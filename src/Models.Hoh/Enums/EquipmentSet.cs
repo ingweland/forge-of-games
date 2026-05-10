@@ -44,4 +44,5 @@ public enum EquipmentSet
     Worker,
     RoyalEgyptian,
     Jackal,
+    Ronin,
 }
