@@ -53,6 +53,11 @@ public class InGameEventsFetcher(
                     {
                         defId = EventDefinitionId.BattleEvent;
                     }
+                    else if (ige.EventDefinition.Id.Equals("event.woa_event",
+                                 StringComparison.InvariantCultureIgnoreCase))
+                    {
+                        defId = EventDefinitionId.WoAEvent;
+                    }
                     else
                     {
                         defId = HohStringParser.ParseEnumFromString<EventDefinitionId>(ige.EventDefinition.Id);

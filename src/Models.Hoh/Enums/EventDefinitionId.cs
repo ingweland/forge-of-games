@@ -9,4 +9,5 @@ public enum EventDefinitionId
     MilestoneEvent,
     BattleEvent,
     TreasureHunt,
+    WoAEvent,
 }
