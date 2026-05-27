@@ -45,4 +45,6 @@ public enum EquipmentSet
     RoyalEgyptian,
     Jackal,
     Ronin,
+    Voyager,
+    Enchantress,
 }

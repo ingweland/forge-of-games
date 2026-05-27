@@ -66,4 +66,6 @@ public enum UnitStatType
     LightningDamageAmp,
     FrostDamageAmp,
     FrostDamageTakenAmp,
+    DefenseDebuffGivenAmp,
+    DefenseDebuffTakenAmp,
 }
