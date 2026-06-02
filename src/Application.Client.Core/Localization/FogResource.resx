@@ -1426,12 +1426,6 @@
     <data name="CityStrategyViewer.Meta.Keywords" xml:space="preserve">
         <value>Heroes of History city strategy, event city, event city strategy, city planner, city building, city management, game optimization, production stats</value>
     </data>
-    <data name="CityStrategiesDashboard.Title" xml:space="preserve">
-        <value>City Guides</value>
-    </data>
-    <data name="CityStrategiesDashboard.PageTitle" xml:space="preserve">
-        <value>City Guides | Heroes of History | Forge of Games</value>
-    </data>
     <data name="CityStrategiesDashboard.MyStrategies" xml:space="preserve">
         <value>My Strategies</value>
     </data>
@@ -1546,13 +1540,37 @@
     <data name="CityStrategiesDashboard.AlliedCultures" xml:space="preserve">
         <value>Allied Cultures</value>
     </data>
-    <data name="Navigation.CityStrategiesDashboard" xml:space="preserve">
-        <value>Guides</value>
-    </data>
     <data name="CityStrategiesDashboard.Meta.Description" xml:space="preserve">
         <value>Allied culture and the capital guides for Heroes of History.</value>
     </data>
     <data name="CityStrategiesDashboard.Meta.Keywords" xml:space="preserve">
         <value>Heroes of History allied culture guides, Heroes of History allied culture strategy, allied culture guide, allied culture strategy, event city guide, event city, event city strategy, city planner, city building, city management, game optimization, production stats</value>
+    </data>
+    <data name="AlliedCultureCityGuides.Calendar" xml:space="preserve">
+        <value>Calendar</value>
+    </data>
+    <data name="AlliedCultureCityGuides.Title" xml:space="preserve">
+        <value>Allied Culture City Guides</value>
+    </data>
+    <data name="AlliedCultureCityGuides.PageTitle" xml:space="preserve">
+        <value>Allied Culture City Guides | Heroes of History | Forge of Games</value>
+    </data>
+    <data name="AlliedCultureCityGuides.Meta.Description" xml:space="preserve">
+        <value>Allied culture city guides for Heroes of History.</value>
+    </data>
+    <data name="AlliedCultureCityGuides.Meta.Keywords" xml:space="preserve">
+        <value>Allied culture city guide, Heroes of History city guide, event city, event city guide, allied culture, allied culture event, city planner, city building, city management, game optimization, production stats</value>
+    </data>
+    <data name="Navigation.AlliedCultureCityGuides" xml:space="preserve">
+        <value>City guides</value>
+    </data>
+    <data name="CityStrategiesDashboard.Title" xml:space="preserve">
+        <value>City Strategies</value>
+    </data>
+    <data name="CityStrategiesDashboard.PageTitle" xml:space="preserve">
+        <value>City Strategies | Heroes of History | Forge of Games</value>
+    </data>
+    <data name="CityStrategiesDashboard.GuidesMovedNotice" xml:space="preserve">
+        <value>Community guides have been moved to a dedicated page</value>
     </data>
 </root>

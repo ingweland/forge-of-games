@@ -1397,12 +1397,6 @@ Forge of Games nie jest powiązany ani oficjalnie związany z twórcami lub wyda
     <data name="CityStrategyViewer.Meta.Keywords" xml:space="preserve">
   <value>Heroes of History strategia miasta, miasto wydarzenia, strategia miasta wydarzenia, planer miasta, budowa miasta, zarządzanie miastem, optymalizacja gry, statystyki produkcji</value>
 </data>
-    <data name="CityStrategiesDashboard.Title" xml:space="preserve">
-        <value>Przewodniki po mieście</value>
-    </data>
-    <data name="CityStrategiesDashboard.PageTitle" xml:space="preserve">
-        <value>Przewodniki po mieście | Heroes of History | Forge of Games</value>
-    </data>
     <data name="CityStrategiesDashboard.MyStrategies" xml:space="preserve">
   <value>Moje strategie</value>
 </data>
@@ -1514,13 +1508,37 @@ Forge of Games nie jest powiązany ani oficjalnie związany z twórcami lub wyda
     <data name="CityStrategiesDashboard.AlliedCultures" xml:space="preserve">
     <value>Kultury sojusznicze</value>
 </data>
-    <data name="Navigation.CityStrategiesDashboard" xml:space="preserve">
-    <value>Przewodniki</value>
-</data>
     <data name="CityStrategiesDashboard.Meta.Description" xml:space="preserve">
     <value>Przewodniki po kulturze sojuszniczej i stolicy w Heroes of History.</value>
 </data>
     <data name="CityStrategiesDashboard.Meta.Keywords" xml:space="preserve">
     <value>Heroes of History przewodniki kultura sojusznicza, Heroes of History strategia kultura sojusznicza, przewodnik kultura sojusznicza, strategia kultura sojusznicza, przewodnik miasto eventowe, miasto eventowe, strategia miasto eventowe, planista miasta, budowanie miasta, zarządzanie miastem, optymalizacja gry, statystyki produkcji</value>
+</data>
+    <data name="AlliedCultureCityGuides.Calendar" xml:space="preserve">
+    <value>Kalendarz</value>
+</data>
+    <data name="AlliedCultureCityGuides.Title" xml:space="preserve">
+    <value>Przewodniki miast kultury sojuszniczej</value>
+</data>
+    <data name="AlliedCultureCityGuides.PageTitle" xml:space="preserve">
+    <value>Przewodniki miast kultury sojuszniczej | Heroes of History | Forge of Games</value>
+</data>
+    <data name="AlliedCultureCityGuides.Meta.Description" xml:space="preserve">
+    <value>Przewodniki miast kultury sojuszniczej dla Heroes of History.</value>
+</data>
+    <data name="AlliedCultureCityGuides.Meta.Keywords" xml:space="preserve">
+    <value>przewodnik po mieście kultury sojuszniczej, przewodnik po mieście Heroes of History, miasto eventowe, przewodnik po mieście eventowym, kultura sojusznicza, wydarzenie kultury sojuszniczej, planista miasta, budowa miasta, zarządzanie miastem, optymalizacja gry, statystyki produkcji</value>
+</data>
+    <data name="Navigation.AlliedCultureCityGuides" xml:space="preserve">
+    <value>Przewodniki miast</value>
+</data>
+    <data name="CityStrategiesDashboard.Title" xml:space="preserve">
+    <value>Strategie miasta</value>
+</data>
+    <data name="CityStrategiesDashboard.PageTitle" xml:space="preserve">
+    <value>Strategie miasta | Heroes of History | Forge of Games</value>
+</data>
+    <data name="CityStrategiesDashboard.GuidesMovedNotice" xml:space="preserve">
+    <value>Przewodniki społeczności zostały przeniesione na dedykowaną stronę</value>
 </data>
 </root>

@@ -1,0 +1,92 @@
+.page-container {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    width: 100%;
+    gap: 6px;
+}
+
+.section-title {
+    color: var(--fog-text-on-container-color);
+    font-size: 18px;
+    border-bottom: 1px solid var(--fog-text-on-container-color);
+    align-self: flex-start;
+    font-weight: 300;
+    padding: 8px 50px 2px 6px;
+    position: relative;
+}
+
+.calendar-items-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+}
+
+.guides-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 18px;
+}
+
+.city-container {
+    display: flex !important;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+
+.city-container > * {
+    width: 100%;
+}
+
+.city-name {
+    padding-top: 14px;
+    background-color: var(--fog-background-color);
+    color: var(--fog-text-on-background-color);
+    text-align: center;
+}
+
+.wonders-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    gap: 6px;
+
+    > * {
+        width: 120px;
+    }
+
+}
+
+.loading-indicator {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    overflow: hidden;
+}
+
+@media (min-width: 576px) {
+    .page-container {
+        gap: 12px;
+    }
+
+    .calendar-items-container {
+        gap: 12px;
+    }
+
+    .section-title {
+        font-size: 24px;
+        padding: 16px 100px 2px 12px;
+    }
+
+    .wonders-container {
+        gap: 12px;
+
+        > * {
+            width: 150px;
+        }
+    }
+}

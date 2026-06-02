@@ -201,6 +201,8 @@ public static class FogUrlBuilder
         public const string CITY_PLANNER_DATA_CONVERTER_PATH = "/city-planner-data-converter";
         public const string CITY_GUIDE_CONVERTER_PATH = "/city-guide-converter";
 
+        public const string ALLIED_CULTURE_CITY_GUIDES = "/allied-culture-city-guides";
+
         public static string Player(int id)
         {
             return PLAYER_PROFILE_TEMPLATE.Replace("{playerId:int}", id.ToString());

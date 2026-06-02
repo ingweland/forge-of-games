@@ -195,6 +195,51 @@ namespace Ingweland.Fog.Application.Client.Core.Localization {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Calendar.
+        /// </summary>
+        public static string AlliedCultureCityGuides_Calendar {
+            get {
+                return ResourceManager.GetString("AlliedCultureCityGuides.Calendar", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Allied culture city guides for Heroes of History..
+        /// </summary>
+        public static string AlliedCultureCityGuides_Meta_Description {
+            get {
+                return ResourceManager.GetString("AlliedCultureCityGuides.Meta.Description", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Allied culture city guide, Heroes of History city guide, event city, event city guide, allied culture, allied culture event, city planner, city building, city management, game optimization, production stats.
+        /// </summary>
+        public static string AlliedCultureCityGuides_Meta_Keywords {
+            get {
+                return ResourceManager.GetString("AlliedCultureCityGuides.Meta.Keywords", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Allied Culture City Guides | Heroes of History | Forge of Games.
+        /// </summary>
+        public static string AlliedCultureCityGuides_PageTitle {
+            get {
+                return ResourceManager.GetString("AlliedCultureCityGuides.PageTitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Allied Culture City Guides.
+        /// </summary>
+        public static string AlliedCultureCityGuides_Title {
+            get {
+                return ResourceManager.GetString("AlliedCultureCityGuides.Title", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Forge of Games needs help. I’ve been covering all costs for this project myself for almost a year. I can’t keep funding it alone — without donations, the site may have to go offline soon. If you’d like it to stay up, please consider donating..
         /// </summary>
         public static string Announcement_Donation {
@@ -1194,6 +1239,15 @@ namespace Ingweland.Fog.Application.Client.Core.Localization {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Community guides have been moved to a dedicated page.
+        /// </summary>
+        public static string CityStrategiesDashboard_GuidesMovedNotice {
+            get {
+                return ResourceManager.GetString("CityStrategiesDashboard.GuidesMovedNotice", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Allied culture and the capital guides for Heroes of History..
         /// </summary>
         public static string CityStrategiesDashboard_Meta_Description {
@@ -1221,7 +1275,7 @@ namespace Ingweland.Fog.Application.Client.Core.Localization {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to City Guides | Heroes of History | Forge of Games.
+        ///   Looks up a localized string similar to City Strategies | Heroes of History | Forge of Games.
         /// </summary>
         public static string CityStrategiesDashboard_PageTitle {
             get {
@@ -1230,7 +1284,7 @@ namespace Ingweland.Fog.Application.Client.Core.Localization {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to City Guides.
+        ///   Looks up a localized string similar to City Strategies.
         /// </summary>
         public static string CityStrategiesDashboard_Title {
             get {
@@ -2940,6 +2994,15 @@ namespace Ingweland.Fog.Application.Client.Core.Localization {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to City guides.
+        /// </summary>
+        public static string Navigation_AlliedCultureCityGuides {
+            get {
+                return ResourceManager.GetString("Navigation.AlliedCultureCityGuides", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Anubis&apos; Awakening.
         /// </summary>
         public static string Navigation_AnubisAwakening {
@@ -2981,15 +3044,6 @@ namespace Ingweland.Fog.Application.Client.Core.Localization {
         public static string Navigation_CityLayouts {
             get {
                 return ResourceManager.GetString("Navigation.CityLayouts", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Guides.
-        /// </summary>
-        public static string Navigation_CityStrategiesDashboard {
-            get {
-                return ResourceManager.GetString("Navigation.CityStrategiesDashboard", resourceCulture);
             }
         }
         

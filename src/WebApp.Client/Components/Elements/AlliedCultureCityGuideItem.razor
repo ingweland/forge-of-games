@@ -1,0 +1,17 @@
+@using Ingweland.Fog.Application.Client.Web.ViewModels
+<div class="card-wrapper" @onclick="() => OnClicked.InvokeAsync(GuideInfo)">
+    <div class="item">
+        <img src="@GuideInfo.Wonder.ImageUrl"/>
+        <div class="title">@GuideInfo.Wonder.Name</div>
+    </div>
+</div>
+
+@code {
+
+    [Parameter]
+    public required AlliedCultureCityGuideViewModel GuideInfo { get; set; }
+
+    [Parameter]
+    public EventCallback<AlliedCultureCityGuideViewModel> OnClicked { get; set; }
+
+}

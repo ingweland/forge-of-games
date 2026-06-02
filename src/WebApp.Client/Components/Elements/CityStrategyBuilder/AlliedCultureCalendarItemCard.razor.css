@@ -1,0 +1,40 @@
+.command-center-card {
+    padding: 0;
+    overflow: hidden;
+    min-height: 80px;
+    position: relative;
+}
+
+.main-container {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    align-items: center;
+    justify-content: center;
+    padding: 8px 22px;
+    gap: 4px;
+}
+
+.dates-label {
+    font-size: 12px;
+    text-align: center;
+}
+
+.city-name {
+    font-size: 16px;
+    text-align: center;
+}
+
+.city-id-icon {
+    height: 20px;
+    object-fit: contain;
+    position: absolute;
+    top: 2px;
+    left: 2px;
+}
+
+@media (min-width: 576px) {
+    .main-container {
+        gap: 8px;
+    }
+}

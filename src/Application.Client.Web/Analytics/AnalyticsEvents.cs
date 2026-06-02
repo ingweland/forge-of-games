@@ -25,6 +25,7 @@ public static class AnalyticsEvents
     public const string NAVIGATE_ALLIANCE = "navigate_alliance";
     public const string NAVIGATE_HERO_BATTLE = "navigate_hero_battle";
     public const string NAVIGATE_PLAYER_PROFILE = "navigate_player_profile";
+    public const string OPEN_ALLIED_CULTURE_CITY_GUIDES_PAGE = "open_ac_guides_page";
     public const string OPEN_CITY_INSPIRATIONS = "open_city_inspirations";
     public const string OPEN_CITY_PLANNER = "open_city_planner";
     public const string OPEN_CITY_PLANNER_DASHBOARD = "open_city_planner_dashboard";

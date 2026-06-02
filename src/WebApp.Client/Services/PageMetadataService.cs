@@ -170,6 +170,20 @@ public class PageMetadataService(NavigationManager navigationManager, IStringLoc
             };
         }
 
+        // city guides
+        if (currentPageAbsolutePath.StartsWith(FogUrlBuilder.PageRoutes.ALLIED_CULTURE_CITY_GUIDES))
+        {
+            return new PageMetadata
+            {
+                PageTitle = localizer[FogResource.AlliedCultureCityGuides_PageTitle],
+                Description = localizer[FogResource.AlliedCultureCityGuides_Meta_Description],
+                Keywords = localizer[FogResource.AlliedCultureCityGuides_Meta_Keywords],
+                Title = localizer[FogResource.AlliedCultureCityGuides_Title],
+                CurrentHomePath = FogUrlBuilder.PageRoutes.ALLIED_CULTURE_CITY_GUIDES,
+                HelpPagePath = FogUrlBuilder.PageRoutes.HELP_CITY_STRATEGY_BUILDER_APP_PATH,
+            };
+        }
+
         // city planner
         if (currentPageAbsolutePath.StartsWith(FogUrlBuilder.PageRoutes.BASE_CITY_PLANNER_PATH))
         {
@@ -194,7 +208,7 @@ public class PageMetadataService(NavigationManager navigationManager, IStringLoc
                     Description = localizer[FogResource.CityStrategyViewer_Meta_Description],
                     Keywords = localizer[FogResource.CityStrategyViewer_Meta_Keywords],
                     Title = localizer[FogResource.CityStrategyViewer_Title],
-                    CurrentHomePath = FogUrlBuilder.PageRoutes.CITY_STRATEGIES_DASHBOARD_PATH,
+                    CurrentHomePath = FogUrlBuilder.PageRoutes.ALLIED_CULTURE_CITY_GUIDES,
                     HelpPagePath = FogUrlBuilder.PageRoutes.HELP_CITY_STRATEGY_BUILDER_APP_PATH,
                 };
             }
@@ -220,19 +234,6 @@ public class PageMetadataService(NavigationManager navigationManager, IStringLoc
                     Description = localizer[FogResource.CityStrategiesDashboard_Meta_Description],
                     Keywords = localizer[FogResource.CityStrategiesDashboard_Meta_Keywords],
                     Title = localizer[FogResource.CityStrategiesDashboard_Title],
-                    CurrentHomePath = FogUrlBuilder.PageRoutes.CITY_STRATEGIES_DASHBOARD_PATH,
-                    HelpPagePath = FogUrlBuilder.PageRoutes.HELP_CITY_STRATEGY_BUILDER_APP_PATH,
-                };
-            }
-
-            if (currentPageAbsolutePath.StartsWith(FogUrlBuilder.PageRoutes.BASE_CITY_GUIDES_PATH))
-            {
-                return new PageMetadata
-                {
-                    PageTitle = localizer[FogResource.CityGuide_PageTitle, string.Empty],
-                    Description = localizer[FogResource.CityGuide_Meta_Description],
-                    Keywords = localizer[FogResource.CityGuide_Meta_Keywords],
-                    Title = localizer[FogResource.CityGuide_Title],
                     CurrentHomePath = FogUrlBuilder.PageRoutes.CITY_STRATEGIES_DASHBOARD_PATH,
                     HelpPagePath = FogUrlBuilder.PageRoutes.HELP_CITY_STRATEGY_BUILDER_APP_PATH,
                 };

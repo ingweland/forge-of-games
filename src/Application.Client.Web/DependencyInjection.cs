@@ -166,6 +166,9 @@ public static class DependencyInjection
         services.AddScoped<IBuildingRenderer, BuildingRenderer>();
         services.AddScoped<IPlayerAthRankingViewModelFactory, PlayerAthRankingViewModelFactory>();
         services.AddScoped<IBattleEventBasicViewModelFactory, BattleEventBasicViewModelFactory>();
+        services.AddScoped<IAlliedCultureCalendarItemViewModelFactory, AlliedCultureCalendarItemViewModelFactory>();
+        services.AddScoped<IAlliedCultureCityGuidesUiService, AlliedCultureCityGuidesUiService>();
+        services.AddScoped<IAlliedCultureCityGuideViewModelFactory, AlliedCultureCityGuideViewModelFactory>();
 
         services.AddScoped<CityPlannerSettings>();
 

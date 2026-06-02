@@ -1,9 +1,7 @@
 @attribute [Route(FogUrlBuilder.PageRoutes.CITY_STRATEGIES_DASHBOARD_PATH)]
 @using Ingweland.Fog.Application.Client.Core.Localization
-@using Ingweland.Fog.Application.Client.Web.Constants
 @using Ingweland.Fog.Application.Core.Helpers
 @using Ingweland.Fog.WebApp.Client.Components.Elements.CityPlanner
-@using Ingweland.Fog.WebApp.Client.Components.Elements.CityStrategyBuilder
 @inherits Ingweland.Fog.WebApp.Client.Components.Pages.Abstractions.FogPageBase
 <div class="page-container">
     <div class="action-buttons-container">
@@ -16,8 +14,6 @@
         }
 
     </div>
-
-    <AdSenseComponent AdSlot="3973473671" AdClass="ads-display-responsive-horizontal"/>
 
     <div class="section-title">
         @Loc[FogResource.CityStrategiesDashboard_MyStrategies]
@@ -33,27 +29,6 @@
         </div>
     }
 
-    <div class="section-title">
-        <span>@Loc[FogResource.CityStrategiesDashboard_AlliedCultures]</span>
-        @if (_strategiesAreLoading)
-        {
-            <div class="loading-indicator">
-                <MudProgressLinear Color="Color.Secondary" Indeterminate="true"/>
-            </div>
-        }
-    </div>
-    @if (_communityStrategies.Count > 0)
-    {
-        <div class="items-container">
-
-            @foreach (var info in _communityStrategies)
-            {
-                <CommunityCityStrategyCard Info="@info" OnClick="@OpenCommunityStrategy"/>
-            }
-        </div>
-    }
-
-    <AdSenseComponent AdSlot="2995868697" AdFormat="@AdSenseConstants.FORMAT_MULTIPLEX"
-                      AdClass="ads-multiflex" Style="margin-top: 24px;"/>
-
+    <a class="guides-moved-notice"
+       href="@FogUrlBuilder.PageRoutes.ALLIED_CULTURE_CITY_GUIDES">@Loc[FogResource.CityStrategiesDashboard_GuidesMovedNotice]</a>
 </div>

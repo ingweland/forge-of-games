@@ -1388,12 +1388,6 @@ Forge of Games není přidružený ani oficiálně spojený s tvůrci nebo vydav
     <data name="CityStrategyViewer.Meta.Keywords" xml:space="preserve">
   <value>Heroes of History strategie města, město události, strategie města události, plánovač města, výstavba města, správa města, optimalizace hry, produkční statistiky</value>
 </data>
-    <data name="CityStrategiesDashboard.Title" xml:space="preserve">
-        <value>Průvodci městem</value>
-    </data>
-    <data name="CityStrategiesDashboard.PageTitle" xml:space="preserve">
-        <value>Průvodci městem | Heroes of History | Forge of Games</value>
-    </data>
     <data name="CityStrategiesDashboard.MyStrategies" xml:space="preserve">
   <value>Moje strategie</value>
 </data>
@@ -1505,13 +1499,37 @@ Forge of Games není přidružený ani oficiálně spojený s tvůrci nebo vydav
     <data name="CityStrategiesDashboard.AlliedCultures" xml:space="preserve">
     <value>Spojenecké kultury</value>
 </data>
-    <data name="Navigation.CityStrategiesDashboard" xml:space="preserve">
-    <value>Průvodci</value>
-</data>
     <data name="CityStrategiesDashboard.Meta.Description" xml:space="preserve">
     <value>Průvodci spojeneckými kulturami a hlavním městem pro Heroes of History.</value>
 </data>
     <data name="CityStrategiesDashboard.Meta.Keywords" xml:space="preserve">
     <value>Heroes of History průvodci spojeneckými kulturami, Heroes of History strategie spojeneckých kultur, průvodce spojeneckou kulturou, strategie spojenecké kultury, průvodce událostmi města, eventové město, strategie eventového města, plánovač města, budování města, správa města, optimalizace hry, výrobní statistiky</value>
 </data>
+    <data name="AlliedCultureCityGuides.Calendar" xml:space="preserve">
+    <value>Kalendář</value>
+</data>
+    <data name="AlliedCultureCityGuides.Title" xml:space="preserve">
+    <value>Průvodci městy spojeneckých kultur</value>
+</data>
+    <data name="AlliedCultureCityGuides.PageTitle" xml:space="preserve">
+    <value>Průvodci městy spojeneckých kultur | Heroes of History | Forge of Games</value>
+</data>
+    <data name="AlliedCultureCityGuides.Meta.Description" xml:space="preserve">
+    <value>Průvodci městy spojeneckých kultur pro Heroes of History.</value>
+</data>
+    <data name="AlliedCultureCityGuides.Meta.Keywords" xml:space="preserve">
+    <value>průvodce městem spojenecké kultury, průvodce městem Heroes of History, město události, průvodce městem události, spojenecká kultura, událost spojenecké kultury, plánovač města, budování města, správa města, optimalizace hry, statistiky výroby</value>
+</data>
+    <data name="Navigation.AlliedCultureCityGuides" xml:space="preserve">
+    <value>Průvodci městy</value>
+</data>
+    <data name="CityStrategiesDashboard.Title" xml:space="preserve">
+    <value>Strategie měst</value>
+</data>
+    <data name="CityStrategiesDashboard.PageTitle" xml:space="preserve">
+    <value>Strategie měst | Heroes of History | Forge of Games</value>
+</data>
+    <data name="CityStrategiesDashboard.GuidesMovedNotice" xml:space="preserve">
+        <value>Community guides have been moved to a dedicated page</value>
+    </data>
 </root>

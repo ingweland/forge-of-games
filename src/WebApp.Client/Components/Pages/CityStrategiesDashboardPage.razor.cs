@@ -3,7 +3,6 @@ using Ingweland.Fog.Application.Client.Web.Analytics.Interfaces;
 using Ingweland.Fog.Application.Client.Web.CityStrategyBuilder.Abstractions;
 using Ingweland.Fog.Application.Client.Web.Models;
 using Ingweland.Fog.Application.Client.Web.Services.Abstractions;
-using Ingweland.Fog.Application.Client.Web.ViewModels;
 using Ingweland.Fog.Application.Core.CityPlanner;
 using Ingweland.Fog.Application.Core.Constants;
 using Ingweland.Fog.Application.Core.Helpers;
@@ -17,10 +16,8 @@ namespace Ingweland.Fog.WebApp.Client.Components.Pages;
 
 public partial class CityStrategiesDashboardPage : FogPageBase
 {
-    private IReadOnlyCollection<CommunityCityStrategyViewModel> _communityStrategies = [];
     private bool _isSmallScreen;
     private IReadOnlyCollection<HohCityBasicData> _myStrategies = [];
-    private bool _strategiesAreLoading;
 
     [Inject]
     private ICityStrategyAnalyticsService AnalyticsService { get; set; }
@@ -55,21 +52,9 @@ public partial class CityStrategiesDashboardPage : FogPageBase
         var size = await BrowserViewportService.GetCurrentBrowserWindowSizeAsync();
         _isSmallScreen = size.Width < FogConstants.CITY_PLANNER_REQUIRED_SCREEN_WIDTH;
 
-        _ = GetCommunityStrategiesAsync();
         _myStrategies = await PersistenceService.GetCityStrategies();
 
         AnalyticsService.TrackEvent(AnalyticsEvents.OPEN_CITY_STRATEGIES_DASHBOARD);
-    }
-
-    private async Task GetCommunityStrategiesAsync()
-    {
-        _strategiesAreLoading = true;
-        StateHasChanged();
-
-        _communityStrategies = await CityStrategyUiService.GetCommunityStrategiesAsync();
-
-        _strategiesAreLoading = false;
-        StateHasChanged();
     }
 
     private async Task OpenStrategy(string strategyId)
@@ -94,44 +79,6 @@ public partial class CityStrategiesDashboardPage : FogPageBase
         };
 
         NavigationManager.NavigateTo(FogUrlBuilder.PageRoutes.CITY_STRATEGY_VIEWER_PATH);
-    }
-
-    private async Task OpenCommunityStrategy(CommunityCityStrategyViewModel communityStrategy)
-    {
-        _strategiesAreLoading = true;
-        StateHasChanged();
-
-        var eventParams = new Dictionary<string, object>
-        {
-            {AnalyticsParams.CITY_ID, communityStrategy.CityId.ToString()},
-            {AnalyticsParams.SHARE_ID, communityStrategy.SharedDataId},
-        };
-
-        AnalyticsService.TrackEvent(AnalyticsEvents.OPEN_COMMUNITY_CITY_STRATEGY_INIT, eventParams);
-
-        var strategy = await CityStrategyUiService.GetCommunityStrategyAsync(communityStrategy.SharedDataId);
-        if (strategy != null)
-        {
-            CityStrategyNavigationState.Data = new CityStrategyNavigationState.CityStrategyNavigationStateData
-            {
-                Strategy = strategy,
-                IsRemote = true,
-                IsCommunity = true,
-            };
-
-            _strategiesAreLoading = false;
-
-            AnalyticsService.TrackEvent(AnalyticsEvents.OPEN_COMMUNITY_CITY_STRATEGY_SUCCESS, eventParams);
-
-            NavigationManager.NavigateTo(FogUrlBuilder.PageRoutes.CITY_STRATEGY_VIEWER_PATH);
-        }
-        else
-        {
-            AnalyticsService.TrackEvent(AnalyticsEvents.OPEN_COMMUNITY_CITY_STRATEGY_ERROR, eventParams);
-        }
-
-        _strategiesAreLoading = false;
-        StateHasChanged();
     }
 
     private async Task CreateStrategy()

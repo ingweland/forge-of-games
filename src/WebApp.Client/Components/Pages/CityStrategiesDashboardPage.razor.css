@@ -40,6 +40,11 @@
     overflow: hidden;
 }
 
+.guides-moved-notice {
+    font-size: 16px;
+    padding: 12px 6px;
+    font-weight: 700;
+}
 
 @media (min-width: 576px) {
     .page-container {

@@ -1368,12 +1368,6 @@
     <data name="CityStrategyViewer.Meta.Keywords" xml:space="preserve">
     <value>Heroes of History 도시 전략, 이벤트 도시, 이벤트 도시 전략, 도시 플래너, 도시 건설, 도시 관리, 게임 최적화, 생산 통계</value>
 </data>
-    <data name="CityStrategiesDashboard.Title" xml:space="preserve">
-        <value>도시 가이드</value>
-    </data>
-    <data name="CityStrategiesDashboard.PageTitle" xml:space="preserve">
-        <value>도시 가이드 | Heroes of History | Forge of Games</value>
-    </data>
     <data name="CityStrategiesDashboard.MyStrategies" xml:space="preserve">
     <value>내 전략</value>
 </data>
@@ -1485,13 +1479,37 @@
     <data name="CityStrategiesDashboard.AlliedCultures" xml:space="preserve">
     <value>동맹 문화</value>
 </data>
-    <data name="Navigation.CityStrategiesDashboard" xml:space="preserve">
-    <value>가이드</value>
-</data>
     <data name="CityStrategiesDashboard.Meta.Description" xml:space="preserve">
     <value>Heroes of History의 동맹 문화 및 수도 가이드.</value>
 </data>
     <data name="CityStrategiesDashboard.Meta.Keywords" xml:space="preserve">
     <value>Heroes of History 동맹 문화 가이드, Heroes of History 동맹 문화 전략, 동맹 문화 가이드, 동맹 문화 전략, 이벤트 도시 가이드, 이벤트 도시, 이벤트 도시 전략, 도시 플래너, 도시 건설, 도시 관리, 게임 최적화, 생산 통계</value>
+</data>
+    <data name="AlliedCultureCityGuides.Calendar" xml:space="preserve">
+    <value>달력</value>
+</data>
+    <data name="AlliedCultureCityGuides.Title" xml:space="preserve">
+    <value>동맹 문화 도시 가이드</value>
+</data>
+    <data name="AlliedCultureCityGuides.PageTitle" xml:space="preserve">
+    <value>동맹 문화 도시 가이드 | Heroes of History | Forge of Games</value>
+</data>
+    <data name="AlliedCultureCityGuides.Meta.Description" xml:space="preserve">
+    <value>Heroes of History의 동맹 문화 도시 가이드.</value>
+</data>
+    <data name="AlliedCultureCityGuides.Meta.Keywords" xml:space="preserve">
+    <value>동맹 문화 도시 가이드, Heroes of History 도시 가이드, 이벤트 도시, 이벤트 도시 가이드, 동맹 문화, 동맹 문화 이벤트, 도시 계획, 도시 건설, 도시 관리, 게임 최적화, 생산 통계</value>
+</data>
+    <data name="Navigation.AlliedCultureCityGuides" xml:space="preserve">
+    <value>도시 가이드</value>
+</data>
+    <data name="CityStrategiesDashboard.Title" xml:space="preserve">
+    <value>도시 전략</value>
+</data>
+    <data name="CityStrategiesDashboard.PageTitle" xml:space="preserve">
+    <value>도시 전략 | Heroes of History | Forge of Games</value>
+</data>
+    <data name="CityStrategiesDashboard.GuidesMovedNotice" xml:space="preserve">
+    <value>커뮤니티 가이드가 전용 페이지로 이동되었습니다</value>
 </data>
 </root>

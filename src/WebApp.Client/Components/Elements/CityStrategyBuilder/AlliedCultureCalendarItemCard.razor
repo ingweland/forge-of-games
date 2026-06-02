@@ -1,0 +1,23 @@
+@using Ingweland.Fog.Application.Client.Core.Localization
+@using Ingweland.Fog.Application.Client.Web.ViewModels
+@using Ingweland.Fog.Models.Hoh.Enums
+@using Microsoft.Extensions.Localization
+@inject IStringLocalizer<FogResource> Loc
+<div class="command-center-card" @onclick="() => OnClick.InvokeAsync(Item.WonderId)">
+    <img class="city-id-icon" src="@Item.IconUrl"/>
+    <div class="main-container">
+        <span class="city-name">@Item.Name</span>
+        <span class="dates-label">@Item.DatesFormatted</span>
+    </div>
+</div>
+
+@code {
+
+    [Parameter]
+    [EditorRequired]
+    public required AlliedCultureCalendarItemViewModel Item { get; init; }
+
+    [Parameter]
+    public EventCallback<WonderId> OnClick { get; set; }
+
+}

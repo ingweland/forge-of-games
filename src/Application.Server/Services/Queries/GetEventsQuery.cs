@@ -16,7 +16,7 @@ public record GetEventsQuery : IRequest<IReadOnlyCollection<InGameEventDto>>, IC
     public DateTimeOffset? Expiration { get; }
 }
 
-public class GetAthEventsQueryHandler(IFogDbContext context, IMapper mapper)
+public class GetEventsQueryHandler(IFogDbContext context, IMapper mapper)
     : IRequestHandler<GetEventsQuery, IReadOnlyCollection<InGameEventDto>>
 {
     public async Task<IReadOnlyCollection<InGameEventDto>> Handle(GetEventsQuery request,

@@ -1,0 +1,46 @@
+@attribute [Route(FogUrlBuilder.PageRoutes.ALLIED_CULTURE_CITY_GUIDES)]
+@using Ingweland.Fog.Application.Client.Core.Localization
+@using Ingweland.Fog.Application.Client.Web.Constants
+@using Ingweland.Fog.Application.Core.Helpers
+@using Ingweland.Fog.WebApp.Client.Components.Elements.CityStrategyBuilder
+@inherits Ingweland.Fog.WebApp.Client.Components.Pages.Abstractions.FogPageBase
+<div class="page-container">
+    <AdSenseComponent AdSlot="3973473671" AdClass="ads-display-responsive-horizontal"/>
+
+    <div class="section-title">
+        @Loc[FogResource.AlliedCultureCityGuides_Calendar]
+        @if (_dataIsLoading)
+        {
+            <div class="loading-indicator">
+                <MudProgressLinear Color="Color.Secondary" Indeterminate="true"/>
+            </div>
+        }
+    </div>
+    <div class="calendar-items-container">
+        @foreach (var item in _calendar)
+        {
+            <AlliedCultureCalendarItemCard Item="@item" OnClick="@OpenCalendarItem"/>
+        }
+    </div>
+
+    @foreach (var wonderGroup in _guides)
+    {
+        <div class="city-container">
+            <h4 class="city-name">@wonderGroup.CityName</h4>
+            <div class="wonders-container">
+                @foreach (var wonder in wonderGroup.Guides)
+                {
+                    <AlliedCultureCityGuideItem GuideInfo="@wonder" OnClicked="@OpenCommunityStrategy"/>
+                }
+            </div>
+        </div>
+    }
+
+    <AdSenseComponent AdSlot="2995868697" AdFormat="@AdSenseConstants.FORMAT_MULTIPLEX"
+                      AdClass="ads-multiflex" Style="margin-top: 24px;"/>
+
+</div>
+
+@code {
+
+}
