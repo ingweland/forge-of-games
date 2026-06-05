@@ -1573,4 +1573,19 @@
     <data name="CityStrategiesDashboard.GuidesMovedNotice" xml:space="preserve">
         <value>Community guides have been moved to a dedicated page</value>
     </data>
+    <data name="Navigation.Atlantis" xml:space="preserve">
+        <value>Atlantis</value>
+    </data>
+    <data name="Atlantis.Title" xml:space="preserve">
+        <value>Battle for Atlantis</value>
+    </data>
+    <data name="Atlantis.PageTitle" xml:space="preserve">
+        <value>Battle for Atlantis | Heroes of History | Forge of Games</value>
+    </data>
+    <data name="Atlantis.Meta.Description" xml:space="preserve">
+        <value>Battle for Atlantis guide and tools.</value>
+    </data>
+    <data name="Atlantis.Meta.Keywords" xml:space="preserve">
+        <value>Battle for Atlantis guide, Heroes of History, guide, tools, bfa</value>
+    </data>
 </root>

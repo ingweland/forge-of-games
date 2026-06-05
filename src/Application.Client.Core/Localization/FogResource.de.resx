@@ -1536,4 +1536,19 @@ Forge of Games ist weder mit den Erstellern noch mit den Herausgebern von Heroes
     <data name="CityStrategiesDashboard.GuidesMovedNotice" xml:space="preserve">
     <value>Community-Guides wurden auf eine eigene Seite verschoben</value>
 </data>
+    <data name="Navigation.Atlantis" xml:space="preserve">
+    <value>Atlantis</value>
+</data>
+    <data name="Atlantis.Title" xml:space="preserve">
+    <value>Schlacht um Atlantis</value>
+</data>
+    <data name="Atlantis.PageTitle" xml:space="preserve">
+    <value>Schlacht um Atlantis | Heroes of History | Forge of Games</value>
+</data>
+    <data name="Atlantis.Meta.Description" xml:space="preserve">
+    <value>Leitfaden und Tools für Schlacht um Atlantis.</value>
+</data>
+    <data name="Atlantis.Meta.Keywords" xml:space="preserve">
+    <value>Schlacht um Atlantis Leitfaden, Heroes of History, Leitfaden, Tools, bfa</value>
+</data>
 </root>

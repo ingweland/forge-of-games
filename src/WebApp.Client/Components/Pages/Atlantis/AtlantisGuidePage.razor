@@ -1,0 +1,2246 @@
+@using Ingweland.Fog.Application.Core.Helpers
+@attribute [Route(FogUrlBuilder.PageRoutes.ATLANTIS)]
+@inherits Ingweland.Fog.WebApp.Client.Components.Pages.Abstractions.FogPageBase
+
+    <style type="text/css">ul.lst-kix_72rope32fcgf-2 {
+        list-style-type: none
+    }
+
+    ul.lst-kix_72rope32fcgf-1 {
+        list-style-type: none
+    }
+
+    ul.lst-kix_72rope32fcgf-4 {
+        list-style-type: none
+    }
+
+    ul.lst-kix_72rope32fcgf-3 {
+        list-style-type: none
+    }
+
+    ul.lst-kix_72rope32fcgf-6 {
+        list-style-type: none
+    }
+
+    ul.lst-kix_72rope32fcgf-5 {
+        list-style-type: none
+    }
+
+    ul.lst-kix_72rope32fcgf-8 {
+        list-style-type: none
+    }
+
+    ul.lst-kix_72rope32fcgf-7 {
+        list-style-type: none
+    }
+
+    ul.lst-kix_gftdusduf4zx-6 {
+        list-style-type: none
+    }
+
+    ul.lst-kix_gftdusduf4zx-5 {
+        list-style-type: none
+    }
+
+    ul.lst-kix_gftdusduf4zx-4 {
+        list-style-type: none
+    }
+
+    ul.lst-kix_gftdusduf4zx-3 {
+        list-style-type: none
+    }
+
+    ul.lst-kix_gftdusduf4zx-2 {
+        list-style-type: none
+    }
+
+    ul.lst-kix_gftdusduf4zx-1 {
+        list-style-type: none
+    }
+
+    ul.lst-kix_72rope32fcgf-0 {
+        list-style-type: none
+    }
+
+    ul.lst-kix_gftdusduf4zx-0 {
+        list-style-type: none
+    }
+
+    ol.lst-kix_u7hajjisclsd-1.start {
+        counter-reset: lst-ctn-kix_u7hajjisclsd-1 0
+    }
+
+    ul.lst-kix_gftdusduf4zx-8 {
+        list-style-type: none
+    }
+
+    ul.lst-kix_gftdusduf4zx-7 {
+        list-style-type: none
+    }
+
+    ul.lst-kix_61uur26cchyv-6 {
+        list-style-type: none
+    }
+
+    ul.lst-kix_jh9g8efn0ia9-4 {
+        list-style-type: none
+    }
+
+    ul.lst-kix_61uur26cchyv-5 {
+        list-style-type: none
+    }
+
+    ul.lst-kix_jh9g8efn0ia9-3 {
+        list-style-type: none
+    }
+
+    ul.lst-kix_61uur26cchyv-4 {
+        list-style-type: none
+    }
+
+    ul.lst-kix_jh9g8efn0ia9-6 {
+        list-style-type: none
+    }
+
+    .lst-kix_u7hajjisclsd-8 > li {
+        counter-increment: lst-ctn-kix_u7hajjisclsd-8
+    }
+
+    ul.lst-kix_61uur26cchyv-3 {
+        list-style-type: none
+    }
+
+    ul.lst-kix_jh9g8efn0ia9-5 {
+        list-style-type: none
+    }
+
+    ul.lst-kix_61uur26cchyv-2 {
+        list-style-type: none
+    }
+
+    ul.lst-kix_jh9g8efn0ia9-0 {
+        list-style-type: none
+    }
+
+    ul.lst-kix_61uur26cchyv-1 {
+        list-style-type: none
+    }
+
+    ul.lst-kix_61uur26cchyv-0 {
+        list-style-type: none
+    }
+
+    ul.lst-kix_jh9g8efn0ia9-2 {
+        list-style-type: none
+    }
+
+    ul.lst-kix_jh9g8efn0ia9-1 {
+        list-style-type: none
+    }
+
+    ul.lst-kix_hxnxriozlb62-3 {
+        list-style-type: none
+    }
+
+    ul.lst-kix_hxnxriozlb62-4 {
+        list-style-type: none
+    }
+
+    ul.lst-kix_hxnxriozlb62-5 {
+        list-style-type: none
+    }
+
+    ul.lst-kix_b12ve4pioya5-8 {
+        list-style-type: none
+    }
+
+    .lst-kix_7vapbwkl71mr-8 > li:before {
+        content: "-  "
+    }
+
+    ul.lst-kix_hxnxriozlb62-6 {
+        list-style-type: none
+    }
+
+    ul.lst-kix_hxnxriozlb62-7 {
+        list-style-type: none
+    }
+
+    ul.lst-kix_jh9g8efn0ia9-8 {
+        list-style-type: none
+    }
+
+    ul.lst-kix_hxnxriozlb62-8 {
+        list-style-type: none
+    }
+
+    ul.lst-kix_jh9g8efn0ia9-7 {
+        list-style-type: none
+    }
+
+    .lst-kix_7vapbwkl71mr-5 > li:before {
+        content: "-  "
+    }
+
+    .lst-kix_7vapbwkl71mr-4 > li:before {
+        content: "-  "
+    }
+
+    .lst-kix_7vapbwkl71mr-6 > li:before {
+        content: "-  "
+    }
+
+    .lst-kix_7vapbwkl71mr-3 > li:before {
+        content: "-  "
+    }
+
+    .lst-kix_7vapbwkl71mr-7 > li:before {
+        content: "-  "
+    }
+
+    ul.lst-kix_hxnxriozlb62-0 {
+        list-style-type: none
+    }
+
+    ul.lst-kix_hxnxriozlb62-1 {
+        list-style-type: none
+    }
+
+    ul.lst-kix_hxnxriozlb62-2 {
+        list-style-type: none
+    }
+
+    ul.lst-kix_61uur26cchyv-8 {
+        list-style-type: none
+    }
+
+    ul.lst-kix_61uur26cchyv-7 {
+        list-style-type: none
+    }
+
+    .lst-kix_hcwkh91g36a-0 > li:before {
+        content: "-  "
+    }
+
+    .lst-kix_hcwkh91g36a-2 > li:before {
+        content: "-  "
+    }
+
+    .lst-kix_hcwkh91g36a-1 > li:before {
+        content: "-  "
+    }
+
+    .lst-kix_hcwkh91g36a-8 > li:before {
+        content: "-  "
+    }
+
+    .lst-kix_u7hajjisclsd-6 > li {
+        counter-increment: lst-ctn-kix_u7hajjisclsd-6
+    }
+
+    .lst-kix_hcwkh91g36a-4 > li:before {
+        content: "-  "
+    }
+
+    .lst-kix_hcwkh91g36a-6 > li:before {
+        content: "-  "
+    }
+
+    .lst-kix_hcwkh91g36a-3 > li:before {
+        content: "-  "
+    }
+
+    .lst-kix_hcwkh91g36a-7 > li:before {
+        content: "-  "
+    }
+
+    .lst-kix_hcwkh91g36a-5 > li:before {
+        content: "-  "
+    }
+
+    .lst-kix_jh9g8efn0ia9-5 > li:before {
+        content: "-  "
+    }
+
+    .lst-kix_gnhoprmpl14c-4 > li:before {
+        content: "-  "
+    }
+
+    .lst-kix_mp25lo385089-7 > li:before {
+        content: "-  "
+    }
+
+    .lst-kix_jh9g8efn0ia9-3 > li:before {
+        content: "-  "
+    }
+
+    .lst-kix_jh9g8efn0ia9-7 > li:before {
+        content: "-  "
+    }
+
+    .lst-kix_mp25lo385089-5 > li:before {
+        content: "-  "
+    }
+
+    .lst-kix_u7hajjisclsd-1 > li {
+        counter-increment: lst-ctn-kix_u7hajjisclsd-1
+    }
+
+    .lst-kix_61uur26cchyv-5 > li:before {
+        content: "-  "
+    }
+
+    .lst-kix_d78m128us7e2-3 > li:before {
+        content: "\0025cf   "
+    }
+
+    .lst-kix_mp25lo385089-3 > li:before {
+        content: "-  "
+    }
+
+    ol.lst-kix_u7hajjisclsd-5.start {
+        counter-reset: lst-ctn-kix_u7hajjisclsd-5 0
+    }
+
+    .lst-kix_gnhoprmpl14c-2 > li:before {
+        content: "-  "
+    }
+
+    .lst-kix_61uur26cchyv-3 > li:before {
+        content: "-  "
+    }
+
+    .lst-kix_d78m128us7e2-1 > li:before {
+        content: "\0025cb   "
+    }
+
+    .lst-kix_u7hajjisclsd-8 > li:before {
+        content: "" counter(lst-ctn-kix_u7hajjisclsd-8, lower-roman) ". "
+    }
+
+    .lst-kix_d78m128us7e2-7 > li:before {
+        content: "\0025cb   "
+    }
+
+    .lst-kix_u7hajjisclsd-6 > li:before {
+        content: "" counter(lst-ctn-kix_u7hajjisclsd-6, decimal) ". "
+    }
+
+    .lst-kix_n113up5jai02-8 > li:before {
+        content: "-  "
+    }
+
+    .lst-kix_mp25lo385089-1 > li:before {
+        content: "-  "
+    }
+
+    ul.lst-kix_n113up5jai02-1 {
+        list-style-type: none
+    }
+
+    .lst-kix_61uur26cchyv-1 > li:before {
+        content: "-  "
+    }
+
+    ul.lst-kix_n113up5jai02-0 {
+        list-style-type: none
+    }
+
+    .lst-kix_d78m128us7e2-5 > li:before {
+        content: "\0025a0   "
+    }
+
+    ol.lst-kix_u7hajjisclsd-8.start {
+        counter-reset: lst-ctn-kix_u7hajjisclsd-8 0
+    }
+
+    .lst-kix_gnhoprmpl14c-0 > li:before {
+        content: "-  "
+    }
+
+    .lst-kix_u7hajjisclsd-0 > li:before {
+        content: "" counter(lst-ctn-kix_u7hajjisclsd-0, decimal) ". "
+    }
+
+    .lst-kix_n113up5jai02-2 > li:before {
+        content: "-  "
+    }
+
+    ul.lst-kix_ixn7c7ummtnw-5 {
+        list-style-type: none
+    }
+
+    .lst-kix_ixn7c7ummtnw-8 > li:before {
+        content: "-  "
+    }
+
+    .lst-kix_u7hajjisclsd-2 > li:before {
+        content: "" counter(lst-ctn-kix_u7hajjisclsd-2, lower-roman) ". "
+    }
+
+    .lst-kix_n113up5jai02-0 > li:before {
+        content: "-  "
+    }
+
+    .lst-kix_n113up5jai02-4 > li:before {
+        content: "-  "
+    }
+
+    ul.lst-kix_ixn7c7ummtnw-6 {
+        list-style-type: none
+    }
+
+    ul.lst-kix_ixn7c7ummtnw-7 {
+        list-style-type: none
+    }
+
+    ul.lst-kix_ixn7c7ummtnw-8 {
+        list-style-type: none
+    }
+
+    ul.lst-kix_n113up5jai02-3 {
+        list-style-type: none
+    }
+
+    ul.lst-kix_ixn7c7ummtnw-1 {
+        list-style-type: none
+    }
+
+    .lst-kix_ixn7c7ummtnw-6 > li:before {
+        content: "-  "
+    }
+
+    .lst-kix_u7hajjisclsd-4 > li:before {
+        content: "" counter(lst-ctn-kix_u7hajjisclsd-4, lower-latin) ". "
+    }
+
+    ul.lst-kix_n113up5jai02-2 {
+        list-style-type: none
+    }
+
+    .lst-kix_n113up5jai02-6 > li:before {
+        content: "-  "
+    }
+
+    ul.lst-kix_ixn7c7ummtnw-2 {
+        list-style-type: none
+    }
+
+    ul.lst-kix_n113up5jai02-5 {
+        list-style-type: none
+    }
+
+    ul.lst-kix_ixn7c7ummtnw-3 {
+        list-style-type: none
+    }
+
+    ul.lst-kix_n113up5jai02-4 {
+        list-style-type: none
+    }
+
+    ul.lst-kix_ixn7c7ummtnw-4 {
+        list-style-type: none
+    }
+
+    .lst-kix_u7hajjisclsd-2 > li {
+        counter-increment: lst-ctn-kix_u7hajjisclsd-2
+    }
+
+    ul.lst-kix_n113up5jai02-7 {
+        list-style-type: none
+    }
+
+    ul.lst-kix_n113up5jai02-6 {
+        list-style-type: none
+    }
+
+    ul.lst-kix_n113up5jai02-8 {
+        list-style-type: none
+    }
+
+    ul.lst-kix_ixn7c7ummtnw-0 {
+        list-style-type: none
+    }
+
+    ul.lst-kix_5wskmhq1n7a5-7 {
+        list-style-type: none
+    }
+
+    ul.lst-kix_5wskmhq1n7a5-8 {
+        list-style-type: none
+    }
+
+    .lst-kix_72rope32fcgf-8 > li:before {
+        content: "-  "
+    }
+
+    .lst-kix_jh9g8efn0ia9-1 > li:before {
+        content: "-  "
+    }
+
+    ul.lst-kix_5wskmhq1n7a5-0 {
+        list-style-type: none
+    }
+
+    ul.lst-kix_5wskmhq1n7a5-1 {
+        list-style-type: none
+    }
+
+    ul.lst-kix_5wskmhq1n7a5-2 {
+        list-style-type: none
+    }
+
+    ul.lst-kix_5wskmhq1n7a5-3 {
+        list-style-type: none
+    }
+
+    ul.lst-kix_5wskmhq1n7a5-4 {
+        list-style-type: none
+    }
+
+    ul.lst-kix_5wskmhq1n7a5-5 {
+        list-style-type: none
+    }
+
+    ul.lst-kix_5wskmhq1n7a5-6 {
+        list-style-type: none
+    }
+
+    .lst-kix_7vapbwkl71mr-0 > li:before {
+        content: "-  "
+    }
+
+    .lst-kix_7vapbwkl71mr-2 > li:before {
+        content: "-  "
+    }
+
+    ul.lst-kix_mp25lo385089-8 {
+        list-style-type: none
+    }
+
+    ul.lst-kix_mp25lo385089-7 {
+        list-style-type: none
+    }
+
+    ul.lst-kix_mp25lo385089-4 {
+        list-style-type: none
+    }
+
+    ul.lst-kix_fktxh076xc9r-2 {
+        list-style-type: none
+    }
+
+    ul.lst-kix_b12ve4pioya5-2 {
+        list-style-type: none
+    }
+
+    .lst-kix_ixn7c7ummtnw-2 > li:before {
+        content: "-  "
+    }
+
+    ul.lst-kix_mp25lo385089-3 {
+        list-style-type: none
+    }
+
+    .lst-kix_72rope32fcgf-6 > li:before {
+        content: "-  "
+    }
+
+    ul.lst-kix_fktxh076xc9r-1 {
+        list-style-type: none
+    }
+
+    ul.lst-kix_b12ve4pioya5-3 {
+        list-style-type: none
+    }
+
+    ul.lst-kix_mp25lo385089-6 {
+        list-style-type: none
+    }
+
+    ul.lst-kix_fktxh076xc9r-4 {
+        list-style-type: none
+    }
+
+    ul.lst-kix_b12ve4pioya5-0 {
+        list-style-type: none
+    }
+
+    ol.lst-kix_u7hajjisclsd-6.start {
+        counter-reset: lst-ctn-kix_u7hajjisclsd-6 0
+    }
+
+    ul.lst-kix_mp25lo385089-5 {
+        list-style-type: none
+    }
+
+    .lst-kix_fktxh076xc9r-1 > li:before {
+        content: "-  "
+    }
+
+    ul.lst-kix_fktxh076xc9r-3 {
+        list-style-type: none
+    }
+
+    ul.lst-kix_b12ve4pioya5-1 {
+        list-style-type: none
+    }
+
+    ul.lst-kix_mp25lo385089-0 {
+        list-style-type: none
+    }
+
+    ul.lst-kix_b12ve4pioya5-6 {
+        list-style-type: none
+    }
+
+    .lst-kix_ixn7c7ummtnw-0 > li:before {
+        content: "-  "
+    }
+
+    .lst-kix_ixn7c7ummtnw-4 > li:before {
+        content: "-  "
+    }
+
+    .lst-kix_72rope32fcgf-4 > li:before {
+        content: "-  "
+    }
+
+    ul.lst-kix_b12ve4pioya5-7 {
+        list-style-type: none
+    }
+
+    ul.lst-kix_mp25lo385089-2 {
+        list-style-type: none
+    }
+
+    ul.lst-kix_fktxh076xc9r-0 {
+        list-style-type: none
+    }
+
+    ul.lst-kix_b12ve4pioya5-4 {
+        list-style-type: none
+    }
+
+    ul.lst-kix_mp25lo385089-1 {
+        list-style-type: none
+    }
+
+    ul.lst-kix_b12ve4pioya5-5 {
+        list-style-type: none
+    }
+
+    .lst-kix_72rope32fcgf-2 > li:before {
+        content: "-  "
+    }
+
+    .lst-kix_fktxh076xc9r-3 > li:before {
+        content: "-  "
+    }
+
+    ul.lst-kix_fktxh076xc9r-6 {
+        list-style-type: none
+    }
+
+    ul.lst-kix_fktxh076xc9r-5 {
+        list-style-type: none
+    }
+
+    ul.lst-kix_fktxh076xc9r-8 {
+        list-style-type: none
+    }
+
+    ul.lst-kix_fktxh076xc9r-7 {
+        list-style-type: none
+    }
+
+    .lst-kix_hxnxriozlb62-5 > li:before {
+        content: "-  "
+    }
+
+    .lst-kix_hxnxriozlb62-7 > li:before {
+        content: "-  "
+    }
+
+    .lst-kix_72rope32fcgf-0 > li:before {
+        content: "-  "
+    }
+
+    ol.lst-kix_u7hajjisclsd-7.start {
+        counter-reset: lst-ctn-kix_u7hajjisclsd-7 0
+    }
+
+    .lst-kix_gnhoprmpl14c-8 > li:before {
+        content: "-  "
+    }
+
+    .lst-kix_gnhoprmpl14c-6 > li:before {
+        content: "-  "
+    }
+
+    .lst-kix_61uur26cchyv-7 > li:before {
+        content: "-  "
+    }
+
+    .lst-kix_5wskmhq1n7a5-2 > li:before {
+        content: "-  "
+    }
+
+    ul.lst-kix_gnhoprmpl14c-3 {
+        list-style-type: none
+    }
+
+    ul.lst-kix_gnhoprmpl14c-2 {
+        list-style-type: none
+    }
+
+    .lst-kix_gftdusduf4zx-7 > li:before {
+        content: "-  "
+    }
+
+    .lst-kix_gftdusduf4zx-8 > li:before {
+        content: "-  "
+    }
+
+    .lst-kix_5wskmhq1n7a5-1 > li:before {
+        content: "-  "
+    }
+
+    .lst-kix_5wskmhq1n7a5-3 > li:before {
+        content: "-  "
+    }
+
+    ul.lst-kix_gnhoprmpl14c-5 {
+        list-style-type: none
+    }
+
+    ul.lst-kix_gnhoprmpl14c-4 {
+        list-style-type: none
+    }
+
+    ul.lst-kix_gnhoprmpl14c-7 {
+        list-style-type: none
+    }
+
+    ul.lst-kix_gnhoprmpl14c-6 {
+        list-style-type: none
+    }
+
+    .lst-kix_gftdusduf4zx-5 > li:before {
+        content: "-  "
+    }
+
+    ul.lst-kix_gnhoprmpl14c-8 {
+        list-style-type: none
+    }
+
+    .lst-kix_d1416tkoyllp-6 > li:before {
+        content: "-  "
+    }
+
+    .lst-kix_gftdusduf4zx-3 > li:before {
+        content: "-  "
+    }
+
+    .lst-kix_gftdusduf4zx-4 > li:before {
+        content: "-  "
+    }
+
+    .lst-kix_5wskmhq1n7a5-5 > li:before {
+        content: "-  "
+    }
+
+    .lst-kix_5wskmhq1n7a5-4 > li:before {
+        content: "-  "
+    }
+
+    .lst-kix_d1416tkoyllp-8 > li:before {
+        content: "-  "
+    }
+
+    .lst-kix_gftdusduf4zx-2 > li:before {
+        content: "-  "
+    }
+
+    ul.lst-kix_gnhoprmpl14c-1 {
+        list-style-type: none
+    }
+
+    .lst-kix_d1416tkoyllp-7 > li:before {
+        content: "-  "
+    }
+
+    .lst-kix_u7hajjisclsd-7 > li {
+        counter-increment: lst-ctn-kix_u7hajjisclsd-7
+    }
+
+    ul.lst-kix_gnhoprmpl14c-0 {
+        list-style-type: none
+    }
+
+    .lst-kix_d1416tkoyllp-2 > li:before {
+        content: "-  "
+    }
+
+    .lst-kix_gftdusduf4zx-0 > li:before {
+        content: "-  "
+    }
+
+    .lst-kix_b12ve4pioya5-0 > li:before {
+        content: "-  "
+    }
+
+    ul.lst-kix_a8z15g4sm37w-2 {
+        list-style-type: none
+    }
+
+    .lst-kix_gftdusduf4zx-1 > li:before {
+        content: "-  "
+    }
+
+    ul.lst-kix_a8z15g4sm37w-3 {
+        list-style-type: none
+    }
+
+    .lst-kix_a8z15g4sm37w-8 > li:before {
+        content: "-  "
+    }
+
+    ul.lst-kix_a8z15g4sm37w-0 {
+        list-style-type: none
+    }
+
+    .lst-kix_d1416tkoyllp-1 > li:before {
+        content: "-  "
+    }
+
+    .lst-kix_d1416tkoyllp-5 > li:before {
+        content: "-  "
+    }
+
+    .lst-kix_hxnxriozlb62-2 > li:before {
+        content: "-  "
+    }
+
+    ul.lst-kix_a8z15g4sm37w-1 {
+        list-style-type: none
+    }
+
+    .lst-kix_b12ve4pioya5-1 > li:before {
+        content: "-  "
+    }
+
+    .lst-kix_5wskmhq1n7a5-6 > li:before {
+        content: "-  "
+    }
+
+    ul.lst-kix_a8z15g4sm37w-6 {
+        list-style-type: none
+    }
+
+    .lst-kix_a8z15g4sm37w-6 > li:before {
+        content: "-  "
+    }
+
+    .lst-kix_a8z15g4sm37w-7 > li:before {
+        content: "-  "
+    }
+
+    ul.lst-kix_a8z15g4sm37w-7 {
+        list-style-type: none
+    }
+
+    .lst-kix_5wskmhq1n7a5-7 > li:before {
+        content: "-  "
+    }
+
+    ul.lst-kix_a8z15g4sm37w-4 {
+        list-style-type: none
+    }
+
+    .lst-kix_hxnxriozlb62-3 > li:before {
+        content: "-  "
+    }
+
+    ul.lst-kix_a8z15g4sm37w-5 {
+        list-style-type: none
+    }
+
+    .lst-kix_5wskmhq1n7a5-8 > li:before {
+        content: "-  "
+    }
+
+    .lst-kix_d1416tkoyllp-4 > li:before {
+        content: "-  "
+    }
+
+    ul.lst-kix_a8z15g4sm37w-8 {
+        list-style-type: none
+    }
+
+    .lst-kix_d1416tkoyllp-3 > li:before {
+        content: "-  "
+    }
+
+    .lst-kix_hxnxriozlb62-4 > li:before {
+        content: "-  "
+    }
+
+    .lst-kix_a8z15g4sm37w-2 > li:before {
+        content: "-  "
+    }
+
+    .lst-kix_a8z15g4sm37w-3 > li:before {
+        content: "-  "
+    }
+
+    .lst-kix_fktxh076xc9r-7 > li:before {
+        content: "-  "
+    }
+
+    .lst-kix_b12ve4pioya5-6 > li:before {
+        content: "-  "
+    }
+
+    .lst-kix_b12ve4pioya5-8 > li:before {
+        content: "-  "
+    }
+
+    .lst-kix_a8z15g4sm37w-0 > li:before {
+        content: "-  "
+    }
+
+    .lst-kix_a8z15g4sm37w-1 > li:before {
+        content: "-  "
+    }
+
+    .lst-kix_a8z15g4sm37w-4 > li:before {
+        content: "-  "
+    }
+
+    .lst-kix_a8z15g4sm37w-5 > li:before {
+        content: "-  "
+    }
+
+    .lst-kix_u7hajjisclsd-5 > li {
+        counter-increment: lst-ctn-kix_u7hajjisclsd-5
+    }
+
+    .lst-kix_fktxh076xc9r-8 > li:before {
+        content: "-  "
+    }
+
+    .lst-kix_b12ve4pioya5-5 > li:before {
+        content: "-  "
+    }
+
+    .lst-kix_fktxh076xc9r-5 > li:before {
+        content: "-  "
+    }
+
+    .lst-kix_b12ve4pioya5-2 > li:before {
+        content: "-  "
+    }
+
+    .lst-kix_b12ve4pioya5-4 > li:before {
+        content: "-  "
+    }
+
+    .lst-kix_hxnxriozlb62-1 > li:before {
+        content: "-  "
+    }
+
+    .lst-kix_d1416tkoyllp-0 > li:before {
+        content: "-  "
+    }
+
+    .lst-kix_hxnxriozlb62-0 > li:before {
+        content: "-  "
+    }
+
+    .lst-kix_fktxh076xc9r-6 > li:before {
+        content: "-  "
+    }
+
+    .lst-kix_b12ve4pioya5-3 > li:before {
+        content: "-  "
+    }
+
+    .lst-kix_5wskmhq1n7a5-0 > li:before {
+        content: "-  "
+    }
+
+    .lst-kix_b12ve4pioya5-7 > li:before {
+        content: "-  "
+    }
+
+    ul.lst-kix_d1416tkoyllp-1 {
+        list-style-type: none
+    }
+
+    ul.lst-kix_hcwkh91g36a-7 {
+        list-style-type: none
+    }
+
+    ol.lst-kix_u7hajjisclsd-3.start {
+        counter-reset: lst-ctn-kix_u7hajjisclsd-3 0
+    }
+
+    ul.lst-kix_d1416tkoyllp-0 {
+        list-style-type: none
+    }
+
+    ul.lst-kix_hcwkh91g36a-8 {
+        list-style-type: none
+    }
+
+    ul.lst-kix_hcwkh91g36a-5 {
+        list-style-type: none
+    }
+
+    ul.lst-kix_hcwkh91g36a-6 {
+        list-style-type: none
+    }
+
+    ul.lst-kix_d1416tkoyllp-5 {
+        list-style-type: none
+    }
+
+    ul.lst-kix_hcwkh91g36a-3 {
+        list-style-type: none
+    }
+
+    ul.lst-kix_d1416tkoyllp-4 {
+        list-style-type: none
+    }
+
+    ul.lst-kix_hcwkh91g36a-4 {
+        list-style-type: none
+    }
+
+    ul.lst-kix_d1416tkoyllp-3 {
+        list-style-type: none
+    }
+
+    ul.lst-kix_hcwkh91g36a-1 {
+        list-style-type: none
+    }
+
+    ul.lst-kix_d1416tkoyllp-2 {
+        list-style-type: none
+    }
+
+    ul.lst-kix_hcwkh91g36a-2 {
+        list-style-type: none
+    }
+
+    ul.lst-kix_d1416tkoyllp-8 {
+        list-style-type: none
+    }
+
+    ul.lst-kix_d1416tkoyllp-7 {
+        list-style-type: none
+    }
+
+    ul.lst-kix_d1416tkoyllp-6 {
+        list-style-type: none
+    }
+
+    ul.lst-kix_hcwkh91g36a-0 {
+        list-style-type: none
+    }
+
+    ol.lst-kix_u7hajjisclsd-4.start {
+        counter-reset: lst-ctn-kix_u7hajjisclsd-4 0
+    }
+
+    .lst-kix_u7hajjisclsd-0 > li {
+        counter-increment: lst-ctn-kix_u7hajjisclsd-0
+    }
+
+    ul.lst-kix_d78m128us7e2-0 {
+        list-style-type: none
+    }
+
+    ul.lst-kix_d78m128us7e2-1 {
+        list-style-type: none
+    }
+
+    ul.lst-kix_d78m128us7e2-2 {
+        list-style-type: none
+    }
+
+    ul.lst-kix_d78m128us7e2-3 {
+        list-style-type: none
+    }
+
+    ul.lst-kix_d78m128us7e2-4 {
+        list-style-type: none
+    }
+
+    ul.lst-kix_d78m128us7e2-5 {
+        list-style-type: none
+    }
+
+    ul.lst-kix_d78m128us7e2-6 {
+        list-style-type: none
+    }
+
+    ul.lst-kix_d78m128us7e2-7 {
+        list-style-type: none
+    }
+
+    .lst-kix_u7hajjisclsd-3 > li {
+        counter-increment: lst-ctn-kix_u7hajjisclsd-3
+    }
+
+    ul.lst-kix_d78m128us7e2-8 {
+        list-style-type: none
+    }
+
+    .lst-kix_61uur26cchyv-8 > li:before {
+        content: "-  "
+    }
+
+    .lst-kix_gnhoprmpl14c-5 > li:before {
+        content: "-  "
+    }
+
+    .lst-kix_mp25lo385089-8 > li:before {
+        content: "-  "
+    }
+
+    .lst-kix_jh9g8efn0ia9-4 > li:before {
+        content: "-  "
+    }
+
+    .lst-kix_jh9g8efn0ia9-6 > li:before {
+        content: "-  "
+    }
+
+    .lst-kix_d78m128us7e2-0 > li:before {
+        content: "\0025cf   "
+    }
+
+    .lst-kix_d78m128us7e2-2 > li:before {
+        content: "\0025a0   "
+    }
+
+    ol.lst-kix_u7hajjisclsd-3 {
+        list-style-type: none
+    }
+
+    .lst-kix_61uur26cchyv-4 > li:before {
+        content: "-  "
+    }
+
+    ol.lst-kix_u7hajjisclsd-2 {
+        list-style-type: none
+    }
+
+    .lst-kix_gnhoprmpl14c-1 > li:before {
+        content: "-  "
+    }
+
+    .lst-kix_mp25lo385089-4 > li:before {
+        content: "-  "
+    }
+
+    ol.lst-kix_u7hajjisclsd-1 {
+        list-style-type: none
+    }
+
+    ol.lst-kix_u7hajjisclsd-0 {
+        list-style-type: none
+    }
+
+    ol.lst-kix_u7hajjisclsd-7 {
+        list-style-type: none
+    }
+
+    .lst-kix_61uur26cchyv-2 > li:before {
+        content: "-  "
+    }
+
+    ol.lst-kix_u7hajjisclsd-6 {
+        list-style-type: none
+    }
+
+    .lst-kix_gnhoprmpl14c-3 > li:before {
+        content: "-  "
+    }
+
+    .lst-kix_mp25lo385089-2 > li:before {
+        content: "-  "
+    }
+
+    ol.lst-kix_u7hajjisclsd-5 {
+        list-style-type: none
+    }
+
+    ol.lst-kix_u7hajjisclsd-4 {
+        list-style-type: none
+    }
+
+    .lst-kix_61uur26cchyv-0 > li:before {
+        content: "-  "
+    }
+
+    .lst-kix_mp25lo385089-0 > li:before {
+        content: "-  "
+    }
+
+    .lst-kix_d78m128us7e2-8 > li:before {
+        content: "\0025a0   "
+    }
+
+    .lst-kix_u7hajjisclsd-7 > li:before {
+        content: "" counter(lst-ctn-kix_u7hajjisclsd-7, lower-latin) ". "
+    }
+
+    .lst-kix_jh9g8efn0ia9-8 > li:before {
+        content: "-  "
+    }
+
+    .lst-kix_d78m128us7e2-4 > li:before {
+        content: "\0025cb   "
+    }
+
+    .lst-kix_d78m128us7e2-6 > li:before {
+        content: "\0025cf   "
+    }
+
+    .lst-kix_u7hajjisclsd-1 > li:before {
+        content: "" counter(lst-ctn-kix_u7hajjisclsd-1, lower-latin) ". "
+    }
+
+    .lst-kix_n113up5jai02-3 > li:before {
+        content: "-  "
+    }
+
+    .lst-kix_u7hajjisclsd-3 > li:before {
+        content: "" counter(lst-ctn-kix_u7hajjisclsd-3, decimal) ". "
+    }
+
+    ol.lst-kix_u7hajjisclsd-2.start {
+        counter-reset: lst-ctn-kix_u7hajjisclsd-2 0
+    }
+
+    .lst-kix_u7hajjisclsd-5 > li:before {
+        content: "" counter(lst-ctn-kix_u7hajjisclsd-5, lower-roman) ". "
+    }
+
+    .lst-kix_n113up5jai02-7 > li:before {
+        content: "-  "
+    }
+
+    .lst-kix_n113up5jai02-5 > li:before {
+        content: "-  "
+    }
+
+    .lst-kix_ixn7c7ummtnw-7 > li:before {
+        content: "-  "
+    }
+
+    ol.lst-kix_u7hajjisclsd-8 {
+        list-style-type: none
+    }
+
+    .lst-kix_jh9g8efn0ia9-0 > li:before {
+        content: "-  "
+    }
+
+    .lst-kix_jh9g8efn0ia9-2 > li:before {
+        content: "-  "
+    }
+
+    .lst-kix_n113up5jai02-1 > li:before {
+        content: "-  "
+    }
+
+    .lst-kix_mp25lo385089-6 > li:before {
+        content: "-  "
+    }
+
+    .lst-kix_u7hajjisclsd-4 > li {
+        counter-increment: lst-ctn-kix_u7hajjisclsd-4
+    }
+
+    .lst-kix_7vapbwkl71mr-1 > li:before {
+        content: "-  "
+    }
+
+    .lst-kix_72rope32fcgf-7 > li:before {
+        content: "-  "
+    }
+
+    .lst-kix_72rope32fcgf-5 > li:before {
+        content: "-  "
+    }
+
+    .lst-kix_ixn7c7ummtnw-1 > li:before {
+        content: "-  "
+    }
+
+    .lst-kix_ixn7c7ummtnw-5 > li:before {
+        content: "-  "
+    }
+
+    ol.lst-kix_u7hajjisclsd-0.start {
+        counter-reset: lst-ctn-kix_u7hajjisclsd-0 0
+    }
+
+    .lst-kix_fktxh076xc9r-0 > li:before {
+        content: "-  "
+    }
+
+    .lst-kix_fktxh076xc9r-4 > li:before {
+        content: "-  "
+    }
+
+    .lst-kix_72rope32fcgf-1 > li:before {
+        content: "-  "
+    }
+
+    .lst-kix_72rope32fcgf-3 > li:before {
+        content: "-  "
+    }
+
+    .lst-kix_ixn7c7ummtnw-3 > li:before {
+        content: "-  "
+    }
+
+    .lst-kix_fktxh076xc9r-2 > li:before {
+        content: "-  "
+    }
+
+    .lst-kix_hxnxriozlb62-6 > li:before {
+        content: "-  "
+    }
+
+    li.li-bullet-0:before {
+        margin-left: -18pt;
+        white-space: nowrap;
+        display: inline-block;
+        min-width: 18pt
+    }
+
+    .lst-kix_hxnxriozlb62-8 > li:before {
+        content: "-  "
+    }
+
+    ul.lst-kix_7vapbwkl71mr-3 {
+        list-style-type: none
+    }
+
+    ul.lst-kix_7vapbwkl71mr-2 {
+        list-style-type: none
+    }
+
+    ul.lst-kix_7vapbwkl71mr-5 {
+        list-style-type: none
+    }
+
+    ul.lst-kix_7vapbwkl71mr-4 {
+        list-style-type: none
+    }
+
+    ul.lst-kix_7vapbwkl71mr-1 {
+        list-style-type: none
+    }
+
+    ul.lst-kix_7vapbwkl71mr-0 {
+        list-style-type: none
+    }
+
+    .lst-kix_61uur26cchyv-6 > li:before {
+        content: "-  "
+    }
+
+    ul.lst-kix_7vapbwkl71mr-7 {
+        list-style-type: none
+    }
+
+    .lst-kix_gnhoprmpl14c-7 > li:before {
+        content: "-  "
+    }
+
+    .lst-kix_gftdusduf4zx-6 > li:before {
+        content: "-  "
+    }
+
+    ul.lst-kix_7vapbwkl71mr-6 {
+        list-style-type: none
+    }
+
+    ul.lst-kix_7vapbwkl71mr-8 {
+        list-style-type: none
+    }
+
+    ol {
+        margin: 0;
+        padding: 0
+    }
+
+    table td, table th {
+        padding: 0
+    }
+
+    .c2 {
+        border-right-style: solid;
+        padding: 5pt 5pt 5pt 5pt;
+        border-bottom-color: #000000;
+        border-top-width: 1pt;
+        border-right-width: 1pt;
+        border-left-color: #000000;
+        vertical-align: top;
+        border-right-color: #000000;
+        border-left-width: 1pt;
+        border-top-style: solid;
+        border-left-style: solid;
+        border-bottom-width: 1pt;
+        width: 81pt;
+        border-top-color: #000000;
+        border-bottom-style: solid
+    }
+
+    .c18 {
+        border-right-style: solid;
+        padding: 5pt 5pt 5pt 5pt;
+        border-bottom-color: #000000;
+        border-top-width: 1pt;
+        border-right-width: 1pt;
+        border-left-color: #000000;
+        vertical-align: top;
+        border-right-color: #000000;
+        border-left-width: 1pt;
+        border-top-style: solid;
+        border-left-style: solid;
+        border-bottom-width: 1pt;
+        width: 96.8pt;
+        border-top-color: #000000;
+        border-bottom-style: solid
+    }
+
+    .c9 {
+        border-right-style: solid;
+        padding: 5pt 5pt 5pt 5pt;
+        border-bottom-color: #000000;
+        border-top-width: 1pt;
+        border-right-width: 1pt;
+        border-left-color: #000000;
+        vertical-align: top;
+        border-right-color: #000000;
+        border-left-width: 1pt;
+        border-top-style: solid;
+        border-left-style: solid;
+        border-bottom-width: 1pt;
+        width: 164.2pt;
+        border-top-color: #000000;
+        border-bottom-style: solid
+    }
+
+    .c8 {
+        border-right-style: solid;
+        padding: 5pt 5pt 5pt 5pt;
+        border-bottom-color: #000000;
+        border-top-width: 1pt;
+        border-right-width: 1pt;
+        border-left-color: #000000;
+        vertical-align: top;
+        border-right-color: #000000;
+        border-left-width: 1pt;
+        border-top-style: solid;
+        border-left-style: solid;
+        border-bottom-width: 1pt;
+        width: 93pt;
+        border-top-color: #000000;
+        border-bottom-style: solid
+    }
+
+    .c10 {
+        color: #000000;
+        font-weight: 400;
+        text-decoration: none;
+        vertical-align: baseline;
+        font-size: 16pt;
+        font-family: "Arial";
+        font-style: normal
+    }
+
+    .c0 {
+        padding-top: 0pt;
+        padding-bottom: 0pt;
+        line-height: 1.15;
+        orphans: 2;
+        widows: 2;
+        text-align: left;
+        height: 11pt
+    }
+
+    .c15 {
+        padding-top: 16pt;
+        padding-bottom: 4pt;
+        line-height: 1.15;
+        page-break-after: avoid;
+        orphans: 2;
+        widows: 2;
+        text-align: left
+    }
+
+    .c13 {
+        padding-top: 14pt;
+        padding-bottom: 4pt;
+        line-height: 1.15;
+        page-break-after: avoid;
+        orphans: 2;
+        widows: 2;
+        text-align: left
+    }
+
+    .c1 {
+        color: #000000;
+        font-weight: 400;
+        text-decoration: none;
+        vertical-align: baseline;
+        font-size: 11pt;
+        font-family: "Arial";
+        font-style: normal
+    }
+
+    .c17 {
+        color: #666666;
+        font-weight: 400;
+        text-decoration: none;
+        vertical-align: baseline;
+        font-size: 12pt;
+        font-family: "Arial";
+        font-style: normal
+    }
+
+    .c6 {
+        color: #434343;
+        font-weight: 400;
+        text-decoration: none;
+        vertical-align: baseline;
+        font-size: 14pt;
+        font-family: "Arial";
+        font-style: normal
+    }
+
+    .c24 {
+        color: #000000;
+        font-weight: 400;
+        text-decoration: none;
+        vertical-align: baseline;
+        font-size: 20pt;
+        font-family: "Arial";
+        font-style: normal
+    }
+
+    .c5 {
+        padding-top: 18pt;
+        padding-bottom: 6pt;
+        line-height: 1.15;
+        page-break-after: avoid;
+        orphans: 2;
+        widows: 2;
+        text-align: left
+    }
+
+    .c23 {
+        padding-top: 20pt;
+        padding-bottom: 6pt;
+        line-height: 1.15;
+        page-break-after: avoid;
+        orphans: 2;
+        widows: 2;
+        text-align: left
+    }
+
+    .c22 {
+        padding-top: 0pt;
+        padding-bottom: 3pt;
+        line-height: 1.15;
+        page-break-after: avoid;
+        orphans: 2;
+        widows: 2;
+        text-align: center
+    }
+
+    .c21 {
+        color: #000000;
+        font-weight: 400;
+        text-decoration: none;
+        vertical-align: baseline;
+        font-size: 26pt;
+        font-family: "Arial";
+        font-style: normal
+    }
+
+    .c3 {
+        padding-top: 0pt;
+        padding-bottom: 0pt;
+        line-height: 1.15;
+        orphans: 2;
+        widows: 2;
+        text-align: left
+    }
+
+    .c4 {
+        padding-top: 0pt;
+        padding-bottom: 0pt;
+        line-height: 1.0;
+        text-align: left
+    }
+
+    .c20 {
+        margin-left: 114pt;
+        border-spacing: 0;
+        border-collapse: collapse;
+        margin-right: auto
+    }
+
+    .c12 {
+        background-color: #ffffff;
+        max-width: 468pt;
+        padding: 72pt 72pt 72pt 72pt
+    }
+
+    .c7 {
+        margin-left: 36pt;
+        padding-left: 0pt
+    }
+
+    .c11 {
+        padding: 0;
+        margin: 0
+    }
+
+    .c16 {
+        margin-left: 72pt;
+        padding-left: 0pt
+    }
+
+    .c14 {
+        height: 0pt
+    }
+
+    .c25 {
+        margin-left: 36pt
+    }
+
+    .c19 {
+        height: 14pt
+    }
+
+    .title {
+        padding-top: 0pt;
+        color: #000000;
+        font-size: 26pt;
+        padding-bottom: 3pt;
+        font-family: "Arial";
+        line-height: 1.15;
+        page-break-after: avoid;
+        orphans: 2;
+        widows: 2;
+        text-align: left
+    }
+
+    .subtitle {
+        padding-top: 0pt;
+        color: #666666;
+        font-size: 15pt;
+        padding-bottom: 16pt;
+        font-family: "Arial";
+        line-height: 1.15;
+        page-break-after: avoid;
+        orphans: 2;
+        widows: 2;
+        text-align: left
+    }
+
+    li {
+        color: #000000;
+        font-size: 11pt;
+        font-family: "Arial"
+    }
+
+    p {
+        margin: 0;
+        color: #000000;
+        font-size: 11pt;
+        font-family: "Arial"
+    }
+
+    h1 {
+        padding-top: 20pt;
+        color: #000000;
+        font-size: 20pt;
+        padding-bottom: 6pt;
+        font-family: "Arial";
+        line-height: 1.15;
+        page-break-after: avoid;
+        orphans: 2;
+        widows: 2;
+        text-align: left
+    }
+
+    h2 {
+        padding-top: 18pt;
+        color: #000000;
+        font-size: 16pt;
+        padding-bottom: 6pt;
+        font-family: "Arial";
+        line-height: 1.15;
+        page-break-after: avoid;
+        orphans: 2;
+        widows: 2;
+        text-align: left
+    }
+
+    h3 {
+        padding-top: 16pt;
+        color: #434343;
+        font-size: 14pt;
+        padding-bottom: 4pt;
+        font-family: "Arial";
+        line-height: 1.15;
+        page-break-after: avoid;
+        orphans: 2;
+        widows: 2;
+        text-align: left
+    }
+
+    h4 {
+        padding-top: 14pt;
+        color: #666666;
+        font-size: 12pt;
+        padding-bottom: 4pt;
+        font-family: "Arial";
+        line-height: 1.15;
+        page-break-after: avoid;
+        orphans: 2;
+        widows: 2;
+        text-align: left
+    }
+
+    h5 {
+        padding-top: 12pt;
+        color: #666666;
+        font-size: 11pt;
+        padding-bottom: 4pt;
+        font-family: "Arial";
+        line-height: 1.15;
+        page-break-after: avoid;
+        orphans: 2;
+        widows: 2;
+        text-align: left
+    }
+
+    h6 {
+        padding-top: 12pt;
+        color: #666666;
+        font-size: 11pt;
+        padding-bottom: 4pt;
+        font-family: "Arial";
+        line-height: 1.15;
+        page-break-after: avoid;
+        font-style: italic;
+        orphans: 2;
+        widows: 2;
+        text-align: left
+    }</style>
+<div class="fog-container component-root">
+    <p class="c22 title" id="h.p8jqrogugbh"><span
+        class="c21">A Guide to Atlantis (tentative)</span></p>
+<h1 class="c23" id="h.tbdw8kj66job"><span class="c24">Rewards Overview</span></h1>
+<p class="c0"><span class="c1"></span></p>
+<p class="c3"><span class="c1">The primary reason to play Atlantis is to obtain the following rewards:<br><br>1. Pantheon Currency: Orichalcum Shards, Orichalcum Ore, and Orichalcum Ingots. </span>
+</p>
+<p class="c3"><span class="c1">2. Regular Anti-matter (up to 3 per event)</span></p>
+<p class="c3"><span class="c1">3. Elite Arena Tokens</span></p>
+<p class="c0"><span class="c1"></span></p>
+<p class="c3"><span class="c1">You can either obtain these rewards directly through participation checkpoints or via Tritons and the Arena shop which are earned in various ways.</span>
+</p>
+<p class="c3"><span>&nbsp;</span><span
+        style="overflow: hidden; display: inline-block; margin: 0.00px 0.00px; border: 0.00px solid #000000; transform: rotate(0.00rad) translateZ(0px); -webkit-transform: rotate(0.00rad) translateZ(0px); width: 248.00px; height: 256.00px;"><img
+        alt="" src="https://d11pry14zi9nsg.cloudfront.net/1/images/atlantis/image2.png"
+        style="width: 248.00px; height: 256.00px; margin-left: 0.00px; margin-top: 0.00px; transform: rotate(0.00rad) translateZ(0px); -webkit-transform: rotate(0.00rad) translateZ(0px);"
+        title=""></span></p>
+<p class="c0"><span class="c1"></span></p>
+<p class="c3"><span
+        style="overflow: hidden; display: inline-block; margin: 0.00px 0.00px; border: 0.00px solid #000000; transform: rotate(0.00rad) translateZ(0px); -webkit-transform: rotate(0.00rad) translateZ(0px); width: 455.14px; height: 360.99px;"><img
+        alt="" src="https://d11pry14zi9nsg.cloudfront.net/1/images/atlantis/image17.jpg"
+        style="width: 455.14px; height: 360.99px; margin-left: 0.00px; margin-top: 0.00px; transform: rotate(0.00rad) translateZ(0px); -webkit-transform: rotate(0.00rad) translateZ(0px);"
+        title=""></span></p>
+<p class="c3"><span class="c1">Cumulative Player Checkpoint Rewards (requires 1400 points):</span></p>
+<ul class="c11 lst-kix_ixn7c7ummtnw-0 start">
+    <li class="c3 c7 li-bullet-0"><span class="c1">100 Tritons</span></li>
+    <li class="c3 c7 li-bullet-0"><span class="c1">3 anti-matter</span></li>
+    <li class="c3 c7 li-bullet-0"><span class="c1">37 orichalcum shards</span></li>
+    <li class="c3 c7 li-bullet-0"><span class="c1">15 orichalcum ore</span></li>
+    <li class="c3 c7 li-bullet-0"><span class="c1">1 orichalcum ingot</span></li>
+</ul>
+<p class="c0"><span class="c1"></span></p>
+<p class="c3"><span
+        style="overflow: hidden; display: inline-block; margin: 0.00px 0.00px; border: 0.00px solid #000000; transform: rotate(0.00rad) translateZ(0px); -webkit-transform: rotate(0.00rad) translateZ(0px); width: 457.37px; height: 361.23px;"><img
+        alt="" src="https://d11pry14zi9nsg.cloudfront.net/1/images/atlantis/image3.jpg"
+        style="width: 457.37px; height: 361.23px; margin-left: 0.00px; margin-top: 0.00px; transform: rotate(0.00rad) translateZ(0px); -webkit-transform: rotate(0.00rad) translateZ(0px);"
+        title=""></span></p>
+<p class="c0"><span class="c1"></span></p>
+<p class="c3"><span class="c1">Cumulative Alliance Checkpoint Rewards (requires 28000 points):</span></p>
+<ul class="c11 lst-kix_a8z15g4sm37w-0 start">
+    <li class="c3 c7 li-bullet-0"><span class="c1">50 Tritons</span></li>
+    <li class="c3 c7 li-bullet-0"><span class="c1">1 anti-matter</span></li>
+    <li class="c3 c7 li-bullet-0"><span class="c1">37 orichalcum shards</span></li>
+    <li class="c3 c7 li-bullet-0"><span class="c1">15 orichalcum ore</span></li>
+    <li class="c3 c7 li-bullet-0"><span class="c1">1 orichalcum ingot</span></li>
+    <li class="c3 c7 li-bullet-0"><span class="c1">1 legendary AM piece</span></li>
+    <li class="c3 c7 li-bullet-0"><span class="c1">Event-use Items (Medkits + Atlantis Energy)</span></li>
+</ul>
+<p class="c0"><span class="c1"></span></p>
+<p class="c3"><span class="c1">End of Event Rewards:</span></p>
+<ul class="c11 lst-kix_7vapbwkl71mr-0 start">
+    <li class="c3 c7 li-bullet-0"><span class="c1">Each battle has a reward of Tritons tokens being fought over. The total rewards being fought over increases depending on [alliance level, past performance?]</span>
+    </li>
+    <li class="c3 c7 li-bullet-0"><span class="c1">The reward is distributed to players in alliances according to the following:</span>
+    </li>
+</ul>
+<ul class="c11 lst-kix_7vapbwkl71mr-1 start">
+    <li class="c3 c16 li-bullet-0"><span class="c1">1st place: 35%</span></li>
+    <li class="c3 c16 li-bullet-0"><span class="c1">2nd place: 28%</span></li>
+    <li class="c3 c16 li-bullet-0"><span class="c1">3rd place: 22%</span></li>
+    <li class="c3 c16 li-bullet-0"><span class="c1">4th place: 15%</span></li>
+</ul>
+<p class="c0"><span class="c1"></span></p>
+<p class="c3"><span class="c1">Roughly speaking if you are in an active alliance that completes all participation checkpoints you can expect the following pantheon progression each event:</span>
+</p>
+<ul class="c11 lst-kix_d1416tkoyllp-0 start">
+    <li class="c3 c7 li-bullet-0"><span class="c1">1 level 1 or 0.66 level 2 reward</span></li>
+    <li class="c3 c7 li-bullet-0"><span class="c1">0.75 level 3 or 0.66 level 4 reward</span></li>
+    <li class="c3 c7 li-bullet-0"><span class="c1">0.66 level 5 rewards</span></li>
+    <li class="c3 c7 li-bullet-0"><span class="c1">Extra Tritons depending on the end of event placement.</span></li>
+</ul>
+<p class="c0"><span class="c1"></span></p>
+<p class="c3"><span class="c1">Overall, the value of the participation rewards is much greater than that of the end of event placement, especially considering 4th place still gets a decent chunk of the total reward. In total, maxing out participation is worth around 3800 Tritons (using shop prices to convert) and 1st place is worth 200-1000 Tritons over last place. So if your alliance is having trouble coordinating, performing any task you can is preferable to wasting energy or hero-time waiting for instructions. </span>
+</p>
+<h1 class="c23" id="h.vjrrpz7hnt17"><span class="c24">Event Mechanics</span></h1>
+<p class="c0"><span class="c1"></span></p>
+<p class="c3"><span class="c1">Atlantis provides players 4 primary actions that can be taken, each of which awards points:</span>
+</p>
+<ul class="c11 lst-kix_hcwkh91g36a-0 start">
+    <li class="c3 c7 li-bullet-0"><span class="c1">Attack an enemy garrison slot (15 points). </span></li>
+    <li class="c3 c7 li-bullet-0"><span class="c1">Repair a breached garrison slot (5 points). This requires using 5 heroes. </span>
+    </li>
+    <li class="c3 c7 li-bullet-0"><span class="c1">Heal your heroes or garrisoned heroes (2 points per hero).</span>
+    </li>
+    <li class="c3 c7 li-bullet-0"><span class="c1">Garrison a garrison slot (5 points but only if you win a battle). This requires using 5 heroes.</span>
+    </li>
+</ul>
+<p class="c0"><span class="c1"></span></p>
+<p class="c3"><span class="c1">In addition to this you can withdraw garrisoned units from a garrison slot to use them elsewhere but there is an important caveat to this. See Garrisons and Defenders. </span>
+</p>
+<p class="c0"><span class="c1"></span></p>
+<p class="c3"><span class="c1">You are limited to one action per site at a time, which means you cannot garrison units at a site you are repairing, nor can you repair a site at which you have units garrisoned. Other action buttons at a site are greyed out when you repair or garrison to indicate this.</span>
+</p>
+<p class="c3"><span class="c1"><br>The remainder of the guide goes into the details of the event and potential strategies for teams to use and tactics for individual players to execute.</span>
+</p>
+<h2 class="c5" id="h.1cjbv0whr7jd"><span class="c10">Attacking and Atlantis Energy</span></h2>
+<p class="c0"><span class="c1"></span></p>
+<p class="c3"><span class="c1">Alliances can only attack sites connected (via dotted lines) to one of their own. You will be attacking neutral sites (controlled by Atlantean Remnants) and sites controlled by other alliances. </span>
+</p>
+<p class="c0"><span class="c1"></span></p>
+<p class="c3"><span
+        style="overflow: hidden; display: inline-block; margin: 0.00px 0.00px; border: 0.00px solid #000000; transform: rotate(0.00rad) translateZ(0px); -webkit-transform: rotate(0.00rad) translateZ(0px); width: 686.16px; height: 1040.63px;"><img
+        alt="" src="https://d11pry14zi9nsg.cloudfront.net/1/images/atlantis/image20.jpg"
+        style="width: 686.16px; height: 1040.63px; margin-left: 0.00px; margin-top: 0.00px; transform: rotate(0.00rad) translateZ(0px); -webkit-transform: rotate(0.00rad) translateZ(0px);"
+        title=""></span></p>
+<p class="c0"><span class="c1"></span></p>
+<p class="c3"><span class="c1">You can attack an enemy garrison slot for the cost of 1 Atlantis energy. Your heroes will take all the normal damage from the fight plus 20% damage from attrition. The enemy heroes will take all the normal damage from the fight plus 4% damage from attrition per hero you used. You do not need to attack with exactly 5 heroes. You will gain 15 points for initiating an attack regardless of the outcome of the fight. &nbsp;</span>
+</p>
+<p class="c0"><span class="c1"></span></p>
+<p class="c3"><span class="c1">If you win the fight the enemy garrison slot will be breached and the enemy heroes will be &ldquo;knocked out&rdquo;. If you lose the fight there&rsquo;s two possible outcomes:</span>
+</p>
+<ol class="c11 lst-kix_u7hajjisclsd-0 start" start="1">
+    <li class="c3 c7 li-bullet-0"><span class="c1">The attrition damage (4% per hero the attacker used) will KO every hero left at the end of the fight. This causes the garrison slot to be breached. </span>
+    </li>
+    <li class="c3 c7 li-bullet-0"><span class="c1">The attrition damage (4% per hero the attacker used) will not KO all heroes left at the end of the fight. Any KO&rsquo;d heroes are removed from the garrison to heal and any heroes left alive will remain as defenders of the slot. &nbsp;</span>
+    </li>
+</ol>
+<p class="c3"><span class="c1">Once all defending garrison slots at a site are breached, the team that breached the most slots takes control. Upon capture, the site will be given a battle shield and be immune from any attacks on garrison slots for 1 hour.</span>
+</p>
+<p class="c3"><span>&nbsp;</span><span
+        style="overflow: hidden; display: inline-block; margin: 0.00px 0.00px; border: 0.00px solid #000000; transform: rotate(0.00rad) translateZ(0px); -webkit-transform: rotate(0.00rad) translateZ(0px); width: 362.00px; height: 311.00px;"><img
+        alt="" src="https://d11pry14zi9nsg.cloudfront.net/1/images/atlantis/image13.jpg"
+        style="width: 362.00px; height: 311.00px; margin-left: 0.00px; margin-top: 0.00px; transform: rotate(0.00rad) translateZ(0px); -webkit-transform: rotate(0.00rad) translateZ(0px);"
+        title=""></span></p>
+<p class="c0"><span class="c1"></span></p>
+<p class="c3"><span class="c1">If the enemy has no garrison in a garrison slot then a &ldquo;quick-capture&rdquo; is made available. This doesn&rsquo;t require choosing heroes but it does require at least 1 hero available. </span>
+</p>
+<p class="c0"><span class="c1"></span></p>
+<p class="c3"><span
+        style="overflow: hidden; display: inline-block; margin: 0.00px 0.00px; border: 0.00px solid #000000; transform: rotate(0.00rad) translateZ(0px); -webkit-transform: rotate(0.00rad) translateZ(0px); width: 661.00px; height: 416.00px;"><img
+        alt="" src="https://d11pry14zi9nsg.cloudfront.net/1/images/atlantis/image6.jpg"
+        style="width: 661.00px; height: 416.00px; margin-left: 0.00px; margin-top: 0.00px; transform: rotate(0.00rad) translateZ(0px); -webkit-transform: rotate(0.00rad) translateZ(0px);"
+        title=""></span></p>
+<p class="c0"><span class="c1"></span></p>
+<p class="c3"><span class="c1">Atlantis Energy is generated at a rate of 1 per 2 hours, up to a maximum of 5. This means you can generate 12 x 15 = 180 participation points per day by attacking. </span>
+</p>
+<p class="c0"><span class="c1"></span></p>
+<p class="c3"><span class="c1">Atlantis Energy can be bought with gems in batches of 5 up to 3 times per day at costs of 50, 100, and finally 200 gems.</span>
+</p>
+<h3 class="c15" id="h.tvremrtwa0wb"><span class="c6">Multiple Teams Attacking</span></h3>
+<p class="c3"><span class="c1">No more than 2 alliances can breach the same site, which ensures that one side will always be able to breach a majority of the garrison slots. If a 3rd team gains access to the site they cannot attack or quick-capture until one of the existing attacking team&rsquo;s breaches are repaired or one of the existing attacking teams gains control of the site. </span>
+</p>
+<h2 class="c5" id="h.dj2nsx1qyezs"><span class="c10">Repair</span></h2>
+<p class="c0"><span class="c1"></span></p>
+<p class="c3"><span class="c1">You can use exactly 5 heroes at a time to repair an alliance garrison slot. This takes 2 hours by default but is reduced by 30m for each additional alliance member, up to 2, that contributes. So the minimum repair time is 1 hour. Repairing a breached garrison slot provides a &ldquo;battle shield&rdquo; which prevents that garrison slot from being attacked for 1 hr. </span>
+</p>
+<p class="c0"><span class="c1"></span></p>
+<p class="c3"><span class="c1">Starting a repair awards 5 participation points. You cannot stop repairs in progress and heroes repairing do not heal passively. Sites in need of repair are easily identifiable by the smoke rising from them on the map. </span>
+</p>
+<p class="c3"><span
+        style="overflow: hidden; display: inline-block; margin: 0.00px 0.00px; border: 0.00px solid #000000; transform: rotate(0.00rad) translateZ(0px); -webkit-transform: rotate(0.00rad) translateZ(0px); width: 639.00px; height: 371.00px;"><img
+        alt="" src="https://d11pry14zi9nsg.cloudfront.net/1/images/atlantis/image14.jpg"
+        style="width: 639.00px; height: 371.00px; margin-left: 0.00px; margin-top: 0.00px; transform: rotate(0.00rad) translateZ(0px); -webkit-transform: rotate(0.00rad) translateZ(0px);"
+        title=""></span><span class="c1">[A site in need of 2 repairs]</span></p>
+<p class="c0"><span class="c1"></span></p>
+<p class="c3"><span class="c1">Once repairs are done (or the site changes alliance control mid-repair), heroes will immediately begin healing passively again. So starting repairs then leaving the game is fine. </span>
+</p>
+<h2 class="c5" id="h.wzr8ntf1nwcu"><span class="c10">Healing and Knocked Out</span></h2>
+<p class="c3"><span class="c1">Heroes below 10% health are classified as &ldquo;Knocked out&rdquo;. They need to heal to return to &ldquo;Available&rdquo; status whence they can be used for all other tasks. </span>
+</p>
+<p class="c3"><span
+        style="overflow: hidden; display: inline-block; margin: 0.00px 0.00px; border: 0.00px solid #000000; transform: rotate(0.00rad) translateZ(0px); -webkit-transform: rotate(0.00rad) translateZ(0px); width: 307.00px; height: 310.00px;"><img
+        alt="" src="https://d11pry14zi9nsg.cloudfront.net/1/images/atlantis/image12.jpg"
+        style="width: 307.00px; height: 310.00px; margin-left: 0.00px; margin-top: 0.00px; transform: rotate(0.00rad) translateZ(0px); -webkit-transform: rotate(0.00rad) translateZ(0px);"
+        title=""></span><span class="c1">[Knock out info blurb]</span></p>
+<p class="c0"><span class="c1"></span></p>
+<p class="c3"><span class="c1">Healing comes in two forms: passive healing and medkit healing. Passive healing occurs at a rate of 15% per hour for all heroes not garrisoned or repairing. So knocked out heroes take ~6.5 hours to fully heal. With medkits you can individually heal heroes at any alliance garrison slot, both your own heroes and your alliance mates&rsquo;. You can also heal your own heroes individually by clicking the helmet to open the hero roster then clicking on the medkit for the heroes you want to heal. Healing done via medkits awards 2 participation points per use. </span>
+</p>
+<p class="c0"><span class="c1"></span></p>
+<p class="c3"><span
+        style="overflow: hidden; display: inline-block; margin: 0.00px 0.00px; border: 0.00px solid #000000; transform: rotate(0.00rad) translateZ(0px); -webkit-transform: rotate(0.00rad) translateZ(0px); width: 686.50px; height: 366.00px;"><img
+        alt="" src="https://d11pry14zi9nsg.cloudfront.net/1/images/atlantis/image18.jpg"
+        style="width: 686.50px; height: 366.00px; margin-left: 0.00px; margin-top: 0.00px; transform: rotate(0.00rad) translateZ(0px); -webkit-transform: rotate(0.00rad) translateZ(0px);"
+        title=""></span><span class="c1">[The garrison heal screen]</span></p>
+<p class="c0"><span class="c1"></span></p>
+<p class="c3"><span class="c1">Medkits are quite rare. You start with 5 and can obtain up to 25 via the alliance participation rewards. This means you can obtain up to 60 participation points per event from medkits. </span>
+</p>
+<p class="c0"><span class="c1"></span></p>
+<p class="c3"><span class="c1">Medkits can be bought with gems in batches of 5 up to 3 times per day at costs of 50, 100, and finally 200 gems.</span>
+</p>
+<h2 class="c5" id="h.niikr03thhnf"><span class="c10">Garrisons and Defending. </span></h2>
+<p class="c0"><span class="c1"></span></p>
+<p class="c3"><span class="c1">Garrisoning units in a garrison slot does not generate points unless you successfully defend against an attack. If you do successfully rebuff an attack, you will earn 5 participation points. You can withdraw defenders at any time but there is an important caveat. If the site being defended has any breached slots, withdrawing a garrison means leaving the slot &ldquo;Abandoned&rdquo;. Abandoned slots cannot be re-garrisoned until all breaches have been repaired. (Footnote: Presumably this is to prevent &lsquo;hot-swapping&rsquo; wounded heroes for fully healed heroes at a contested site on the front line). </span>
+</p>
+<p class="c0"><span class="c1"></span></p>
+<p class="c3"><span class="c1">If attacked, your defending heroes suffer the normal damage from battle + 4% health damage per enemy hero used. </span>
+</p>
+<p class="c0"><span class="c1"></span></p>
+<p class="c3"><span
+        style="overflow: hidden; display: inline-block; margin: 0.00px 0.00px; border: 0.00px solid #000000; transform: rotate(0.00rad) translateZ(0px); -webkit-transform: rotate(0.00rad) translateZ(0px); width: 376.15px; height: 574.66px;"><img
+        alt="" src="https://d11pry14zi9nsg.cloudfront.net/1/images/atlantis/image11.jpg"
+        style="width: 376.15px; height: 574.66px; margin-left: 0.00px; margin-top: 0.00px; transform: rotate(0.00rad) translateZ(0px); -webkit-transform: rotate(0.00rad) translateZ(0px);"
+        title=""></span><span class="c1">[Abandoned Garrison slot]</span></p>
+<p class="c3"><span
+        style="overflow: hidden; display: inline-block; margin: 0.00px 0.00px; border: 0.00px solid #000000; transform: rotate(0.00rad) translateZ(0px); -webkit-transform: rotate(0.00rad) translateZ(0px); width: 687.10px; height: 480.13px;"><img
+        alt="" src="https://d11pry14zi9nsg.cloudfront.net/1/images/atlantis/image19.jpg"
+        style="width: 687.10px; height: 480.13px; margin-left: 0.00px; margin-top: 0.00px; transform: rotate(0.00rad) translateZ(0px); -webkit-transform: rotate(0.00rad) translateZ(0px);"
+        title=""></span><span class="c1">[Garrison selection screen, 5 heroes must be used]</span></p>
+<p class="c0"><span class="c1"></span></p>
+<h2 class="c5" id="h.3epfqqvrcp12"><span class="c10">Victory Points and Sites</span></h2>
+<p class="c3"><span
+        class="c1">Victory points are what determines the placement of an alliance at the end of the event. </span></p>
+<p class="c0"><span class="c1"></span></p>
+<p class="c3"><span class="c1">Each site has a certain number of garrisons and awards victory points in two ways: immediately upon breaching a garrison slot and over time upon capturing the site. The immediate reward for breaching a garrison slot is 1/10th the hourly income. </span>
+</p>
+<p class="c0 c25"><span class="c1"></span></p>
+<table class="c20">
+    <tr class="c14">
+        <td class="c18" colspan="1" rowspan="1"><p class="c4"><span class="c1">Site</span></p></td>
+        <td class="c8" colspan="1" rowspan="1"><p class="c4"><span class="c1">Garrison Slots</span></p></td>
+        <td class="c2" colspan="1" rowspan="1"><p class="c4"><span class="c1">VP per hour</span></p></td>
+        <td class="c2" colspan="1" rowspan="1"><p class="c4"><span class="c1">% of Island VP income</span></p></td>
+        <td class="c9" colspan="1" rowspan="1"><p class="c4"><span class="c1">Note</span></p></td>
+    </tr>
+    <tr class="c14">
+        <td class="c18" colspan="1" rowspan="1"><p class="c4"><span>Home Base</span><span
+                style="overflow: hidden; display: inline-block; margin: 0.00px 0.00px; border: 0.00px solid #000000; transform: rotate(0.00rad) translateZ(0px); -webkit-transform: rotate(0.00rad) translateZ(0px); width: 428.00px; height: 413.00px;"><img
+                alt="" src="https://d11pry14zi9nsg.cloudfront.net/1/images/atlantis/image8.jpg"
+                style="width: 428.00px; height: 413.00px; margin-left: 0.00px; margin-top: 0.00px; transform: rotate(0.00rad) translateZ(0px); -webkit-transform: rotate(0.00rad) translateZ(0px);"
+                title=""></span></p></td>
+        <td class="c8" colspan="1" rowspan="1"><p class="c4"><span class="c1">N/A</span></p></td>
+        <td class="c2" colspan="1" rowspan="1"><p class="c4"><span class="c1">300</span></p></td>
+        <td class="c2" colspan="1" rowspan="1"><p class="c4"><span class="c1">6%</span></p></td>
+        <td class="c9" colspan="1" rowspan="1"><p class="c4"><span class="c1">Unassailable</span></p></td>
+    </tr>
+    <tr class="c14">
+        <td class="c18" colspan="1" rowspan="1"><p class="c4"><span>Gatehouse</span><span
+                style="overflow: hidden; display: inline-block; margin: 0.00px 0.00px; border: 0.00px solid #000000; transform: rotate(0.00rad) translateZ(0px); -webkit-transform: rotate(0.00rad) translateZ(0px); width: 202.00px; height: 203.00px;"><img
+                alt="" src="https://d11pry14zi9nsg.cloudfront.net/1/images/atlantis/image5.jpg"
+                style="width: 202.00px; height: 203.00px; margin-left: 0.00px; margin-top: 0.00px; transform: rotate(0.00rad) translateZ(0px); -webkit-transform: rotate(0.00rad) translateZ(0px);"
+                title=""></span></p></td>
+        <td class="c8" colspan="1" rowspan="1"><p class="c4"><span class="c1">3</span></p></td>
+        <td class="c2" colspan="1" rowspan="1"><p class="c4"><span class="c1">60</span></p></td>
+        <td class="c2" colspan="1" rowspan="1"><p class="c4"><span class="c1">6%</span></p></td>
+        <td class="c9" colspan="1" rowspan="1"><p class="c4"><span class="c1">5 per island around perimeter</span></p>
+        </td>
+    </tr>
+    <tr class="c14">
+        <td class="c18" colspan="1" rowspan="1"><p class="c4"><span>Sea Shrine</span><span
+                style="overflow: hidden; display: inline-block; margin: 0.00px 0.00px; border: 0.00px solid #000000; transform: rotate(0.00rad) translateZ(0px); -webkit-transform: rotate(0.00rad) translateZ(0px); width: 149.00px; height: 152.00px;"><img
+                alt="" src="https://d11pry14zi9nsg.cloudfront.net/1/images/atlantis/image15.jpg"
+                style="width: 149.00px; height: 152.00px; margin-left: 0.00px; margin-top: 0.00px; transform: rotate(0.00rad) translateZ(0px); -webkit-transform: rotate(0.00rad) translateZ(0px);"
+                title=""></span></p></td>
+        <td class="c8" colspan="1" rowspan="1"><p class="c4"><span class="c1">5</span></p></td>
+        <td class="c2" colspan="1" rowspan="1"><p class="c4"><span class="c1">100</span></p></td>
+        <td class="c2" colspan="1" rowspan="1"><p class="c4"><span class="c1">34%</span></p></td>
+        <td class="c9" colspan="1" rowspan="1"><p class="c4"><span class="c1">17 per island</span></p></td>
+    </tr>
+    <tr class="c14">
+        <td class="c18" colspan="1" rowspan="1"><p class="c4"><span>Noble House</span><span
+                style="overflow: hidden; display: inline-block; margin: 0.00px 0.00px; border: 0.00px solid #000000; transform: rotate(0.00rad) translateZ(0px); -webkit-transform: rotate(0.00rad) translateZ(0px); width: 169.00px; height: 215.00px;"><img
+                alt="" src="https://d11pry14zi9nsg.cloudfront.net/1/images/atlantis/image10.jpg"
+                style="width: 169.00px; height: 215.00px; margin-left: 0.00px; margin-top: 0.00px; transform: rotate(0.00rad) translateZ(0px); -webkit-transform: rotate(0.00rad) translateZ(0px);"
+                title=""></span></p></td>
+        <td class="c8" colspan="1" rowspan="1"><p class="c4"><span class="c1">7</span></p></td>
+        <td class="c2" colspan="1" rowspan="1"><p class="c4"><span class="c1">300</span></p></td>
+        <td class="c2" colspan="1" rowspan="1"><p class="c4"><span class="c1">36%</span></p></td>
+        <td class="c9" colspan="1" rowspan="1"><p class="c4"><span class="c1">6 per island</span></p></td>
+    </tr>
+    <tr class="c14">
+        <td class="c18" colspan="1" rowspan="1"><p class="c4"><span>Royal Palace</span><span
+                style="overflow: hidden; display: inline-block; margin: 0.00px 0.00px; border: 0.00px solid #000000; transform: rotate(0.00rad) translateZ(0px); -webkit-transform: rotate(0.00rad) translateZ(0px); width: 218.00px; height: 247.00px;"><img
+                alt="" src="https://d11pry14zi9nsg.cloudfront.net/1/images/atlantis/image9.jpg"
+                style="width: 218.00px; height: 247.00px; margin-left: 0.00px; margin-top: 0.00px; transform: rotate(0.00rad) translateZ(0px); -webkit-transform: rotate(0.00rad) translateZ(0px);"
+                title=""></span></p></td>
+        <td class="c8" colspan="1" rowspan="1"><p class="c4"><span class="c1">9</span></p></td>
+        <td class="c2" colspan="1" rowspan="1"><p class="c4"><span class="c1">900</span></p></td>
+        <td class="c2" colspan="1" rowspan="1"><p class="c4"><span class="c1">18%</span></p></td>
+        <td class="c9" colspan="1" rowspan="1"><p class="c4"><span class="c1">1 per island</span></p></td>
+    </tr>
+    <tr class="c14">
+        <td class="c18" colspan="1" rowspan="1"><p class="c4"><span>Triton Tower </span><span
+                style="overflow: hidden; display: inline-block; margin: 0.00px 0.00px; border: 0.00px solid #000000; transform: rotate(0.00rad) translateZ(0px); -webkit-transform: rotate(0.00rad) translateZ(0px); width: 186.00px; height: 272.00px;"><img
+                alt="" src="https://d11pry14zi9nsg.cloudfront.net/1/images/atlantis/image4.jpg"
+                style="width: 186.00px; height: 272.00px; margin-left: 0.00px; margin-top: 0.00px; transform: rotate(0.00rad) translateZ(0px); -webkit-transform: rotate(0.00rad) translateZ(0px);"
+                title=""></span></p></td>
+        <td class="c8" colspan="1" rowspan="1"><p class="c4"><span class="c1">7</span></p></td>
+        <td class="c2" colspan="1" rowspan="1"><p class="c4"><span class="c1">600</span></p></td>
+        <td class="c2" colspan="1" rowspan="1"><p class="c4"><span class="c1">63%</span></p></td>
+        <td class="c9" colspan="1" rowspan="1"><p class="c4"><span class="c1">20 around the central island. Unlocks at T time</span>
+        </p></td>
+    </tr>
+    <tr class="c14">
+        <td class="c18" colspan="1" rowspan="1"><p class="c4"><span class="c1">Poseidon Vault</span></p>
+            <p class="c4"><span
+                    style="overflow: hidden; display: inline-block; margin: 0.00px 0.00px; border: 0.00px solid #000000; transform: rotate(0.00rad) translateZ(0px); -webkit-transform: rotate(0.00rad) translateZ(0px); width: 286.00px; height: 265.00px;"><img
+                    alt="" src="https://d11pry14zi9nsg.cloudfront.net/1/images/atlantis/image1.jpg"
+                    style="width: 286.00px; height: 265.00px; margin-left: 0.00px; margin-top: 0.00px; transform: rotate(0.00rad) translateZ(0px); -webkit-transform: rotate(0.00rad) translateZ(0px);"
+                    title=""></span></p></td>
+        <td class="c8" colspan="1" rowspan="1"><p class="c4"><span class="c1">9</span></p></td>
+        <td class="c2" colspan="1" rowspan="1"><p class="c4"><span class="c1">1800</span></p></td>
+        <td class="c2" colspan="1" rowspan="1"><p class="c4"><span class="c1">37%</span></p></td>
+        <td class="c9" colspan="1" rowspan="1"><p class="c4"><span class="c1">4 in the central island. Unlocks at T time.</span>
+        </p></td>
+    </tr>
+</table>
+<p class="c0"><span class="c1"></span></p>
+<p class="c3"><span
+        style="overflow: hidden; display: inline-block; margin: 0.00px 0.00px; border: 0.00px solid #000000; transform: rotate(0.00rad) translateZ(0px); -webkit-transform: rotate(0.00rad) translateZ(0px); width: 696.18px; height: 462.14px;"><img
+        alt="" src="https://d11pry14zi9nsg.cloudfront.net/1/images/atlantis/image7.jpg"
+        style="width: 696.18px; height: 462.14px; margin-left: 0.00px; margin-top: 0.00px; transform: rotate(0.00rad) translateZ(0px); -webkit-transform: rotate(0.00rad) translateZ(0px);"
+        title=""></span><span class="c1">[A full island]</span></p>
+<p class="c0"><span class="c1"></span></p>
+<p class="c3"><span class="c1">This means to fully clear one&rsquo;s home island requires at least 151 Atlantis Energy. This is 7-8 energy per person for a 20 person alliance. </span>
+</p>
+<p class="c0"><span class="c1"></span></p>
+<p class="c3"><span
+        class="c1">It is important to note that between each player-island are 2 4-length chains of sites: </span></p>
+<ul class="c11 lst-kix_gnhoprmpl14c-0 start">
+    <li class="c3 c7 li-bullet-0"><span class="c1">X21-X30 &ndash; Y26-Y25</span></li>
+    <li class="c3 c7 li-bullet-0"><span class="c1">X22-X29 &ndash; Y27-Y24 </span></li>
+</ul>
+<p class="c0"><span class="c1"></span></p>
+<p class="c3"><span
+        style="overflow: hidden; display: inline-block; margin: 0.00px 0.00px; border: 0.00px solid #000000; transform: rotate(0.00rad) translateZ(0px); -webkit-transform: rotate(0.00rad) translateZ(0px); width: 692.50px; height: 335.34px;"><img
+        alt="" src="https://d11pry14zi9nsg.cloudfront.net/1/images/atlantis/image16.jpg"
+        style="width: 692.50px; height: 335.34px; margin-left: 0.00px; margin-top: 0.00px; transform: rotate(0.00rad) translateZ(0px); -webkit-transform: rotate(0.00rad) translateZ(0px);"
+        title=""></span><span class="c1">[The water-lanes between players]</span></p>
+<h1 class="c23" id="h.7n1i68u9cxmf"><span class="c24">Strategies and Tactics</span></h1>
+<p class="c3"><span class="c1">The following is all hypothetical. Treat it as a kind of thinking out loud/stream of consciousness. I&rsquo;m just trying to work through some properties and interactions that might occur.</span>
+</p>
+<h2 class="c5" id="h.9kw9dt5ul26v"><span class="c10">Some Basics</span></h2>
+<p class="c3"><span class="c1">Attrition damage cannot be overcome by healing. </span></p>
+<p class="c0"><span class="c1"></span></p>
+<p class="c3"><span class="c1">While all teams rely on max HP against equally strong teams, some teams can use shields, invincibility, etc. to avoid losing effectiveness against weaker teams. In theory this can allow for 1 strong team to wipe out multiple weaker teams and </span>
+</p>
+<p class="c0"><span class="c1"></span></p>
+<p class="c3"><span class="c1">The enemy can&rsquo;t see the garrison for slots behind the front line. This makes it harder for attackers to optimally plan a push. </span>
+</p>
+<p class="c0"><span class="c1"></span></p>
+<p class="c3"><span class="c1">Losing a hero team attacking a garrison slot </span></p>
+<h2 class="c5" id="h.dou6uu7rdcrg"><span class="c10">Site Dynamics </span></h2>
+<p class="c3"><span class="c1">In some sense, winning is about choosing which garrison slots are worth fighting over. So here are some interesting dynamics that affect this:</span>
+</p>
+<p class="c0"><span class="c1"></span></p>
+<p class="c3"><span class="c1">Example 1: Consider the sea-shrines like X1 - X5. You have the choice to ignore these all game and focus your Atlantis energy elsewhere. But since these are quite safe you can pretty much guarantee they will each generate 2400 VP per day x 7 days = 16,800 VP (+50 for the capture but I&rsquo;m ignoring that). All for the price of 5 Atlantis energy each and no garrisons. This comes out to 3360 VP per energy at no garrison cost. <br><br>Similarly if you can credibly hold a sea shrine for say 3 days that is ~1500 VP per energy. If you can only hold it for a few hours that&rsquo;s down to maybe 100 VP per energy. The point is that context matters. For an individual site, you will want to analyze the realistic chance of holding it. </span>
+</p>
+<p class="c0"><span class="c1"></span></p>
+<p class="c3"><span class="c1">Example 2: Consider attacking an enemy Royal Palace. </span></p>
+<h2 class="c5" id="h.u92metip3fla"><span class="c10">Player tactics</span></h2>
+<p class="c0"><span class="c1"></span></p>
+<p class="c3"><span class="c1">Weaker players who otherwise have trouble finding fights they can win should focus on &ldquo;Quick-Captures&rdquo; of undefended garrison slots as well as repairs. But because participation points are so important, using Atlantis energy to just cause attrition to enemy defenders is still valuable. </span>
+</p>
+<p class="c0"><span class="c1"></span></p>
+<p class="c3"><span class="c1">Example: Consider a weaker player and an average player not coordinating vs a strongly defended site. The weak player would need to use all 5 Atlantis energy to defeat a single slot. The average player needs 2 per slot. This means with 10-11 energy they can only capture 3-4 slots. However with coordination, the weaker player can do attrition damage per slot, the average player can follow up with the KO per slot. So with 10 energy they can capture 5 slots. This is a significant efficiency improvement. </span>
+</p>
+<p class="c0"><span class="c1"></span></p>
+<p class="c3"><span class="c1">Stronger players should focus on eliminating defenders, keeping their heroes healed, and defending chokepoints such as gatehouses or near-gatehouse sites. Alliances should try to keep their strong player&rsquo;s defenders healed so the strong player can easily put them to use for attacks when active. </span>
+</p>
+<p class="c0"><span class="c1"></span></p>
+<p class="c3"><span class="c1">You can use damaged heroes to garrison in a pinch to force the enemy to take attrition. 5x 10% health defending heroes will still cause 20% of health attrition damage to attackers. Knocked-out heroes instantly start regenerating health so you don&rsquo;t have to be playing at the time. But beware! An attacker might bypass a site and leave your under-health garrison alone, leaving you stuck with damaged heroes when you come back.</span>
+</p>
+<p class="c0"><span class="c1"></span></p>
+<p class="c3"><span class="c1">Use any intuition gained from Arena and Elite Arena fights to gauge how much damage you are likely to take given the difference in team strength. Keep in mind the 20% attrition damage you will take when attacking and the 4-20% attrition damage the defenders will take. </span>
+</p>
+<p class="c0"><span class="c1"></span></p>
+<p class="c3"><span class="c1">Useful numbers:</span></p>
+<ul class="c11 lst-kix_n113up5jai02-0 start">
+    <li class="c3 c7 li-bullet-0"><span class="c1">1 Team where all members take &lt;30% damage can be used every 2 hours at full health</span>
+    </li>
+    <li class="c3 c7 li-bullet-0"><span class="c1">2 Teams where all members take &lt;60% damage can be used every 4 hours at full health</span>
+    </li>
+    <li class="c3 c7 li-bullet-0"><span class="c1">3 Teams where all members take &lt;90% damage can be used every 6 hours at full health. </span>
+    </li>
+</ul>
+<p class="c0"><span class="c1"></span></p>
+<p class="c3"><span class="c1">While breaching allows defenders to repair-lock a site, breaching a site also allows attackers to garrison-lock any defenders. Which is to say they must either keep their defenders there or abandon the slot (which can allow for a quick-capture). This can be useful in a multi-pronged attack against an active opponent. </span>
+</p>
+<h3 class="c15" id="h.mnyitsoh6qhj"><span class="c6">Defense</span></h3>
+<p class="c3"><span class="c1">In general defending sites with larger garrisons will be easier. No single player can take out a site with 7 or 9 garrisoned slots unless they spend gems on some Atlantis Energy and maybe some healing. Which means if the attack is uncoordinated, you will have a bit of lead time between the first attack and the last garrison standing. You should use the time in-between to repair or cut off the enemy access to the site by counter-attacking. <br></span>
+</p>
+<p class="c3"><span class="c1">Repair: As mentioned above if you can repair a garrison slot, you gain an hour of unassailability on that garrison slot. As long as one slot is unassailable the site cannot change alliance control. This unassailable slot buys you time to then repair any other breached slots and repeat the process. If the enemy isn&rsquo;t careful they can keep giving you breaches to repair and you can keep the site under your control via single-slots being unassailable. </span>
+</p>
+<p class="c0"><span class="c1"></span></p>
+<p class="c3"><span class="c1">Counter-attack: This becomes a very good option when the enemy has only 1 adjacent site or their front line is otherwise weakly defended. Just keep in mind that the enemy can still launch attacks from cut-off tiles so you need to eliminate cut-off tiles too. </span>
+</p>
+<p class="c0"><span class="c1"></span></p>
+<p class="c3"><span class="c1">As a tactic it might be useful to leave one slot ungarrisoned as &ldquo;bait&rdquo; on the 7 and 9 garrison slot sites. Participation is very useful and some weaker enemy players might quick-capture it. If they do, defenders can now repair, which gives them alliance points.</span>
+</p>
+<h3 class="c15" id="h.krlizzn6lod6"><span class="c6">Offense</span></h3>
+<p class="c3"><span class="c1">The biggest risk on offense is wasting Atlantis energy due to attacking a site then getting counter-attacked and losing access to said site before you can breach all garrison slots. The next biggest risk is getting repair-locked out of capturing a site due to an uncoordinated attack vs a coordinated defense. </span>
+</p>
+<p class="c0"><span class="c1"></span></p>
+<p class="c3"><span class="c1">Coordination on offense is the key to efficiency. If you can advance rapidly you will have a trail of battle-shielded sites behind you which prevents counter-attacks. It also prevents repair-locking shenanigans. This ensures most of your Atlantis energy gets translated into site captures and thus victory point income. </span>
+</p>
+<p class="c0"><span class="c1"></span></p>
+<p class="c3"><span class="c1">Generally speaking you will want to use the alliance&rsquo;s weakest available team that will still get the attack done for a given amount of Atlantis energy. This saves your alliance&rsquo;s stronger teams for defense in chokepoints or attacks. Choosing how much energy to expend on an attack is a strategic balancing act that depends on how it opens up new opportunities. </span>
+</p>
+<h3 class="c15" id="h.bj7invqk8ggk"><span class="c6">The Back and Forth</span></h3>
+<p class="c3"><span class="c1">This gets at a fundamental property of the game-mode: unless defenders spam medkits and the enemy can&rsquo;t quite one-shot defender garrisons, defenders cannot stop a well-coordinated push in the short term. Attackers will use a chain of battle shields protecting against counter-attacks, they will not damage then leave a site alone long enough for a repair, and if defenders garrison their Heroes then attackers will knock defender Heroes out in the process. So we can walk through some examples to see how this plays out:</span>
+</p><h4 class="c13" id="h.jtweo1ti05bd"><span class="c17">Example 1: Attackers push as far as possible</span></h4>
+<p class="c0"><span class="c1"></span></p>
+<p class="c3"><span class="c1">If attackers push as far as possible, and defenders have garrisoned every slot and the alliances are more or less even, the end result is both teams will have the majority of their Heroes knocked out but the attackers will have a bunch of new territory with battle shields.</span>
+</p>
+<p class="c0"><span class="c1"></span></p>
+<p class="c3"><span class="c1">Now the follow up to this attack is where things get interesting. If the attackers decide to garrison their new territory to prevent this they will stop healing. Which means eventually the defenders can use single teams to knock out multiple teams, giving them a massive hero-health advantage. Which then means the attackers would need to either waste Atlantis energy not attacking or (more likely) use Atlantis energy to do attrition but keeping their Heroes on low health and opening up repair-locking. Defenders Atlantis energy will recharge and they will have an advantage. </span>
+</p>
+<p class="c0"><span class="c1"></span></p>
+<p class="c3"><span class="c1">If the attackers don&rsquo;t garrison their new gains the defenders can quick-capture. Since the attackers are out of Atlantis energy, they can hold off on garrisoning without too much worry. Each side can burn energy maintaining the front line with empty slots until their heroes heal. Once the heroes are healed, there are 2 options: garrison an existing site and save Atlantis energy for a bigger push or use Atlantis energy to capture a site and load it with a garrison. </span>
+</p>
+<p class="c0"><span class="c1"></span></p>
+<p class="c3"><span class="c1">So from an offense perspective pushing as far as possible all at once vs a decent defense is pretty bad at securing VPs. But keep in mind this will feel like &ldquo;too much&rdquo; territory anyway; 100 hero teams would be around 10-20 sites or around half an island. That being said, if attackers can simply quick-capture slots then they can immediately garrison the front lines and not suffer this issue. However even then the attackers will be out of Atlantis energy so if the defenders push, the attackers cannot push back. So it&rsquo;s a bit risky.</span>
+</p><h4 class="c13" id="h.3sfwjatgivkl"><span class="c17">Example 2: Attackers push halfway</span></h4>
+<p class="c0"><span class="c1"></span></p>
+<p class="c3"><span class="c1">So if a full push leads to being over-extended, let&rsquo;s now consider that the attacking alliance only pushes halfway. Which is to say they don&rsquo;t fully exhaust their hero teams. This feels more reasonable anyway as that&rsquo;s more like 5 - 10 sites at once. At the end of this push, both sides have ~half their heroes KO&rsquo;d. But since the attackers only pushed half-way they can immediately garrison the newly gained territory. Now if defenders re-capture (and thus deplete both side&rsquo;s heroes) after an hour some very interesting interactions can occur. <br><br>Fundamentally if the defenders re-garrison the sites then the attackers have all their heroes healing and the defenders only have half. So eventually the attackers will have an advantage and can overpower. But the attackers need to be smart and take advantage of attrition to maximize these gains (e.g. against 5x 15% heroes, you can probably get away with 3x heroes because of the innate 12% attrition. Do this over 5 slots and defenders have 25 heroes KO&rsquo;d and attackers have only 15. Anyway this will effectively lead to attackers solidifying their gains because they will have some healthy garrisons and the opponent will not have healthy attacking teams. <br></span>
+</p>
+<p class="c3"><span class="c1">If defenders do not re-garrison, the attackers can take back any undefended sites but now the attackers are over-extended again. They lost half their heroes in the original push, an hour passed, then lost the other half their heroes on the counter-attack, another hour passed, and now have at best heroes at 30% health with which to defend. This basically puts them in the same over-extended position as a full push. </span>
+</p><h4 class="c13" id="h.gqz3mb1k8851"><span
+        class="c17">Example 3: Defenders only defend half the sites attacked.</span></h4>
+<p class="c3"><span class="c1">Let&rsquo;s say the defenders only defend the initial front line, which is to say they can fully defend a half-push or partially defend against a full push. As discussed above, if the attackers do a full push they will be out of Atlantis energy. Which means the defenders can use their remaining heroes to counter-attack. Everyone is back to the starting position, except everyone is out of hero health and atlantis energy. Which means defenders can&rsquo;t easily defend the position now. They can re-garrison and not heal or leave the sites vulnerable to quick-capture. </span>
+</p><h4 class="c13" id="h.r1i7jlktsdi2"><span class="c17">Example 4: Chokepoints</span></h4>
+<p class="c3"><span class="c1">How do chokepoints come into play? The only way I can think of is that an attacker&rsquo;s push should ideally end on a chokepoint. If all gains were locked behind one site, theoretically this would allow a small hero-health advantage to lock down all the gains in the sense that the enemy would need to spend a lot of atlantis energy capturing that one site and would thus not be able to push the front-line back to the original state. </span>
+</p>
+<p class="c0"><span class="c1"></span></p>
+<p class="c3"><span class="c1">Similarly defenders can use chokepoints to hinder a push by having strong teams there (which the enemy can&rsquo;t see until they have access to it). From a coordination standpoint, 9 player&rsquo;s strongest team would require the enemy&rsquo;s 9 strongest players to all be online at the same time to coordinate a push. If they aren&rsquo;t online this can force &lsquo;double-tapping&rsquo; and the enemy wont have enough hero-health and/or atlantis energy to push the front line back as far. Which means on the counter-attack you can push farther than the old front line. </span>
+</p>
+<p class="c0"><span class="c1"></span></p><h4 class="c13" id="h.6psh5o8trzx3"><span class="c17">Example 5: Bypassing weak garrisons</span>
+</h4>
+<p class="c3"><span class="c1">This is an interesting one. Consider a push which is wide enough that gaps in the moving front line occasionally appear. This presents an option: do you bypass the defender&rsquo;s garrisons or knock them out? Fundamentally it depends on how efficiently you can do this and whether the defenders are paying attention. <br><br>If they aren&rsquo;t active and the defenders are not full health, leaving them is a good idea. They will just stay unhealed and you can make gains elsewhere. If they are full health and you can efficiently knock them out (e.g. one team taking out 2-3 of them) doing this gives you a hero-health advantage for the next 6 hours or so. </span>
+</p>
+<p class="c0"><span class="c1"></span></p><h4 class="c13" id="h.gfy6jc58e8bv"><span class="c17">Examples summary:</span>
+</h4>
+<p class="c0"><span class="c1"></span></p>
+<p class="c3"><span class="c1">Things to take away from this dynamic:</span></p>
+<ul class="c11 lst-kix_d78m128us7e2-0 start">
+    <li class="c3 c7 li-bullet-0"><span class="c1">In an even matchup, the ability to gain and keep ground is strongly dependent on opponent hero health and atlantis energy availability. </span>
+    </li>
+    <li class="c3 c7 li-bullet-0"><span class="c1">In an even matchup with both sides KO&rsquo;d evenly, the player who depletes their Atlantis energy first is at a disadvantage. They won&rsquo;t be able to quick-capture undefended sites which allows the enemy to heal. </span>
+    </li>
+    <li class="c3 c7 li-bullet-0"><span class="c1">If your team is over-extended (i.e. likely to be at a hero-health deficit relative to an enemy with Atlantis energy) don&rsquo;t defend the front line. You will just be wasting hero health. </span>
+    </li>
+    <li class="c3 c7 li-bullet-0"><span class="c1">Roughly speaking the only way to gain an advantage is through a combination of hero-health and Atlantis energy. You need to force the enemy to spend more taking the same ground than it costs for you to take it. This is fundamentally what moves the front line. </span>
+    </li>
+    <li class="c3 c7 li-bullet-0"><span class="c1">Using less-than-full-health garrisoned enemies is </span></li>
+</ul>
+<h4 class="c13" id="h.dk5ffg3ogcsi"><span class="c17">Medkits</span></h4>
+<p class="c3"><span class="c1">Note that both sides can use medkits to alleviate their hero-health deficit which can cause big swings. For example if both sides are out of hero-health, a single full strength garrison slot will lock down a site and prevent re-capture. This can outright solidify gains as by the time the enemy has the health to attack your other heroes are also healed. Or they spend extra Atlantis energy to attrition that slot and so they can&rsquo;t capture back everything even if the remaining slots are undefended. </span>
+</p><h4 class="c13" id="h.n65ymo6nc60o"><span class="c17">Atlantis Energy</span></h4>
+<p class="c3"><span class="c1">Atlantis energy can cause the front line to move in various ways. The most obvious way is that after both sides have KO&rsquo;d their heroes you can either side can use Atlantis energy to quick-capture sites. When the enemy attacks again, defenders won&rsquo;t have enough Atlantis energy to capture back to the front line and attackers won&rsquo;t have enough Atlantis energy to push as deep. As this process repeats the front line can shift further out. &nbsp;</span>
+</p>
+<h2 class="c5" id="h.qmdpoly6nvqo"><span class="c10">Strategy</span></h2>
+<p class="c3"><span class="c1">For this I&rsquo;m going to use X to indicate your team&rsquo;s island sites and Y to indicate other team island sites. Obviously the goal is to maximize the total rewards for players which practically speaking means:</span>
+</p>
+<ul class="c11 lst-kix_5wskmhq1n7a5-0 start">
+    <li class="c3 c7 li-bullet-0"><span class="c1">Spend your Atlantis energy &amp; repair sites. These are the easiest ways to gain participation points and as mentioned participation is more important than winning in terms of total rewards. </span>
+    </li>
+    <li class="c3 c7 li-bullet-0"><span class="c1">Conditional on performing participation tasks, try to maximize your end-of-event placement:</span>
+    </li>
+</ul>
+<ul class="c11 lst-kix_61uur26cchyv-0 start">
+    <li class="c3 c16 li-bullet-0"><span class="c1">Take easy wins. If you see unprotected sites, especially as a weaker player, just take them. </span>
+    </li>
+    <li class="c3 c16 li-bullet-0"><span class="c1">Focus on taking and holding sites with high VP income to garrison strength ratios. </span>
+    </li>
+    <li class="c3 c16 li-bullet-0"><span class="c1">Make other teams waste energy and hero health. If you&rsquo;re short on heroes and dealing with a push, toss some beat up heroes into a garrison to force attackers to take attrition damage.</span>
+    </li>
+    <li class="c3 c16 li-bullet-0"><span class="c1">Use medkits on the strongest active heroes your alliance has to keep them attacking frequently or topped up defending a critical point. Players with strong heroes can put their heroes in garrisons and ask for others to heal them. </span>
+    </li>
+</ul>
+<p class="c0"><span class="c1"></span></p>
+<h3 class="c15" id="h.dkx5do5zv2va"><span class="c6">General Approach:</span></h3>
+<p class="c3"><span class="c1">The general approach is to think not in terms of individual tiles since the return on energy and hero health spent to capture + hold individual tiles depends on how long you can hold it, which depends on how much further you can push the front line. Instead think in terms of where the front line will be given you and your enemies&rsquo; activity + skill level and for how long these front lines will be maintained. </span>
+</p>
+<p class="c0"><span class="c1"></span></p>
+<p class="c3"><span class="c1">Everything behind the &ldquo;worst&rdquo; front line is &ldquo;safe&rdquo; and should be captured since it will provide lots of VP for the energy invested. Trivial examples are the sea shrines X1-X5 since even if an opponent gains access they likely won&rsquo;t waste energy capturing them since there is no cheap way to keep the enemy from capturing them back. Everything ahead of the &ldquo;best&rdquo; front line will be lost almost immediately, so is not worth capturing at all. Of course you will need to waste energy on this from time to time because you don&rsquo;t know what the enemy can/will push back on until you try.</span>
+</p>
+<h3 class="c15 c19" id="h.9uqq14fia07c"><span class="c6"></span></h3>
+<h3 class="c15" id="h.t5n951sfi3cm"><span class="c6">Opening</span></h3>
+<p class="c3"><span class="c1">The primary strategy in the early game is going to be capturing the starting island from the Atlanteans. As mentioned earlier this takes ~150 Atlantis Energy which is only 7-8 Atlantis Energy per person (assuming 20 members) so easily achievable within the first day. X7 -&gt; X14 -&gt; X15 -&gt; X6, X16 -&gt; X25 will get you the most bang for your buck early. You can then progress to X26, X24, and X27 to lock down the &ldquo;Royal Flank&rdquo; where your Royal Palace and half your Noble Houses are. This takes 51 Atlantis Energy so can be done basically immediately. If you&rsquo;re feeling spicy you can cross the water to your enemy&rsquo;s &ldquo;Opposing Flank&rdquo;, capture Y21,Y30 and Y29, Y22. Of course you&rsquo;ll want to get your own opposing flank locked down. So try to capture up to X29, X30. Better yet try to capture the enemy Y25 and Y25. </span>
+</p>
+<h3 class="c15" id="h.aa2r4cjwpcy7"><span class="c6">Early Game</span></h3>
+<p class="c3"><span class="c1">After securing as much of your island as you can you will be fighting on your Royal and Opposing flanks a lot. Roughly speaking the goal here is to keep control of your Royal Flank + island interior (i.e. gatehouses and X1,X2, X10,X11, X20, X21 optional) locked down. At the same time you want to capture someone else&rsquo;s royal flank, most likely the team across from your Opposing flank (i.e. the next team going counter-clockwise). If you can make more progress by capturing enemy teams&rsquo; Noble Houses, great!</span>
+</p>
+<h3 class="c15" id="h.oopspvytyu5f"><span class="c6">Midgame</span></h3>
+<p class="c3"><span class="c1">Once the triton towers open up on the central island you can path through the central island. At 600 VP per hour per site, claiming the 5 towers on your side is a 60% boost.</span>
+</p>
+<h3 class="c15" id="h.bxpufqg5rt8q"><span class="c6">Endgame</span></h3>
+<p class="c3"><span class="c1">The Poseidon Vaults open up with 3 days left in the event. At 1800 VP per hour each, they can quickly boost income but don&rsquo;t expect them to be able to close large leads. </span>
+</p>
+<h3 class="c15" id="h.rpg3uz47v83y"><span class="c6">Chokepoints</span></h3>
+<p class="c3"><span class="c1">Some key chokepoints exist on every island. Due to the way attrition works it&rsquo;s basically guaranteed that if an enemy team wants to control a tile they can claim it. It&rsquo;s the defender&rsquo;s job to make this as expensive or time-consuming as possible. It&rsquo;s the attacker&rsquo;s job to make this task cheap and timely. </span>
+</p>
+<p class="c0"><span class="c1"></span></p>
+<p class="c3"><span class="c1">The gatehouses. Each only provides access to 1 site on the island and only has 3 garrison slots. For defenders this makes them good targets for counter-attacks if the enemy doesn&rsquo;t advance quickly to take advantage of the battle shield benefits. This includes crossing the water to capture the enemy gatehouse just to force them to waste energy if they want to attack. Attackers should try to push through these quickly to the near-gatehouse sites which have more garrison slots (and so are easier to defend) and have access to more sites making it more likely to find a weak link.</span>
+</p>
+<p class="c0"><span class="c1"></span></p>
+<p class="c3"><span class="c1">The near-gatehouse sites. For a defender, sites X22, X23, and X24 should be strongly defended since they offer flexible access to the island interior. Counter-attacks, medkits, and repair-locking are useful here. If one of these falls, a strong effort should be made to get it back. For an attacker, one should use coordination to avoid defenders repair-locking the tile. So grab a buddy before attacking. One there, find the weakest link and punch it. Then play whackamole <br></span>
+</p>
+<p class="c0"><span class="c1"></span></p>
+</div>
+@code {
+    
+}

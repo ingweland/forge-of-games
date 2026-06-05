@@ -25,6 +25,13 @@ public class MainMenuService(NavigationManager navigationManager, IAssetUrlProvi
             },
             new()
             {
+                Href = FogUrlBuilder.PageRoutes.ATLANTIS,
+                ResourceKey = FogResource.Navigation_Atlantis,
+                Icon = GetIconString(assetUrlProvider.GetHohIconUrl("icon_flat_atlantis_shop")),
+                Match = NavLinkMatch.All,
+            },
+            new()
+            {
                 ResourceKey = FogResource.Navigation_CityLayouts,
                 Icon = GetIconString(assetUrlProvider.GetIconUrl("dashboard_24dp_FBE0C6_FILL0_wght400_GRAD0_opsz24",
                     ".svg")),

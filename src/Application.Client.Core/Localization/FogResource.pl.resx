@@ -1541,4 +1541,19 @@ Forge of Games nie jest powiązany ani oficjalnie związany z twórcami lub wyda
     <data name="CityStrategiesDashboard.GuidesMovedNotice" xml:space="preserve">
     <value>Przewodniki społeczności zostały przeniesione na dedykowaną stronę</value>
 </data>
+    <data name="Navigation.Atlantis" xml:space="preserve">
+    <value>Atlantyda</value>
+</data>
+    <data name="Atlantis.Title" xml:space="preserve">
+    <value>Bitwa o Atlantydę</value>
+</data>
+    <data name="Atlantis.PageTitle" xml:space="preserve">
+    <value>Bitwa o Atlantydę | Heroes of History | Forge of Games</value>
+</data>
+    <data name="Atlantis.Meta.Description" xml:space="preserve">
+    <value>Przewodnik i narzędzia do Bitwy o Atlantydę.</value>
+</data>
+    <data name="Atlantis.Meta.Keywords" xml:space="preserve">
+    <value>przewodnik Bitwa o Atlantydę, Heroes of History, przewodnik, narzędzia, bfa</value>
+</data>
 </root>

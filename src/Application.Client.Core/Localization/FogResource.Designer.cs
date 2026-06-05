@@ -303,6 +303,42 @@ namespace Ingweland.Fog.Application.Client.Core.Localization {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Battle for Atlantis guide and tools..
+        /// </summary>
+        public static string Atlantis_Meta_Description {
+            get {
+                return ResourceManager.GetString("Atlantis.Meta.Description", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Battle for Atlantis guide, Heroes of History, guide, tools, bfa.
+        /// </summary>
+        public static string Atlantis_Meta_Keywords {
+            get {
+                return ResourceManager.GetString("Atlantis.Meta.Keywords", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Battle for Atlantis | Heroes of History | Forge of Games.
+        /// </summary>
+        public static string Atlantis_PageTitle {
+            get {
+                return ResourceManager.GetString("Atlantis.PageTitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Battle for Atlantis.
+        /// </summary>
+        public static string Atlantis_Title {
+            get {
+                return ResourceManager.GetString("Atlantis.Title", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Hard.
         /// </summary>
         public static string Battle_Difficulty_Hard {
@@ -3008,6 +3044,15 @@ namespace Ingweland.Fog.Application.Client.Core.Localization {
         public static string Navigation_AnubisAwakening {
             get {
                 return ResourceManager.GetString("Navigation.AnubisAwakening", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Atlantis.
+        /// </summary>
+        public static string Navigation_Atlantis {
+            get {
+                return ResourceManager.GetString("Navigation.Atlantis", resourceCulture);
             }
         }
         

@@ -1,0 +1,46 @@
+.component-root {
+    max-width: 1200px;
+    align-self: center;
+    padding: 8px;
+}
+
+.component-root img {
+    display: block;
+    margin-inline: auto;
+    max-width: 100% !important;
+    height: auto !important;
+    width: auto !important;
+}
+
+/* Neutralize the inline-block image wrappers Google Docs generates */
+.component-root span[style*="display: inline-block"] {
+    max-width: 100% !important;
+    width: auto !important;
+    height: auto !important;
+}
+
+.component-root table {
+    max-width: 100% !important;
+    margin-left: 0 !important;
+    table-layout: fixed;
+    word-wrap: break-word;
+}
+
+.component-root table td,
+.component-root table th {
+    max-width: 100% !important;
+    width: auto !important;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+}
+
+@media (min-width: 575px) {
+    .component-root {
+        padding: 16px;
+    }
+
+    .component-root .c7 { margin-left: 18pt; }
+    .component-root .c16 { margin-left: 32pt; }
+    .component-root .c25 { margin-left: 12pt; }
+
+}

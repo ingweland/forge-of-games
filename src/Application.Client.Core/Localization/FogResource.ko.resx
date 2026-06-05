@@ -1512,4 +1512,19 @@
     <data name="CityStrategiesDashboard.GuidesMovedNotice" xml:space="preserve">
     <value>커뮤니티 가이드가 전용 페이지로 이동되었습니다</value>
 </data>
+    <data name="Navigation.Atlantis" xml:space="preserve">
+    <value>아틀란티스</value>
+</data>
+    <data name="Atlantis.Title" xml:space="preserve">
+    <value>아틀란티스 전투</value>
+</data>
+    <data name="Atlantis.PageTitle" xml:space="preserve">
+    <value>아틀란티스 전투 | Heroes of History | Forge of Games</value>
+</data>
+    <data name="Atlantis.Meta.Description" xml:space="preserve">
+    <value>아틀란티스 전투 가이드 및 도구.</value>
+</data>
+    <data name="Atlantis.Meta.Keywords" xml:space="preserve">
+    <value>아틀란티스 전투 가이드, Heroes of History, 가이드, 도구, bfa</value>
+</data>
 </root>

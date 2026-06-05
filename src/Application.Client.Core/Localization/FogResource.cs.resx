@@ -1532,4 +1532,19 @@ Forge of Games není přidružený ani oficiálně spojený s tvůrci nebo vydav
     <data name="CityStrategiesDashboard.GuidesMovedNotice" xml:space="preserve">
         <value>Community guides have been moved to a dedicated page</value>
     </data>
+    <data name="Navigation.Atlantis" xml:space="preserve">
+    <value>Atlantida</value>
+</data>
+    <data name="Atlantis.Title" xml:space="preserve">
+    <value>Bitva o Atlantidu</value>
+</data>
+    <data name="Atlantis.PageTitle" xml:space="preserve">
+    <value>Bitva o Atlantidu | Heroes of History | Forge of Games</value>
+</data>
+    <data name="Atlantis.Meta.Description" xml:space="preserve">
+    <value>Průvodce a nástroje pro Bitvu o Atlantidu.</value>
+</data>
+    <data name="Atlantis.Meta.Keywords" xml:space="preserve">
+    <value>průvodce Bitvou o Atlantidu, Heroes of History, průvodce, nástroje, bfa</value>
+</data>
 </root>

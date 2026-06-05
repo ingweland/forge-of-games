@@ -67,6 +67,19 @@ public class PageMetadataService(NavigationManager navigationManager, IStringLoc
                 HelpPagePath = FogUrlBuilder.PageRoutes.HELP_COMMAND_CENTER_PATH,
             };
         }
+        
+        if (currentPageAbsolutePath.StartsWith(FogUrlBuilder.PageRoutes.ATLANTIS))
+        {
+            return new PageMetadata
+            {
+                PageTitle = localizer[FogResource.Atlantis_PageTitle],
+                Description = localizer[FogResource.Atlantis_Meta_Description],
+                Keywords = localizer[FogResource.Atlantis_Meta_Keywords],
+                Title = localizer[FogResource.Atlantis_Title],
+                CurrentHomePath = FogUrlBuilder.PageRoutes.ATLANTIS,
+                HelpPagePath = FogUrlBuilder.PageRoutes.BASE_HELP_PATH,
+            };
+        }
 
         if (currentPageAbsolutePath.StartsWith(FogUrlBuilder.PageRoutes.BATTLE_LOG_PATH))
         {

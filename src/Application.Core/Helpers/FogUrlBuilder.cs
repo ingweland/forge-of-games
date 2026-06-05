@@ -202,6 +202,7 @@ public static class FogUrlBuilder
         public const string CITY_GUIDE_CONVERTER_PATH = "/city-guide-converter";
 
         public const string ALLIED_CULTURE_CITY_GUIDES = "/allied-culture-city-guides";
+        public const string ATLANTIS = "/battle-for-atlantis";
 
         public static string Player(int id)
         {

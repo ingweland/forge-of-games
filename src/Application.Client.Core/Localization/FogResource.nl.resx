@@ -1552,4 +1552,19 @@ Forge of Games is niet verbonden met of officieel gelieerd aan de makers of uitg
     <data name="CityStrategiesDashboard.GuidesMovedNotice" xml:space="preserve">
     <value>Communitygidsen zijn verplaatst naar een speciale pagina</value>
 </data>
+    <data name="Navigation.Atlantis" xml:space="preserve">
+    <value>Atlantis</value>
+</data>
+    <data name="Atlantis.Title" xml:space="preserve">
+    <value>Gevecht om Atlantis</value>
+</data>
+    <data name="Atlantis.PageTitle" xml:space="preserve">
+    <value>Gevecht om Atlantis | Heroes of History | Forge of Games</value>
+</data>
+    <data name="Atlantis.Meta.Description" xml:space="preserve">
+    <value>Gids en tools voor Gevecht om Atlantis.</value>
+</data>
+    <data name="Atlantis.Meta.Keywords" xml:space="preserve">
+    <value>Gevecht om Atlantis gids, Heroes of History, gids, tools, bfa</value>
+</data>
 </root>
