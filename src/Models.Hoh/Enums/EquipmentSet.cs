@@ -47,4 +47,6 @@ public enum EquipmentSet
     Ronin,
     Voyager,
     Enchantress,
+    Berserker,
+    Warden,
 }
