@@ -66,6 +66,13 @@ public class HohHelperResponseDtoToTablePkConverter(
                                 InGameDataProcessingServiceType.WakeupAlliance);
                             break;
                         }
+
+                        case "woa":
+                        {
+                            yield return (collectionCategoryId, tablePartitionKeyProvider.Woa(worldId, date),
+                                InGameDataProcessingServiceType.Undefined);
+                            break;
+                        }
                     }
                 }
 
@@ -98,6 +105,13 @@ public class HohHelperResponseDtoToTablePkConverter(
             {
                 yield return (inGameData.CollectionCategoryIds.First(),
                     tablePartitionKeyProvider.BattleStart(worldId, date), InGameDataProcessingServiceType.Undefined);
+                break;
+            }
+
+            case "game/woa/get-player-statistics":
+            {
+                yield return (inGameData.CollectionCategoryIds.First(),
+                    tablePartitionKeyProvider.WoaPlayerStats(worldId, date), InGameDataProcessingServiceType.Undefined);
                 break;
             }
         }

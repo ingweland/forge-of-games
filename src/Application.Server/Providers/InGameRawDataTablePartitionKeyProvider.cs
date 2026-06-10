@@ -49,6 +49,16 @@ public class InGameRawDataTablePartitionKeyProvider
         return WithWorldAndDate("alliance", worldId, date);
     }
 
+    public string Woa(string worldId, DateOnly date)
+    {
+        return WithWorldAndDate("woa-wakeup", worldId, date);
+    }
+
+    public string WoaPlayerStats(string worldId, DateOnly date)
+    {
+        return WithWorldAndDate("woa-player-stats", worldId, date);
+    }
+
     private string WithWorldAndDate(string src, string worldId, DateOnly date)
     {
         return $"{src}_{worldId}_{date.ToString("O")}";

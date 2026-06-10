@@ -5,15 +5,16 @@ namespace Ingweland.Fog.Functions.Validators;
 public class EndpointValidator
 {
     private static readonly IReadOnlyDictionary<string, HashSet<string>> GameEndpointsToCollectionCategoryIdsMap =
-        new Dictionary<string, HashSet<string>>()
+        new Dictionary<string, HashSet<string>>
         {
-            {"game/wakeup", ["alliance", "leaderboards"]},
+            {"game/wakeup", ["alliance", "leaderboards", "woa"]},
             {"game/ranking/player", ["leaderboards"]},
             {"game/ranking/alliance", ["leaderboards"]},
             {"game/pvp/get-battle-history", ["pvpBattles"]},
             {"game/battle/hero/stats", ["battleStats"]},
             {"game/battle/hero/complete-wave", ["battles"]},
             {"game/battle/hero/start", ["battles"]},
+            {"game/woa/get-player-statistics", ["woa"]},
         };
 
     public bool ValidateEndpoint(string responseUrl, IEnumerable<string> collectionCategoryIds, out string errorMessage)
