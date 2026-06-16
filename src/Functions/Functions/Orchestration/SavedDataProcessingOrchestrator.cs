@@ -10,8 +10,8 @@ public class SavedDataProcessingOrchestrator : SubOrchestratorBase
     protected override IReadOnlyDictionary<string, ActivityConfiguration> Activities =>
         new ReadOnlyDictionary<string, ActivityConfiguration>(new Dictionary<string, ActivityConfiguration>
         {
-            {nameof(PlayerDataProcessor), new ActivityConfiguration(6)},
-            {nameof(AllianceDataProcessor), new ActivityConfiguration(6)},
+            {nameof(PlayerDataProcessor), new ActivityConfiguration(12)},
+            {nameof(AllianceDataProcessor), new ActivityConfiguration(12)},
             {nameof(BattlesProcessor), new ActivityConfiguration(1)},
         });
 

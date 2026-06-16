@@ -24,7 +24,7 @@ public abstract class AutoDataProcessorBase(
     DatabaseWarmUpService databaseWarmUpService) : FunctionBase(gameWorldsProvider, inGameRawDataTableRepository,
     inGameDataParsingService, inGameRawDataTablePartitionKeyProvider, logger)
 {
-    private const int WAKEUP_BATCH_SIZE = 200;
+    private const int WAKEUP_BATCH_SIZE = 100;
 
     private static readonly HashSet<PlayerRankingType> PlayerRankingTypes =
         [PlayerRankingType.ResearchPoints, PlayerRankingType.TotalHeroPower];
