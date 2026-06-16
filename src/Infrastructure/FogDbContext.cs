@@ -51,6 +51,7 @@ public class FogDbContext : DbContext, IFogDbContext
     public DbSet<ProfileSquadDataEntity> ProfileSquadDataItems { get; set; }
     public DbSet<EquipmentInsightsEntity> EquipmentInsights { get; set; }
     public DbSet<CommunityCityStrategyEntity> CommunityCityStrategies { get; set; }
+    public DbSet<WoaPlayerStatsEntity> WoaPlayerStats { get; set; }
 
     protected override void OnModelCreating(ModelBuilder builder)
     {
@@ -96,5 +97,6 @@ public class FogDbContext : DbContext, IFogDbContext
         builder.ApplyConfiguration(new CommunityCityStrategyEntityTypeConfiguration());
         builder.ApplyConfiguration(new CommunityCityGuideEntityTypeConfiguration());
         builder.ApplyConfiguration(new PlayerAthRankingEntityTypeConfiguration());
+        builder.ApplyConfiguration(new WoaPlayerStatsEntityTypeConfiguration());
     }
 }

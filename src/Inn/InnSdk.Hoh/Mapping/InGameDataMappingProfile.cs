@@ -14,6 +14,7 @@ using Ingweland.Fog.Models.Hoh.Entities.Ranking;
 using Ingweland.Fog.Models.Hoh.Entities.Relics;
 using Ingweland.Fog.Models.Hoh.Entities.Research;
 using Ingweland.Fog.Models.Hoh.Entities.Units;
+using Ingweland.Fog.Models.Hoh.Entities.Woa;
 using Ingweland.Fog.Models.Hoh.Enums;
 using Ingweland.Fog.Shared.Helpers;
 using Enum = System.Enum;
@@ -265,5 +266,8 @@ public class InGameDataMappingProfile : Profile
                 opt.PreCondition(src => !string.IsNullOrWhiteSpace(src.EquippedOnHeroDefinitionId));
                 opt.MapFrom(src => HohStringParser.GetConcreteId(src.EquippedOnHeroDefinitionId));
             });
+
+        CreateMap<WoAPlayerStatsDTO, WoaPlayerStats>()
+            .ForMember(dest => dest.ContributionPointsGainedAt, opt => opt.MapFrom(src => src.ContributionPointsGainedAt.ToDateTime()));
     }
 }

@@ -1,0 +1,7 @@
+syntax = "proto3";
+
+option csharp_namespace = "Ingweland.Fog.Inn.Models.Hoh";
+
+message WoAGetPlayerStatsRequest {
+  int32 event_id = 1;
+}

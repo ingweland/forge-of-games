@@ -33,5 +33,6 @@ public interface IFogDbContext
     DbSet<RelicInsightsEntity> RelicInsights { get; set; }
     DbSet<SharedSubmissionIdEntity> SharedSubmissionIds { get; set; }
     DbSet<TopHeroInsightsEntity> TopHeroInsights { get; set; }
+    DbSet<WoaPlayerStatsEntity> WoaPlayerStats { get; set; }
     Task<int> SaveChangesAsync(CancellationToken cancellationToken = default);
 }
