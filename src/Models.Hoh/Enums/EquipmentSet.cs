@@ -49,4 +49,5 @@ public enum EquipmentSet
     Enchantress,
     Berserker,
     Warden,
+    HornedKing,
 }

@@ -16,4 +16,5 @@ public enum UnitType
     Ally,
     Ghost,
     AllyNaya,
+    AllyZhengYiSao,
 }
