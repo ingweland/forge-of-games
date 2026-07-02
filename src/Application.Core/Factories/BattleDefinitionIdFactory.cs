@@ -50,7 +50,7 @@ public class BattleDefinitionIdFactory : IBattleDefinitionIdFactory
     private string CreateBattleEventId(BattleSearchRequest request, StringBuilder sb)
     {
         sb.Append(request.BattleEventRegion);
-        if (request.BattleEventRegion == RegionId.AncientEgyptDungeon)
+        if (request.BattleType == BattleType.BattleEvent)
         {
             sb.Append("_1");
         }

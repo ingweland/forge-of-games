@@ -21,4 +21,5 @@ public enum ContinentId
     SpartasLastStand,
     FallOfTroy,
     AncientEgyptDungeon,
+    ScyllaDungeon,
 }

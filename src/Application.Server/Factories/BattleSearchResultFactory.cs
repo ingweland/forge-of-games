@@ -89,7 +89,7 @@ public class BattleSearchResultFactory(IMapper mapper) : IBattleSearchResultFact
         // Some units are located in a Hero slot. However, they are not regular player's heroes.
         if (queryString == "unit.Unit_SpartasLastStand_Leonidas_1" ||
             queryString.Contains("Unit_FallOfTroy_Barricade") || queryString.Contains("Unit_FallOfTroy_Gate") ||
-            queryString.Contains("Unit_Anubis_Boss"))
+            queryString.Contains("Unit_Anubis_Boss") || queryString.Contains("Unit_Scylla_Boss"))
         {
             return false;
         }

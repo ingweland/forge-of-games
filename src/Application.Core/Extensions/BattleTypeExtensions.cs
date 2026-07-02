@@ -45,7 +45,8 @@ public static class BattleTypeExtensions
             return BattleType.Pvp;
         }
 
-        if (lowerSrc.StartsWith(nameof(RegionId.AncientEgyptDungeon), StringComparison.InvariantCultureIgnoreCase))
+        if (lowerSrc.StartsWith(nameof(RegionId.AncientEgyptDungeon), StringComparison.InvariantCultureIgnoreCase) ||
+            lowerSrc.StartsWith(nameof(RegionId.ScyllaDungeon), StringComparison.InvariantCultureIgnoreCase))
         {
             return BattleType.BattleEvent;
         }
