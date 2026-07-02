@@ -88,25 +88,43 @@ public class CampaignService(
 
     public async Task<IReadOnlyCollection<BattleEventBasicDto>> GetBattleEventsBasicDataAsync()
     {
-        var region = (await hohCoreDataRepository.GetWorldAsync(WorldId.AncientEgyptDungeon))?.Continents
+        var result = new List<BattleEventBasicDto>();
+        var ancientEgyptRegion = (await hohCoreDataRepository.GetWorldAsync(WorldId.AncientEgyptDungeon))?.Continents
             .SelectMany(c => c.Regions)
             .FirstOrDefault(r => r.Id == RegionId.AncientEgyptDungeon);
-        if (region == null)
+        if (ancientEgyptRegion != null)
         {
-            logger.LogWarning($"Failed to get region by RegionId: {RegionId.AncientEgyptDungeon}");
-            return [];
-        }
-
-        var result = new List<BattleEventBasicDto>
-        {
-            new()
+            result.Add(new BattleEventBasicDto
             {
                 Id = RegionId.AncientEgyptDungeon,
-                EncounterCount = region.Encounters.Count,
-                EncounterStartIndex = region.Encounters.MinBy(x => x.Index)!.Index,
+                EncounterCount = ancientEgyptRegion.Encounters.Count,
+                EncounterStartIndex = ancientEgyptRegion.Encounters.MinBy(x => x.Index)!.Index,
                 Name = gameLocalizationService.GetBattleEventName("BattleEvent_AncientEgyptEvent_AnubisDungeon"),
-            },
-        };
+            });
+        }
+        else
+        {
+            logger.LogWarning($"Failed to get region by RegionId: {RegionId.AncientEgyptDungeon}");
+        }
+
+        var scyllaDungeonRegion = (await hohCoreDataRepository.GetWorldAsync(WorldId.ScyllaDungeon))?.Continents
+            .SelectMany(c => c.Regions)
+            .FirstOrDefault(r => r.Id == RegionId.ScyllaDungeon);
+        if (scyllaDungeonRegion != null)
+        {
+            result.Add(new BattleEventBasicDto
+            {
+                Id = RegionId.ScyllaDungeon,
+                EncounterCount = scyllaDungeonRegion.Encounters.Count,
+                EncounterStartIndex = scyllaDungeonRegion.Encounters.MinBy(x => x.Index)!.Index,
+                Name = gameLocalizationService.GetBattleEventName("BattleEvent_OdysseyEvent_ScyllaDungeon"),
+            });
+        }
+        else
+        {
+            logger.LogWarning($"Failed to get region by RegionId: {RegionId.ScyllaDungeon}");
+        }
+
         return result;
     }
 

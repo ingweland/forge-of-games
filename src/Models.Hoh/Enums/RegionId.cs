@@ -65,6 +65,7 @@ public enum RegionId
     SpartasLastStand,
     FallOfTroy,
     AncientEgyptDungeon,
+    ScyllaDungeon,
 }
 
 public enum CampaignRegionGroup
