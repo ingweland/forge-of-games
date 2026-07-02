@@ -5,6 +5,7 @@ using Ingweland.Fog.Application.Client.Web.Providers.Interfaces;
 using Ingweland.Fog.Application.Client.Web.ViewModels.Hoh.Battle;
 using Ingweland.Fog.Application.Core.Calculators.Interfaces;
 using Ingweland.Fog.Application.Core.Helpers;
+using Ingweland.Fog.Application.Core.Interfaces;
 using Ingweland.Fog.Dtos.Hoh.Units;
 using Ingweland.Fog.Models.Fog.Entities;
 using Ingweland.Fog.Models.Hoh.Entities.Battle;
@@ -17,7 +18,8 @@ namespace Ingweland.Fog.Application.Client.Web.Factories;
 public class BattleWaveSquadViewModelFactory(
     IAssetUrlProvider assetUrlProvider,
     IUnitPowerCalculator unitPowerCalculator,
-    IStringLocalizer<FogResource> loc) : IBattleWaveSquadViewModelFactory
+    IStringLocalizer<FogResource> loc,
+    IHeroValidator heroValidator) : IBattleWaveSquadViewModelFactory
 {
     public IEnumerable<BattleWaveSquadViewModel> Create(IReadOnlyCollection<BattleWaveSquad> squads,
         IReadOnlyCollection<UnitDto> units, IReadOnlyCollection<HeroDto> heroes)
@@ -84,7 +86,7 @@ public class BattleWaveSquadViewModelFactory(
         }
 
         //TODO: get concrete star class
-        if (squad.Hero != null && IsValidHero(squad.Hero.UnitId))
+        if (squad.Hero != null && heroValidator.IsValidHero(squad.Hero.UnitId))
         {
             var hero = heroes.First(u => u.Unit.Id == squad.Hero.UnitId);
             // TODO: start using squad.Hero.AbilityLevel once they fix the data
@@ -115,16 +117,5 @@ public class BattleWaveSquadViewModelFactory(
         };
     }
 
-    private static bool IsValidHero(string queryString)
-    {
-        // Some units are located in a Hero slot. However, they are not regular player's heroes.
-        if (queryString == "unit.Unit_SpartasLastStand_Leonidas_1" ||
-            queryString.Contains("Unit_FallOfTroy_Barricade") || queryString.Contains("Unit_FallOfTroy_Gate") ||
-            queryString.Contains("Unit_Anubis_Boss"))
-        {
-            return false;
-        }
-
-        return true;
-    }
+    
 }

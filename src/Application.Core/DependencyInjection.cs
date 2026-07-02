@@ -15,6 +15,7 @@ using Ingweland.Fog.Application.Core.Services;
 using Ingweland.Fog.Application.Core.Services.Hoh;
 using Ingweland.Fog.Application.Core.Services.Hoh.Abstractions;
 using Ingweland.Fog.Application.Core.Utils;
+using Ingweland.Fog.Application.Core.Validation;
 using Microsoft.Extensions.DependencyInjection;
 
 namespace Ingweland.Fog.Application.Core;
@@ -35,6 +36,7 @@ public static class DependencyInjection
         services.AddSingleton<IHohGameLocalizationDataRepository, HohGameLocalizationDataRepository>();
         services.AddSingleton<IHohDataCacheKeyFactory, HohDataCacheKeyFactory>();
         services.AddSingleton<InitCityConfigs>();
+        services.AddSingleton<IHeroValidator, HeroValidator>();
 
         services.AddScoped<ICityPlannerDataService, CityPlannerDataService>();
         services.AddScoped<ICityMapStateCoreFactory, CityMapStateCoreFactory>();

@@ -37,6 +37,7 @@ public class BattleSearchRequestFactory(
     private readonly Dictionary<RegionId, string> _battleEventAbbreviations = new()
     {
         {RegionId.AncientEgyptDungeon, "Anubis"},
+        {RegionId.ScyllaDungeon, "Scylla"},
     };
 
     private readonly Dictionary<RegionId, string> _historicBattlesAbbreviations = new()

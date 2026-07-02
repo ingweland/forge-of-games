@@ -1,6 +1,7 @@
 using System.Text.Json;
 using System.Text.Json.Serialization;
 using AutoMapper;
+using Ingweland.Fog.Application.Core.Interfaces;
 using Ingweland.Fog.Application.Server.Factories.Interfaces;
 using Ingweland.Fog.Dtos.Hoh.Battle;
 using Ingweland.Fog.Models.Fog.Entities;
@@ -9,7 +10,7 @@ using Ingweland.Fog.Models.Hoh.Enums;
 
 namespace Ingweland.Fog.Application.Server.Factories;
 
-public class BattleSearchResultFactory(IMapper mapper) : IBattleSearchResultFactory
+public class BattleSearchResultFactory(IMapper mapper, IHeroValidator heroValidator) : IBattleSearchResultFactory
 {
     private static readonly JsonSerializerOptions JsonSerializerOptions = new()
     {
@@ -59,13 +60,13 @@ public class BattleSearchResultFactory(IMapper mapper) : IBattleSearchResultFact
             JsonSerializerOptions) ?? [];
 
         var playerBattleUnitDtos = playerSquads
-            .Where(src => src.Hero != null && IsValidHero(src.Hero.Properties.UnitId))
+            .Where(src => src.Hero != null && heroValidator.IsValidHero(src.Hero.Properties.UnitId))
             .OrderBy(src => src.BattlefieldSlot)
             .Select(mapper.Map<BattleSquadDto>)
             .ToList();
 
         var enemyBattleUnitDtos = enemySquads?
-            .Where(src => src.Hero != null && IsValidHero(src.Hero.Properties.UnitId))
+            .Where(src => src.Hero != null && heroValidator.IsValidHero(src.Hero.Properties.UnitId))
             .OrderBy(src => src.BattlefieldSlot)
             .Select(mapper.Map<BattleSquadDto>)
             .ToList() ?? [];
@@ -82,18 +83,5 @@ public class BattleSearchResultFactory(IMapper mapper) : IBattleSearchResultFact
             BattleType = entity.BattleType,
             PerformedAt = entity.PerformedAt,
         };
-    }
-
-    private static bool IsValidHero(string queryString)
-    {
-        // Some units are located in a Hero slot. However, they are not regular player's heroes.
-        if (queryString == "unit.Unit_SpartasLastStand_Leonidas_1" ||
-            queryString.Contains("Unit_FallOfTroy_Barricade") || queryString.Contains("Unit_FallOfTroy_Gate") ||
-            queryString.Contains("Unit_Anubis_Boss") || queryString.Contains("Unit_Scylla_Boss"))
-        {
-            return false;
-        }
-
-        return true;
     }
 }
