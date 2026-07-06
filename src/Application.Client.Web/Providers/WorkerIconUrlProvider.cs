@@ -33,6 +33,11 @@ public class WorkerIconUrlProvider(IAssetUrlProvider assetUrlProvider) : IWorker
                 id = "icon_workers_city_arabia";
                 break;
             }
+            case CityId.Ithaka:
+            {
+                id = workerType == WorkerType.Fisher ? "icon_workers_city_ithaka" : "workers_city_ithaka";
+                break;
+            }
         }
 
         return assetUrlProvider.GetHohIconUrl(id);

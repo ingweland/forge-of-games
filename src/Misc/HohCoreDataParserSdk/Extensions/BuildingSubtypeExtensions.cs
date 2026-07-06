@@ -104,6 +104,14 @@ public static class BuildingSubtypeExtensions
             "presetFountain" => BuildingGroup.PresetFountain,
             "presetOasis" => BuildingGroup.PresetOasis,
             "tutorialCityHall" => BuildingGroup.TutorialCityHall,
+            "premiumPlantation" => BuildingGroup.PremiumPlantation,
+            "averageMasticGrove" => BuildingGroup.AverageMasticGrove,
+            "averageVineyard" => BuildingGroup.AverageVineyard,
+            "oilPress" => BuildingGroup.OilPress,
+            "vintner" => BuildingGroup.Vintner,
+            "fisherHome" => BuildingGroup.FisherHome,
+            "dryingRacks" => BuildingGroup.DryingRacks,
+            "averageOliveGrove" => BuildingGroup.AverageOliveGrove,
             _ => throw new Exception($"Cannot map building subtype: {value}"),
         };
     }

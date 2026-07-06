@@ -105,6 +105,7 @@ public class StatsProcessor(
             case BuildingType.GoldMine:
             case BuildingType.Merchant:
             case BuildingType.CamelFarm:
+            case BuildingType.Plantation:
             {
                 UpdateHappiness(target);
                 var modifiers = GetWonderModifiers();
@@ -141,6 +142,7 @@ public class StatsProcessor(
             case BuildingType.RiceFarm:
             case BuildingType.FishingPier:
             case BuildingType.Beehive:
+            case BuildingType.Pier:
             {
                 var modifiers = GetWonderModifiers();
                 if (modifiers == null)

@@ -17,4 +17,5 @@ public enum CityId
     Arabia_NoriasOfHama,
     Arabia_Petra,
     AncientEgyptEvent,
+    Ithaka,
 }

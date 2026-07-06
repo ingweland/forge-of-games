@@ -33,4 +33,5 @@ public enum WonderId
     Arabia_NoriasOfHama,
     Arabia_Petra,
     AncientEgyptEvent_AnubisTemple,
+    Ithaka_PenelopesHearth,
 }

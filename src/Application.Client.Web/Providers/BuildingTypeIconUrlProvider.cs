@@ -29,6 +29,8 @@ public class BuildingTypeIconUrlProvider(IAssetUrlProvider assetUrlProvider) : I
             BuildingType.Runestone => "",
             BuildingType.Special => "icon_flat_special",
             BuildingType.Workshop => "icon_flat_workshop",
+            BuildingType.Plantation => "icon_flat_plantation",
+            BuildingType.Pier => "icon_flat_pier",
             _ => string.Empty,
         };
 

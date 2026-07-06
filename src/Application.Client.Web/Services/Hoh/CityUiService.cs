@@ -25,7 +25,7 @@ public class CityUiService(
         var cityIds = new List<CityId>
         {
             CityId.Capital, CityId.China, CityId.Egypt, CityId.Vikings, CityId.Mayas_Tikal, CityId.Arabia_Petra,
-            CityId.AncientEgyptEvent,
+            CityId.AncientEgyptEvent, CityId.Ithaka,
         };
         var result = new List<CityBuildingGroupsViewModel>();
         foreach (var cityId in cityIds)

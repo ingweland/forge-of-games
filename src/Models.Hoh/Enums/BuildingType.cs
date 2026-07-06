@@ -29,4 +29,6 @@ public enum BuildingType
     Runestone,
     Special,
     Workshop,
+    Plantation,
+    Pier,
 }

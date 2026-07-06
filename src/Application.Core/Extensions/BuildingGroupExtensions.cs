@@ -104,6 +104,14 @@ public static class BuildingGroupExtensions
             BuildingGroup.PresetFountain => "presetFountain",
             BuildingGroup.PresetOasis => "presetOasis",
             BuildingGroup.TutorialCityHall => "tutorialCityHall",
+            BuildingGroup.PremiumPlantation => "premiumPlantation",
+            BuildingGroup.AverageMasticGrove => "averageMasticGrove",
+            BuildingGroup.AverageVineyard => "averageVineyard",
+            BuildingGroup.OilPress => "oilPress",
+            BuildingGroup.Vintner => "vintner",
+            BuildingGroup.FisherHome => "fisherHome",
+            BuildingGroup.DryingRacks => "dryingRacks",
+            BuildingGroup.AverageOliveGrove => "averageOliveGrove",
             _ => string.Empty,
         };
     }

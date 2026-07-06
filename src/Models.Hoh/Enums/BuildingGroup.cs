@@ -102,4 +102,12 @@ public enum BuildingGroup
     PresetFountain,
     PresetOasis,
     TutorialCityHall,
+    PremiumPlantation,
+    AverageMasticGrove,
+    AverageVineyard,
+    OilPress,
+    Vintner,
+    FisherHome,
+    DryingRacks,
+    AverageOliveGrove,
 }

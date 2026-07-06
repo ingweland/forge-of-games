@@ -441,6 +441,17 @@ public class InitCityConfigs
                     IsLocked = true,
                 },
             ],
+            nameof(WonderId.Ithaka_PenelopesHearth) =>
+            [
+                new HohCityMapEntity
+                {
+                    Id = 0,
+                    CityEntityId = "Building_Ithaka_City_CityHall_1",
+                    Level = 1,
+                    X = 19,
+                    Y = -51,
+                },
+            ],
             _ => [],
         };
     }
@@ -527,6 +538,13 @@ public class InitCityConfigs
                 "Expansion_AncientEgypt_Event_5", "Expansion_AncientEgypt_Event_6",
                 "Expansion_AncientEgypt_Event_7", "Expansion_AncientEgypt_Event_8",
                 "Expansion_AncientEgypt_Event_9",
+            ],
+            CityId.Ithaka =>
+            [
+                "Expansion_Ithaka_1", "Expansion_Ithaka_2", "Expansion_Ithaka_3", "Expansion_Ithaka_4",
+                "Expansion_Ithaka_5", "Expansion_Ithaka_6", "Expansion_Ithaka_7", "Expansion_Ithaka_8",
+                "Expansion_Ithaka_9", "Expansion_Ithaka_10", "Expansion_Ithaka_11", "Expansion_Ithaka_12",
+                "Expansion_Ithaka_13", "Expansion_Ithaka_14",
             ],
             _ => [],
         };

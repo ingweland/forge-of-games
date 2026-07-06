@@ -211,6 +211,7 @@ public class DefaultCityMapEntityStyle : ICityMapEntityStyle
             case BuildingType.Beehive:
             case BuildingType.RiceFarm:
             case BuildingType.CamelFarm:
+            case BuildingType.Plantation:
                 return SKColor.Parse("#CFE895");
 
             case BuildingType.Workshop:
@@ -221,6 +222,7 @@ public class DefaultCityMapEntityStyle : ICityMapEntityStyle
             case BuildingType.GoldMine:
             case BuildingType.PapyrusField:
             case BuildingType.FishingPier:
+            case BuildingType.Pier:
                 return SKColor.Parse("#E8B995");
 
             default:

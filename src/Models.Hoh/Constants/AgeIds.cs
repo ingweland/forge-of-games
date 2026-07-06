@@ -23,4 +23,5 @@ public class AgeIds
     public const string MAYAS = "Mayas";
     public const string ARABIA = "Arabia";
     public const string ANCIENT_EGYPT_EVENT = "AncientEgyptEvent";
+    public const string ITHAKA = "Ithaka";
 }

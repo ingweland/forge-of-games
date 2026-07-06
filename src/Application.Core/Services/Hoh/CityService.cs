@@ -28,7 +28,8 @@ public class CityService(
             BuildingType.CultureSite, BuildingType.Special, BuildingType.Beehive, BuildingType.Irrigation,
             BuildingType.Merchant, BuildingType.ExtractionPoint, BuildingType.FishingPier, BuildingType.GoldMine,
             BuildingType.PapyrusField, BuildingType.RiceFarm, BuildingType.Aviary, BuildingType.Quarry,
-            BuildingType.RitualSite, BuildingType.CamelFarm, BuildingType.PresetIrrigation,
+            BuildingType.RitualSite, BuildingType.CamelFarm, BuildingType.PresetIrrigation, BuildingType.Plantation,
+            BuildingType.Pier,
         };
         var buildings = await hohCoreDataRepository.GetBuildingsAsync(cityId);
         var categories = buildings.Where(b => types.Contains(b.Type)).DistinctBy(b => b.Group).GroupBy(b => b.Type);
@@ -163,6 +164,14 @@ public class CityService(
                         await hohCoreDataRepository.GetWonderAsync(WonderId.AncientEgyptEvent_AnubisTemple)),
                 }
             },
+            {
+                CityId.Ithaka,
+                new List<WonderBasicDto>
+                {
+                    mapper.Map<WonderBasicDto>(
+                        await hohCoreDataRepository.GetWonderAsync(WonderId.Ithaka_PenelopesHearth)),
+                }
+            },
         };
     }
 
@@ -185,7 +194,7 @@ public class CityService(
         var cityIds = new List<CityId>
         {
             CityId.Capital, CityId.China, CityId.Egypt, CityId.Vikings, CityId.Mayas_Tikal.ToDefaultTechnologyCity(),
-            CityId.Arabia_Petra.ToDefaultTechnologyCity(), CityId.AncientEgyptEvent,
+            CityId.Arabia_Petra.ToDefaultTechnologyCity(), CityId.AncientEgyptEvent, CityId.Ithaka,
         };
         return Task.FromResult(mapper.Map<IReadOnlyCollection<CityDto>>(cityIds));
     }

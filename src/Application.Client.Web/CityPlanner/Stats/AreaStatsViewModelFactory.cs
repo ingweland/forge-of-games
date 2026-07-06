@@ -27,7 +27,7 @@ public class AreaStatsViewModelFactory(
         foreach (var kvp in stats.AreasByType)
         {
             if (kvp.Key is BuildingType.Home or BuildingType.Farm or BuildingType.Barracks or BuildingType.Workshop
-                or BuildingType.CultureSite)
+                or BuildingType.CultureSite or BuildingType.Plantation)
             {
                 areasByType.Add(new IconLabelItemViewModel
                 {

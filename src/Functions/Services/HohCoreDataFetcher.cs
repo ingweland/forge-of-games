@@ -31,7 +31,7 @@ public class HohCoreDataFetcher(
     private static readonly HashSet<string> StartupFileNames =
     [
         "startup_china-maya.bin", "startup_maya-egypt.bin", "startup_egypt-vikings.bin",
-        "startup_ancientEgypt-arabia-vikings.bin",
+        "startup_ancientEgypt-arabia-vikings.bin", "startup_ithaka.bin",
     ];
 
     private readonly GameWorldConfig _betaWorldConfig = new("zz", 1, "beta");

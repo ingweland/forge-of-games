@@ -6,4 +6,5 @@ enum WorkerType {
   WorkerType_UNDEFINED = 0;
   WorkerType_PRIEST_MAYA = 1;
   WorkerType_SAILOR_VIKINGS = 2;
+  WorkerType_FISHER = 3;
 }

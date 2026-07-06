@@ -40,6 +40,7 @@ public class CityPlannerDataFactory(
         var mayaWonderIds = CityId.Mayas_Tikal.GetWonders();
         var arabiaWonderIds = CityId.Arabia_Petra.GetWonders();
         var ancientEgyptWonderIds = CityId.AncientEgyptEvent.GetWonders();
+        var ithakaWonderIds = CityId.Ithaka.GetWonders();
         return
         [
             new NewCityDialogItemDto
@@ -89,6 +90,13 @@ public class CityPlannerDataFactory(
                 CityId = CityId.AncientEgyptEvent,
                 CityName = gameLocalizationService.GetCityName(CityId.AncientEgyptEvent),
                 Wonders = wonders.Where(w => ancientEgyptWonderIds.Contains(w.Id)).Select(wonderDtoFactory.Create)
+                    .ToList(),
+            },
+            new NewCityDialogItemDto
+            {
+                CityId = CityId.Ithaka,
+                CityName = gameLocalizationService.GetCityName(CityId.Ithaka),
+                Wonders = wonders.Where(w => ithakaWonderIds.Contains(w.Id)).Select(wonderDtoFactory.Create)
                     .ToList(),
             },
         ];

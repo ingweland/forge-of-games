@@ -31,6 +31,8 @@ public static class BuildingTypeExtensions
             BuildingType.Aviary => "aviary",
             BuildingType.Quarry => "quarry",
             BuildingType.RitualSite => "ritualSite",
+            BuildingType.Plantation => "plantation",
+            BuildingType.Pier => "pier",
             _ => string.Empty,
         };
     }
