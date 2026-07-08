@@ -65,7 +65,7 @@ public class DefaultDomainRestrictionMiddleware : IDisposable
                 return;
             }
 
-            context.Response.Redirect(MAIN_WEBSITE);
+            context.Response.Redirect(MAIN_WEBSITE, true);
             return;
         }
 
