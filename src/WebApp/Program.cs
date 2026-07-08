@@ -55,6 +55,7 @@ var resultLogger = app.Services.GetRequiredService<IResultLogger>();
 Result.Setup(cfg => { cfg.Logger = resultLogger; });
 
 app.UseMiddleware<MaintenanceModeMiddleware>();
+app.UseMiddleware<DefaultDomainRestrictionMiddleware>();
 app.Use(async (context, next) =>
 {
     //TODO: add redirection from HELP_HERO_PLAYGROUNDS_PATH

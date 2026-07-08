@@ -59,6 +59,7 @@ internal static class DependencyInjection
                 options.Connect(connectionString)
                     .Select($"{ResourceSettings.CONFIGURATION_PROPERTY_NAME}:*")
                     .Select($"{MaintenanceModeSettings.CONFIGURATION_PROPERTY_NAME}:*")
+                    .Select($"{DefaultDomainRestrictionSettings.CONFIGURATION_PROPERTY_NAME}:*")
                     .Select("Logging:LogLevel:*")
                     .ConfigureRefresh(refreshOptions =>
                     {
@@ -85,5 +86,8 @@ internal static class DependencyInjection
 
         builder.Services.Configure<MaintenanceModeSettings>(
             builder.Configuration.GetSection(MaintenanceModeSettings.CONFIGURATION_PROPERTY_NAME));
+        
+        builder.Services.Configure<DefaultDomainRestrictionSettings>(
+            builder.Configuration.GetSection(DefaultDomainRestrictionSettings.CONFIGURATION_PROPERTY_NAME));
     }
 }
