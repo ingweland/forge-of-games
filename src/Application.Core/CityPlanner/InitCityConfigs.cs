@@ -544,7 +544,7 @@ public class InitCityConfigs
                 "Expansion_Ithaka_1", "Expansion_Ithaka_2", "Expansion_Ithaka_3", "Expansion_Ithaka_4",
                 "Expansion_Ithaka_5", "Expansion_Ithaka_6", "Expansion_Ithaka_7", "Expansion_Ithaka_8",
                 "Expansion_Ithaka_9", "Expansion_Ithaka_10", "Expansion_Ithaka_11", "Expansion_Ithaka_12",
-                "Expansion_Ithaka_13", "Expansion_Ithaka_14",
+                "Expansion_Ithaka_13", "Expansion_Ithaka_14", "Expansion_Ithaka_15",
             ],
             _ => [],
         };
