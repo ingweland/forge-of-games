@@ -24,10 +24,11 @@ namespace Ingweland.Fog.Inn.Models.Hoh {
     static WorkerTypeReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "ChF3b3JrZXJfdHlwZS5wcm90byphCgpXb3JrZXJUeXBlEhgKFFdvcmtlclR5",
+            "ChF3b3JrZXJfdHlwZS5wcm90byp4CgpXb3JrZXJUeXBlEhgKFFdvcmtlclR5",
             "cGVfVU5ERUZJTkVEEAASGgoWV29ya2VyVHlwZV9QUklFU1RfTUFZQRABEh0K",
-            "GVdvcmtlclR5cGVfU0FJTE9SX1ZJS0lOR1MQAkIfqgIcSW5nd2VsYW5kLkZv",
-            "Zy5Jbm4uTW9kZWxzLkhvaGIGcHJvdG8z"));
+            "GVdvcmtlclR5cGVfU0FJTE9SX1ZJS0lOR1MQAhIVChFXb3JrZXJUeXBlX0ZJ",
+            "U0hFUhADQh+qAhxJbmd3ZWxhbmQuRm9nLklubi5Nb2RlbHMuSG9oYgZwcm90",
+            "bzM="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(new[] {typeof(global::Ingweland.Fog.Inn.Models.Hoh.WorkerType), }, null, null));
@@ -40,6 +41,7 @@ namespace Ingweland.Fog.Inn.Models.Hoh {
     [pbr::OriginalName("WorkerType_UNDEFINED")] Undefined = 0,
     [pbr::OriginalName("WorkerType_PRIEST_MAYA")] PriestMaya = 1,
     [pbr::OriginalName("WorkerType_SAILOR_VIKINGS")] SailorVikings = 2,
+    [pbr::OriginalName("WorkerType_FISHER")] Fisher = 3,
   }
 
   #endregion
