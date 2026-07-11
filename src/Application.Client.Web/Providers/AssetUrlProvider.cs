@@ -113,7 +113,7 @@ public class AssetUrlProvider(IOptionsSnapshot<AssetsSettings> assetsSettings) :
 
     public string GetHohTreasureHuntLeagueIconUrl(TreasureHuntLeague league)
     {
-        return GetAssetUrl(assetsSettings.Value.HohIconsPath, $"icon_PvP_Tier_{league}.png");
+        return GetAssetUrl(assetsSettings.Value.HohIconsPath, $"icon_ath_tier_0{(int) league + 1}.png");
     }
 
     public string GetHohWoaLeagueIconUrl(WoaTier tier)
