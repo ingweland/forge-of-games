@@ -1588,4 +1588,7 @@
     <data name="Atlantis.Meta.Keywords" xml:space="preserve">
         <value>Battle for Atlantis guide, Heroes of History, guide, tools, bfa</value>
     </data>
+    <data name="StatsHub.Alliance.WoaRanking" xml:space="preserve">
+        <value>Battle for Atlantis Ranking</value>
+    </data>
 </root>

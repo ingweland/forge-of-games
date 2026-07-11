@@ -14,6 +14,7 @@ using Ingweland.Fog.Models.Hoh.Entities.Ranking;
 using Ingweland.Fog.Models.Hoh.Entities.Relics;
 using Ingweland.Fog.Models.Hoh.Entities.Research;
 using Ingweland.Fog.Models.Hoh.Entities.Units;
+using Ingweland.Fog.Models.Hoh.Entities.Woa;
 using Ingweland.Fog.Models.Hoh.Enums;
 using Ingweland.Fog.Shared.Helpers;
 using Enum = System.Enum;
@@ -75,7 +76,16 @@ public class InGameDataMappingProfile : Profile
                 opt => opt.MapFrom(src => src.HeroTreasureHuntAlliancePointsPushs))
             .ForMember(dest => dest.AthPlayerRankings,
                 opt => opt.MapFrom(src => src.HeroTreasureHuntPlayerPointsPushs))
-            .ForMember(dest => dest.Leaderboards, opt => opt.MapFrom(src => src.Leaderboards));
+            .ForMember(dest => dest.Leaderboards, opt => opt.MapFrom(src => src.Leaderboards))
+            .ForMember(dest => dest.WoaDivision, opt =>
+            {
+                {
+                    opt.PreCondition(src => src.WoaDivisionPush != null);
+                    opt.MapFrom(src => src.WoaDivisionPush);
+                }
+            })
+            .ForMember(dest => dest.WoaAlliances, opt => opt.MapFrom(src => src.WoAAlliancePushs))
+            .ForMember(dest => dest.Alliances, opt => opt.MapFrom(src => src.Alliances));
 
         CreateMap<PvpBattleDto, PvpBattle>()
             .ForMember(dest => dest.PerformedAt, opt => opt.MapFrom(src => src.PerformedAt.ToDateTime()));
@@ -265,5 +275,11 @@ public class InGameDataMappingProfile : Profile
                 opt.PreCondition(src => !string.IsNullOrWhiteSpace(src.EquippedOnHeroDefinitionId));
                 opt.MapFrom(src => HohStringParser.GetConcreteId(src.EquippedOnHeroDefinitionId));
             });
+
+        CreateMap<WoAPlayerStatsDTO, WoaPlayerStats>()
+            .ForMember(dest => dest.ContributionPointsGainedAt,
+                opt => opt.MapFrom(src => src.ContributionPointsGainedAt.ToDateTime()));
+        CreateMap<WoADivisionPush, WoaDivision>();
+        CreateMap<WoAAlliancePush, WoaAlliance>();
     }
 }

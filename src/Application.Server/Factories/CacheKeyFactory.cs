@@ -74,6 +74,7 @@ public class CacheKeyFactory : ICacheKeyFactory
             GetSharedResourceQuery q => $"SharedResource:{q.ShareId}",
             GetHeroAbilityFeaturesQuery q => HeroAbilityFeatures(CultureInfo.CurrentCulture.Name),
             GetHohCoreDataVersionQuery q => "HohCoreDataVersion",
+            GetAllianceWoaRankingsQuery q => $"AllianceWoaRankings:{q.AllianceId}",
             _ => typeof(TRequest).FullName ?? Guid.NewGuid().ToString(),
         };
     }

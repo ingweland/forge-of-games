@@ -62,6 +62,7 @@ public static class DependencyInjection
         services.AddScoped<IEventCityFetcher, EventCityFetcher>();
         services.AddScoped<IEventCityStrategyFactory, EventCityStrategyFactory>();
         services.AddScoped<IPlayerAthService, PlayerAthService>();
+        services.AddScoped<IAllianceWoaService, AllianceWoaService>();
 
         services.AddScoped<HohHelperResponseDtoToTablePkConverter>();
 

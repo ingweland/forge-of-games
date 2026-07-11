@@ -28,19 +28,20 @@ namespace Ingweland.Fog.Inn.Models.Hoh {
             "bWlzc2lvbl90eXBlLnByb3RvGhlhbGxpYW5jZV9tZW1iZXJfZHRvLnByb3Rv",
             "GhlhbGxpYW5jZV9iYW5uZXJfZHRvLnByb3RvImIKFUFsbGlhbmNlV2l0aExl",
             "YWRlckRUTxIlCghhbGxpYW5jZRgBIAEoCzITLkFsbGlhbmNlRGV0YWlsc0R0",
-            "bxIiCgZsZWFkZXIYAiABKAsyEi5BbGxpYW5jZU1lbWJlckR0byJsChJBbGxp",
-            "YW5jZURldGFpbHNEdG8SCgoCaWQYASABKAUSFAoMbWVtYmVyX2NvdW50GAIg",
-            "ASgFEiYKCHNldHRpbmdzGAQgASgLMhQuQWxsaWFuY2VTZXR0aW5nc0R0bxIM",
-            "CgRyYW5rGAYgASgFIp4BChNBbGxpYW5jZVNldHRpbmdzRHRvEgwKBG5hbWUY",
-            "ASABKAkSEwoLZGVzY3JpcHRpb24YAiABKAkSLgoOYWRtaXNzaW9uX3R5cGUY",
-            "BSABKA4yFi5BbGxpYW5jZUFkbWlzc2lvblR5cGUSEAoIbGFuZ3VhZ2UYBCAB",
-            "KAkSIgoGYmFubmVyGAwgASgLMhIuQWxsaWFuY2VCYW5uZXJEdG9CH6oCHElu",
-            "Z3dlbGFuZC5Gb2cuSW5uLk1vZGVscy5Ib2hiBnByb3RvMw=="));
+            "bxIiCgZsZWFkZXIYAiABKAsyEi5BbGxpYW5jZU1lbWJlckR0byKaAQoSQWxs",
+            "aWFuY2VEZXRhaWxzRHRvEgoKAmlkGAEgASgFEhQKDG1lbWJlcl9jb3VudBgC",
+            "IAEoBRImCghzZXR0aW5ncxgEIAEoCzIULkFsbGlhbmNlU2V0dGluZ3NEdG8S",
+            "DAoEcmFuaxgGIAEoBRIYChB3b2Ffd2luc19ieV90aWVyGAkgASgMEhIKCndv",
+            "YV9yYXRpbmcYCiABKAIingEKE0FsbGlhbmNlU2V0dGluZ3NEdG8SDAoEbmFt",
+            "ZRgBIAEoCRITCgtkZXNjcmlwdGlvbhgCIAEoCRIuCg5hZG1pc3Npb25fdHlw",
+            "ZRgFIAEoDjIWLkFsbGlhbmNlQWRtaXNzaW9uVHlwZRIQCghsYW5ndWFnZRgE",
+            "IAEoCRIiCgZiYW5uZXIYDCABKAsyEi5BbGxpYW5jZUJhbm5lckR0b0IfqgIc",
+            "SW5nd2VsYW5kLkZvZy5Jbm4uTW9kZWxzLkhvaGIGcHJvdG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Ingweland.Fog.Inn.Models.Hoh.AllianceAdmissionTypeReflection.Descriptor, global::Ingweland.Fog.Inn.Models.Hoh.AllianceMemberDtoReflection.Descriptor, global::Ingweland.Fog.Inn.Models.Hoh.AllianceBannerDtoReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
             new pbr::GeneratedClrTypeInfo(typeof(global::Ingweland.Fog.Inn.Models.Hoh.AllianceWithLeaderDTO), global::Ingweland.Fog.Inn.Models.Hoh.AllianceWithLeaderDTO.Parser, new[]{ "Alliance", "Leader" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Ingweland.Fog.Inn.Models.Hoh.AllianceDetailsDto), global::Ingweland.Fog.Inn.Models.Hoh.AllianceDetailsDto.Parser, new[]{ "Id", "MemberCount", "Settings", "Rank" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Ingweland.Fog.Inn.Models.Hoh.AllianceDetailsDto), global::Ingweland.Fog.Inn.Models.Hoh.AllianceDetailsDto.Parser, new[]{ "Id", "MemberCount", "Settings", "Rank", "WoaWinsByTier", "WoaRating" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Ingweland.Fog.Inn.Models.Hoh.AllianceSettingsDto), global::Ingweland.Fog.Inn.Models.Hoh.AllianceSettingsDto.Parser, new[]{ "Name", "Description", "AdmissionType", "Language", "Banner" }, null, null, null, null)
           }));
     }
@@ -332,6 +333,8 @@ namespace Ingweland.Fog.Inn.Models.Hoh {
       memberCount_ = other.memberCount_;
       settings_ = other.settings_ != null ? other.settings_.Clone() : null;
       rank_ = other.rank_;
+      woaWinsByTier_ = other.woaWinsByTier_;
+      woaRating_ = other.woaRating_;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
@@ -389,6 +392,30 @@ namespace Ingweland.Fog.Inn.Models.Hoh {
       }
     }
 
+    /// <summary>Field number for the "woa_wins_by_tier" field.</summary>
+    public const int WoaWinsByTierFieldNumber = 9;
+    private pb::ByteString woaWinsByTier_ = pb::ByteString.Empty;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public pb::ByteString WoaWinsByTier {
+      get { return woaWinsByTier_; }
+      set {
+        woaWinsByTier_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+      }
+    }
+
+    /// <summary>Field number for the "woa_rating" field.</summary>
+    public const int WoaRatingFieldNumber = 10;
+    private float woaRating_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public float WoaRating {
+      get { return woaRating_; }
+      set {
+        woaRating_ = value;
+      }
+    }
+
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override bool Equals(object other) {
@@ -408,6 +435,8 @@ namespace Ingweland.Fog.Inn.Models.Hoh {
       if (MemberCount != other.MemberCount) return false;
       if (!object.Equals(Settings, other.Settings)) return false;
       if (Rank != other.Rank) return false;
+      if (WoaWinsByTier != other.WoaWinsByTier) return false;
+      if (!pbc::ProtobufEqualityComparers.BitwiseSingleEqualityComparer.Equals(WoaRating, other.WoaRating)) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
 
@@ -419,6 +448,8 @@ namespace Ingweland.Fog.Inn.Models.Hoh {
       if (MemberCount != 0) hash ^= MemberCount.GetHashCode();
       if (settings_ != null) hash ^= Settings.GetHashCode();
       if (Rank != 0) hash ^= Rank.GetHashCode();
+      if (WoaWinsByTier.Length != 0) hash ^= WoaWinsByTier.GetHashCode();
+      if (WoaRating != 0F) hash ^= pbc::ProtobufEqualityComparers.BitwiseSingleEqualityComparer.GetHashCode(WoaRating);
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -453,6 +484,14 @@ namespace Ingweland.Fog.Inn.Models.Hoh {
         output.WriteRawTag(48);
         output.WriteInt32(Rank);
       }
+      if (WoaWinsByTier.Length != 0) {
+        output.WriteRawTag(74);
+        output.WriteBytes(WoaWinsByTier);
+      }
+      if (WoaRating != 0F) {
+        output.WriteRawTag(85);
+        output.WriteFloat(WoaRating);
+      }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
       }
@@ -479,6 +518,14 @@ namespace Ingweland.Fog.Inn.Models.Hoh {
         output.WriteRawTag(48);
         output.WriteInt32(Rank);
       }
+      if (WoaWinsByTier.Length != 0) {
+        output.WriteRawTag(74);
+        output.WriteBytes(WoaWinsByTier);
+      }
+      if (WoaRating != 0F) {
+        output.WriteRawTag(85);
+        output.WriteFloat(WoaRating);
+      }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(ref output);
       }
@@ -500,6 +547,12 @@ namespace Ingweland.Fog.Inn.Models.Hoh {
       }
       if (Rank != 0) {
         size += 1 + pb::CodedOutputStream.ComputeInt32Size(Rank);
+      }
+      if (WoaWinsByTier.Length != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeBytesSize(WoaWinsByTier);
+      }
+      if (WoaRating != 0F) {
+        size += 1 + 4;
       }
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
@@ -527,6 +580,12 @@ namespace Ingweland.Fog.Inn.Models.Hoh {
       }
       if (other.Rank != 0) {
         Rank = other.Rank;
+      }
+      if (other.WoaWinsByTier.Length != 0) {
+        WoaWinsByTier = other.WoaWinsByTier;
+      }
+      if (other.WoaRating != 0F) {
+        WoaRating = other.WoaRating;
       }
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
@@ -562,6 +621,14 @@ namespace Ingweland.Fog.Inn.Models.Hoh {
             Rank = input.ReadInt32();
             break;
           }
+          case 74: {
+            WoaWinsByTier = input.ReadBytes();
+            break;
+          }
+          case 85: {
+            WoaRating = input.ReadFloat();
+            break;
+          }
         }
       }
     #endif
@@ -594,6 +661,14 @@ namespace Ingweland.Fog.Inn.Models.Hoh {
           }
           case 48: {
             Rank = input.ReadInt32();
+            break;
+          }
+          case 74: {
+            WoaWinsByTier = input.ReadBytes();
+            break;
+          }
+          case 85: {
+            WoaRating = input.ReadFloat();
             break;
           }
         }

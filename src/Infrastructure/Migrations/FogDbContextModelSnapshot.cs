@@ -17,7 +17,7 @@ namespace Ingweland.Fog.Infrastructure.Migrations
         {
 #pragma warning disable 612, 618
             modelBuilder
-                .HasAnnotation("ProductVersion", "9.0.2")
+                .HasAnnotation("ProductVersion", "9.0.14")
                 .HasAnnotation("Relational:MaxIdentifierLength", 128);
 
             SqlServerModelBuilderExtensions.UseIdentityColumns(modelBuilder);
@@ -257,6 +257,53 @@ namespace Ingweland.Fog.Infrastructure.Migrations
                     b.HasIndex("AllianceId", "Type", "CollectedAt");
 
                     b.ToTable("alliance_rankings", (string)null);
+                });
+
+            modelBuilder.Entity("Ingweland.Fog.Models.Fog.Entities.AllianceWoaRanking", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<int>("AllianceId")
+                        .HasColumnType("int");
+
+                    b.Property<DateTime>("CollectedAt")
+                        .HasColumnType("datetime2");
+
+                    b.Property<int>("DivisionId")
+                        .HasColumnType("int");
+
+                    b.Property<int>("EloDelta")
+                        .HasColumnType("int");
+
+                    b.Property<int>("EloRating")
+                        .HasColumnType("int");
+
+                    b.Property<double>("ExpectedVictoryPointsShare")
+                        .HasColumnType("float");
+
+                    b.Property<int>("InGameEventId")
+                        .HasColumnType("int");
+
+                    b.Property<int>("VictoryPoints")
+                        .HasColumnType("int");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("DivisionId");
+
+                    b.HasIndex("EloRating")
+                        .IsDescending();
+
+                    b.HasIndex("InGameEventId");
+
+                    b.HasIndex("AllianceId", "InGameEventId", "DivisionId")
+                        .IsUnique();
+
+                    b.ToTable("alliance_woa_rankings", (string)null);
                 });
 
             modelBuilder.Entity("Ingweland.Fog.Models.Fog.Entities.AnnualBudget", b =>
@@ -1698,6 +1745,15 @@ namespace Ingweland.Fog.Infrastructure.Migrations
                         .IsRequired();
                 });
 
+            modelBuilder.Entity("Ingweland.Fog.Models.Fog.Entities.AllianceWoaRanking", b =>
+                {
+                    b.HasOne("Ingweland.Fog.Models.Fog.Entities.Alliance", null)
+                        .WithMany("WoaRankings")
+                        .HasForeignKey("AllianceId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+                });
+
             modelBuilder.Entity("Ingweland.Fog.Models.Fog.Entities.BattleSquadStatsEntity", b =>
                 {
                     b.HasOne("Ingweland.Fog.Models.Fog.Entities.BattleStatsEntity", null)
@@ -1936,6 +1992,8 @@ namespace Ingweland.Fog.Infrastructure.Migrations
                     b.Navigation("NameHistory");
 
                     b.Navigation("Rankings");
+
+                    b.Navigation("WoaRankings");
                 });
 
             modelBuilder.Entity("Ingweland.Fog.Models.Fog.Entities.BattleStatsEntity", b =>

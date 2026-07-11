@@ -1,0 +1,141 @@
+.component-root {
+    display: flex;
+    flex-direction: column;
+    border-radius: var(--fog-border-radius);
+    border: 1px solid var(--fog-container-color);
+    overflow: hidden;
+    align-items: center;
+    user-select: none;
+    -webkit-user-select: none;
+}
+
+.event-label-container {
+    display: flex;
+    justify-content: center;
+    padding: 2px 4px;
+    background-color: var(--fog-container-color);
+    color: var(--fog-text-on-container-color);
+    font-size: 10px;
+    width: 100%;
+}
+
+.league-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: 700;
+    background-color: var(--fog-surface-color);
+    padding: 4px;
+    font-size: 12px;
+    gap: 4px;
+    border-bottom: 1px solid var(--fog-container-color);
+    width: 90%;
+}
+
+.points-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: 700;
+    background-color: var(--fog-surface-color);
+    padding: 6px;
+    font-size: 12px;
+    gap: 4px;
+    line-height: 1;
+}
+
+.value-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 2px;
+}
+
+.value-main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 4px;
+}
+
+.value-label {
+    display: flex;
+    align-items: flex-end;
+    gap: 1px;
+}
+
+.value-delta {
+    font-size: 10px;
+}
+
+.value-delta.positive {
+    color: var(--fog-positive-color);
+}
+
+.value-delta.negative {
+    color: var(--fog-negative-color);
+}
+
+.league-name {
+    color: var(--fog-text-on-container-color);
+}
+
+.league-icon {
+    width: 24px;
+    height: 24px;
+}
+
+.value-icon {
+    width: 14px;
+    height: 14px;
+}
+
+.value-delta {
+    font-size: 10px;
+}
+
+.v-divider {
+    height: 100%;
+    border-right: 1px solid var(--fog-container-color);
+}
+
+@media (min-width: 576px) {
+    .event-label-container {
+        padding: 4px 8px;
+        font-size: 12px;
+    }
+
+    .points-container {
+        padding: 8px;
+        font-size: 14px;
+        gap: 8px;
+    }
+
+    .league-container {
+        padding: 8px;
+        font-size: 14px;
+        gap: 8px;
+    }
+
+    .value-container {
+        gap: 4px;
+    }
+
+    .league-icon {
+        width: 32px;
+        height: 32px;
+    }
+
+    .value-icon {
+        width: 18px;
+        height: 18px;
+    }
+
+    .value-delta {
+        font-size: 12px;
+    }
+
+    .value-label {
+        gap: 2px;
+    }
+}

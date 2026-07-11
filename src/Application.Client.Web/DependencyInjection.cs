@@ -169,6 +169,7 @@ public static class DependencyInjection
         services.AddScoped<IAlliedCultureCalendarItemViewModelFactory, AlliedCultureCalendarItemViewModelFactory>();
         services.AddScoped<IAlliedCultureCityGuidesUiService, AlliedCultureCityGuidesUiService>();
         services.AddScoped<IAlliedCultureCityGuideViewModelFactory, AlliedCultureCityGuideViewModelFactory>();
+        services.AddScoped<IAllianceWoaRankingViewModelFactory, AllianceWoaRankingViewModelFactory>();
 
         services.AddScoped<CityPlannerSettings>();
 

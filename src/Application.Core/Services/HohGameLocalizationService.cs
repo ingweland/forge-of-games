@@ -117,6 +117,12 @@ public class HohGameLocalizationService(IHohGameLocalizationDataRepository local
         return GetValue(key) ?? league.ToString();
     }
 
+    public string GetWoaTierName(WoaTier tier)
+    {
+        var key = HohLocalizationKeyBuilder.BuildKey(HohLocalizationCategory.WoATier, tier.ToString());
+        return GetValue(key) ?? tier.ToString();
+    }
+
     public string GetHeroName(string id)
     {
         var key = HohLocalizationKeyBuilder.BuildKey(HohLocalizationCategory.Heroes, HohLocalizationProperty.Name,

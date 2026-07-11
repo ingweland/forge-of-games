@@ -21,6 +21,7 @@ public class InGameDataQueueProcessor(
     DatabaseWarmUpService databaseWarmUpService,
     IAllianceAthService allianceAthService,
     IPlayerAthService playerAthService,
+    IAllianceWoaService allianceWoaService,
     ILogger<InGameDataQueueProcessor> logger)
 {
     [Function(nameof(InGameDataQueueProcessor))]
@@ -53,6 +54,11 @@ public class InGameDataQueueProcessor(
             case InGameDataProcessingServiceType.WakeupAlliance:
             {
                 await ProcessPlayerAthRankingsAsync(payload.PartitionKey, payload.RowKey);
+                break;
+            }
+            case InGameDataProcessingServiceType.WakeupAllianceWoa:
+            {
+                await ProcessAllianceWoaRankingsAsync(payload.PartitionKey, payload.RowKey);
                 break;
             }
             default:
@@ -93,6 +99,15 @@ public class InGameDataQueueProcessor(
         var parts = partitionKey.Split('_');
         var wakeup = inGameDataParsingService.ParseWakeup(rawData.Base64Data);
         await allianceAthService.RunAsync(wakeup.AthAllianceRankings, parts[1], rawData.CollectedAt);
+    }
+
+    private async Task ProcessAllianceWoaRankingsAsync(string partitionKey, string rowKey)
+    {
+        var rawData = await LoadRawDataAsync(partitionKey, rowKey);
+        var parts = partitionKey.Split('_');
+        var wakeup = inGameDataParsingService.ParseWakeup(rawData.Base64Data);
+        await allianceWoaService.RunAsync(wakeup.WoaDivision, wakeup.WoaAlliances, wakeup.Alliances, parts[1],
+            rawData.CollectedAt);
     }
 
     private async Task ProcessPlayerAthRankingsAsync(string partitionKey, string rowKey)

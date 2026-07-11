@@ -9,4 +9,6 @@ public static class HohConstants
 
     public static readonly int[] CapitalPremiumExpansionCost =
         [190, 290, 490, 590, 690, 890, 990, 1500, 2000, 2500, 3000, 4000, 5000, 6000, 7000, 8000, 9000, 10000];
+
+    public static readonly int[] WoaBracketTierThresholds = [0, 1000, 1800, 2500, 3200, 4000];
 }

@@ -118,6 +118,20 @@
             }
         </ExpandableContainer>
 
+        <ExpandableContainer Title="@Loc[FogResource.StatsHub_Alliance_WoaRanking]"
+                             IsLoading="@_woaRankingsAreLoading"
+                             ExpandedChanged="@ToggleWoaRankingsContainer">
+            @if (_woaRankings != null)
+            {
+                <div class="ath-ranking-items-container">
+                    @foreach (var r in _woaRankings)
+                    {
+                        <AllianceWoaRankingComponent Ranking="@r"/>
+                    }
+                </div>
+            }
+        </ExpandableContainer>
+
         <div class="fog-container section-container">
             <span class="section-title">@Loc[FogResource.StatsHub_Player_Names]</span>
             <MudTimeline TimelinePosition="TimelinePosition.Start">

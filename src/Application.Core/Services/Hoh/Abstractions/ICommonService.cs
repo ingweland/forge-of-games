@@ -11,4 +11,6 @@ public interface ICommonService
     Task<IReadOnlyCollection<PvpTierDto>> GetPvpTiersAsync();
 
     Task<IReadOnlyCollection<TreasureHuntLeagueDto>> GetTreasureHuntLeaguesAsync();
+
+    Task<IReadOnlyCollection<WoaTierDto>> GetWoaTiersAsync();
 }

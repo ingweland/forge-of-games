@@ -1527,4 +1527,7 @@
     <data name="Atlantis.Meta.Keywords" xml:space="preserve">
     <value>아틀란티스 전투 가이드, Heroes of History, 가이드, 도구, bfa</value>
 </data>
+    <data name="StatsHub.Alliance.WoaRanking" xml:space="preserve">
+        <value>아틀란티스 전투 순위</value>
+    </data>
 </root>

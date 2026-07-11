@@ -87,6 +87,15 @@ public class AggregateDataMappingProfile : Profile
                 opt.MapFrom((_, _, _, context) =>
                     context.Items.GetRequiredItem<string>(ResolutionContextKeys.WORLD_ID)));
 
+        CreateMap<HohAllianceExtended, AllianceAggregate>()
+            .ForMember(dest => dest.InGameAllianceId, opt => opt.MapFrom(src => src.Id))
+            .ForMember(dest => dest.Rank, opt => opt.MapFrom(src => src.Rank))
+            .ForMember(dest => dest.CollectedAt, opt =>
+                opt.MapFrom((_, _, _, context) => context.Items.GetRequiredItem<DateTime>(ResolutionContextKeys.DATE)))
+            .ForMember(dest => dest.WorldId, opt =>
+                opt.MapFrom((_, _, _, context) =>
+                    context.Items.GetRequiredItem<string>(ResolutionContextKeys.WORLD_ID)));
+
         CreateMap<PvpRank, AllianceAggregate>()
             .ForMember(dest => dest.InGameAllianceId, opt => opt.MapFrom(src => src.Alliance!.Id))
             .ForMember(dest => dest.Name, opt => opt.MapFrom(src => src.Alliance!.Name))

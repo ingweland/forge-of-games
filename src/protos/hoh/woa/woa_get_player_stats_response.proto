@@ -1,0 +1,22 @@
+syntax = "proto3";
+import "google/protobuf/timestamp.proto";
+import "player_dto.proto";
+
+option csharp_namespace = "Ingweland.Fog.Inn.Models.Hoh";
+
+message WoAGetPlayerStatsResponse {
+  repeated WoAPlayerStatsDTO entries = 1;
+}
+    
+message WoAPlayerStatsDTO {
+  PlayerDto player = 1;
+  float victory_points = 2;
+  int32 won_attacks = 3;
+  int32 won_defenses = 4;
+  int32 repairs_started = 5;
+  int64 contribution_points = 6;
+  int32 event_id = 7;
+  google.protobuf.Timestamp contribution_points_gained_at = 8;
+  int32 healing_done = 9;
+  int32 lost_attacks = 10;
+}

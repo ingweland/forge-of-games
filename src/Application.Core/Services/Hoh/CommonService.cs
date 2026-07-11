@@ -75,4 +75,23 @@ public class CommonService(
 
         return Task.FromResult(result);
     }
+
+    public Task<IReadOnlyCollection<WoaTierDto>> GetWoaTiersAsync()
+    {
+        var version = hohCoreDataRepository.Version;
+
+        var result = dataCache.GetOrAdd(cacheKeyFactory.WoaTiers(version),
+            IReadOnlyCollection<WoaTierDto> () =>
+            {
+                return Enum.GetValues<WoaTier>().Select(x => new WoaTierDto
+                    {
+                        Tier = x,
+                        Name = localizationService.GetWoaTierName(x),
+                    })
+                    .OrderBy(x => x.Tier).ToList();
+            },
+            version);
+
+        return Task.FromResult(result);
+    }
 }

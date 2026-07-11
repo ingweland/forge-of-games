@@ -1559,4 +1559,7 @@ Forge of Games no está afiliado ni tiene conexión oficial con los creadores o 
     <data name="Atlantis.Meta.Keywords" xml:space="preserve">
     <value>guía Batalla por Atlantis, Heroes of History, guía, herramientas, bfa</value>
 </data>
+    <data name="StatsHub.Alliance.WoaRanking" xml:space="preserve">
+        <value>Clasificación de la Batalla por Atlantis</value>
+    </data>
 </root>

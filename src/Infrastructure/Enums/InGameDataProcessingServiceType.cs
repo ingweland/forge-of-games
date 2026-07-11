@@ -6,4 +6,5 @@ public enum InGameDataProcessingServiceType
     Battle = 1,
     WakeupLeaderboards = 2,
     WakeupAlliance = 3,
+    WakeupAllianceWoa = 4,
 }

@@ -51,6 +51,8 @@
     --fog-selected-open-tech-color: #ACD2C7;
     --fog-open-tech-color: #CFFCEF;
     --fog-toolbar-background-color: #808080;
+    --fog-positive-color: #6db000;
+    --fog-negative-color: #cd2a26;
 
     /*values*/
     --fog-border-radius: 0.5rem;
