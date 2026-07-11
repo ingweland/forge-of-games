@@ -1551,4 +1551,7 @@ Forge of Games ist weder mit den Erstellern noch mit den Herausgebern von Heroes
     <data name="Atlantis.Meta.Keywords" xml:space="preserve">
     <value>Schlacht um Atlantis Leitfaden, Heroes of History, Leitfaden, Tools, bfa</value>
 </data>
+    <data name="StatsHub.Alliance.WoaRanking" xml:space="preserve">
+        <value>Rangliste der Schlacht um Atlantis</value>
+    </data>
 </root>

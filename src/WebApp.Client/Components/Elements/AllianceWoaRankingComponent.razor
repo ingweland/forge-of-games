@@ -1,0 +1,39 @@
+@using Ingweland.Fog.Application.Client.Web.Providers.Interfaces
+@using Ingweland.Fog.Application.Client.Web.StatsHub.ViewModels
+@inject IAssetUrlProvider AssetUrlProvider
+<div class="component-root">
+    <div class="event-label-container">
+        @Ranking.EventLabel
+    </div>
+    <div class="league-container">
+        <img class="league-icon" src="@AssetUrlProvider.GetHohWoaLeagueIconUrl(Ranking.Tier.Tier)"/>
+        <span class="league-name">@Ranking.Tier.Name</span>
+    </div>
+    <div class="points-container">
+        <div class="value-container">
+            <img class="value-icon" src="@AssetUrlProvider.GetHohIconUrl("icon_flat_atlantis_rating")"/>
+            <span class="value-label">
+                @Ranking.EloRatingFormatted
+                @if (Ranking.EloDelta != 0)
+                {
+                    <span class="value-delta @(Ranking.EloDelta > 0 ? "positive" : "negative")">
+                        @(Ranking.EloDelta > 0 ? "+" : "")@Ranking.EloDelta
+                    </span>
+                }
+            </span>
+        </div>
+        <div class="v-divider"></div>
+        <div class="value-container">
+            <img class="value-icon" src="@AssetUrlProvider.GetHohIconUrl("woa_victory_points")"/>
+            <span> @Ranking.VictoryPointsFormatted</span>
+        </div>
+    </div>
+</div>
+
+@code {
+
+    [Parameter]
+    [EditorRequired]
+    public required AllianceWoaRankingViewModel Ranking { get; set; }
+
+}

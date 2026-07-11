@@ -1,0 +1,13 @@
+syntax = "proto3";
+
+option csharp_namespace = "Ingweland.Fog.Inn.Models.Hoh";
+
+message WoADivisionPush {
+  int32 event_id = 1;
+  int32 division_id = 2;
+  repeated int32 alliance_ids = 10;
+  map<int32, double> elo_rating_by_alliance_id = 11;
+  map<int32, double> expected_vp_share_by_alliance_id = 12;
+  map<int32, int32> enrolled_members_by_alliance_id = 13;
+  map<int32, double> elo_delta_by_alliance_id = 14;
+}

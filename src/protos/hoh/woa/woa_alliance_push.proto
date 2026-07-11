@@ -1,0 +1,13 @@
+syntax = "proto3";
+import "google/protobuf/timestamp.proto";
+
+option csharp_namespace = "Ingweland.Fog.Inn.Models.Hoh";
+
+message WoAAlliancePush {
+  int32 event_id = 1;
+  int32 alliance_id = 2;
+  google.protobuf.Timestamp version = 3;
+  float victory_points = 10;
+  float victory_points_generation_rate = 11;
+  google.protobuf.Timestamp last_victory_points_generation = 12;
+}

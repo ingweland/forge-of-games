@@ -33,6 +33,20 @@ public static class AnyHelper
             .ToList();
     }
 
+    public static IList<T> FindAndUnpackToList<T>(this RepeatedField<Any> items, string typeName)
+        where T : IMessage<T>, new()
+    {
+        return items
+            .Where(item => Any.GetTypeName(item.TypeUrl) == typeName)
+            .Select(item =>
+            {
+                var message = new T();
+                message.MergeFrom(item.Value);
+                return message;
+            })
+            .ToList();
+    }
+
     public static Result<T> FindAndUnpackToResult<T>(this RepeatedField<Any> items) where T : IMessage<T>, new()
     {
         var message = new T();

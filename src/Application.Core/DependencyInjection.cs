@@ -8,6 +8,7 @@ using Ingweland.Fog.Application.Core.Factories;
 using Ingweland.Fog.Application.Core.Factories.Interfaces;
 using Ingweland.Fog.Application.Core.Formatters;
 using Ingweland.Fog.Application.Core.Formatters.Interfaces;
+using Ingweland.Fog.Application.Core.Helpers;
 using Ingweland.Fog.Application.Core.Interfaces;
 using Ingweland.Fog.Application.Core.Repository;
 using Ingweland.Fog.Application.Core.Repository.Abstractions;
@@ -37,6 +38,7 @@ public static class DependencyInjection
         services.AddSingleton<IHohDataCacheKeyFactory, HohDataCacheKeyFactory>();
         services.AddSingleton<InitCityConfigs>();
         services.AddSingleton<IHeroValidator, HeroValidator>();
+        services.AddSingleton<IWoaTierHelper, WoaTierHelper>();
 
         services.AddScoped<ICityPlannerDataService, CityPlannerDataService>();
         services.AddScoped<ICityMapStateCoreFactory, CityMapStateCoreFactory>();

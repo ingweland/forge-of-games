@@ -28,6 +28,7 @@ public class StatsHubUiService : UiServiceBase, IStatsHubUiService
 
     private readonly Lazy<Task<IReadOnlyDictionary<string, AgeDto>>> _ages;
     private readonly IAllianceAthRankingViewModelFactory _allianceAthRankingViewModelFactory;
+    private readonly IAllianceWoaRankingViewModelFactory _allianceWoaRankingViewModelFactory;
     private readonly IBattleService _battleService;
     private readonly IBattleViewModelFactory _battleViewModelFactory;
     private readonly IPlayerCityPropertiesViewModelFactory _cityPropertiesViewModelFactory;
@@ -52,6 +53,7 @@ public class StatsHubUiService : UiServiceBase, IStatsHubUiService
         IHohCoreDataCache coreDataCache,
         IMapper mapper,
         IAllianceAthRankingViewModelFactory allianceAthRankingViewModelFactory,
+        IAllianceWoaRankingViewModelFactory allianceWoaRankingViewModelFactory,
         ICommonUiService commonUiService,
         IPlayerCityPropertiesViewModelFactory cityPropertiesViewModelFactory,
         IWonderRankingViewModelFactory wonderRankingViewModelFactory,
@@ -69,6 +71,7 @@ public class StatsHubUiService : UiServiceBase, IStatsHubUiService
         _coreDataCache = coreDataCache;
         _mapper = mapper;
         _allianceAthRankingViewModelFactory = allianceAthRankingViewModelFactory;
+        _allianceWoaRankingViewModelFactory = allianceWoaRankingViewModelFactory;
         _commonUiService = commonUiService;
         _cityPropertiesViewModelFactory = cityPropertiesViewModelFactory;
         _wonderRankingViewModelFactory = wonderRankingViewModelFactory;
@@ -300,6 +303,17 @@ public class StatsHubUiService : UiServiceBase, IStatsHubUiService
             null);
 
         return result != null ? _cityPropertiesViewModelFactory.Create(result) : null;
+    }
+
+    public async Task<IReadOnlyCollection<AllianceWoaRankingViewModel>> GetAllianceWoaRankingsAsync(int allianceId,
+        CancellationToken ct = default)
+    {
+        var tiersTask = _commonUiService.GetWoaTiersAsync();
+        var rankings = await _statsHubService.GetAllianceWoaRankingsAsync(allianceId, ct);
+        var tiers = await tiersTask;
+
+        return rankings.OrderBy(x => x.StartedAt).Select(x => _allianceWoaRankingViewModelFactory.Create(x,
+            tiers.GetValueOrDefault(x.Tier, WoaTierDto.Default))).ToList();
     }
 
     private async Task<T> GetOrCreateAsync<T>(string key, Func<Task<T>> factory) where T : ICollection, new()

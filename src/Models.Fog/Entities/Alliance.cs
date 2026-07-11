@@ -31,5 +31,6 @@ public class Alliance
 
     public InGameEntityStatus Status { get; set; } = InGameEntityStatus.Active;
     public DateOnly UpdatedAt { get; set; }
+    public ICollection<AllianceWoaRanking> WoaRankings { get; set; } = new List<AllianceWoaRanking>();
     public required string WorldId { get; set; }
 }

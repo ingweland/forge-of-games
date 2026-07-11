@@ -1556,4 +1556,7 @@ Forge of Games nie jest powiązany ani oficjalnie związany z twórcami lub wyda
     <data name="Atlantis.Meta.Keywords" xml:space="preserve">
     <value>przewodnik Bitwa o Atlantydę, Heroes of History, przewodnik, narzędzia, bfa</value>
 </data>
+    <data name="StatsHub.Alliance.WoaRanking" xml:space="preserve">
+        <value>Ranking Bitwy o Atlantydę</value>
+    </data>
 </root>

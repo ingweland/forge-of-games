@@ -182,6 +182,16 @@ public class StatsHubService(ISender sender) : IStatsHubService
         return sender.Send(query, ct);
     }
 
+    public Task<IReadOnlyCollection<AllianceWoaRankingDto>> GetAllianceWoaRankingsAsync(int allianceId,
+        CancellationToken ct = default)
+    {
+        var query = new GetAllianceWoaRankingsQuery
+        {
+            AllianceId = allianceId,
+        };
+        return sender.Send(query, ct);
+    }
+
     public Task<IReadOnlyCollection<StatsTimedIntValue>> GetAllianceRankingsAsync(int allianceId,
         CancellationToken ct = default)
     {

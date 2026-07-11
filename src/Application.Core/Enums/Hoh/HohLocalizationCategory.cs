@@ -269,4 +269,5 @@ public enum HohLocalizationCategory
     WorldWondersOverviewPanel,
     WorldWondersPromotion,
     WorldWondersSearchResultItem,
+    WoATier,
 }

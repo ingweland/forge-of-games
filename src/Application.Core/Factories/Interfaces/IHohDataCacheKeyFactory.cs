@@ -11,5 +11,6 @@ public interface IHohDataCacheKeyFactory
     string HohAges(Guid version);
     string PvpTiers(Guid version);
     string TreasureHuntLeagues(Guid version);
+    string WoaTiers(Guid version);
     string HohResources(Guid version);
 }

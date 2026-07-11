@@ -1567,4 +1567,7 @@ Forge of Games is niet verbonden met of officieel gelieerd aan de makers of uitg
     <data name="Atlantis.Meta.Keywords" xml:space="preserve">
     <value>Gevecht om Atlantis gids, Heroes of History, gids, tools, bfa</value>
 </data>
+    <data name="StatsHub.Alliance.WoaRanking" xml:space="preserve">
+        <value>Ranglijst Gevecht om Atlantis</value>
+    </data>
 </root>

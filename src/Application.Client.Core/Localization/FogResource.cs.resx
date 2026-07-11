@@ -1547,4 +1547,7 @@ Forge of Games není přidružený ani oficiálně spojený s tvůrci nebo vydav
     <data name="Atlantis.Meta.Keywords" xml:space="preserve">
     <value>průvodce Bitvou o Atlantidu, Heroes of History, průvodce, nástroje, bfa</value>
 </data>
+    <data name="StatsHub.Alliance.WoaRanking" xml:space="preserve">
+        <value>Žebříček Bitvy o Atlantidu</value>
+    </data>
 </root>

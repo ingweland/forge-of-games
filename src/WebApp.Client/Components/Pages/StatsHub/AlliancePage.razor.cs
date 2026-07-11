@@ -19,6 +19,9 @@ public partial class AlliancePage : StatsHubPageBase
     private bool _rankingsAreLoading;
     private CancellationTokenSource? _rankingsCts;
     private bool _showLastSeenOn;
+    private IReadOnlyCollection<AllianceWoaRankingViewModel>? _woaRankings;
+    private bool _woaRankingsAreLoading;
+    private CancellationTokenSource? _woaRankingsCts;
 
     [Parameter]
     public required int AllianceId { get; set; }
@@ -68,6 +71,17 @@ public partial class AlliancePage : StatsHubPageBase
         if (expanded)
         {
             await GetAthRankings();
+        }
+    }
+
+    private async Task ToggleWoaRankingsContainer(bool expanded)
+    {
+        AnalyticsService.TrackChartView(AnalyticsEvents.TOGGLE_VIEW, _defaultAnalyticsParameters,
+            AnalyticsParams.Values.Sources.ALLIANCE_WOA_RANKINGS, expanded);
+
+        if (expanded)
+        {
+            await GetWoaRankings();
         }
     }
 
@@ -123,6 +137,42 @@ public partial class AlliancePage : StatsHubPageBase
         catch (Exception e)
         {
             _athRankingsAreLoading = false;
+            Console.Error.WriteLine(e);
+        }
+    }
+
+    private async Task GetWoaRankings()
+    {
+        if (_woaRankings != null)
+        {
+            return;
+        }
+
+        if (_woaRankingsCts != null)
+        {
+            await _woaRankingsCts.CancelAsync();
+        }
+
+        _woaRankingsAreLoading = true;
+        StateHasChanged();
+
+        _woaRankingsCts = new CancellationTokenSource();
+
+        try
+        {
+            _woaRankings = await StatsHubUiService.GetAllianceWoaRankingsAsync(AllianceId, _woaRankingsCts.Token);
+            _woaRankingsAreLoading = false;
+        }
+        catch (OperationCanceledException _)
+        {
+        }
+        catch (ApiException apiEx) when (apiEx.InnerException is TaskCanceledException)
+        {
+            _woaRankingsAreLoading = false;
+        }
+        catch (Exception e)
+        {
+            _woaRankingsAreLoading = false;
             Console.Error.WriteLine(e);
         }
     }

@@ -70,7 +70,7 @@ public class HohHelperResponseDtoToTablePkConverter(
                         case "woa":
                         {
                             yield return (collectionCategoryId, tablePartitionKeyProvider.Woa(worldId, date),
-                                InGameDataProcessingServiceType.Undefined);
+                                InGameDataProcessingServiceType.WakeupAllianceWoa);
                             break;
                         }
                     }

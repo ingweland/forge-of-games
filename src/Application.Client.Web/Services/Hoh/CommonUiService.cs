@@ -16,6 +16,8 @@ public class CommonUiService : ICommonUiService
     private readonly Lazy<Task<IReadOnlyDictionary<TreasureHuntLeague, TreasureHuntLeagueDto>>>
         _lazyTreasureHuntLeagues;
 
+    private readonly Lazy<Task<IReadOnlyDictionary<WoaTier, WoaTierDto>>> _lazyWoaTiers;
+
     private readonly IMapper _mapper;
 
     public CommonUiService(IMapper mapper, ICommonService commonService)
@@ -27,6 +29,9 @@ public class CommonUiService : ICommonUiService
         _lazyTreasureHuntLeagues =
             new Lazy<Task<IReadOnlyDictionary<TreasureHuntLeague, TreasureHuntLeagueDto>>>(
                 InitializeTreasureHuntLeagues, true);
+        _lazyWoaTiers =
+            new Lazy<Task<IReadOnlyDictionary<WoaTier, WoaTierDto>>>(
+                InitializeWoaTiers, true);
     }
 
     public Task<IReadOnlyDictionary<string, AgeViewModel>> GetAgesAsync()
@@ -50,6 +55,11 @@ public class CommonUiService : ICommonUiService
         return _lazyTreasureHuntLeagues.Value;
     }
 
+    public Task<IReadOnlyDictionary<WoaTier, WoaTierDto>> GetWoaTiersAsync()
+    {
+        return _lazyWoaTiers.Value;
+    }
+
     private async Task<IReadOnlyDictionary<string, AgeViewModel>> InitializeAges()
     {
         var ages = await _commonService.GetAgesAsync();
@@ -66,5 +76,11 @@ public class CommonUiService : ICommonUiService
     {
         var tiers = await _commonService.GetTreasureHuntLeaguesAsync();
         return tiers.ToDictionary(x => x.League);
+    }
+
+    private async Task<IReadOnlyDictionary<WoaTier, WoaTierDto>> InitializeWoaTiers()
+    {
+        var tiers = await _commonService.GetWoaTiersAsync();
+        return tiers.ToDictionary(x => x.Tier);
     }
 }

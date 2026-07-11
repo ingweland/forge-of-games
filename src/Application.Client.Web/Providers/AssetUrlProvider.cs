@@ -116,6 +116,11 @@ public class AssetUrlProvider(IOptionsSnapshot<AssetsSettings> assetsSettings) :
         return GetAssetUrl(assetsSettings.Value.HohIconsPath, $"icon_PvP_Tier_{league}.png");
     }
 
+    public string GetHohWoaLeagueIconUrl(WoaTier tier)
+    {
+        return GetAssetUrl(assetsSettings.Value.HohIconsPath, $"icon_woa_tier_{(int) tier}.png");
+    }
+
     public string GetHohHeroAbilityIconUrl(string heroAbilityId)
     {
         var iconId = heroAbilityId.Replace('.', '_').ToLowerInvariant();

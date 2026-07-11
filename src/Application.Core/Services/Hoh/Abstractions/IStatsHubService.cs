@@ -86,4 +86,8 @@ public interface IStatsHubService
 
     [Get(FogUrlBuilder.ApiRoutes.PLAYER_PRODUCTION_CAPACITY_TEMPLATE_REFIT)]
     Task<PlayerCityPropertiesDto?> GetPlayerProductionCapacityAsync(int playerId, CancellationToken ct = default);
+
+    [Get(FogUrlBuilder.ApiRoutes.ALLIANCE_WOA_RANKINGS_TEMPLATE_REFIT)]
+    Task<IReadOnlyCollection<AllianceWoaRankingDto>> GetAllianceWoaRankingsAsync(int allianceId,
+        CancellationToken ct = default);
 }

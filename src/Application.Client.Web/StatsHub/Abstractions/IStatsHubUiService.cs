@@ -53,4 +53,6 @@ public interface IStatsHubUiService
 
     Task<PlayerCityPropertiesViewModel?> GetPlayerCityPropertiesAsync(int playerId,
         CancellationToken ct = default);
+    Task<IReadOnlyCollection<AllianceWoaRankingViewModel>> GetAllianceWoaRankingsAsync(int allianceId,
+        CancellationToken ct = default);
 }

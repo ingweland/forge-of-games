@@ -3273,6 +3273,15 @@ namespace Ingweland.Fog.Application.Client.Core.Localization {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Battle for Atlantis Ranking.
+        /// </summary>
+        public static string StatsHub_Alliance_WoaRanking {
+            get {
+                return ResourceManager.GetString("StatsHub.Alliance.WoaRanking", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Alliance Profile | Heroes of History | Forge of Games.
         /// </summary>
         public static string StatsHub_AllianceProfile_PageTitle {

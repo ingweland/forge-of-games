@@ -41,6 +41,11 @@ public class HohDataCacheKeyFactory : IHohDataCacheKeyFactory
         return $"ath-leagues:{CultureInfo.CurrentCulture.Name}:{version}";
     }
 
+    public string WoaTiers(Guid version)
+    {
+        return $"woa-tiers:{CultureInfo.CurrentCulture.Name}:{version}";
+    }
+
     public string HohResources(Guid version)
     {
         return $"hoh-resources:{CultureInfo.CurrentCulture.Name}:{version}";

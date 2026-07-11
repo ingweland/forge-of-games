@@ -27,6 +27,7 @@ public class InGameDataReceiver(
             InGameDataProcessingServiceType.Battle,
             InGameDataProcessingServiceType.WakeupLeaderboards,
             InGameDataProcessingServiceType.WakeupAlliance,
+            InGameDataProcessingServiceType.WakeupAllianceWoa,
         });
 
     [Function("InGameDataReceiver")]

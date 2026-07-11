@@ -10,4 +10,5 @@ public interface ICommonUiService
     Task<AgeViewModel?> GetAgeAsync(string ageId);
     Task<IReadOnlyDictionary<PvpTier, PvpTierDto>> GetPvpTiersAsync();
     Task<IReadOnlyDictionary<TreasureHuntLeague, TreasureHuntLeagueDto>> GetTreasureHuntLeaguesAsync();
+    Task<IReadOnlyDictionary<WoaTier, WoaTierDto>> GetWoaTiersAsync();
 }

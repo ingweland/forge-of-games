@@ -11,6 +11,9 @@ public sealed partial class CommunicationDto
 
     public AllianceRanksDTO AllianceRanks => Response.FindAndUnpack<AllianceRanksDTO>();
 
+    public IList<AllianceDetailsDto> Alliances =>
+        RootContext.Messages.FindAndUnpackToList<AllianceDetailsDto>("AllianceDTO");
+
     public BatchResponse BatchResponse => Response.FindAndUnpack<BatchResponse>();
 
     public IList<CityDTO> Cities => RootContext.Messages.FindAndUnpackToList<CityDTO>();
@@ -67,6 +70,11 @@ public sealed partial class CommunicationDto
 
     public ResearchStateDTO? ResearchState =>
         RootContext.Messages.FindAndUnpackToList<ResearchStateDTO>().FirstOrDefault();
+
+    public IList<WoAAlliancePush> WoAAlliancePushs => RootContext.Messages.FindAndUnpackToList<WoAAlliancePush>();
+
+    public WoADivisionPush? WoaDivisionPush =>
+        RootContext.Messages.FindAndUnpackToList<WoADivisionPush>().FirstOrDefault();
 
     public ReworkedWondersDTO? Wonders =>
         RootContext.Messages.FindAndUnpackToList<ReworkedWondersDTO>().FirstOrDefault();
