@@ -1,6 +1,7 @@
 using Ingweland.Fog.Application.Core.Repository.Abstractions;
 using Ingweland.Fog.Application.Server.Interfaces;
 using Ingweland.Fog.Models.Fog.Entities;
+using Ingweland.Fog.Shared.Helpers;
 using Microsoft.EntityFrameworkCore;
 
 namespace Ingweland.Fog.Functions.Services;
@@ -32,7 +33,7 @@ public class PlayerHeroesService(
         foreach (var player in players)
         {
             var unitIds = units.GetValueOrDefault(player.InGamePlayerId, []);
-            var heroIds = heroes.GetValueOrDefault(player.InGamePlayerId, []);
+            var heroIds = heroes.GetValueOrDefault(player.InGamePlayerId, []).Select(HohStringParser.GetConcreteId);
             foreach (var heroId in heroIds)
             {
                 if (heroesToUnitIds.TryGetValue(heroId, out var unitId))
