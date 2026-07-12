@@ -29,7 +29,7 @@ public class WoaPlayerStatsProcessor(
         await databaseWarmUpService.WarmUpDatabaseIfRequiredAsync();
 
         var date = DateOnly.FromDateTime(DateTime.UtcNow).AddDays(-1);
-        logger.LogInformation("BattlesProcessor started for date {date}", date);
+        logger.LogInformation("WoaPlayerStatsProcessor started for date {date}", date);
         foreach (var gameWorld in GameWorldsProvider.GetGameWorlds())
         {
             logger.LogInformation("Processing game world {gameWorldId}", gameWorld.Id);
