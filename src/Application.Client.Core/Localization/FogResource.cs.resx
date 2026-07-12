@@ -1550,4 +1550,31 @@ Forge of Games není přidružený ani oficiálně spojený s tvůrci nebo vydav
     <data name="StatsHub.Alliance.WoaRanking" xml:space="preserve">
         <value>Žebříček Bitvy o Atlantidu</value>
     </data>
+    <data name="StatsHub.Player.WoaStats" xml:space="preserve">
+        <value>Statistiky Bitvy o Atlantidu</value>
+    </data>
+    <data name="StatsHub.Player.WoaStats.Table.EventDates" xml:space="preserve">
+        <value>Data události</value>
+    </data>
+    <data name="StatsHub.Player.WoaStats.Table.ContributionPoints" xml:space="preserve">
+        <value>Příspěvkové body</value>
+    </data>
+    <data name="StatsHub.Player.WoaStats.Table.HealingDone" xml:space="preserve">
+        <value>Celkové léčení</value>
+    </data>
+    <data name="StatsHub.Player.WoaStats.Table.LostAttacks" xml:space="preserve">
+        <value>Ztracené útoky</value>
+    </data>
+    <data name="StatsHub.Player.WoaStats.Table.RepairsStarted" xml:space="preserve">
+        <value>Opravy byly zahájeny</value>
+    </data>
+    <data name="StatsHub.Player.WoaStats.Table.VictoryPoints" xml:space="preserve">
+        <value>Vítězné body</value>
+    </data>
+    <data name="StatsHub.Player.WoaStats.Table.WonAttacks" xml:space="preserve">
+        <value>Vyhrané útoky</value>
+    </data>
+    <data name="StatsHub.Player.WoaStats.Table.WonDefenses" xml:space="preserve">
+        <value>Vyhrané obrany</value>
+    </data>
 </root>

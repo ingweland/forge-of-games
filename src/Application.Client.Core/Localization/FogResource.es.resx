@@ -1562,4 +1562,31 @@ Forge of Games no está afiliado ni tiene conexión oficial con los creadores o 
     <data name="StatsHub.Alliance.WoaRanking" xml:space="preserve">
         <value>Clasificación de la Batalla por Atlantis</value>
     </data>
+    <data name="StatsHub.Player.WoaStats" xml:space="preserve">
+        <value>Estadísticas de la Batalla por Atlantis</value>
+    </data>
+    <data name="StatsHub.Player.WoaStats.Table.EventDates" xml:space="preserve">
+        <value>Fechas del evento</value>
+    </data>
+    <data name="StatsHub.Player.WoaStats.Table.ContributionPoints" xml:space="preserve">
+        <value>Puntos de contribución</value>
+    </data>
+    <data name="StatsHub.Player.WoaStats.Table.HealingDone" xml:space="preserve">
+        <value>Curación realizada</value>
+    </data>
+    <data name="StatsHub.Player.WoaStats.Table.LostAttacks" xml:space="preserve">
+        <value>Ataques perdidos</value>
+    </data>
+    <data name="StatsHub.Player.WoaStats.Table.RepairsStarted" xml:space="preserve">
+        <value>Reparaciones iniciadas</value>
+    </data>
+    <data name="StatsHub.Player.WoaStats.Table.VictoryPoints" xml:space="preserve">
+        <value>Puntos de Victoria</value>
+    </data>
+    <data name="StatsHub.Player.WoaStats.Table.WonAttacks" xml:space="preserve">
+        <value>Ataques ganados</value>
+    </data>
+    <data name="StatsHub.Player.WoaStats.Table.WonDefenses" xml:space="preserve">
+        <value>Defensas ganadas</value>
+    </data>
 </root>

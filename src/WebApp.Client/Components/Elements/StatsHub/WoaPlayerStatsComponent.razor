@@ -1,0 +1,51 @@
+@using Ingweland.Fog.Application.Client.Core.Localization
+@using Ingweland.Fog.Application.Client.Web.StatsHub.ViewModels
+@using Microsoft.Extensions.Localization
+@inject IStringLocalizer<FogResource> Loc
+<table class="unit-battles-table" disabled>
+    <colgroup>
+        <col class="table-column"/>
+        <col class="table-column"/>
+        <col class="table-column"/>
+        <col class="table-column"/>
+        <col class="table-column"/>
+        <col class="table-column"/>
+        <col class="table-column"/>
+        <col class="table-column"/>
+    </colgroup>
+    <thead>
+    <tr>
+        <th>@Loc[FogResource.StatsHub_Player_WoaStats_Table_EventDates]</th>
+        <th>@Loc[FogResource.StatsHub_Player_WoaStats_Table_ContributionPoints]</th>
+        <th>@Loc[FogResource.StatsHub_Player_WoaStats_Table_VictoryPoints]</th>
+        <th>@Loc[FogResource.StatsHub_Player_WoaStats_Table_WonAttacks]</th>
+        <th>@Loc[FogResource.StatsHub_Player_WoaStats_Table_LostAttacks]</th>
+        <th>@Loc[FogResource.StatsHub_Player_WoaStats_Table_WonDefenses]</th>
+        <th>@Loc[FogResource.StatsHub_Player_WoaStats_Table_RepairsStarted]</th>
+        <th>@Loc[FogResource.StatsHub_Player_WoaStats_Table_HealingDone]</th>
+    </tr>
+    </thead>
+    <tbody>
+    @foreach (var item in Stats)
+    {
+        <tr>
+            <td>@item.EventLabel</td>
+            <td>@item.ContributionPointsFormatted</td>
+            <td>@item.VictoryPointsFormatted</td>
+            <td>@item.WonAttacks</td>
+            <td>@item.LostAttacks</td>
+            <td>@item.WonDefenses</td>
+            <td>@item.RepairsStarted</td>
+            <td>@item.HealingDone</td>
+        </tr>
+    }
+    </tbody>
+</table>
+
+@code {
+
+    [Parameter]
+    [EditorRequired]
+    public required IReadOnlyCollection<WoaPlayerStatsViewModel> Stats { get; set; } = [];
+
+}

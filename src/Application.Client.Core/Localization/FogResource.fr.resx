@@ -1594,4 +1594,31 @@ Forge of Games n’est pas affilié ou officiellement associé aux créateurs ou
     <data name="StatsHub.Alliance.WoaRanking" xml:space="preserve">
         <value>Classement de la Bataille pour l'Atlantide</value>
     </data>
+    <data name="StatsHub.Player.WoaStats" xml:space="preserve">
+        <value>Statistiques de la Bataille pour l'Atlantide</value>
+    </data>
+    <data name="StatsHub.Player.WoaStats.Table.EventDates" xml:space="preserve">
+        <value>Dates de l'événement</value>
+    </data>
+    <data name="StatsHub.Player.WoaStats.Table.ContributionPoints" xml:space="preserve">
+        <value>Points de Contribution</value>
+    </data>
+    <data name="StatsHub.Player.WoaStats.Table.HealingDone" xml:space="preserve">
+        <value>Soins effectués</value>
+    </data>
+    <data name="StatsHub.Player.WoaStats.Table.LostAttacks" xml:space="preserve">
+        <value>Attaques perdues</value>
+    </data>
+    <data name="StatsHub.Player.WoaStats.Table.RepairsStarted" xml:space="preserve">
+        <value>Réparations commencées</value>
+    </data>
+    <data name="StatsHub.Player.WoaStats.Table.VictoryPoints" xml:space="preserve">
+        <value>Points de Victoire</value>
+    </data>
+    <data name="StatsHub.Player.WoaStats.Table.WonAttacks" xml:space="preserve">
+        <value>Attaques gagnées</value>
+    </data>
+    <data name="StatsHub.Player.WoaStats.Table.WonDefenses" xml:space="preserve">
+        <value>Défenses gagnées</value>
+    </data>
 </root>

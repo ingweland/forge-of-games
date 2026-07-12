@@ -3714,6 +3714,87 @@ namespace Ingweland.Fog.Application.Client.Core.Localization {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Battle for Atlantis Stats.
+        /// </summary>
+        public static string StatsHub_Player_WoaStats {
+            get {
+                return ResourceManager.GetString("StatsHub.Player.WoaStats", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Contribution Points.
+        /// </summary>
+        public static string StatsHub_Player_WoaStats_Table_ContributionPoints {
+            get {
+                return ResourceManager.GetString("StatsHub.Player.WoaStats.Table.ContributionPoints", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Event Dates.
+        /// </summary>
+        public static string StatsHub_Player_WoaStats_Table_EventDates {
+            get {
+                return ResourceManager.GetString("StatsHub.Player.WoaStats.Table.EventDates", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Healing Done.
+        /// </summary>
+        public static string StatsHub_Player_WoaStats_Table_HealingDone {
+            get {
+                return ResourceManager.GetString("StatsHub.Player.WoaStats.Table.HealingDone", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Attacks Lost.
+        /// </summary>
+        public static string StatsHub_Player_WoaStats_Table_LostAttacks {
+            get {
+                return ResourceManager.GetString("StatsHub.Player.WoaStats.Table.LostAttacks", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Repairs Started.
+        /// </summary>
+        public static string StatsHub_Player_WoaStats_Table_RepairsStarted {
+            get {
+                return ResourceManager.GetString("StatsHub.Player.WoaStats.Table.RepairsStarted", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Victory Points.
+        /// </summary>
+        public static string StatsHub_Player_WoaStats_Table_VictoryPoints {
+            get {
+                return ResourceManager.GetString("StatsHub.Player.WoaStats.Table.VictoryPoints", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Attacks Won.
+        /// </summary>
+        public static string StatsHub_Player_WoaStats_Table_WonAttacks {
+            get {
+                return ResourceManager.GetString("StatsHub.Player.WoaStats.Table.WonAttacks", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Defenses Won.
+        /// </summary>
+        public static string StatsHub_Player_WoaStats_Table_WonDefenses {
+            get {
+                return ResourceManager.GetString("StatsHub.Player.WoaStats.Table.WonDefenses", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Wonder Levels.
         /// </summary>
         public static string StatsHub_Player_WonderLevels {

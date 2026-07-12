@@ -1591,4 +1591,31 @@
     <data name="StatsHub.Alliance.WoaRanking" xml:space="preserve">
         <value>Battle for Atlantis Ranking</value>
     </data>
+    <data name="StatsHub.Player.WoaStats" xml:space="preserve">
+        <value>Battle for Atlantis Stats</value>
+    </data>
+    <data name="StatsHub.Player.WoaStats.Table.EventDates" xml:space="preserve">
+        <value>Event Dates</value>
+    </data>
+    <data name="StatsHub.Player.WoaStats.Table.ContributionPoints" xml:space="preserve">
+        <value>Contribution Points</value>
+    </data>
+    <data name="StatsHub.Player.WoaStats.Table.HealingDone" xml:space="preserve">
+        <value>Healing Done</value>
+    </data>
+    <data name="StatsHub.Player.WoaStats.Table.LostAttacks" xml:space="preserve">
+        <value>Attacks Lost</value>
+    </data>
+    <data name="StatsHub.Player.WoaStats.Table.RepairsStarted" xml:space="preserve">
+        <value>Repairs Started</value>
+    </data>
+    <data name="StatsHub.Player.WoaStats.Table.VictoryPoints" xml:space="preserve">
+        <value>Victory Points</value>
+    </data>
+    <data name="StatsHub.Player.WoaStats.Table.WonAttacks" xml:space="preserve">
+        <value>Attacks Won</value>
+    </data>
+    <data name="StatsHub.Player.WoaStats.Table.WonDefenses" xml:space="preserve">
+        <value>Defenses Won</value>
+    </data>
 </root>

@@ -1570,4 +1570,31 @@ Forge of Games is niet verbonden met of officieel gelieerd aan de makers of uitg
     <data name="StatsHub.Alliance.WoaRanking" xml:space="preserve">
         <value>Ranglijst Gevecht om Atlantis</value>
     </data>
+    <data name="StatsHub.Player.WoaStats" xml:space="preserve">
+        <value>Statistieken Gevecht om Atlantis</value>
+    </data>
+    <data name="StatsHub.Player.WoaStats.Table.EventDates" xml:space="preserve">
+        <value>Evenementdata</value>
+    </data>
+    <data name="StatsHub.Player.WoaStats.Table.ContributionPoints" xml:space="preserve">
+        <value>Bijdragepunten</value>
+    </data>
+    <data name="StatsHub.Player.WoaStats.Table.HealingDone" xml:space="preserve">
+        <value>Genezing gedaan</value>
+    </data>
+    <data name="StatsHub.Player.WoaStats.Table.LostAttacks" xml:space="preserve">
+        <value>Verloren aanvallen</value>
+    </data>
+    <data name="StatsHub.Player.WoaStats.Table.RepairsStarted" xml:space="preserve">
+        <value>De reparaties zijn gestart.</value>
+    </data>
+    <data name="StatsHub.Player.WoaStats.Table.VictoryPoints" xml:space="preserve">
+        <value>Overwinningspunten</value>
+    </data>
+    <data name="StatsHub.Player.WoaStats.Table.WonAttacks" xml:space="preserve">
+        <value>Gewonnen aanvallen</value>
+    </data>
+    <data name="StatsHub.Player.WoaStats.Table.WonDefenses" xml:space="preserve">
+        <value>Gewonnen verdedigingen</value>
+    </data>
 </root>

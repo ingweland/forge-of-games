@@ -78,6 +78,13 @@ var searchKeys = new HashSet<string>
     "Base.UnlockableFeatures.EventCities",
     "Base.HarborShopPanel.Atlantis.ButtonLabel",
     "Base.WoA.Header",
+    "Base.WoARankingPanel.Contributed",
+    "Base.WoARankingPanel.HealingDone",
+    "Base.WoARankingPanel.RepairsStarted",
+    "Base.WoA.VictoryPointsTitle",
+    "Base.WoARankingPanel.AttacksStarted",
+    "Tutorial.JoystickBattle.LostOverlayTitle",
+    "Base.PvpFightPanel.Attack",
 };
 
 var result = new Dictionary<string, List<Translations>>();

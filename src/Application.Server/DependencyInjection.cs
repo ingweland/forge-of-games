@@ -82,6 +82,7 @@ public static class DependencyInjection
         services.AddScoped<ICommunityCityStrategyService, CommunityCityStrategyService>();
         services.AddScoped<IPlayerAthRankingDtoFactory, PlayerAthRankingDtoFactory>();
         services.AddScoped<IHeroAbilityService, HeroAbilityService>();
+        services.AddScoped<IWoaPlayerStatsDtoFactory, WoaPlayerStatsDtoFactory>();
 
         services.AddTransient<IResultLogger, ResultLogger>();
 

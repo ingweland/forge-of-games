@@ -51,6 +51,9 @@ public partial class PlayerProfilePage : StatsHubPageBase, IAsyncDisposable
     private IReadOnlyCollection<StatsTimedIntValue>? _rankings;
     private bool _rankingsAreLoading;
     private CancellationTokenSource? _rankingsCts;
+    private CancellationTokenSource? _woaRankingsCts;
+    private IReadOnlyCollection<WoaPlayerStatsViewModel>? _woaStats;
+    private bool _woaStatsAreLoading;
     private IReadOnlyCollection<WonderRankingViewModel>? _wonderRankings;
     private bool _wonderRankingsAreLoading;
     private CancellationTokenSource? _wonderRankingsCts;
@@ -577,5 +580,37 @@ public partial class PlayerProfilePage : StatsHubPageBase, IAsyncDisposable
 
         _athRankings = await StatsHubUiService.GetPlayerAthRankingsAsync(PlayerId);
         _athRankingsAreLoading = false;
+    }
+
+    private async Task ToggleWoaStatsContainer(bool expanded)
+    {
+        AnalyticsService.TrackChartView(AnalyticsEvents.TOGGLE_VIEW, _defaultAnalyticsParameters,
+            AnalyticsParams.Values.Sources.WOA_PLAYER_STATS, expanded);
+
+        if (expanded)
+        {
+            await GetWoaStats();
+        }
+    }
+
+    private async Task GetWoaStats()
+    {
+        if (_woaStats != null)
+        {
+            return;
+        }
+
+        if (_woaRankingsCts != null)
+        {
+            await _woaRankingsCts.CancelAsync();
+        }
+
+        _woaStatsAreLoading = true;
+        StateHasChanged();
+
+        _woaRankingsCts = new CancellationTokenSource();
+
+        _woaStats = await StatsHubUiService.GetWoaPlayerStatsAsync(PlayerId, _woaRankingsCts.Token);
+        _woaStatsAreLoading = false;
     }
 }

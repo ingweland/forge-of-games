@@ -42,6 +42,7 @@ public class StatsHubUiService : UiServiceBase, IStatsHubUiService
     private readonly IStatsHubService _statsHubService;
     private readonly IStatsHubViewModelsFactory _statsHubViewModelsFactory;
     private readonly ITreasureHuntUiService _treasureHuntUiService;
+    private readonly IWoaPlayerStatsViewModelFactory _woaPlayerStatsViewModelFactory;
     private readonly IWonderRankingViewModelFactory _wonderRankingViewModelFactory;
 
     public StatsHubUiService(IStatsHubService statsHubService,
@@ -59,6 +60,7 @@ public class StatsHubUiService : UiServiceBase, IStatsHubUiService
         IWonderRankingViewModelFactory wonderRankingViewModelFactory,
         IPlayerCityStrategyInfoViewModelFactory playerCityStrategyInfoViewModelFactory,
         IPlayerAthRankingViewModelFactory playerAthRankingViewModelFactory,
+        IWoaPlayerStatsViewModelFactory woaPlayerStatsViewModelFactory,
         ILogger<StatsHubUiService> logger,
         IMemoryCache memoryCache) : base(logger)
     {
@@ -78,6 +80,7 @@ public class StatsHubUiService : UiServiceBase, IStatsHubUiService
         _playerCityStrategyInfoViewModelFactory = playerCityStrategyInfoViewModelFactory;
         _memoryCache = memoryCache;
         _playerAthRankingViewModelFactory = playerAthRankingViewModelFactory;
+        _woaPlayerStatsViewModelFactory = woaPlayerStatsViewModelFactory;
 
         _ages = new Lazy<Task<IReadOnlyDictionary<string, AgeDto>>>(GetAgesAsync);
     }
@@ -314,6 +317,18 @@ public class StatsHubUiService : UiServiceBase, IStatsHubUiService
 
         return rankings.OrderBy(x => x.StartedAt).Select(x => _allianceWoaRankingViewModelFactory.Create(x,
             tiers.GetValueOrDefault(x.Tier, WoaTierDto.Default))).ToList();
+    }
+
+    public Task<IReadOnlyCollection<WoaPlayerStatsViewModel>> GetWoaPlayerStatsAsync(int playerId,
+        CancellationToken ct = default)
+    {
+        return ExecuteSafeAsync<IReadOnlyCollection<WoaPlayerStatsViewModel>>(
+            async () =>
+            {
+                var stats = await _statsHubService.GetWoaPlayerStatsAsync(playerId, ct);
+                return stats.OrderBy(x => x.StartedAt).Select(x => _woaPlayerStatsViewModelFactory.Create(x)).ToList();
+            },
+            []);
     }
 
     private async Task<T> GetOrCreateAsync<T>(string key, Func<Task<T>> factory) where T : ICollection, new()

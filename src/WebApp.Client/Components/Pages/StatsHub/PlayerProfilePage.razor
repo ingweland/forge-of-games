@@ -172,6 +172,15 @@
             }
         </ExpandableContainer>
 
+        <ExpandableContainer Title="@Loc[FogResource.StatsHub_Player_WoaStats]" HasHorizontalPadding="false"
+                             IsLoading="@_woaStatsAreLoading" IsEmpty="@(_woaStats is {Count: 0})"
+                             ExpandedChanged="@ToggleWoaStatsContainer">
+            @if (_woaStats != null)
+            {
+                <WoaPlayerStatsComponent Stats="@_woaStats"/>
+            }
+        </ExpandableContainer>
+
         <ExpandableContainer Title="@Loc[FogResource.StatsHub_Player_WonderLevels]"
                              IsLoading="@_wonderRankingsAreLoading" IsEmpty="@(_wonderRankings is {Count: 0})"
                              ExpandedChanged="@ToggleWonderRankingsContainer">
