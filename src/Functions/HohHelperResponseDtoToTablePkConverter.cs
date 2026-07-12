@@ -73,6 +73,13 @@ public class HohHelperResponseDtoToTablePkConverter(
                                 InGameDataProcessingServiceType.WakeupAllianceWoa);
                             break;
                         }
+
+                        case "heroes":
+                        {
+                            yield return (collectionCategoryId, tablePartitionKeyProvider.HeroesWakeup(worldId, date),
+                                InGameDataProcessingServiceType.Undefined);
+                            break;
+                        }
                     }
                 }
 
@@ -112,6 +119,13 @@ public class HohHelperResponseDtoToTablePkConverter(
             {
                 yield return (inGameData.CollectionCategoryIds.First(),
                     tablePartitionKeyProvider.WoaPlayerStats(worldId, date), InGameDataProcessingServiceType.Undefined);
+                break;
+            }
+
+            case "game/startup":
+            {
+                yield return (inGameData.CollectionCategoryIds.First(),
+                    tablePartitionKeyProvider.HeroesStartup(worldId, date), InGameDataProcessingServiceType.Undefined);
                 break;
             }
         }

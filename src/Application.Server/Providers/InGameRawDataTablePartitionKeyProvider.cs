@@ -59,6 +59,16 @@ public class InGameRawDataTablePartitionKeyProvider
         return WithWorldAndDate("woa-player-stats", worldId, date);
     }
 
+    public string HeroesWakeup(string worldId, DateOnly date)
+    {
+        return WithWorldAndDate("heroes-wakeup", worldId, date);
+    }
+
+    public string HeroesStartup(string worldId, DateOnly date)
+    {
+        return WithWorldAndDate("heroes-startup", worldId, date);
+    }
+
     private string WithWorldAndDate(string src, string worldId, DateOnly date)
     {
         return $"{src}_{worldId}_{date.ToString("O")}";

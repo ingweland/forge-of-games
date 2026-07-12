@@ -7,7 +7,7 @@ public class EndpointValidator
     private static readonly IReadOnlyDictionary<string, HashSet<string>> GameEndpointsToCollectionCategoryIdsMap =
         new Dictionary<string, HashSet<string>>
         {
-            {"game/wakeup", ["alliance", "leaderboards", "woa"]},
+            {"game/wakeup", ["alliance", "leaderboards", "woa", "heroes"]},
             {"game/ranking/player", ["leaderboards"]},
             {"game/ranking/alliance", ["leaderboards"]},
             {"game/pvp/get-battle-history", ["pvpBattles"]},
@@ -15,6 +15,7 @@ public class EndpointValidator
             {"game/battle/hero/complete-wave", ["battles"]},
             {"game/battle/hero/start", ["battles"]},
             {"game/woa/get-player-statistics", ["woa"]},
+            {"game/startup", ["heroes"]},
         };
 
     public bool ValidateEndpoint(string responseUrl, IEnumerable<string> collectionCategoryIds, out string errorMessage)
