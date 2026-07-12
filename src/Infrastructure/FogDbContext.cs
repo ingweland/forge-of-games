@@ -46,6 +46,7 @@ public class FogDbContext : DbContext, IFogDbContext
     public DbSet<PvpBattle> PvpBattles { get; set; }
     public DbSet<TopHeroInsightsEntity> TopHeroInsights { get; set; }
     public DbSet<WoaPlayerStatsEntity> WoaPlayerStats { get; set; }
+    public DbSet<PlayerHeroEntity> PlayerHeroes { get; set; }
     public DbSet<BattleStatsEntity> BattleStats { get; set; }
     public DbSet<PlayerCitySnapshot> PlayerCitySnapshots { get; set; }
     public DbSet<ProfileSquadEntity> ProfileSquads { get; set; }
@@ -100,5 +101,6 @@ public class FogDbContext : DbContext, IFogDbContext
         builder.ApplyConfiguration(new PlayerAthRankingEntityTypeConfiguration());
         builder.ApplyConfiguration(new AllianceWoaRankingEntityTypeConfiguration());
         builder.ApplyConfiguration(new WoaPlayerStatsEntityTypeConfiguration());
+        builder.ApplyConfiguration(new PlayerHeroEntityTypeConfiguration());
     }
 }

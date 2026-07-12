@@ -19,6 +19,8 @@ public class Player
     public ICollection<EventCityWonderRanking> EventCityWonderRankings { get; set; } =
         new List<EventCityWonderRanking>();
 
+    public ICollection<PlayerHeroEntity> Heroes { get; set; } = new List<PlayerHeroEntity>();
+
     public int Id { get; set; }
     public required int InGamePlayerId { get; set; }
 

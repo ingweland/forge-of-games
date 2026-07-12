@@ -25,6 +25,7 @@ public interface IFogDbContext
     DbSet<InGameEventEntity> InGameEvents { get; set; }
     DbSet<PlayerAthRanking> PlayerAthRankings { get; set; }
     DbSet<PlayerCitySnapshot> PlayerCitySnapshots { get; set; }
+    DbSet<PlayerHeroEntity> PlayerHeroes { get; set; }
     DbSet<PlayerRanking> PlayerRankings { get; set; }
     DbSet<Player> Players { get; set; }
     DbSet<ProfileSquadDataEntity> ProfileSquadDataItems { get; set; }
