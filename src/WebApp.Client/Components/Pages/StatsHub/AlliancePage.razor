@@ -119,7 +119,7 @@
         </ExpandableContainer>
 
         <ExpandableContainer Title="@Loc[FogResource.StatsHub_Alliance_WoaRanking]"
-                             IsLoading="@_woaRankingsAreLoading"
+                             IsLoading="@_woaRankingsAreLoading" IsEmpty="@(_woaRankings is {Count: 0})"
                              ExpandedChanged="@ToggleWoaRankingsContainer">
             @if (_woaRankings != null)
             {
