@@ -75,6 +75,7 @@ public class CacheKeyFactory : ICacheKeyFactory
             GetHohCoreDataVersionQuery q => "HohCoreDataVersion",
             GetAllianceWoaRankingsQuery q => $"AllianceWoaRankings:{q.AllianceId}",
             GetWoaPlayerStatsQuery q => $"WoaPlayerStats:{q.PlayerId}",
+            GetPlayerHeroesQuery q => $"PlayerHeroes:{q.PlayerId}",
             _ => typeof(TRequest).FullName ?? Guid.NewGuid().ToString(),
         };
     }

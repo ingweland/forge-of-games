@@ -2,11 +2,13 @@ using System.Collections;
 using AutoMapper;
 using Ingweland.Fog.Application.Client.Web.Caching.Interfaces;
 using Ingweland.Fog.Application.Client.Web.Factories.Interfaces;
+using Ingweland.Fog.Application.Client.Web.Models;
 using Ingweland.Fog.Application.Client.Web.Services.Abstractions;
 using Ingweland.Fog.Application.Client.Web.Services.Hoh.Abstractions;
 using Ingweland.Fog.Application.Client.Web.StatsHub.Abstractions;
 using Ingweland.Fog.Application.Client.Web.StatsHub.ViewModels;
 using Ingweland.Fog.Application.Client.Web.ViewModels.Hoh.Battle;
+using Ingweland.Fog.Application.Client.Web.ViewModels.Hoh.Units;
 using Ingweland.Fog.Application.Core.Constants;
 using Ingweland.Fog.Application.Core.Services.Hoh.Abstractions;
 using Ingweland.Fog.Dtos.Hoh;
@@ -35,6 +37,7 @@ public class StatsHubUiService : UiServiceBase, IStatsHubUiService
     private readonly ICommonService _commonService;
     private readonly ICommonUiService _commonUiService;
     private readonly IHohCoreDataCache _coreDataCache;
+    private readonly IHeroProfileUiService _heroProfileUiService;
     private readonly IMapper _mapper;
     private readonly IMemoryCache _memoryCache;
     private readonly IPlayerAthRankingViewModelFactory _playerAthRankingViewModelFactory;
@@ -59,6 +62,7 @@ public class StatsHubUiService : UiServiceBase, IStatsHubUiService
         IPlayerCityStrategyInfoViewModelFactory playerCityStrategyInfoViewModelFactory,
         IPlayerAthRankingViewModelFactory playerAthRankingViewModelFactory,
         IWoaPlayerStatsViewModelFactory woaPlayerStatsViewModelFactory,
+        IHeroProfileUiService heroProfileUiService,
         ILogger<StatsHubUiService> logger,
         IMemoryCache memoryCache) : base(logger)
     {
@@ -78,6 +82,7 @@ public class StatsHubUiService : UiServiceBase, IStatsHubUiService
         _memoryCache = memoryCache;
         _playerAthRankingViewModelFactory = playerAthRankingViewModelFactory;
         _woaPlayerStatsViewModelFactory = woaPlayerStatsViewModelFactory;
+        _heroProfileUiService = heroProfileUiService;
 
         _ages = new Lazy<Task<IReadOnlyDictionary<string, AgeDto>>>(GetAgesAsync);
     }
@@ -318,6 +323,23 @@ public class StatsHubUiService : UiServiceBase, IStatsHubUiService
             {
                 var stats = await _statsHubService.GetWoaPlayerStatsAsync(playerId, ct);
                 return stats.OrderBy(x => x.StartedAt).Select(x => _woaPlayerStatsViewModelFactory.Create(x)).ToList();
+            },
+            []);
+    }
+
+    public Task<IReadOnlyCollection<HeroBasicViewModel>> GetPlayerHeroesAsync(int playerId, CancellationToken ct)
+    {
+        return ExecuteSafeAsync<IReadOnlyCollection<HeroBasicViewModel>>(
+            async () =>
+            {
+                var playerHeroes = await _statsHubService.GetPlayerHeroesAsync(playerId, ct);
+                if (playerHeroes.Count == 0)
+                {
+                    return [];
+                }
+
+                var heroes = await _heroProfileUiService.GetHeroes(HeroFilterRequest.Empty, playerHeroes.ToHashSet());
+                return heroes.OrderBy(x => x.Name).ToList();
             },
             []);
     }

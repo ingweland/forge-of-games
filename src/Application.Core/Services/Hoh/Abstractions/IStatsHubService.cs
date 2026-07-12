@@ -89,4 +89,7 @@ public interface IStatsHubService
 
     [Get(FogUrlBuilder.ApiRoutes.WOA_PLAYER_STATS_TEMPLATE_REFIT)]
     Task<IReadOnlyCollection<WoaPlayerStatsDto>> GetWoaPlayerStatsAsync(int playerId, CancellationToken ct = default);
+
+    [Get(FogUrlBuilder.ApiRoutes.PLAYER_HEROES_TEMPLATE_REFIT)]
+    Task<IReadOnlyCollection<string>> GetPlayerHeroesAsync(int playerId, CancellationToken ct = default);
 }

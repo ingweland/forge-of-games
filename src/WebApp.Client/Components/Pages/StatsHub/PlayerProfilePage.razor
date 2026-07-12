@@ -72,6 +72,22 @@
             </div>
         }
 
+        <ExpandableContainer Title="@Loc[FogResource.Hoh_Heroes]" HasHorizontalPadding="false"
+                             IsLoading="@_heroesAreLoading" IsEmpty="@(_heroes is {Count: 0})"
+                             ExpandedChanged="@ToggleHeroesContainer">
+            <div class="heroes-container">
+                @if (_heroes != null)
+                {
+                    @foreach (var hero in _heroes)
+                    {
+                        <a class="anchor-inherited-style" href="@FogUrlBuilder.PageRoutes.Hero(hero.Id)">
+                            <PlayerHeroItem Hero="@hero"/>
+                        </a>
+                    }
+                }
+            </div>
+        </ExpandableContainer>
+
         @if (_canShowChart)
         {
             <ExpandableContainer Title="@Loc[FogResource.StatsHub_Player_RankingPoints]"

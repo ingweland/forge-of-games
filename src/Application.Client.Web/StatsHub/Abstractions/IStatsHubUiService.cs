@@ -1,5 +1,6 @@
 using Ingweland.Fog.Application.Client.Web.StatsHub.ViewModels;
 using Ingweland.Fog.Application.Client.Web.ViewModels.Hoh.Battle;
+using Ingweland.Fog.Application.Client.Web.ViewModels.Hoh.Units;
 using Ingweland.Fog.Dtos.Hoh.Battle;
 using Ingweland.Fog.Dtos.Hoh.Stats;
 using Ingweland.Fog.Models.Fog;
@@ -58,4 +59,6 @@ public interface IStatsHubUiService
 
     Task<IReadOnlyCollection<WoaPlayerStatsViewModel>> GetWoaPlayerStatsAsync(int playerId,
         CancellationToken ct = default);
+
+    Task<IReadOnlyCollection<HeroBasicViewModel>> GetPlayerHeroesAsync(int playerId, CancellationToken ct);
 }

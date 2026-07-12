@@ -1,0 +1,53 @@
+.component-root {
+    display: flex;
+    flex-direction: column;
+    background-color: var(--fog-surface-color);
+    border-radius: var(--fog-border-radius);
+    border: 1px solid var(--fog-border-color);
+    overflow: hidden;
+    cursor: pointer;
+    max-width: 70px;
+    min-width: 60px;
+    height: 100%;
+    user-select: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+}
+
+.avatar-section {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 1/1;
+    overflow: hidden;
+}
+
+.avatar-section > img {
+    width: 100%;
+    height: auto;
+    min-height: 100%;
+    object-fit: cover;
+    aspect-ratio: 1/1;
+}
+
+.rating {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    color: white;
+    text-shadow: 0 2px 4px black;
+    font-size: 10px;
+}
+
+.main-label {
+    font-size: 10px;
+    white-space: normal;
+    width: 100%;
+    flex-grow: 1;
+    padding: 2px;
+    text-align: center;
+    align-content: center;
+}

@@ -38,6 +38,9 @@ public partial class PlayerProfilePage : StatsHubPageBase, IAsyncDisposable
     private DateTime? _citySnapshotDate = DateTime.Today;
     private Dictionary<string, object> _defaultAnalyticsParameters = [];
     private bool _fetchingCity;
+    private IReadOnlyCollection<HeroBasicViewModel>? _heroes;
+    private bool _heroesAreLoading;
+    private CancellationTokenSource? _heroesCts;
     private bool _isDisposed;
     private DateTime _maxPvpRankingsChartDate = DateTime.Today.AddDays(5);
     private PvpTier _maxPvpTier = PvpTier.PvP_Tier_Overlord_1;
@@ -506,6 +509,17 @@ public partial class PlayerProfilePage : StatsHubPageBase, IAsyncDisposable
         }
     }
 
+    private async Task ToggleHeroesContainer(bool expanded)
+    {
+        AnalyticsService.TrackChartView(AnalyticsEvents.TOGGLE_VIEW, _defaultAnalyticsParameters,
+            AnalyticsParams.Values.Sources.PLAYER_HEROES, expanded);
+
+        if (expanded)
+        {
+            await GetHeroesAsync();
+        }
+    }
+
     private async Task GetAthRankings()
     {
         if (_athRankings != null)
@@ -525,6 +539,27 @@ public partial class PlayerProfilePage : StatsHubPageBase, IAsyncDisposable
 
         _athRankings = await StatsHubUiService.GetPlayerAthRankingsAsync(PlayerId);
         _athRankingsAreLoading = false;
+    }
+
+    private async Task GetHeroesAsync()
+    {
+        if (_heroes != null)
+        {
+            return;
+        }
+
+        if (_heroesCts != null)
+        {
+            await _heroesCts.CancelAsync();
+        }
+
+        _heroesAreLoading = true;
+        StateHasChanged();
+
+        _heroesCts = new CancellationTokenSource();
+
+        _heroes = await StatsHubUiService.GetPlayerHeroesAsync(PlayerId, _heroesCts.Token);
+        _heroesAreLoading = false;
     }
 
     private async Task ToggleWoaStatsContainer(bool expanded)

@@ -1,0 +1,16 @@
+@using Ingweland.Fog.Application.Client.Web.ViewModels.Hoh.Units
+@using MudBlazor.Utilities
+<div class="component-root">
+    <div class="avatar-section">
+        <img src="@Hero.PortraitUrl"/>
+        <div class="rating">@(new string('★', Hero.StarCount))</div>
+    </div>
+    <div class="main-label">@Hero.Name</div>
+</div>
+
+@code {
+
+    [Parameter]
+    [EditorRequired]
+    public required HeroBasicViewModel Hero { get; set; }
+}

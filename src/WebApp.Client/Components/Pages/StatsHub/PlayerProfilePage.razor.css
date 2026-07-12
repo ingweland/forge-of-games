@@ -103,6 +103,14 @@ p {
     position: relative;
 }
 
+.heroes-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, 70px);
+    gap: 12px 2px;
+    justify-content: space-evenly;
+    width: 100%;
+}
+
 @media (min-width: 576px) {
     .page-container {
         padding: 0 0 16px 0;

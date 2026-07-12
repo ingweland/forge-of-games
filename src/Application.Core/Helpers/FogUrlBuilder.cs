@@ -42,6 +42,8 @@ public static class FogUrlBuilder
         public const string PLAYER_ATH_RANKINGS_TEMPLATE_REFIT = PLAYER_TEMPLATE_REFIT + "/athRankings";
         public const string WOA_PLAYER_STATS_TEMPLATE = PLAYER_TEMPLATE + "/woaStats";
         public const string WOA_PLAYER_STATS_TEMPLATE_REFIT = PLAYER_TEMPLATE_REFIT + "/woaStats";
+        public const string PLAYER_HEROES_TEMPLATE = PLAYER_TEMPLATE + "/heroes";
+        public const string PLAYER_HEROES_TEMPLATE_REFIT = PLAYER_TEMPLATE_REFIT + "/heroes";
 
         public const string WORLD_EVENT_CITY_TEMPLATE = "/" + BASE_STATS_PATH + "/worlds/{worldId}/eventCities";
 

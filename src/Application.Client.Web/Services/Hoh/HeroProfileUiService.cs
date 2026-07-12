@@ -104,7 +104,7 @@ public class HeroProfileUiService : UiServiceBase, IHeroProfileUiService
 
         if (heroIds.Count > 0)
         {
-            query = query.Where(x => heroIds.Contains(x.Id));
+            query = query.Where(x => heroIds.Contains(x.Id) || heroIds.Contains(x.UnitId));
         }
 
         if (request.Classes.Count > 0)
