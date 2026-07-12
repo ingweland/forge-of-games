@@ -67,7 +67,6 @@ public static class AnalyticsParams
             public const string PVP_BATTLE = "pvp_battle";
             public const string TOP_HEROES = "top_heroes";
             public const string UNIT_BATTLES_COMPONENTS = "unit_battles_component";
-            public const string WONDER_RANKINGS = "wonder_rankings";
             public const string WOA_PLAYER_STATS = "woa_player_stats";
         }
 

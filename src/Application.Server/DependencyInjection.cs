@@ -77,7 +77,6 @@ public static class DependencyInjection
         services.AddScoped<IRankingUpdateOrchestrator, RankingUpdateOrchestrator>();
         services.AddScoped<IFogCommonService, FogCommonService>();
         services.AddScoped<IInGameEventService, InGameEventService>();
-        services.AddScoped<IWonderRankingDtoFactory, WonderRankingDtoFactory>();
         services.AddScoped<IPlayerCityStrategyInfoDtoFactory, PlayerCityStrategyInfoDtoFactory>();
         services.AddScoped<ICommunityCityStrategyService, CommunityCityStrategyService>();
         services.AddScoped<IPlayerAthRankingDtoFactory, PlayerAthRankingDtoFactory>();

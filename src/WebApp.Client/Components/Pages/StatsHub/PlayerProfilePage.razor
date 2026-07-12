@@ -181,20 +181,6 @@
             }
         </ExpandableContainer>
 
-        <ExpandableContainer Title="@Loc[FogResource.StatsHub_Player_WonderLevels]"
-                             IsLoading="@_wonderRankingsAreLoading" IsEmpty="@(_wonderRankings is {Count: 0})"
-                             ExpandedChanged="@ToggleWonderRankingsContainer">
-            @if (_wonderRankings != null)
-            {
-                <div class="wonder-ranking-items-container">
-                    @foreach (var r in _wonderRankings)
-                    {
-                        <WonderRankingComponent Ranking="@r"/>
-                    }
-                </div>
-            }
-        </ExpandableContainer>
-
         @if (_player.CurrentAlliance != null || _player.PreviousAlliances.Count > 0)
         {
             <div class="fog-container section-container">

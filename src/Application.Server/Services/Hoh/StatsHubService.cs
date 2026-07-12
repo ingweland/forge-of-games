@@ -82,13 +82,6 @@ public class StatsHubService(ISender sender) : IStatsHubService
         return sender.Send(query, ct);
     }
 
-    public Task<IReadOnlyCollection<WonderRankingDto>> GetWonderRankingsAsync(int playerId,
-        CancellationToken ct = default)
-    {
-        var query = new GetWonderRankingsQuery(playerId);
-        return sender.Send(query, ct);
-    }
-
     public Task<PaginatedList<AllianceDto>> GetAlliancesAsync(string worldId, int startIndex,
         int pageSize = FogConstants.DEFAULT_STATS_PAGE_SIZE,
         string? name = null, CancellationToken ct = default)

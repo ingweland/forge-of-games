@@ -58,10 +58,6 @@ public interface IStatsHubService
     Task<IReadOnlyCollection<StatsTimedIntValue>> GetPlayerRankingsAsync(int playerId,
         CancellationToken ct = default);
 
-    [Get(FogUrlBuilder.ApiRoutes.PLAYER_WONDER_RANKINGS_TEMPLATE_REFIT)]
-    Task<IReadOnlyCollection<WonderRankingDto>> GetWonderRankingsAsync(int playerId,
-        CancellationToken ct = default);
-
     [Get(FogUrlBuilder.ApiRoutes.ALLIANCES_TEMPLATE)]
     Task<PaginatedList<AllianceDto>> GetAlliancesAsync(string worldId, [Query] int startIndex = 0,
         [Query] int pageSize = FogConstants.DEFAULT_STATS_PAGE_SIZE, [Query] string? name = null,

@@ -31,7 +31,6 @@ public interface IStatsHubUiService
     Task<IReadOnlyCollection<PlayerAthRankingViewModel>> GetPlayerAthRankingsAsync(int playerId,
         CancellationToken ct = default);
 
-    Task<IReadOnlyCollection<WonderRankingViewModel>> GetWonderRankingsAsync(int playerId);
     Task<IReadOnlyCollection<PvpRankingViewModel>> GetPlayerPvpRankingsAsync(int playerId);
 
     Task<PaginatedList<AllianceViewModel>> GetAlliancesAthRankingsAsync(string worldId, int startIndex, int pageSize,

@@ -38,8 +38,6 @@ public static class FogUrlBuilder
         public const string PLAYER_RANKINGS_TEMPLATE_REFIT = PLAYER_TEMPLATE_REFIT + "/rankings";
         public const string PLAYER_PRODUCTION_CAPACITY_TEMPLATE = PLAYER_TEMPLATE + "/productionCapacity";
         public const string PLAYER_PRODUCTION_CAPACITY_TEMPLATE_REFIT = PLAYER_TEMPLATE_REFIT + "/productionCapacity";
-        public const string PLAYER_WONDER_RANKINGS_TEMPLATE_REFIT = PLAYER_TEMPLATE_REFIT + "/wonderRankings";
-        public const string PLAYER_WONDER_RANKINGS_TEMPLATE = PLAYER_TEMPLATE + "/wonderRankings";
         public const string PLAYER_ATH_RANKINGS_TEMPLATE = PLAYER_TEMPLATE + "/athRankings";
         public const string PLAYER_ATH_RANKINGS_TEMPLATE_REFIT = PLAYER_TEMPLATE_REFIT + "/athRankings";
         public const string WOA_PLAYER_STATS_TEMPLATE = PLAYER_TEMPLATE + "/woaStats";

@@ -43,7 +43,6 @@ public class StatsHubUiService : UiServiceBase, IStatsHubUiService
     private readonly IStatsHubViewModelsFactory _statsHubViewModelsFactory;
     private readonly ITreasureHuntUiService _treasureHuntUiService;
     private readonly IWoaPlayerStatsViewModelFactory _woaPlayerStatsViewModelFactory;
-    private readonly IWonderRankingViewModelFactory _wonderRankingViewModelFactory;
 
     public StatsHubUiService(IStatsHubService statsHubService,
         ICommonService commonService,
@@ -57,7 +56,6 @@ public class StatsHubUiService : UiServiceBase, IStatsHubUiService
         IAllianceWoaRankingViewModelFactory allianceWoaRankingViewModelFactory,
         ICommonUiService commonUiService,
         IPlayerCityPropertiesViewModelFactory cityPropertiesViewModelFactory,
-        IWonderRankingViewModelFactory wonderRankingViewModelFactory,
         IPlayerCityStrategyInfoViewModelFactory playerCityStrategyInfoViewModelFactory,
         IPlayerAthRankingViewModelFactory playerAthRankingViewModelFactory,
         IWoaPlayerStatsViewModelFactory woaPlayerStatsViewModelFactory,
@@ -76,7 +74,6 @@ public class StatsHubUiService : UiServiceBase, IStatsHubUiService
         _allianceWoaRankingViewModelFactory = allianceWoaRankingViewModelFactory;
         _commonUiService = commonUiService;
         _cityPropertiesViewModelFactory = cityPropertiesViewModelFactory;
-        _wonderRankingViewModelFactory = wonderRankingViewModelFactory;
         _playerCityStrategyInfoViewModelFactory = playerCityStrategyInfoViewModelFactory;
         _memoryCache = memoryCache;
         _playerAthRankingViewModelFactory = playerAthRankingViewModelFactory;
@@ -174,12 +171,6 @@ public class StatsHubUiService : UiServiceBase, IStatsHubUiService
                     .ToList();
             },
             []);
-    }
-
-    public async Task<IReadOnlyCollection<WonderRankingViewModel>> GetWonderRankingsAsync(int playerId)
-    {
-        var rankings = await _statsHubService.GetWonderRankingsAsync(playerId);
-        return rankings.OrderBy(x => x.StartedAt).Select(x => _wonderRankingViewModelFactory.Create(x)).ToList();
     }
 
     public async Task<IReadOnlyCollection<PvpRankingViewModel>> GetPlayerPvpRankingsAsync(int playerId)

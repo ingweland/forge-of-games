@@ -64,7 +64,6 @@ public class CacheKeyFactory : ICacheKeyFactory
             GetEventCityRankingsQuery q => $"EventCityRankingsQuery:{q.WorldId}",
             GetAnnualBudgetQuery q => $"AnnualBudget:{q.Year}",
             GetPlayerCityPropertiesQuery q => $"PlayerCityProperties:{q.PlayerId}",
-            GetWonderRankingsQuery q => $"WonderRankings:{q.PlayerId}",
             GetCommunityCityStrategiesQuery q => "CommunityCityStrategies",
             GetCommunityCityGuidesQuery q => "CommunityCityGuides",
             GetCommunityCityGuideQuery q => $"CommunityCityGuide:{q.Id}",
