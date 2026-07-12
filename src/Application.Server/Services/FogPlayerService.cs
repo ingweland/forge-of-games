@@ -215,6 +215,18 @@ public class FogPlayerService(IFogDbContext context, ILogger<FogPlayerService> l
         logger.LogDebug("Upserting squads completed for player {PlayerId}.", player.InGamePlayerId);
     }
 
+    private void AddHeroes(Player player, IReadOnlyCollection<ProfileSquad> squads)
+    {
+        logger.LogDebug("Adding {SquadCount} heroes for player {PlayerId}", squads.Count, player.InGamePlayerId);
+
+        var existing = player.Heroes.Select(x => x.UnitId).ToHashSet();
+        var newHeroes = squads.Select(x => x.Hero.UnitId).ToHashSet().Except(existing);
+        foreach (var h in newHeroes)
+        {
+            player.Heroes.Add(new PlayerHeroEntity {UnitId = h});
+        }
+    }
+
     private async Task<Player> AddOrUpdatePlayerAsync(string worldId, HohPlayer player, int? rank, int rankingPoints,
         DateTime now)
     {
@@ -231,6 +243,7 @@ public class FogPlayerService(IFogDbContext context, ILogger<FogPlayerService> l
             .Include(p => p.Squads)
             .Include(p => p.AllianceMembership)
             .Include(p => p.PvpRankings2.Where(x => x.CollectedAt == today))
+            .Include(p => p.Heroes)
             .AsSplitQuery()
             .FirstOrDefaultAsync(x => x.InGamePlayerId == player.Id && x.WorldId == worldId);
 
@@ -378,6 +391,7 @@ public class FogPlayerService(IFogDbContext context, ILogger<FogPlayerService> l
         }
 
         UpsertSquads(modifiedPlayer, profile.Squads, today);
+        AddHeroes(modifiedPlayer, profile.Squads);
 
         logger.LogDebug("Saving changes for player {PlayerId} from world {WorldId}",
             profile.Player.Id, worldId);
