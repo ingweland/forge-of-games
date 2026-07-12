@@ -5,6 +5,7 @@ import "pvp_result_points_dto.proto";
 import "google/protobuf/any.proto";
 import "battle_squad_dto.proto";
 import "google/protobuf/wrappers.proto";
+import "hero_battle_wave_definition_dto.proto";
 
 option csharp_namespace = "Ingweland.Fog.Inn.Models.Hoh";
 
@@ -45,6 +46,12 @@ message PvpBattleLocationDataDTO {
   int32 enemy_ranking_points = 6;
   PvpResultPointsDto points_on_win = 8;
   PvpResultPointsDto points_on_loss = 9;
+  repeated PvpStageDataDTO stages = 10;
+  int32 stage = 11;
+}
+
+message PvpStageDataDTO {
+  repeated BattleWaveSquadDto enemies = 1;
 }
 
 message HistoricBattleLocationDTO {

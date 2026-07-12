@@ -14,6 +14,7 @@ public class SavedDataProcessingOrchestrator : SubOrchestratorBase
             {nameof(AllianceDataProcessor), new ActivityConfiguration(12)},
             {nameof(BattlesProcessor), new ActivityConfiguration(1)},
             {nameof(WoaPlayerStatsProcessor), new ActivityConfiguration(12)},
+            {nameof(PlayerHeroesProcessor), new ActivityConfiguration(12)},
         });
 
     [Function(nameof(SavedDataProcessingOrchestrator))]

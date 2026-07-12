@@ -29,6 +29,11 @@ public class InGameDataParsingService(
         return TryDecodeAndBind(inputData, dataParsingService.ParsePlayerRankings);
     }
 
+    public Result<CommunicationDto> ParseCommunicationDto(string inputData)
+    {
+        return TryDecodeAndBind(inputData, dataParsingService.ParseCommunicationDto);
+    }
+
     public Result<IReadOnlyCollection<WoaPlayerStats>> ParseWoaPlayerStats(string inputData)
     {
         return TryDecodeAndBind(inputData, dataParsingService.ParseWoaPlayerStats);

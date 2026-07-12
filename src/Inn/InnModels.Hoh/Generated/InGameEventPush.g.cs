@@ -26,28 +26,38 @@ namespace Ingweland.Fog.Inn.Models.Hoh {
           string.Concat(
             "Chhpbl9nYW1lX2V2ZW50X3B1c2gucHJvdG8aGWdvb2dsZS9wcm90b2J1Zi9h",
             "bnkucHJvdG8aH2dvb2dsZS9wcm90b2J1Zi90aW1lc3RhbXAucHJvdG8aH3Rl",
-            "Y2hub2xvZ3lfZGVmaW5pdGlvbl9kdG8ucHJvdG8iMgoPSW5HYW1lRXZlbnRQ",
-            "dXNoEh8KBmV2ZW50cxgBIAMoCzIPLkluR2FtZUV2ZW50RHRvIscBCg5Jbkdh",
-            "bWVFdmVudER0bxIKCgJpZBgBIAEoBRIzChBldmVudF9kZWZpbml0aW9uGAIg",
-            "ASgLMhkuSW5HYW1lRXZlbnREZWZpbml0aW9uRHRvEikKBXN0YXJ0GAMgASgL",
-            "MhouZ29vZ2xlLnByb3RvYnVmLlRpbWVzdGFtcBInCgNlbmQYBCABKAsyGi5n",
-            "b29nbGUucHJvdG9idWYuVGltZXN0YW1wEiAKBXN0YXRlGAYgASgOMhEuSW5H",
-            "YW1lRXZlbnRTdGF0ZSJXChhJbkdhbWVFdmVudERlZmluaXRpb25EdG8SCgoC",
-            "aWQYASABKAkSLwoRcGFja2VkX2NvbXBvbmVudHMYAiADKAsyFC5nb29nbGUu",
-            "cHJvdG9idWYuQW55Im0KFUV2ZW50Q2l0eUNvbXBvbmVudERUTxIKCgJpZBgB",
-            "IAEoCRIYChBjaXR5RGVmaW5pdGlvbklkGAIgASgJEi4KDHRlY2hub2xvZ2ll",
-            "cxgDIAMoCzIYLlRlY2hub2xvZ3lEZWZpbml0aW9uRFRPKnYKEEluR2FtZUV2",
-            "ZW50U3RhdGUSGQoVSW5HYW1lRXZlbnRfVU5ERUZJTkVEEAASGAoUSW5HYW1l",
-            "RXZlbnRfUFJFUEFSRUQQARIWChJJbkdhbWVFdmVudF9BQ1RJVkUQAhIVChFJ",
-            "bkdhbWVFdmVudF9FTkRFRBADQh+qAhxJbmd3ZWxhbmQuRm9nLklubi5Nb2Rl",
-            "bHMuSG9oYgZwcm90bzM="));
+            "Y2hub2xvZ3lfZGVmaW5pdGlvbl9kdG8ucHJvdG8aGGJhdHRsZV9zdW1tYXJ5",
+            "X2R0by5wcm90byIyCg9JbkdhbWVFdmVudFB1c2gSHwoGZXZlbnRzGAEgAygL",
+            "Mg8uSW5HYW1lRXZlbnREdG8i1QIKDkluR2FtZUV2ZW50RHRvEgoKAmlkGAEg",
+            "ASgFEjMKEGV2ZW50X2RlZmluaXRpb24YAiABKAsyGS5JbkdhbWVFdmVudERl",
+            "ZmluaXRpb25EdG8SKQoFc3RhcnQYAyABKAsyGi5nb29nbGUucHJvdG9idWYu",
+            "VGltZXN0YW1wEicKA2VuZBgEIAEoCzIaLmdvb2dsZS5wcm90b2J1Zi5UaW1l",
+            "c3RhbXASIAoFc3RhdGUYBiABKA4yES5JbkdhbWVFdmVudFN0YXRlEj4KEGNv",
+            "bXBvbmVudF9zdGF0ZXMYByADKAsyJC5JbkdhbWVFdmVudER0by5Db21wb25l",
+            "bnRTdGF0ZXNFbnRyeRpMChRDb21wb25lbnRTdGF0ZXNFbnRyeRILCgNrZXkY",
+            "ASABKAkSIwoFdmFsdWUYAiABKAsyFC5nb29nbGUucHJvdG9idWYuQW55OgI4",
+            "ASJXChhJbkdhbWVFdmVudERlZmluaXRpb25EdG8SCgoCaWQYASABKAkSLwoR",
+            "cGFja2VkX2NvbXBvbmVudHMYAiADKAsyFC5nb29nbGUucHJvdG9idWYuQW55",
+            "Im0KFUV2ZW50Q2l0eUNvbXBvbmVudERUTxIKCgJpZBgBIAEoCRIYChBjaXR5",
+            "RGVmaW5pdGlvbklkGAIgASgJEi4KDHRlY2hub2xvZ2llcxgDIAMoCzIYLlRl",
+            "Y2hub2xvZ3lEZWZpbml0aW9uRFRPIvoBChBQdnBFdmVudFN0YXRlRFRPEjMK",
+            "EGJhdHRsZV9sb2NhdGlvbnMYASADKAsyGS5QdnBCYXR0bGVMb2NhdGlvbkRh",
+            "dGFEVE8SNQoRbGFzdF90YXJnZXRfcmVzZXQYAiABKAsyGi5nb29nbGUucHJv",
+            "dG9idWYuVGltZXN0YW1wEhwKFHBsYXllcnNfbG9zdF9hZ2FpbnN0GAMgAygF",
+            "EhsKE3BsYXllcnNfd29uX2FnYWluc3QYBCADKAUSHQoVdGllcl9yZXdhcmRf",
+            "Y29sbGVjdGVkGAUgASgIEiAKGHJhbmtpbmdfcmV3YXJkX2NvbGxlY3RlZBgG",
+            "IAEoCCp2ChBJbkdhbWVFdmVudFN0YXRlEhkKFUluR2FtZUV2ZW50X1VOREVG",
+            "SU5FRBAAEhgKFEluR2FtZUV2ZW50X1BSRVBBUkVEEAESFgoSSW5HYW1lRXZl",
+            "bnRfQUNUSVZFEAISFQoRSW5HYW1lRXZlbnRfRU5ERUQQA0IfqgIcSW5nd2Vs",
+            "YW5kLkZvZy5Jbm4uTW9kZWxzLkhvaGIGcHJvdG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
-          new pbr::FileDescriptor[] { global::Google.Protobuf.WellKnownTypes.AnyReflection.Descriptor, global::Google.Protobuf.WellKnownTypes.TimestampReflection.Descriptor, global::Ingweland.Fog.Inn.Models.Hoh.TechnologyDefinitionDtoReflection.Descriptor, },
+          new pbr::FileDescriptor[] { global::Google.Protobuf.WellKnownTypes.AnyReflection.Descriptor, global::Google.Protobuf.WellKnownTypes.TimestampReflection.Descriptor, global::Ingweland.Fog.Inn.Models.Hoh.TechnologyDefinitionDtoReflection.Descriptor, global::Ingweland.Fog.Inn.Models.Hoh.BattleSummaryDtoReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(new[] {typeof(global::Ingweland.Fog.Inn.Models.Hoh.InGameEventState), }, null, new pbr::GeneratedClrTypeInfo[] {
             new pbr::GeneratedClrTypeInfo(typeof(global::Ingweland.Fog.Inn.Models.Hoh.InGameEventPush), global::Ingweland.Fog.Inn.Models.Hoh.InGameEventPush.Parser, new[]{ "Events" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Ingweland.Fog.Inn.Models.Hoh.InGameEventDto), global::Ingweland.Fog.Inn.Models.Hoh.InGameEventDto.Parser, new[]{ "Id", "EventDefinition", "Start", "End", "State" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Ingweland.Fog.Inn.Models.Hoh.InGameEventDto), global::Ingweland.Fog.Inn.Models.Hoh.InGameEventDto.Parser, new[]{ "Id", "EventDefinition", "Start", "End", "State", "ComponentStates" }, null, null, null, new pbr::GeneratedClrTypeInfo[] { null, }),
             new pbr::GeneratedClrTypeInfo(typeof(global::Ingweland.Fog.Inn.Models.Hoh.InGameEventDefinitionDto), global::Ingweland.Fog.Inn.Models.Hoh.InGameEventDefinitionDto.Parser, new[]{ "Id", "PackedComponents" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Ingweland.Fog.Inn.Models.Hoh.EventCityComponentDTO), global::Ingweland.Fog.Inn.Models.Hoh.EventCityComponentDTO.Parser, new[]{ "Id", "CityDefinitionId", "Technologies" }, null, null, null, null)
+            new pbr::GeneratedClrTypeInfo(typeof(global::Ingweland.Fog.Inn.Models.Hoh.EventCityComponentDTO), global::Ingweland.Fog.Inn.Models.Hoh.EventCityComponentDTO.Parser, new[]{ "Id", "CityDefinitionId", "Technologies" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Ingweland.Fog.Inn.Models.Hoh.PvpEventStateDTO), global::Ingweland.Fog.Inn.Models.Hoh.PvpEventStateDTO.Parser, new[]{ "BattleLocations", "LastTargetReset", "PlayersLostAgainst", "PlayersWonAgainst", "TierRewardCollected", "RankingRewardCollected" }, null, null, null, null)
           }));
     }
     #endregion
@@ -283,6 +293,7 @@ namespace Ingweland.Fog.Inn.Models.Hoh {
       start_ = other.start_ != null ? other.start_.Clone() : null;
       end_ = other.end_ != null ? other.end_.Clone() : null;
       state_ = other.state_;
+      componentStates_ = other.componentStates_.Clone();
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
@@ -352,6 +363,17 @@ namespace Ingweland.Fog.Inn.Models.Hoh {
       }
     }
 
+    /// <summary>Field number for the "component_states" field.</summary>
+    public const int ComponentStatesFieldNumber = 7;
+    private static readonly pbc::MapField<string, global::Google.Protobuf.WellKnownTypes.Any>.Codec _map_componentStates_codec
+        = new pbc::MapField<string, global::Google.Protobuf.WellKnownTypes.Any>.Codec(pb::FieldCodec.ForString(10, ""), pb::FieldCodec.ForMessage(18, global::Google.Protobuf.WellKnownTypes.Any.Parser), 58);
+    private readonly pbc::MapField<string, global::Google.Protobuf.WellKnownTypes.Any> componentStates_ = new pbc::MapField<string, global::Google.Protobuf.WellKnownTypes.Any>();
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public pbc::MapField<string, global::Google.Protobuf.WellKnownTypes.Any> ComponentStates {
+      get { return componentStates_; }
+    }
+
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override bool Equals(object other) {
@@ -372,6 +394,7 @@ namespace Ingweland.Fog.Inn.Models.Hoh {
       if (!object.Equals(Start, other.Start)) return false;
       if (!object.Equals(End, other.End)) return false;
       if (State != other.State) return false;
+      if (!ComponentStates.Equals(other.ComponentStates)) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
 
@@ -384,6 +407,7 @@ namespace Ingweland.Fog.Inn.Models.Hoh {
       if (start_ != null) hash ^= Start.GetHashCode();
       if (end_ != null) hash ^= End.GetHashCode();
       if (State != global::Ingweland.Fog.Inn.Models.Hoh.InGameEventState.InGameEventUndefined) hash ^= State.GetHashCode();
+      hash ^= ComponentStates.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -422,6 +446,7 @@ namespace Ingweland.Fog.Inn.Models.Hoh {
         output.WriteRawTag(48);
         output.WriteEnum((int) State);
       }
+      componentStates_.WriteTo(output, _map_componentStates_codec);
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
       }
@@ -452,6 +477,7 @@ namespace Ingweland.Fog.Inn.Models.Hoh {
         output.WriteRawTag(48);
         output.WriteEnum((int) State);
       }
+      componentStates_.WriteTo(ref output, _map_componentStates_codec);
       if (_unknownFields != null) {
         _unknownFields.WriteTo(ref output);
       }
@@ -477,6 +503,7 @@ namespace Ingweland.Fog.Inn.Models.Hoh {
       if (State != global::Ingweland.Fog.Inn.Models.Hoh.InGameEventState.InGameEventUndefined) {
         size += 1 + pb::CodedOutputStream.ComputeEnumSize((int) State);
       }
+      size += componentStates_.CalculateSize(_map_componentStates_codec);
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
       }
@@ -513,6 +540,7 @@ namespace Ingweland.Fog.Inn.Models.Hoh {
       if (other.State != global::Ingweland.Fog.Inn.Models.Hoh.InGameEventState.InGameEventUndefined) {
         State = other.State;
       }
+      componentStates_.MergeFrom(other.componentStates_);
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
 
@@ -557,6 +585,10 @@ namespace Ingweland.Fog.Inn.Models.Hoh {
             State = (global::Ingweland.Fog.Inn.Models.Hoh.InGameEventState) input.ReadEnum();
             break;
           }
+          case 58: {
+            componentStates_.AddEntriesFrom(input, _map_componentStates_codec);
+            break;
+          }
         }
       }
     #endif
@@ -599,6 +631,10 @@ namespace Ingweland.Fog.Inn.Models.Hoh {
           }
           case 48: {
             State = (global::Ingweland.Fog.Inn.Models.Hoh.InGameEventState) input.ReadEnum();
+            break;
+          }
+          case 58: {
+            componentStates_.AddEntriesFrom(ref input, _map_componentStates_codec);
             break;
           }
         }
@@ -1071,6 +1107,361 @@ namespace Ingweland.Fog.Inn.Models.Hoh {
           }
           case 26: {
             technologies_.AddEntriesFrom(ref input, _repeated_technologies_codec);
+            break;
+          }
+        }
+      }
+    }
+    #endif
+
+  }
+
+  [global::System.Diagnostics.DebuggerDisplayAttribute("{ToString(),nq}")]
+  public sealed partial class PvpEventStateDTO : pb::IMessage<PvpEventStateDTO>
+  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      , pb::IBufferMessage
+  #endif
+  {
+    private static readonly pb::MessageParser<PvpEventStateDTO> _parser = new pb::MessageParser<PvpEventStateDTO>(() => new PvpEventStateDTO());
+    private pb::UnknownFieldSet _unknownFields;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public static pb::MessageParser<PvpEventStateDTO> Parser { get { return _parser; } }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public static pbr::MessageDescriptor Descriptor {
+      get { return global::Ingweland.Fog.Inn.Models.Hoh.InGameEventPushReflection.Descriptor.MessageTypes[4]; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    pbr::MessageDescriptor pb::IMessage.Descriptor {
+      get { return Descriptor; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public PvpEventStateDTO() {
+      OnConstruction();
+    }
+
+    partial void OnConstruction();
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public PvpEventStateDTO(PvpEventStateDTO other) : this() {
+      battleLocations_ = other.battleLocations_.Clone();
+      lastTargetReset_ = other.lastTargetReset_ != null ? other.lastTargetReset_.Clone() : null;
+      playersLostAgainst_ = other.playersLostAgainst_.Clone();
+      playersWonAgainst_ = other.playersWonAgainst_.Clone();
+      tierRewardCollected_ = other.tierRewardCollected_;
+      rankingRewardCollected_ = other.rankingRewardCollected_;
+      _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public PvpEventStateDTO Clone() {
+      return new PvpEventStateDTO(this);
+    }
+
+    /// <summary>Field number for the "battle_locations" field.</summary>
+    public const int BattleLocationsFieldNumber = 1;
+    private static readonly pb::FieldCodec<global::Ingweland.Fog.Inn.Models.Hoh.PvpBattleLocationDataDTO> _repeated_battleLocations_codec
+        = pb::FieldCodec.ForMessage(10, global::Ingweland.Fog.Inn.Models.Hoh.PvpBattleLocationDataDTO.Parser);
+    private readonly pbc::RepeatedField<global::Ingweland.Fog.Inn.Models.Hoh.PvpBattleLocationDataDTO> battleLocations_ = new pbc::RepeatedField<global::Ingweland.Fog.Inn.Models.Hoh.PvpBattleLocationDataDTO>();
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public pbc::RepeatedField<global::Ingweland.Fog.Inn.Models.Hoh.PvpBattleLocationDataDTO> BattleLocations {
+      get { return battleLocations_; }
+    }
+
+    /// <summary>Field number for the "last_target_reset" field.</summary>
+    public const int LastTargetResetFieldNumber = 2;
+    private global::Google.Protobuf.WellKnownTypes.Timestamp lastTargetReset_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public global::Google.Protobuf.WellKnownTypes.Timestamp LastTargetReset {
+      get { return lastTargetReset_; }
+      set {
+        lastTargetReset_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "players_lost_against" field.</summary>
+    public const int PlayersLostAgainstFieldNumber = 3;
+    private static readonly pb::FieldCodec<int> _repeated_playersLostAgainst_codec
+        = pb::FieldCodec.ForInt32(26);
+    private readonly pbc::RepeatedField<int> playersLostAgainst_ = new pbc::RepeatedField<int>();
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public pbc::RepeatedField<int> PlayersLostAgainst {
+      get { return playersLostAgainst_; }
+    }
+
+    /// <summary>Field number for the "players_won_against" field.</summary>
+    public const int PlayersWonAgainstFieldNumber = 4;
+    private static readonly pb::FieldCodec<int> _repeated_playersWonAgainst_codec
+        = pb::FieldCodec.ForInt32(34);
+    private readonly pbc::RepeatedField<int> playersWonAgainst_ = new pbc::RepeatedField<int>();
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public pbc::RepeatedField<int> PlayersWonAgainst {
+      get { return playersWonAgainst_; }
+    }
+
+    /// <summary>Field number for the "tier_reward_collected" field.</summary>
+    public const int TierRewardCollectedFieldNumber = 5;
+    private bool tierRewardCollected_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public bool TierRewardCollected {
+      get { return tierRewardCollected_; }
+      set {
+        tierRewardCollected_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "ranking_reward_collected" field.</summary>
+    public const int RankingRewardCollectedFieldNumber = 6;
+    private bool rankingRewardCollected_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public bool RankingRewardCollected {
+      get { return rankingRewardCollected_; }
+      set {
+        rankingRewardCollected_ = value;
+      }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public override bool Equals(object other) {
+      return Equals(other as PvpEventStateDTO);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public bool Equals(PvpEventStateDTO other) {
+      if (ReferenceEquals(other, null)) {
+        return false;
+      }
+      if (ReferenceEquals(other, this)) {
+        return true;
+      }
+      if(!battleLocations_.Equals(other.battleLocations_)) return false;
+      if (!object.Equals(LastTargetReset, other.LastTargetReset)) return false;
+      if(!playersLostAgainst_.Equals(other.playersLostAgainst_)) return false;
+      if(!playersWonAgainst_.Equals(other.playersWonAgainst_)) return false;
+      if (TierRewardCollected != other.TierRewardCollected) return false;
+      if (RankingRewardCollected != other.RankingRewardCollected) return false;
+      return Equals(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public override int GetHashCode() {
+      int hash = 1;
+      hash ^= battleLocations_.GetHashCode();
+      if (lastTargetReset_ != null) hash ^= LastTargetReset.GetHashCode();
+      hash ^= playersLostAgainst_.GetHashCode();
+      hash ^= playersWonAgainst_.GetHashCode();
+      if (TierRewardCollected != false) hash ^= TierRewardCollected.GetHashCode();
+      if (RankingRewardCollected != false) hash ^= RankingRewardCollected.GetHashCode();
+      if (_unknownFields != null) {
+        hash ^= _unknownFields.GetHashCode();
+      }
+      return hash;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public override string ToString() {
+      return pb::JsonFormatter.ToDiagnosticString(this);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void WriteTo(pb::CodedOutputStream output) {
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      output.WriteRawMessage(this);
+    #else
+      battleLocations_.WriteTo(output, _repeated_battleLocations_codec);
+      if (lastTargetReset_ != null) {
+        output.WriteRawTag(18);
+        output.WriteMessage(LastTargetReset);
+      }
+      playersLostAgainst_.WriteTo(output, _repeated_playersLostAgainst_codec);
+      playersWonAgainst_.WriteTo(output, _repeated_playersWonAgainst_codec);
+      if (TierRewardCollected != false) {
+        output.WriteRawTag(40);
+        output.WriteBool(TierRewardCollected);
+      }
+      if (RankingRewardCollected != false) {
+        output.WriteRawTag(48);
+        output.WriteBool(RankingRewardCollected);
+      }
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(output);
+      }
+    #endif
+    }
+
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
+      battleLocations_.WriteTo(ref output, _repeated_battleLocations_codec);
+      if (lastTargetReset_ != null) {
+        output.WriteRawTag(18);
+        output.WriteMessage(LastTargetReset);
+      }
+      playersLostAgainst_.WriteTo(ref output, _repeated_playersLostAgainst_codec);
+      playersWonAgainst_.WriteTo(ref output, _repeated_playersWonAgainst_codec);
+      if (TierRewardCollected != false) {
+        output.WriteRawTag(40);
+        output.WriteBool(TierRewardCollected);
+      }
+      if (RankingRewardCollected != false) {
+        output.WriteRawTag(48);
+        output.WriteBool(RankingRewardCollected);
+      }
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(ref output);
+      }
+    }
+    #endif
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public int CalculateSize() {
+      int size = 0;
+      size += battleLocations_.CalculateSize(_repeated_battleLocations_codec);
+      if (lastTargetReset_ != null) {
+        size += 1 + pb::CodedOutputStream.ComputeMessageSize(LastTargetReset);
+      }
+      size += playersLostAgainst_.CalculateSize(_repeated_playersLostAgainst_codec);
+      size += playersWonAgainst_.CalculateSize(_repeated_playersWonAgainst_codec);
+      if (TierRewardCollected != false) {
+        size += 1 + 1;
+      }
+      if (RankingRewardCollected != false) {
+        size += 1 + 1;
+      }
+      if (_unknownFields != null) {
+        size += _unknownFields.CalculateSize();
+      }
+      return size;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void MergeFrom(PvpEventStateDTO other) {
+      if (other == null) {
+        return;
+      }
+      battleLocations_.Add(other.battleLocations_);
+      if (other.lastTargetReset_ != null) {
+        if (lastTargetReset_ == null) {
+          LastTargetReset = new global::Google.Protobuf.WellKnownTypes.Timestamp();
+        }
+        LastTargetReset.MergeFrom(other.LastTargetReset);
+      }
+      playersLostAgainst_.Add(other.playersLostAgainst_);
+      playersWonAgainst_.Add(other.playersWonAgainst_);
+      if (other.TierRewardCollected != false) {
+        TierRewardCollected = other.TierRewardCollected;
+      }
+      if (other.RankingRewardCollected != false) {
+        RankingRewardCollected = other.RankingRewardCollected;
+      }
+      _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void MergeFrom(pb::CodedInputStream input) {
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      input.ReadRawMessage(this);
+    #else
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
+            break;
+          case 10: {
+            battleLocations_.AddEntriesFrom(input, _repeated_battleLocations_codec);
+            break;
+          }
+          case 18: {
+            if (lastTargetReset_ == null) {
+              LastTargetReset = new global::Google.Protobuf.WellKnownTypes.Timestamp();
+            }
+            input.ReadMessage(LastTargetReset);
+            break;
+          }
+          case 26:
+          case 24: {
+            playersLostAgainst_.AddEntriesFrom(input, _repeated_playersLostAgainst_codec);
+            break;
+          }
+          case 34:
+          case 32: {
+            playersWonAgainst_.AddEntriesFrom(input, _repeated_playersWonAgainst_codec);
+            break;
+          }
+          case 40: {
+            TierRewardCollected = input.ReadBool();
+            break;
+          }
+          case 48: {
+            RankingRewardCollected = input.ReadBool();
+            break;
+          }
+        }
+      }
+    #endif
+    }
+
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
+            break;
+          case 10: {
+            battleLocations_.AddEntriesFrom(ref input, _repeated_battleLocations_codec);
+            break;
+          }
+          case 18: {
+            if (lastTargetReset_ == null) {
+              LastTargetReset = new global::Google.Protobuf.WellKnownTypes.Timestamp();
+            }
+            input.ReadMessage(LastTargetReset);
+            break;
+          }
+          case 26:
+          case 24: {
+            playersLostAgainst_.AddEntriesFrom(ref input, _repeated_playersLostAgainst_codec);
+            break;
+          }
+          case 34:
+          case 32: {
+            playersWonAgainst_.AddEntriesFrom(ref input, _repeated_playersWonAgainst_codec);
+            break;
+          }
+          case 40: {
+            TierRewardCollected = input.ReadBool();
+            break;
+          }
+          case 48: {
+            RankingRewardCollected = input.ReadBool();
             break;
           }
         }

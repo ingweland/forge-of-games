@@ -1,0 +1,22 @@
+syntax = "proto3";
+
+import "google/protobuf/timestamp.proto";
+
+option csharp_namespace = "Ingweland.Fog.Inn.Models.Hoh";
+
+message WoAHeroRosterPush {
+  int64 event_id = 1;
+  int32 player_id = 2;
+  google.protobuf.Timestamp version = 3;
+  repeated WoAHeroDTO heroes = 10;
+}
+
+message WoAHeroDTO {
+  google.protobuf.Timestamp version = 1;
+  string hero_definition_id = 2;
+  float stored_stat_value = 3;
+  google.protobuf.Timestamp regen_starting_at = 4;
+  bool knocked_out = 5;
+  int32 stationed_in_poi = 6;
+  google.protobuf.Timestamp stationed_until = 7;
+}

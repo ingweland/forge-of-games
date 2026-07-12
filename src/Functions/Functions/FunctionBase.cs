@@ -17,9 +17,9 @@ public class FunctionBase(
     InGameRawDataTablePartitionKeyProvider inGameRawDataTablePartitionKeyProvider,
     ILogger logger)
 {
-    private const int WAKEUP_BATCH_SIZE = 100;
+    private const int BATCH_SIZE = 100;
     protected IGameWorldsProvider GameWorldsProvider { get; } = gameWorldsProvider;
-    protected bool HasMoreWakeupData { get; private set; }
+    protected bool HasMoreData { get; private set; }
 
     protected IInGameDataParsingService InGameDataParsingService { get; } = inGameDataParsingService;
 
@@ -174,11 +174,11 @@ public class FunctionBase(
         {
             if (wakeupPage >= 0)
             {
-                var result = await InGameRawDataTableRepository.GetAsync(partitionKey, WAKEUP_BATCH_SIZE * wakeupPage,
-                    WAKEUP_BATCH_SIZE);
-                if (result.Count >= WAKEUP_BATCH_SIZE)
+                var result = await InGameRawDataTableRepository.GetAsync(partitionKey, BATCH_SIZE * wakeupPage,
+                    BATCH_SIZE);
+                if (result.Count >= BATCH_SIZE)
                 {
-                    HasMoreWakeupData = true;
+                    HasMoreData = true;
                 }
 
                 return result;
@@ -200,5 +200,39 @@ public class FunctionBase(
         }
 
         return alliances;
+    }
+
+    protected async Task<List<(DateTime CollectedAt, CommunicationDto CommunicationDto)>> GetDataAsync(
+        string partitionKey,
+        int page = -1)
+    {
+        var rawData = await ExecuteSafeAsync(async () =>
+        {
+            if (page < 0)
+            {
+                return await InGameRawDataTableRepository.GetAllAsync(partitionKey);
+            }
+
+            var result = await InGameRawDataTableRepository.GetAsync(partitionKey, BATCH_SIZE * page,
+                BATCH_SIZE);
+            if (result.Count >= BATCH_SIZE)
+            {
+                HasMoreData = true;
+            }
+
+            return result;
+        }, "", []);
+        var data = new List<(DateTime CollectedAt, CommunicationDto CommunicationDto)>();
+        foreach (var rd in rawData)
+        {
+            var result = InGameDataParsingService.ParseCommunicationDto(rd.Base64Data);
+            result.LogIfFailed<FunctionBase>($"Error parsing communication dto raw data collected on {rd.CollectedAt}");
+            if (result.IsSuccess)
+            {
+                data.Add((rd.CollectedAt, result.Value));
+            }
+        }
+
+        return data;
     }
 }

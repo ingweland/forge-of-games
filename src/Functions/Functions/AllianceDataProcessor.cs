@@ -4,7 +4,6 @@ using Ingweland.Fog.Application.Server.Providers;
 using Ingweland.Fog.Application.Server.Services.Hoh.Abstractions;
 using Ingweland.Fog.Functions.Services;
 using Ingweland.Fog.InnSdk.Hoh.Providers;
-using Ingweland.Fog.Models.Hoh.Enums;
 using Microsoft.Azure.Functions.Worker;
 using Microsoft.Extensions.Logging;
 
@@ -45,7 +44,7 @@ public class AllianceDataProcessor(
         logger.LogInformation("Starting alliance members service update");
         await ExecuteSafeAsync(() => allianceMembersService.UpdateAsync(data.ConfirmedAllianceMembers), "");
         logger.LogInformation("Completed alliance members service update");
-        
-        return HasMoreWakeupData;
+
+        return HasMoreData;
     }
 }

@@ -3,6 +3,7 @@ syntax = "proto3";
 import "google/protobuf/any.proto";
 import "google/protobuf/timestamp.proto";
 import "technology_definition_dto.proto";
+import "battle_summary_dto.proto";
 
 option csharp_namespace = "Ingweland.Fog.Inn.Models.Hoh";
 
@@ -16,6 +17,7 @@ message InGameEventDto {
   google.protobuf.Timestamp start = 3;
   google.protobuf.Timestamp end = 4;
   InGameEventState state = 6;
+  map<string, google.protobuf.Any> component_states = 7;
 }
 
 message InGameEventDefinitionDto {
@@ -28,6 +30,15 @@ message EventCityComponentDTO {
   string id = 1;
   string cityDefinitionId = 2;
   repeated TechnologyDefinitionDTO technologies = 3;
+}
+
+message PvpEventStateDTO {
+  repeated PvpBattleLocationDataDTO battle_locations = 1;
+  google.protobuf.Timestamp last_target_reset = 2;
+  repeated int32 players_lost_against = 3;
+  repeated int32 players_won_against = 4;
+  bool tier_reward_collected = 5;
+  bool ranking_reward_collected = 6;
 }
 
 enum InGameEventState {

@@ -1,6 +1,8 @@
 using AutoMapper;
 using AutoMapper.QueryableExtensions;
 using Ingweland.Fog.Application.Server.Interfaces;
+using Ingweland.Fog.Application.Server.Services.Hoh.Abstractions;
+using Ingweland.Fog.Application.Server.Services.Interfaces;
 using Ingweland.Fog.Functions.Data;
 using Ingweland.Fog.Models.Fog.Entities;
 using Ingweland.Fog.Models.Fog.Enums;
@@ -13,9 +15,16 @@ namespace Ingweland.Fog.Functions.Services;
 public interface IPlayerService
 {
     Task AddAsync(IEnumerable<PlayerAggregate> playerAggregates);
+    Task<IReadOnlySet<int>> AddMissingPlayersAsync(IReadOnlySet<int> inGamePlayerIds, string worldId);
 }
 
-public class PlayerService(IFogDbContext context, IMapper mapper, ILogger<PlayerRankingService> logger) : IPlayerService
+public class PlayerService(
+    IFogDbContext context,
+    IMapper mapper,
+    IFogPlayerService playerService,
+    IFogAllianceService fogAllianceService,
+    IInGamePlayerService inGamePlayerService,
+    ILogger<PlayerRankingService> logger) : IPlayerService
 {
     public async Task AddAsync(IEnumerable<PlayerAggregate> playerAggregates)
     {
@@ -32,7 +41,7 @@ public class PlayerService(IFogDbContext context, IMapper mapper, ILogger<Player
         var newPlayersList = newPlayerKeys.Select(k =>
         {
             var playerAggregate = unique[k];
-            return new Player()
+            return new Player
             {
                 WorldId = playerAggregate.WorldId,
                 InGamePlayerId = playerAggregate.InGamePlayerId,
@@ -47,6 +56,49 @@ public class PlayerService(IFogDbContext context, IMapper mapper, ILogger<Player
         context.Players.AddRange(newPlayersList);
         await context.SaveChangesAsync();
         logger.LogInformation("Saved {NewPlayersCount} new players.", newPlayersList.Count);
+    }
+
+    public async Task<IReadOnlySet<int>> AddMissingPlayersAsync(IReadOnlySet<int> inGamePlayerIds, string worldId)
+    {
+        var existingPlayerKeys = await GetExistingPlayersAsync(inGamePlayerIds.ToHashSet());
+        var missingPlayerKeys =
+            inGamePlayerIds.Except(existingPlayerKeys.Where(x => x.WorldId == worldId).Select(p => p.InGamePlayerId))
+                .Select(x => new PlayerKey(worldId, x)).ToList();
+        var failedPlayerIds = new HashSet<int>();
+        logger.LogInformation("Missing player count: {Count}:", missingPlayerKeys.Count);
+        foreach (var playerKey in missingPlayerKeys)
+        {
+            logger.LogDebug("Processing player {@Player}", playerKey);
+            var delayTask = Task.Delay(200);
+            var profile = await inGamePlayerService.FetchProfile(playerKey);
+            if (profile.IsSuccess)
+            {
+                try
+                {
+                    if (profile.Value.Alliance != null)
+                    {
+                        await fogAllianceService.UpsertAlliance(profile.Value.Alliance, worldId,
+                            DateTime.UtcNow);
+                    }
+
+                    await playerService.UpsertPlayerAsync(profile.Value, worldId);
+                }
+                catch (Exception ex)
+                {
+                    logger.LogError(ex, "Error upserting alliance/player {@Player}", playerKey);
+                    failedPlayerIds.Add(playerKey.InGamePlayerId);
+                }
+            }
+            else
+            {
+                failedPlayerIds.Add(playerKey.InGamePlayerId);
+            }
+
+            await delayTask;
+        }
+
+        logger.LogInformation("Done processing missing players. Failed players count: {Count}:", failedPlayerIds.Count);
+        return failedPlayerIds;
     }
 
     private async Task<HashSet<PlayerKey>> GetExistingPlayersAsync(HashSet<int> inGamePlayerIds)

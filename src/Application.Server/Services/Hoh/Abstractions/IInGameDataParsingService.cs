@@ -18,6 +18,7 @@ public interface IInGameDataParsingService
     IReadOnlyCollection<PvpRank> ParsePvpRanking(string inputData);
     HeroFinishWaveRequestDto ParseBattleCompleteWaveRequest(string inputData);
     Result<PlayerRanks> ParsePlayerRanking(string inputData);
+    Result<CommunicationDto> ParseCommunicationDto(string inputData);
     Result<IReadOnlyCollection<WoaPlayerStats>> ParseWoaPlayerStats(string inputData);
     Wakeup ParseWakeup(string inputData);
     OtherCity ParseOtherCity(string inputData);

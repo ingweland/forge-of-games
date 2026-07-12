@@ -27,43 +27,47 @@ namespace Ingweland.Fog.Inn.Models.Hoh {
             "ChhiYXR0bGVfc3VtbWFyeV9kdG8ucHJvdG8aEHBsYXllcl9kdG8ucHJvdG8a",
             "EmFsbGlhbmNlX2R0by5wcm90bxobcHZwX3Jlc3VsdF9wb2ludHNfZHRvLnBy",
             "b3RvGhlnb29nbGUvcHJvdG9idWYvYW55LnByb3RvGhZiYXR0bGVfc3F1YWRf",
-            "ZHRvLnByb3RvGh5nb29nbGUvcHJvdG9idWYvd3JhcHBlcnMucHJvdG8isAIK",
-            "EEJhdHRsZVN1bW1hcnlEdG8SLgoJYmF0dGxlX2lkGAEgASgLMhsuZ29vZ2xl",
-            "LnByb3RvYnVmLkJ5dGVzVmFsdWUSLQoNcmVzdWx0X3N0YXR1cxgCIAEoCzIW",
-            "LkJhdHRsZVJlc3VsdFN0YXR1c0R0bxI3ChlwYWNrZWRfZW5jb3VudGVyX2xv",
-            "Y2F0aW9uGAMgASgLMhQuZ29vZ2xlLnByb3RvYnVmLkFueRIcChRiYXR0bGVf",
-            "ZGVmaW5pdGlvbl9pZBgEIAEoCRIXCg9uZXh0X3dhdmVfaW5kZXgYBSABKAUS",
-            "JgoNcGxheWVyX3NxdWFkcxgGIAMoCzIPLkJhdHRsZVNxdWFkRHRvEiUKDGVu",
-            "ZW15X3NxdWFkcxgHIAMoCzIPLkJhdHRsZVNxdWFkRHRvIjwKFUJhdHRsZVJl",
-            "c3VsdFN0YXR1c0R0bxIjCgZzdGF0dXMYASABKA4yEy5CYXR0bGVSZXN1bHRT",
-            "dGF0dXMifAokSGVyb1RyZWFzdXJlSHVudEVuY291bnRlckxvY2F0aW9uRFRP",
-            "Eh4KFnRyZWFzdXJlX2h1bnRfZXZlbnRfaWQYASABKAUSEgoKZGlmZmljdWx0",
-            "eRgCIAEoBRINCgVzdGFnZRgDIAEoBRIRCgllbmNvdW50ZXIYBCABKAUiRQoc",
-            "Q2FtcGFpZ25NYXBCYXR0bGVMb2NhdGlvbkRUTxISCgpkaWZmaWN1bHR5GAEg",
-            "ASgJEhEKCWVuY291bnRlchgCIAEoCSKYAgoYUHZwQmF0dGxlTG9jYXRpb25E",
-            "YXRhRFRPEhQKDHB2cF9ldmVudF9pZBgBIAEoBRIcChRiYXR0bGVfZGVmaW5p",
-            "dGlvbl9pZBgCIAEoCRIQCghlbmVteV9pZBgDIAEoBRIZCgVlbmVteRgEIAEo",
-            "CzIKLlBsYXllckR0bxIkCg5lbmVteV9hbGxpYW5jZRgFIAEoCzIMLkFsbGlh",
-            "bmNlRHRvEhwKFGVuZW15X3JhbmtpbmdfcG9pbnRzGAYgASgFEioKDXBvaW50",
-            "c19vbl93aW4YCCABKAsyEy5QdnBSZXN1bHRQb2ludHNEdG8SKwoOcG9pbnRz",
-            "X29uX2xvc3MYCSABKAsyEy5QdnBSZXN1bHRQb2ludHNEdG8iQgoZSGlzdG9y",
-            "aWNCYXR0bGVMb2NhdGlvbkRUTxISCgpkaWZmaWN1bHR5GAEgASgJEhEKCWVu",
-            "Y291bnRlchgCIAEoCSJVCh9QdnBSZXZlbmdlQmF0dGxlTG9jYXRpb25EYXRh",
-            "RFRPEhQKDHB2cF9ldmVudF9pZBgBIAEoBRIcChRiYXR0bGVfZGVmaW5pdGlv",
-            "bl9pZBgCIAEoCSJXChxCYXR0bGVFdmVudEJhdHRsZUxvY2F0aW9uRFRPEhAK",
-            "CGV2ZW50X2lkGAEgASgFEiUKHWJhdHRsZV9ldmVudF9iYXR0bGVfY29tcG9u",
-            "ZW50GAIgASgJKnEKEkJhdHRsZVJlc3VsdFN0YXR1cxIgChxCYXR0bGVSZXN1",
-            "bHRTdGF0dXNfVU5ERUZJTkVEEAASGgoWQmF0dGxlUmVzdWx0U3RhdHVzX1dJ",
-            "ThABEh0KGUJhdHRsZVJlc3VsdFN0YXR1c19ERUZFQVQQAkIfqgIcSW5nd2Vs",
-            "YW5kLkZvZy5Jbm4uTW9kZWxzLkhvaGIGcHJvdG8z"));
+            "ZHRvLnByb3RvGh5nb29nbGUvcHJvdG9idWYvd3JhcHBlcnMucHJvdG8aJWhl",
+            "cm9fYmF0dGxlX3dhdmVfZGVmaW5pdGlvbl9kdG8ucHJvdG8isAIKEEJhdHRs",
+            "ZVN1bW1hcnlEdG8SLgoJYmF0dGxlX2lkGAEgASgLMhsuZ29vZ2xlLnByb3Rv",
+            "YnVmLkJ5dGVzVmFsdWUSLQoNcmVzdWx0X3N0YXR1cxgCIAEoCzIWLkJhdHRs",
+            "ZVJlc3VsdFN0YXR1c0R0bxI3ChlwYWNrZWRfZW5jb3VudGVyX2xvY2F0aW9u",
+            "GAMgASgLMhQuZ29vZ2xlLnByb3RvYnVmLkFueRIcChRiYXR0bGVfZGVmaW5p",
+            "dGlvbl9pZBgEIAEoCRIXCg9uZXh0X3dhdmVfaW5kZXgYBSABKAUSJgoNcGxh",
+            "eWVyX3NxdWFkcxgGIAMoCzIPLkJhdHRsZVNxdWFkRHRvEiUKDGVuZW15X3Nx",
+            "dWFkcxgHIAMoCzIPLkJhdHRsZVNxdWFkRHRvIjwKFUJhdHRsZVJlc3VsdFN0",
+            "YXR1c0R0bxIjCgZzdGF0dXMYASABKA4yEy5CYXR0bGVSZXN1bHRTdGF0dXMi",
+            "fAokSGVyb1RyZWFzdXJlSHVudEVuY291bnRlckxvY2F0aW9uRFRPEh4KFnRy",
+            "ZWFzdXJlX2h1bnRfZXZlbnRfaWQYASABKAUSEgoKZGlmZmljdWx0eRgCIAEo",
+            "BRINCgVzdGFnZRgDIAEoBRIRCgllbmNvdW50ZXIYBCABKAUiRQocQ2FtcGFp",
+            "Z25NYXBCYXR0bGVMb2NhdGlvbkRUTxISCgpkaWZmaWN1bHR5GAEgASgJEhEK",
+            "CWVuY291bnRlchgCIAEoCSLJAgoYUHZwQmF0dGxlTG9jYXRpb25EYXRhRFRP",
+            "EhQKDHB2cF9ldmVudF9pZBgBIAEoBRIcChRiYXR0bGVfZGVmaW5pdGlvbl9p",
+            "ZBgCIAEoCRIQCghlbmVteV9pZBgDIAEoBRIZCgVlbmVteRgEIAEoCzIKLlBs",
+            "YXllckR0bxIkCg5lbmVteV9hbGxpYW5jZRgFIAEoCzIMLkFsbGlhbmNlRHRv",
+            "EhwKFGVuZW15X3JhbmtpbmdfcG9pbnRzGAYgASgFEioKDXBvaW50c19vbl93",
+            "aW4YCCABKAsyEy5QdnBSZXN1bHRQb2ludHNEdG8SKwoOcG9pbnRzX29uX2xv",
+            "c3MYCSABKAsyEy5QdnBSZXN1bHRQb2ludHNEdG8SIAoGc3RhZ2VzGAogAygL",
+            "MhAuUHZwU3RhZ2VEYXRhRFRPEg0KBXN0YWdlGAsgASgFIjcKD1B2cFN0YWdl",
+            "RGF0YURUTxIkCgdlbmVtaWVzGAEgAygLMhMuQmF0dGxlV2F2ZVNxdWFkRHRv",
+            "IkIKGUhpc3RvcmljQmF0dGxlTG9jYXRpb25EVE8SEgoKZGlmZmljdWx0eRgB",
+            "IAEoCRIRCgllbmNvdW50ZXIYAiABKAkiVQofUHZwUmV2ZW5nZUJhdHRsZUxv",
+            "Y2F0aW9uRGF0YURUTxIUCgxwdnBfZXZlbnRfaWQYASABKAUSHAoUYmF0dGxl",
+            "X2RlZmluaXRpb25faWQYAiABKAkiVwocQmF0dGxlRXZlbnRCYXR0bGVMb2Nh",
+            "dGlvbkRUTxIQCghldmVudF9pZBgBIAEoBRIlCh1iYXR0bGVfZXZlbnRfYmF0",
+            "dGxlX2NvbXBvbmVudBgCIAEoCSpxChJCYXR0bGVSZXN1bHRTdGF0dXMSIAoc",
+            "QmF0dGxlUmVzdWx0U3RhdHVzX1VOREVGSU5FRBAAEhoKFkJhdHRsZVJlc3Vs",
+            "dFN0YXR1c19XSU4QARIdChlCYXR0bGVSZXN1bHRTdGF0dXNfREVGRUFUEAJC",
+            "H6oCHEluZ3dlbGFuZC5Gb2cuSW5uLk1vZGVscy5Ib2hiBnByb3RvMw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
-          new pbr::FileDescriptor[] { global::Ingweland.Fog.Inn.Models.Hoh.PlayerDtoReflection.Descriptor, global::Ingweland.Fog.Inn.Models.Hoh.AllianceDtoReflection.Descriptor, global::Ingweland.Fog.Inn.Models.Hoh.PvpResultPointsDtoReflection.Descriptor, global::Google.Protobuf.WellKnownTypes.AnyReflection.Descriptor, global::Ingweland.Fog.Inn.Models.Hoh.BattleSquadDtoReflection.Descriptor, global::Google.Protobuf.WellKnownTypes.WrappersReflection.Descriptor, },
+          new pbr::FileDescriptor[] { global::Ingweland.Fog.Inn.Models.Hoh.PlayerDtoReflection.Descriptor, global::Ingweland.Fog.Inn.Models.Hoh.AllianceDtoReflection.Descriptor, global::Ingweland.Fog.Inn.Models.Hoh.PvpResultPointsDtoReflection.Descriptor, global::Google.Protobuf.WellKnownTypes.AnyReflection.Descriptor, global::Ingweland.Fog.Inn.Models.Hoh.BattleSquadDtoReflection.Descriptor, global::Google.Protobuf.WellKnownTypes.WrappersReflection.Descriptor, global::Ingweland.Fog.Inn.Models.Hoh.HeroBattleWaveDefinitionDtoReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(new[] {typeof(global::Ingweland.Fog.Inn.Models.Hoh.BattleResultStatus), }, null, new pbr::GeneratedClrTypeInfo[] {
             new pbr::GeneratedClrTypeInfo(typeof(global::Ingweland.Fog.Inn.Models.Hoh.BattleSummaryDto), global::Ingweland.Fog.Inn.Models.Hoh.BattleSummaryDto.Parser, new[]{ "BattleId", "ResultStatus", "PackedEncounterLocation", "BattleDefinitionId", "NextWaveIndex", "PlayerSquads", "EnemySquads" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Ingweland.Fog.Inn.Models.Hoh.BattleResultStatusDto), global::Ingweland.Fog.Inn.Models.Hoh.BattleResultStatusDto.Parser, new[]{ "Status" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Ingweland.Fog.Inn.Models.Hoh.HeroTreasureHuntEncounterLocationDTO), global::Ingweland.Fog.Inn.Models.Hoh.HeroTreasureHuntEncounterLocationDTO.Parser, new[]{ "TreasureHuntEventId", "Difficulty", "Stage", "Encounter" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Ingweland.Fog.Inn.Models.Hoh.CampaignMapBattleLocationDTO), global::Ingweland.Fog.Inn.Models.Hoh.CampaignMapBattleLocationDTO.Parser, new[]{ "Difficulty", "Encounter" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Ingweland.Fog.Inn.Models.Hoh.PvpBattleLocationDataDTO), global::Ingweland.Fog.Inn.Models.Hoh.PvpBattleLocationDataDTO.Parser, new[]{ "PvpEventId", "BattleDefinitionId", "EnemyId", "Enemy", "EnemyAlliance", "EnemyRankingPoints", "PointsOnWin", "PointsOnLoss" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Ingweland.Fog.Inn.Models.Hoh.PvpBattleLocationDataDTO), global::Ingweland.Fog.Inn.Models.Hoh.PvpBattleLocationDataDTO.Parser, new[]{ "PvpEventId", "BattleDefinitionId", "EnemyId", "Enemy", "EnemyAlliance", "EnemyRankingPoints", "PointsOnWin", "PointsOnLoss", "Stages", "Stage" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Ingweland.Fog.Inn.Models.Hoh.PvpStageDataDTO), global::Ingweland.Fog.Inn.Models.Hoh.PvpStageDataDTO.Parser, new[]{ "Enemies" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Ingweland.Fog.Inn.Models.Hoh.HistoricBattleLocationDTO), global::Ingweland.Fog.Inn.Models.Hoh.HistoricBattleLocationDTO.Parser, new[]{ "Difficulty", "Encounter" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Ingweland.Fog.Inn.Models.Hoh.PvpRevengeBattleLocationDataDTO), global::Ingweland.Fog.Inn.Models.Hoh.PvpRevengeBattleLocationDataDTO.Parser, new[]{ "PvpEventId", "BattleDefinitionId" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Ingweland.Fog.Inn.Models.Hoh.BattleEventBattleLocationDTO), global::Ingweland.Fog.Inn.Models.Hoh.BattleEventBattleLocationDTO.Parser, new[]{ "EventId", "BattleEventBattleComponent" }, null, null, null, null)
@@ -1263,6 +1267,8 @@ namespace Ingweland.Fog.Inn.Models.Hoh {
       enemyRankingPoints_ = other.enemyRankingPoints_;
       pointsOnWin_ = other.pointsOnWin_ != null ? other.pointsOnWin_.Clone() : null;
       pointsOnLoss_ = other.pointsOnLoss_ != null ? other.pointsOnLoss_.Clone() : null;
+      stages_ = other.stages_.Clone();
+      stage_ = other.stage_;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
@@ -1368,6 +1374,29 @@ namespace Ingweland.Fog.Inn.Models.Hoh {
       }
     }
 
+    /// <summary>Field number for the "stages" field.</summary>
+    public const int StagesFieldNumber = 10;
+    private static readonly pb::FieldCodec<global::Ingweland.Fog.Inn.Models.Hoh.PvpStageDataDTO> _repeated_stages_codec
+        = pb::FieldCodec.ForMessage(82, global::Ingweland.Fog.Inn.Models.Hoh.PvpStageDataDTO.Parser);
+    private readonly pbc::RepeatedField<global::Ingweland.Fog.Inn.Models.Hoh.PvpStageDataDTO> stages_ = new pbc::RepeatedField<global::Ingweland.Fog.Inn.Models.Hoh.PvpStageDataDTO>();
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public pbc::RepeatedField<global::Ingweland.Fog.Inn.Models.Hoh.PvpStageDataDTO> Stages {
+      get { return stages_; }
+    }
+
+    /// <summary>Field number for the "stage" field.</summary>
+    public const int StageFieldNumber = 11;
+    private int stage_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public int Stage {
+      get { return stage_; }
+      set {
+        stage_ = value;
+      }
+    }
+
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override bool Equals(object other) {
@@ -1391,6 +1420,8 @@ namespace Ingweland.Fog.Inn.Models.Hoh {
       if (EnemyRankingPoints != other.EnemyRankingPoints) return false;
       if (!object.Equals(PointsOnWin, other.PointsOnWin)) return false;
       if (!object.Equals(PointsOnLoss, other.PointsOnLoss)) return false;
+      if(!stages_.Equals(other.stages_)) return false;
+      if (Stage != other.Stage) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
 
@@ -1406,6 +1437,8 @@ namespace Ingweland.Fog.Inn.Models.Hoh {
       if (EnemyRankingPoints != 0) hash ^= EnemyRankingPoints.GetHashCode();
       if (pointsOnWin_ != null) hash ^= PointsOnWin.GetHashCode();
       if (pointsOnLoss_ != null) hash ^= PointsOnLoss.GetHashCode();
+      hash ^= stages_.GetHashCode();
+      if (Stage != 0) hash ^= Stage.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -1456,6 +1489,11 @@ namespace Ingweland.Fog.Inn.Models.Hoh {
         output.WriteRawTag(74);
         output.WriteMessage(PointsOnLoss);
       }
+      stages_.WriteTo(output, _repeated_stages_codec);
+      if (Stage != 0) {
+        output.WriteRawTag(88);
+        output.WriteInt32(Stage);
+      }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
       }
@@ -1498,6 +1536,11 @@ namespace Ingweland.Fog.Inn.Models.Hoh {
         output.WriteRawTag(74);
         output.WriteMessage(PointsOnLoss);
       }
+      stages_.WriteTo(ref output, _repeated_stages_codec);
+      if (Stage != 0) {
+        output.WriteRawTag(88);
+        output.WriteInt32(Stage);
+      }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(ref output);
       }
@@ -1531,6 +1574,10 @@ namespace Ingweland.Fog.Inn.Models.Hoh {
       }
       if (pointsOnLoss_ != null) {
         size += 1 + pb::CodedOutputStream.ComputeMessageSize(PointsOnLoss);
+      }
+      size += stages_.CalculateSize(_repeated_stages_codec);
+      if (Stage != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeInt32Size(Stage);
       }
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
@@ -1579,6 +1626,10 @@ namespace Ingweland.Fog.Inn.Models.Hoh {
           PointsOnLoss = new global::Ingweland.Fog.Inn.Models.Hoh.PvpResultPointsDto();
         }
         PointsOnLoss.MergeFrom(other.PointsOnLoss);
+      }
+      stages_.Add(other.stages_);
+      if (other.Stage != 0) {
+        Stage = other.Stage;
       }
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
@@ -1637,6 +1688,14 @@ namespace Ingweland.Fog.Inn.Models.Hoh {
               PointsOnLoss = new global::Ingweland.Fog.Inn.Models.Hoh.PvpResultPointsDto();
             }
             input.ReadMessage(PointsOnLoss);
+            break;
+          }
+          case 82: {
+            stages_.AddEntriesFrom(input, _repeated_stages_codec);
+            break;
+          }
+          case 88: {
+            Stage = input.ReadInt32();
             break;
           }
         }
@@ -1698,6 +1757,193 @@ namespace Ingweland.Fog.Inn.Models.Hoh {
             input.ReadMessage(PointsOnLoss);
             break;
           }
+          case 82: {
+            stages_.AddEntriesFrom(ref input, _repeated_stages_codec);
+            break;
+          }
+          case 88: {
+            Stage = input.ReadInt32();
+            break;
+          }
+        }
+      }
+    }
+    #endif
+
+  }
+
+  [global::System.Diagnostics.DebuggerDisplayAttribute("{ToString(),nq}")]
+  public sealed partial class PvpStageDataDTO : pb::IMessage<PvpStageDataDTO>
+  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      , pb::IBufferMessage
+  #endif
+  {
+    private static readonly pb::MessageParser<PvpStageDataDTO> _parser = new pb::MessageParser<PvpStageDataDTO>(() => new PvpStageDataDTO());
+    private pb::UnknownFieldSet _unknownFields;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public static pb::MessageParser<PvpStageDataDTO> Parser { get { return _parser; } }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public static pbr::MessageDescriptor Descriptor {
+      get { return global::Ingweland.Fog.Inn.Models.Hoh.BattleSummaryDtoReflection.Descriptor.MessageTypes[5]; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    pbr::MessageDescriptor pb::IMessage.Descriptor {
+      get { return Descriptor; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public PvpStageDataDTO() {
+      OnConstruction();
+    }
+
+    partial void OnConstruction();
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public PvpStageDataDTO(PvpStageDataDTO other) : this() {
+      enemies_ = other.enemies_.Clone();
+      _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public PvpStageDataDTO Clone() {
+      return new PvpStageDataDTO(this);
+    }
+
+    /// <summary>Field number for the "enemies" field.</summary>
+    public const int EnemiesFieldNumber = 1;
+    private static readonly pb::FieldCodec<global::Ingweland.Fog.Inn.Models.Hoh.BattleWaveSquadDto> _repeated_enemies_codec
+        = pb::FieldCodec.ForMessage(10, global::Ingweland.Fog.Inn.Models.Hoh.BattleWaveSquadDto.Parser);
+    private readonly pbc::RepeatedField<global::Ingweland.Fog.Inn.Models.Hoh.BattleWaveSquadDto> enemies_ = new pbc::RepeatedField<global::Ingweland.Fog.Inn.Models.Hoh.BattleWaveSquadDto>();
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public pbc::RepeatedField<global::Ingweland.Fog.Inn.Models.Hoh.BattleWaveSquadDto> Enemies {
+      get { return enemies_; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public override bool Equals(object other) {
+      return Equals(other as PvpStageDataDTO);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public bool Equals(PvpStageDataDTO other) {
+      if (ReferenceEquals(other, null)) {
+        return false;
+      }
+      if (ReferenceEquals(other, this)) {
+        return true;
+      }
+      if(!enemies_.Equals(other.enemies_)) return false;
+      return Equals(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public override int GetHashCode() {
+      int hash = 1;
+      hash ^= enemies_.GetHashCode();
+      if (_unknownFields != null) {
+        hash ^= _unknownFields.GetHashCode();
+      }
+      return hash;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public override string ToString() {
+      return pb::JsonFormatter.ToDiagnosticString(this);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void WriteTo(pb::CodedOutputStream output) {
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      output.WriteRawMessage(this);
+    #else
+      enemies_.WriteTo(output, _repeated_enemies_codec);
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(output);
+      }
+    #endif
+    }
+
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
+      enemies_.WriteTo(ref output, _repeated_enemies_codec);
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(ref output);
+      }
+    }
+    #endif
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public int CalculateSize() {
+      int size = 0;
+      size += enemies_.CalculateSize(_repeated_enemies_codec);
+      if (_unknownFields != null) {
+        size += _unknownFields.CalculateSize();
+      }
+      return size;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void MergeFrom(PvpStageDataDTO other) {
+      if (other == null) {
+        return;
+      }
+      enemies_.Add(other.enemies_);
+      _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void MergeFrom(pb::CodedInputStream input) {
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      input.ReadRawMessage(this);
+    #else
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
+            break;
+          case 10: {
+            enemies_.AddEntriesFrom(input, _repeated_enemies_codec);
+            break;
+          }
+        }
+      }
+    #endif
+    }
+
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
+            break;
+          case 10: {
+            enemies_.AddEntriesFrom(ref input, _repeated_enemies_codec);
+            break;
+          }
         }
       }
     }
@@ -1720,7 +1966,7 @@ namespace Ingweland.Fog.Inn.Models.Hoh {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Ingweland.Fog.Inn.Models.Hoh.BattleSummaryDtoReflection.Descriptor.MessageTypes[5]; }
+      get { return global::Ingweland.Fog.Inn.Models.Hoh.BattleSummaryDtoReflection.Descriptor.MessageTypes[6]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -1947,7 +2193,7 @@ namespace Ingweland.Fog.Inn.Models.Hoh {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Ingweland.Fog.Inn.Models.Hoh.BattleSummaryDtoReflection.Descriptor.MessageTypes[6]; }
+      get { return global::Ingweland.Fog.Inn.Models.Hoh.BattleSummaryDtoReflection.Descriptor.MessageTypes[7]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -2174,7 +2420,7 @@ namespace Ingweland.Fog.Inn.Models.Hoh {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Ingweland.Fog.Inn.Models.Hoh.BattleSummaryDtoReflection.Descriptor.MessageTypes[7]; }
+      get { return global::Ingweland.Fog.Inn.Models.Hoh.BattleSummaryDtoReflection.Descriptor.MessageTypes[8]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]

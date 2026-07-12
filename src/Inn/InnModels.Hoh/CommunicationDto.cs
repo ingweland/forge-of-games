@@ -76,6 +76,8 @@ public sealed partial class CommunicationDto
     public WoADivisionPush? WoaDivisionPush =>
         RootContext.Messages.FindAndUnpackToList<WoADivisionPush>().FirstOrDefault();
 
+    public IList<WoAHeroRosterPush> WoaHeroRosters => RootContext.Messages.FindAndUnpackToList<WoAHeroRosterPush>();
+
     public ReworkedWondersDTO? Wonders =>
         RootContext.Messages.FindAndUnpackToList<ReworkedWondersDTO>().FirstOrDefault();
 }

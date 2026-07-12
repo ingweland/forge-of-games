@@ -45,6 +45,6 @@ public class PlayerDataProcessor(
         await ExecuteSafeAsync(() => playerAgeHistoryService.UpdateAsync(data.PlayerAggregates), "");
         logger.LogInformation("Completed player age history service update");
 
-        return HasMoreWakeupData;
+        return HasMoreData;
     }
 }

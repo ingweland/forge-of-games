@@ -64,6 +64,7 @@ public static class DependencyInjection
         services.AddScoped<IPlayerAthService, PlayerAthService>();
         services.AddScoped<IAllianceWoaService, AllianceWoaService>();
         services.AddScoped<IWoaPlayerStatsService, WoaPlayerStatsService>();
+        services.AddScoped<IPlayerHeroesService, PlayerHeroesService>();
 
         services.AddScoped<HohHelperResponseDtoToTablePkConverter>();
 
