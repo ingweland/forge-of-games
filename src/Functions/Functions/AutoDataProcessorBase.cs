@@ -5,7 +5,6 @@ using Ingweland.Fog.Application.Server.Services.Hoh.Abstractions;
 using Ingweland.Fog.Functions.Data;
 using Ingweland.Fog.InnSdk.Hoh.Providers;
 using Ingweland.Fog.Models.Fog.Entities;
-using Ingweland.Fog.Models.Hoh.Entities;
 using Ingweland.Fog.Models.Hoh.Entities.Alliance;
 using Ingweland.Fog.Models.Hoh.Entities.Ranking;
 using Ingweland.Fog.Models.Hoh.Enums;
@@ -24,14 +23,10 @@ public abstract class AutoDataProcessorBase(
     DatabaseWarmUpService databaseWarmUpService) : FunctionBase(gameWorldsProvider, inGameRawDataTableRepository,
     inGameDataParsingService, inGameRawDataTablePartitionKeyProvider, logger)
 {
-    private const int WAKEUP_BATCH_SIZE = 100;
-
     private static readonly HashSet<PlayerRankingType> PlayerRankingTypes =
         [PlayerRankingType.ResearchPoints, PlayerRankingType.TotalHeroPower];
 
     private static readonly HashSet<AllianceRankingType> AllianceRankingTypes = [AllianceRankingType.MemberTotal];
-
-    protected bool HasMoreWakeupData { get; private set; }
 
     protected async
         Task<(List<PlayerAggregate> PlayerAggregates, List<AllianceAggregate> AllianceAggregates,
@@ -180,41 +175,6 @@ public abstract class AutoDataProcessorBase(
             playerAggregates.Count, allianceAggregates.Count);
 
         return (playerAggregates, allianceAggregates, allConfirmedAllianceMembers);
-    }
-
-    private async Task<List<(DateTime CollectedAt, Wakeup Wakeup)>> GetWakeupsAsync(string partitionKey,
-        int wakeupPage = -1)
-    {
-        var rawData = await ExecuteSafeAsync(async () =>
-        {
-            if (wakeupPage >= 0)
-            {
-                var result = await InGameRawDataTableRepository.GetAsync(partitionKey, WAKEUP_BATCH_SIZE * wakeupPage,
-                    WAKEUP_BATCH_SIZE);
-                if (result.Count >= WAKEUP_BATCH_SIZE)
-                {
-                    HasMoreWakeupData = true;
-                }
-
-                return result;
-            }
-
-            return await InGameRawDataTableRepository.GetAllAsync(partitionKey);
-        }, "", []);
-        var alliances = new List<(DateTime CollectedAt, Wakeup Wakeup)>();
-        foreach (var rd in rawData)
-        {
-            try
-            {
-                alliances.Add((rd.CollectedAt, InGameDataParsingService.ParseWakeup(rd.Base64Data)));
-            }
-            catch (Exception e)
-            {
-                logger.LogError(e, "Error parsing wakeup raw data collected on {CollectedAt}", rd.CollectedAt);
-            }
-        }
-
-        return alliances;
     }
 
     private async Task<List<(DateTime CollectedAt, PlayerRank PlayerRank)>> GetPlayerRanking(string worldId,

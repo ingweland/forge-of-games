@@ -3,6 +3,7 @@ using Ingweland.Fog.Application.Server.Providers;
 using Ingweland.Fog.Application.Server.Services.Hoh.Abstractions;
 using Ingweland.Fog.Inn.Models.Hoh;
 using Ingweland.Fog.InnSdk.Hoh.Providers;
+using Ingweland.Fog.Models.Hoh.Entities;
 using Ingweland.Fog.Models.Hoh.Entities.Battle;
 using Microsoft.Extensions.Logging;
 using BattleResultStatus = Ingweland.Fog.Models.Hoh.Enums.BattleResultStatus;
@@ -16,7 +17,9 @@ public class FunctionBase(
     InGameRawDataTablePartitionKeyProvider inGameRawDataTablePartitionKeyProvider,
     ILogger logger)
 {
+    private const int WAKEUP_BATCH_SIZE = 100;
     protected IGameWorldsProvider GameWorldsProvider { get; } = gameWorldsProvider;
+    protected bool HasMoreWakeupData { get; private set; }
 
     protected IInGameDataParsingService InGameDataParsingService { get; } = inGameDataParsingService;
 
@@ -40,7 +43,7 @@ public class FunctionBase(
             try
             {
                 var parsed = InGameDataParsingService.ParseBattleWaveResult(rawData.Base64Data);
-                
+
                 if (parsed.Location is PvpRevengeBattleLocation)
                 {
                     continue;
@@ -62,7 +65,7 @@ public class FunctionBase(
 
         return result;
     }
-    
+
     protected async IAsyncEnumerable<HeroFinishWaveRequestDto> GetBattleRequests(string worldId, DateOnly date)
     {
         var rawDataItems = await ExecuteSafeAsync(
@@ -89,7 +92,6 @@ public class FunctionBase(
                     yield return parsedRequest;
                 }
             }
-
         }
     }
 
@@ -163,5 +165,40 @@ public class FunctionBase(
             logger.LogError(e, "Error while executing safe operation: {ErrorMessage}", errorMessage);
             return fallback;
         }
+    }
+
+    protected async Task<List<(DateTime CollectedAt, Wakeup Wakeup)>> GetWakeupsAsync(string partitionKey,
+        int wakeupPage = -1)
+    {
+        var rawData = await ExecuteSafeAsync(async () =>
+        {
+            if (wakeupPage >= 0)
+            {
+                var result = await InGameRawDataTableRepository.GetAsync(partitionKey, WAKEUP_BATCH_SIZE * wakeupPage,
+                    WAKEUP_BATCH_SIZE);
+                if (result.Count >= WAKEUP_BATCH_SIZE)
+                {
+                    HasMoreWakeupData = true;
+                }
+
+                return result;
+            }
+
+            return await InGameRawDataTableRepository.GetAllAsync(partitionKey);
+        }, "", []);
+        var alliances = new List<(DateTime CollectedAt, Wakeup Wakeup)>();
+        foreach (var rd in rawData)
+        {
+            try
+            {
+                alliances.Add((rd.CollectedAt, InGameDataParsingService.ParseWakeup(rd.Base64Data)));
+            }
+            catch (Exception e)
+            {
+                logger.LogError(e, "Error parsing wakeup raw data collected on {CollectedAt}", rd.CollectedAt);
+            }
+        }
+
+        return alliances;
     }
 }
