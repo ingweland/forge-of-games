@@ -5,6 +5,7 @@ using Ingweland.Fog.Models.Hoh.Entities.Alliance;
 using Ingweland.Fog.Models.Hoh.Entities.Battle;
 using Ingweland.Fog.Models.Hoh.Entities.City;
 using Ingweland.Fog.Models.Hoh.Entities.Ranking;
+using Ingweland.Fog.Models.Hoh.Entities.Woa;
 
 namespace Ingweland.Fog.InnSdk.Hoh.Services.Abstractions;
 
@@ -18,6 +19,7 @@ public interface IDataParsingService
     IReadOnlyCollection<PvpRank> ParsePvpRankings(byte[] data);
     OtherCity ParseOtherCity(byte[] data);
     Result<PlayerRanks> ParsePlayerRankings(byte[] data);
+    Result<IReadOnlyCollection<WoaPlayerStats>> ParseWoaPlayerStats(byte[] data);
     Result<AllianceWithMembers> ParseAllianceMembersResponse(byte[] data);
     Result<IReadOnlyCollection<AllianceWithLeader>> ParseSearchAllianceResponse(byte[] data);
     Result<AllianceWithLeader> ParseAllianceWithLeader(byte[] data);

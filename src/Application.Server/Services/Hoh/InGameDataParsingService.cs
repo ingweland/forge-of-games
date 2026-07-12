@@ -7,6 +7,7 @@ using Ingweland.Fog.Models.Hoh.Entities;
 using Ingweland.Fog.Models.Hoh.Entities.Battle;
 using Ingweland.Fog.Models.Hoh.Entities.City;
 using Ingweland.Fog.Models.Hoh.Entities.Ranking;
+using Ingweland.Fog.Models.Hoh.Entities.Woa;
 using Microsoft.Extensions.Logging;
 
 namespace Ingweland.Fog.Application.Server.Services.Hoh;
@@ -25,10 +26,12 @@ public class InGameDataParsingService(
 
     public Result<PlayerRanks> ParsePlayerRanking(string inputData)
     {
-        return Result.Try(
-                () => DecodeInternal(inputData),
-                e => new InGameDataDecodingError(e))
-            .Bind(dataParsingService.ParsePlayerRankings);
+        return TryDecodeAndBind(inputData, dataParsingService.ParsePlayerRankings);
+    }
+
+    public Result<IReadOnlyCollection<WoaPlayerStats>> ParseWoaPlayerStats(string inputData)
+    {
+        return TryDecodeAndBind(inputData, dataParsingService.ParseWoaPlayerStats);
     }
 
     public IReadOnlyCollection<PvpRank> ParsePvpRanking(string inputData)
@@ -87,8 +90,13 @@ public class InGameDataParsingService(
 
     public Result<SoftErrorType?> GetSoftError(string inputData)
     {
+        return TryDecodeAndBind(inputData, dataParsingService.GetSoftError);
+    }
+
+    private Result<T> TryDecodeAndBind<T>(string inputData, Func<byte[], Result<T>> bindFunc)
+    {
         return Result
             .Try(() => DecodeInternal(inputData), e => new InGameDataDecodingError(e))
-            .Bind(dataParsingService.GetSoftError);
+            .Bind(bindFunc);
     }
 }

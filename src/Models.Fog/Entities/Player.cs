@@ -49,5 +49,6 @@ public class Player
     public InGameEntityStatus Status { get; set; } = InGameEntityStatus.Active;
     public int? TreasureHuntDifficulty { get; set; }
     public DateOnly UpdatedAt { get; set; }
+    public ICollection<WoaPlayerStatsEntity> WoaStats { get; set; } = new List<WoaPlayerStatsEntity>();
     public required string WorldId { get; set; }
 }

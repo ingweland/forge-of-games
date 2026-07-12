@@ -46,5 +46,6 @@ public class PlayerEntityTypeConfiguration : IEntityTypeConfiguration<Player>
         builder.HasOne(p => p.AllianceMembership).WithOne(x => x.Player);
         builder.HasMany(p => p.EventCityWonderRankings).WithOne().HasForeignKey(p => p.PlayerId);
         builder.HasMany(p => p.AthRankings).WithOne().HasForeignKey(p => p.PlayerId);
+        builder.HasMany(p => p.WoaStats).WithOne().HasForeignKey(p => p.PlayerId);
     }
 }
