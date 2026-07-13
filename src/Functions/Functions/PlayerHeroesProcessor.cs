@@ -25,7 +25,7 @@ public class PlayerHeroesProcessor(
         logger.LogInformation("{activity} started.", nameof(PlayerHeroesProcessor));
         await databaseWarmUpService.WarmUpDatabaseIfRequiredAsync();
 
-        var date = DateOnly.FromDateTime(DateTime.UtcNow).AddDays(0);
+        var date = DateOnly.FromDateTime(DateTime.UtcNow).AddDays(-1);
         logger.LogInformation("PlayerHeroesProcessor started for date {date}", date);
         foreach (var gameWorld in GameWorldsProvider.GetGameWorlds())
         {
