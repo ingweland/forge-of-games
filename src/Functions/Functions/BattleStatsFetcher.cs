@@ -1,3 +1,4 @@
+using Ingweland.Fog.Application.Server.Interfaces;
 using Ingweland.Fog.Application.Server.Interfaces.Hoh;
 using Ingweland.Fog.Application.Server.Providers;
 using Ingweland.Fog.Application.Server.Services.Hoh.Abstractions;
@@ -5,10 +6,10 @@ using Ingweland.Fog.Functions.Services;
 using Ingweland.Fog.InnSdk.Hoh.Abstractions;
 using Ingweland.Fog.InnSdk.Hoh.Authentication.Models;
 using Ingweland.Fog.InnSdk.Hoh.Providers;
-using Ingweland.Fog.Models.Fog.Entities;
 using Ingweland.Fog.Models.Hoh.Entities.Battle;
 using Ingweland.Fog.Shared.Utils;
 using Microsoft.Azure.Functions.Worker;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Logging;
 
 namespace Ingweland.Fog.Functions.Functions;
@@ -20,6 +21,7 @@ public class BattleStatsFetcher(
     InGameRawDataTablePartitionKeyProvider inGameRawDataTablePartitionKeyProvider,
     IInnSdkClient innSdkClient,
     IBattleStatsService battleStatsService,
+    IFogDbContext context,
     ILogger<BattleStatsFetcher> logger) : FunctionBase(gameWorldsProvider, inGameRawDataTableRepository,
     inGameDataParsingService, inGameRawDataTablePartitionKeyProvider, logger)
 {
@@ -27,41 +29,25 @@ public class BattleStatsFetcher(
     public async Task Run([TimerTrigger("0 50 7-23/1 * * *")] TimerInfo myTimer)
     {
         logger.LogInformation("BattleStatsFetcher started");
-        var allBattleStatsIds = new HashSet<byte[]>(StructuralByteArrayComparer.Instance);
 
-        var limit = 2;
-        var initDate = DateOnly.FromDateTime(DateTime.UtcNow).AddDays(-limit);
-        for (var i = 0; i < limit + 1; i++)
-        {
-            var d = initDate.AddDays(i);
-            foreach (var gameWorld in GameWorldsProvider.GetGameWorlds())
-            {
-                var existingBattleStats = await GetBattleStats(gameWorld.Id, d);
-                var existingBattleStatsIds = existingBattleStats.Select(t => t.battleStats.BattleId).ToList();
-                allBattleStatsIds.UnionWith(existingBattleStatsIds);
-            }
-        }
+        var initDate = DateOnly.FromDateTime(DateTime.UtcNow).AddDays(-1);
 
-        logger.LogInformation("{count} unique existing battle stats ids retrieved", allBattleStatsIds.Count);
-
-        var date = DateOnly.FromDateTime(DateTime.UtcNow);
         foreach (var gameWorld in GameWorldsProvider.GetGameWorlds())
         {
-            var battleResults = await GetBattleResults(gameWorld.Id, date);
-            var battleIds = battleResults.Select(t => t.BattleSummary.BattleId)
-                .ToHashSet(StructuralByteArrayComparer.Instance);
-
-            var pvpBattles = await GetPvpBattles(gameWorld.Id, date);
-            var pvpBattleIds = pvpBattles.Select(t => t.PvpBattle.Id).ToHashSet(StructuralByteArrayComparer.Instance);
-
-            var allBattleIds = battleIds.Union(pvpBattleIds).ToHashSet(StructuralByteArrayComparer.Instance);
-            logger.LogInformation("{count} unique battle ids retrieved for game world {gameWorldId}",
-                allBattleIds.Count, gameWorld.Id);
-
-            var battlesWithoutStats =
-                allBattleIds.Except(allBattleStatsIds, StructuralByteArrayComparer.Instance).ToList();
-            logger.LogInformation("Found {count} battles without stats for game world {gameWorldId}",
-                battlesWithoutStats.Count, gameWorld.Id);
+            var savedBattleStatsIds = await context.Battles.AsNoTracking()
+                .Where(t => t.WorldId == gameWorld.Id && t.PerformedAt >= initDate)
+                .Select(x => x.InGameBattleId)
+                .ToHashSetAsync(StructuralByteArrayComparer.Instance);
+            var existingBattleIds = await context.BattleStats.AsNoTracking()
+                .Where(x => savedBattleStatsIds.Contains(x.InGameBattleId))
+                .Select(x => x.InGameBattleId)
+                .ToListAsync();
+            var battlesWithoutStats = savedBattleStatsIds
+                .Except(existingBattleIds, StructuralByteArrayComparer.Instance)
+                .ToList();
+            logger.LogInformation(
+                "Game world {gameWorldId}. All battles: {count}, battles without stats: {statsCount}.",
+                gameWorld.Id, savedBattleStatsIds.Count, battlesWithoutStats.Count);
             await FetchBattleStats(gameWorld, battlesWithoutStats);
         }
 
@@ -72,7 +58,7 @@ public class BattleStatsFetcher(
     {
         foreach (var battleId in battleIds)
         {
-            var delayTask = Task.Delay(500);
+            var delayTask = Task.Delay(300);
             byte[] data;
             var battleIdString = Convert.ToBase64String(battleId);
             try
@@ -88,17 +74,10 @@ public class BattleStatsFetcher(
                 continue;
             }
 
-            var now = DateTime.UtcNow;
-            var rawData = new InGameRawData
-            {
-                Base64Data = Convert.ToBase64String(data),
-                CollectedAt = now,
-            };
-
             BattleStats battleStats;
             try
             {
-                battleStats = InGameDataParsingService.ParseBattleStats(rawData.Base64Data);
+                battleStats = InGameDataParsingService.ParseBattleStats(Convert.ToBase64String(data));
             }
             catch (Exception e)
             {
@@ -106,22 +85,10 @@ public class BattleStatsFetcher(
                     battleIdString);
                 continue;
             }
-            
-            try
-            {
-                await InGameRawDataTableRepository.SaveAsync(rawData,
-                    InGameRawDataTablePartitionKeyProvider.BattleStats(gameWorld.Id, DateOnly.FromDateTime(now)));
-            }
-            catch (Exception e)
-            {
-                logger.LogError(e, "Error saving battle stats raw data: world {WorldId}, id {BattleId}", gameWorld.Id,
-                    battleIdString);
-                continue;
-            }
 
             await ExecuteSafeAsync(() => battleStatsService.AddAsync(battleStats),
                 $"Error saving battle stats: world {gameWorld.Id}, id {battleIdString}");
-            
+
             await delayTask;
         }
     }
