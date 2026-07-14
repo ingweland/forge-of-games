@@ -1,8 +1,7 @@
 @using Ingweland.Fog.Application.Client.Core.Localization
-@using Ingweland.Fog.Application.Client.Web.CommandCenter.Models
 @using Ingweland.Fog.Application.Client.Web.ViewModels.Hoh.Units
-@using Microsoft.Extensions.Localization
 @using Ingweland.Fog.WebApp.Client.Components.Elements.Heroes
+@using Microsoft.Extensions.Localization
 @inject IStringLocalizer<FogResource> Loc
 @inject IDialogService DialogService
 <div class="fog-container component-root user-select-none"
@@ -65,7 +64,7 @@
 
     private async Task OnDeleteClicked()
     {
-        var result = await DialogService.ShowMessageBox(
+        var result = await DialogService.ShowMessageBoxAsync(
             null,
             Loc[FogResource.CommandCenter_RemoveHeroDialog_Message, Profile.Name],
             Loc[FogResource.Common_Remove], cancelText: Loc[FogResource.Common_Cancel]);

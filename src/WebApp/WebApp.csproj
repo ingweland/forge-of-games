@@ -28,8 +28,8 @@
             <PrivateAssets>all</PrivateAssets>
             <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
         </PackageReference>
-        <PackageReference Include="MudBlazor" Version="8.2.0" />
         <PackageReference Include="Microsoft.Extensions.Localization" Version="10.0.9"/>
+        <PackageReference Include="MudBlazor" Version="9.7.0"/>
         <ProjectReference Include="..\Application.Client.Web\Application.Client.Web.csproj"/>
         <ProjectReference Include="..\Application.Server\Application.Server.csproj"/>
         <ProjectReference Include="..\Infrastructure\Infrastructure.csproj"/>
