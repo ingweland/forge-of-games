@@ -15,11 +15,11 @@ public static class DependencyInjection
 {
     public static IServiceCollection AddFunctionsServices(this IServiceCollection services)
     {
-        services.AddSingleton<EndpointValidator>();
-        services.AddSingleton<HohHelperResponseDtoValidator>();
-        services.AddSingleton<PayloadValidator>();
-        services.AddSingleton<WorldValidator>();
-        services.AddSingleton<SubmissionIdValidator>();
+        services.AddScoped<EndpointValidator>();
+        services.AddScoped<HohHelperResponseDtoValidator>();
+        services.AddScoped<PayloadValidator>();
+        services.AddScoped<WorldValidator>();
+        services.AddScoped<SubmissionIdValidator>();
 
         services.AddTransient<DatabaseWarmUpService>();
 

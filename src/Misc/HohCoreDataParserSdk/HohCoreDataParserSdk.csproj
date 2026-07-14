@@ -1,7 +1,7 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
     <PropertyGroup>
-        <TargetFramework>net9.0</TargetFramework>
+        <TargetFramework>net10.0</TargetFramework>
         <ImplicitUsings>enable</ImplicitUsings>
         <Nullable>enable</Nullable>
         <AssemblyName>Ingweland.Fog.HohCoreDataParserSdk</AssemblyName>
@@ -9,14 +9,14 @@
     </PropertyGroup>
 
     <ItemGroup>
-      <PackageReference Include="AutoMapper" Version="13.0.1" />
+        <PackageReference Include="AutoMapper" Version="13.0.1"/>
     </ItemGroup>
 
     <ItemGroup>
-      <ProjectReference Include="..\..\Inn\InnModels.Hoh\InnModels.Hoh.csproj" />
-      <ProjectReference Include="..\..\Inn\InnSdk.Hoh\InnSdk.Hoh.csproj" />
-      <ProjectReference Include="..\..\Models.Hoh\Models.Hoh.csproj" />
-      <ProjectReference Include="..\..\Shared\Shared.csproj" />
+        <ProjectReference Include="..\..\Inn\InnModels.Hoh\InnModels.Hoh.csproj"/>
+        <ProjectReference Include="..\..\Inn\InnSdk.Hoh\InnSdk.Hoh.csproj"/>
+        <ProjectReference Include="..\..\Models.Hoh\Models.Hoh.csproj"/>
+        <ProjectReference Include="..\..\Shared\Shared.csproj"/>
     </ItemGroup>
 
 </Project>
