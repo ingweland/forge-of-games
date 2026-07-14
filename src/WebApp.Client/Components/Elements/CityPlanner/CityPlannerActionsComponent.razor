@@ -37,7 +37,7 @@
 </div>
 
 @code {
-    
+
     [Parameter]
     public EventCallback OnShare { get; set; }
 
@@ -68,7 +68,7 @@
 
     private async Task OnDeleteClicked()
     {
-        var result = await DialogService.ShowMessageBox(
+        var result = await DialogService.ShowMessageBoxAsync(
             null,
             Loc[FogResource.Common_DeleteConfirmation, CityPlanner.CityMapState.CityName],
             yesText: Loc[FogResource.Common_Delete], cancelText: Loc[FogResource.Common_Cancel]);

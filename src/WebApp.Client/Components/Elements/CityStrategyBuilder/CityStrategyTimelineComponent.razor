@@ -153,7 +153,6 @@
             _hasPendingUiChanges = true;
         }
 
-        
         _selectedItem = selected;
         _itemsCount = Items.Count;
     }
@@ -189,7 +188,7 @@
 
     private async Task OnDeleteClicked(CityStrategyTimelineItemBase item)
     {
-        var result = await DialogService.ShowMessageBox(
+        var result = await DialogService.ShowMessageBoxAsync(
             null,
             Loc[FogResource.Common_DeleteConfirmation, item.Title],
             Loc[FogResource.Common_Delete], cancelText: Loc[FogResource.Common_Cancel]);
