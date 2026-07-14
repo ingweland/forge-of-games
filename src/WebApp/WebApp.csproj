@@ -1,15 +1,15 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk.Web">
 
     <PropertyGroup>
-        <TargetFramework>net9.0</TargetFramework>
+        <TargetFramework>net10.0</TargetFramework>
         <Nullable>enable</Nullable>
         <ImplicitUsings>enable</ImplicitUsings>
         <AssemblyName>Ingweland.Fog.WebApp</AssemblyName>
         <RootNamespace>Ingweland.Fog.WebApp</RootNamespace>
         <Configurations>Debug;Release</Configurations>
         <Platforms>AnyCPU</Platforms>
-      <UserSecretsId>524584EF-33A9-438D-BFC3-487A35613980</UserSecretsId>
-  </PropertyGroup>
+        <UserSecretsId>524584EF-33A9-438D-BFC3-487A35613980</UserSecretsId>
+    </PropertyGroup>
 
     <PropertyGroup Condition=" '$(Configuration)' == 'Release' ">
         <DebugSymbols>false</DebugSymbols>
@@ -17,29 +17,29 @@
     </PropertyGroup>
 
     <ItemGroup>
-        <PackageReference Include="AutoMapper" Version="13.0.1" />
-        <PackageReference Include="Azure.Data.Tables" Version="12.10.0" />
-        <PackageReference Include="Azure.Monitor.OpenTelemetry.AspNetCore" Version="1.2.0" />
-        <PackageReference Include="FluentResults.Extensions.AspNetCore" Version="0.2.0" />
-        <PackageReference Include="MediatR" Version="12.4.1" />
-        <PackageReference Include="Microsoft.AspNetCore.OpenApi" Version="9.0.14" />
-        <PackageReference Include="Microsoft.Azure.AppConfiguration.AspNetCore" Version="8.4.0" />
-        <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="9.0.14">
-          <PrivateAssets>all</PrivateAssets>
-          <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+        <PackageReference Include="AutoMapper" Version="13.0.1"/>
+        <PackageReference Include="Azure.Data.Tables" Version="12.11.0"/>
+        <PackageReference Include="Azure.Monitor.OpenTelemetry.AspNetCore" Version="1.5.0" />
+        <PackageReference Include="FluentResults.Extensions.AspNetCore" Version="0.2.0"/>
+        <PackageReference Include="MediatR" Version="12.4.1"/>
+        <PackageReference Include="Microsoft.AspNetCore.OpenApi" Version="10.0.9"/>
+        <PackageReference Include="Microsoft.Azure.AppConfiguration.AspNetCore" Version="8.5.0"/>
+        <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="10.0.9">
+            <PrivateAssets>all</PrivateAssets>
+            <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
         </PackageReference>
-        <PackageReference Include="Microsoft.Extensions.Localization" Version="9.0.14" />
         <PackageReference Include="MudBlazor" Version="8.2.0" />
-        <ProjectReference Include="..\Application.Client.Web\Application.Client.Web.csproj" />
-        <ProjectReference Include="..\Application.Server\Application.Server.csproj" />
-        <ProjectReference Include="..\Infrastructure\Infrastructure.csproj" />
-        <ProjectReference Include="..\WebApp.Client\WebApp.Client.csproj" />
-        <PackageReference Include="Microsoft.AspNetCore.Components.WebAssembly.Server" Version="9.0.14" />
+        <PackageReference Include="Microsoft.Extensions.Localization" Version="10.0.9"/>
+        <ProjectReference Include="..\Application.Client.Web\Application.Client.Web.csproj"/>
+        <ProjectReference Include="..\Application.Server\Application.Server.csproj"/>
+        <ProjectReference Include="..\Infrastructure\Infrastructure.csproj"/>
+        <ProjectReference Include="..\WebApp.Client\WebApp.Client.csproj"/>
+        <PackageReference Include="Microsoft.AspNetCore.Components.WebAssembly.Server" Version="10.0.9"/>
     </ItemGroup>
 
     <ItemGroup>
-      <Content Update="wwwroot\maintenance.html">
-        <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-      </Content>
+        <Content Update="wwwroot\maintenance.html">
+            <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+        </Content>
     </ItemGroup>
 </Project>

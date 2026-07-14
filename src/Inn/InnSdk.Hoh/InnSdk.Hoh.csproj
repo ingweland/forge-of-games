@@ -1,7 +1,7 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
     <PropertyGroup>
-        <TargetFramework>net9.0</TargetFramework>
+        <TargetFramework>net10.0</TargetFramework>
         <ImplicitUsings>enable</ImplicitUsings>
         <Nullable>enable</Nullable>
         <AssemblyName>Ingweland.Fog.InnSdk.Hoh</AssemblyName>
@@ -9,17 +9,17 @@
     </PropertyGroup>
 
     <ItemGroup>
-        <PackageReference Include="AutoMapper" Version="13.0.1" />
-        <PackageReference Include="FluentResults" Version="4.0.0" />
-        <PackageReference Include="Microsoft.Extensions.Http" Version="9.0.14" />
-        <PackageReference Include="Microsoft.Extensions.Http.Resilience" Version="9.2.0" />
-        <PackageReference Include="Microsoft.Extensions.Logging.Abstractions" Version="9.0.14" />
-        <PackageReference Include="Microsoft.Extensions.Options" Version="9.0.14" />
+        <PackageReference Include="AutoMapper" Version="13.0.1"/>
+        <PackageReference Include="FluentResults" Version="4.0.0"/>
+        <PackageReference Include="Microsoft.Extensions.Http" Version="10.0.9"/>
+        <PackageReference Include="Microsoft.Extensions.Http.Resilience" Version="10.7.0"/>
+        <PackageReference Include="Microsoft.Extensions.Logging.Abstractions" Version="10.0.9"/>
+        <PackageReference Include="Microsoft.Extensions.Options" Version="10.0.9"/>
     </ItemGroup>
 
     <ItemGroup>
-        <ProjectReference Include="..\..\Models.Hoh\Models.Hoh.csproj" />
-        <ProjectReference Include="..\..\Shared\Shared.csproj" />
+        <ProjectReference Include="..\..\Models.Hoh\Models.Hoh.csproj"/>
+        <ProjectReference Include="..\..\Shared\Shared.csproj"/>
         <ProjectReference Include="..\InnModels.Hoh\InnModels.Hoh.csproj"/>
     </ItemGroup>
 
