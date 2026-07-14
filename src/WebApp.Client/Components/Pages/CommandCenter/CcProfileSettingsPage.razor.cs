@@ -43,7 +43,7 @@ public partial class CcProfileSettingsPage : CcProfilePageBase
 
     private async Task OnDeleteProfileClicked()
     {
-        var result = await DialogService.ShowMessageBox(
+        var result = await DialogService.ShowMessageBoxAsync(
             null,
             Loc[FogResource.Common_DeleteConfirmation, Profile!.Name],
             Loc[FogResource.Common_Delete], cancelText: Loc[FogResource.Common_Cancel]);

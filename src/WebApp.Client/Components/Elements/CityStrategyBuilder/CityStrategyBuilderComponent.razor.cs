@@ -341,7 +341,7 @@ public partial class CityStrategyBuilderComponent : ComponentBase, IDisposable
             var cities = await CityStrategyBuilderService.GetCities();
             if (cities.Count == 0)
             {
-                await DialogService.ShowMessageBox(
+                await DialogService.ShowMessageBoxAsync(
                     null,
                     Loc[FogResource.CityStrategy_NoCityForImport],
                     Loc[FogResource.Common_Ok]);
@@ -433,7 +433,7 @@ public partial class CityStrategyBuilderComponent : ComponentBase, IDisposable
         }
         else
         {
-            _ = await DialogService.ShowMessageBox("Error generating image",
+            _ = await DialogService.ShowMessageBoxAsync("Error generating image",
                 string.Join("; ", image.Reasons.Select(r => r.Message)), Loc[FogResource.Common_Ok]);
         }
     }

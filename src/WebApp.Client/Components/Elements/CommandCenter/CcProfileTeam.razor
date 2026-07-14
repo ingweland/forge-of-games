@@ -1,5 +1,4 @@
 @using Ingweland.Fog.Application.Client.Core.Localization
-@using Ingweland.Fog.Application.Client.Web.CommandCenter
 @using Ingweland.Fog.Application.Client.Web.CommandCenter.Models
 @using Microsoft.Extensions.Localization
 @using Size = MudBlazor.Size
@@ -42,7 +41,7 @@
 
     private async Task OnDeleteClicked()
     {
-        var result = await DialogService.ShowMessageBox(
+        var result = await DialogService.ShowMessageBoxAsync(
             null,
             Loc[FogResource.CommandCenter_DeleteTeamDialog_Message, Data.Name],
             yesText: Loc[FogResource.Common_Delete], cancelText: Loc[FogResource.Common_Cancel]);

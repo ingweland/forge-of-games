@@ -75,7 +75,7 @@
 
     private async Task OnDeleteClicked()
     {
-        var result = await DialogService.ShowMessageBox(
+        var result = await DialogService.ShowMessageBoxAsync(
             null,
             Loc[FogResource.Common_DeleteConfirmation, StrategyName],
             Loc[FogResource.Common_Delete], cancelText: Loc[FogResource.Common_Cancel]);
