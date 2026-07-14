@@ -68,18 +68,18 @@ public partial class CityPlannerDataConverterPage : FogPageBase
             try
             {
                 await PersistenceService.SaveCity(city.Value);
-                _ = await DialogService.ShowMessageBox(null, $"Successfully created city {_cityName}",
+                _ = await DialogService.ShowMessageBoxAsync(null, $"Successfully created city {_cityName}",
                     Loc[FogResource.Common_Ok]);
             }
             catch (Exception e)
             {
-                _ = await DialogService.ShowMessageBox("Error saving city", e.Message, Loc[FogResource.Common_Ok]);
+                _ = await DialogService.ShowMessageBoxAsync("Error saving city", e.Message, Loc[FogResource.Common_Ok]);
             }
         }
         else
         {
             var msg = string.Join("; ", city.Errors.Select(e => e.Message));
-            _ = await DialogService.ShowMessageBox("Error converting data", msg, Loc[FogResource.Common_Ok]);
+            _ = await DialogService.ShowMessageBoxAsync("Error converting data", msg, Loc[FogResource.Common_Ok]);
         }
 
         _isConverting = false;

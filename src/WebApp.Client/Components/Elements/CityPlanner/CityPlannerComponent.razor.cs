@@ -412,7 +412,7 @@ public partial class CityPlannerComponent : ComponentBase, IDisposable
 
     private async Task PurgeInventory()
     {
-        var result = await DialogService.ShowMessageBox(
+        var result = await DialogService.ShowMessageBoxAsync(
             null,
             Loc[FogResource.CityPlanner_PurgeInventoryConfirmation],
             Loc[FogResource.Common_Remove], cancelText: Loc[FogResource.Common_Cancel]);
@@ -446,7 +446,7 @@ public partial class CityPlannerComponent : ComponentBase, IDisposable
         }
         else
         {
-            _ = await DialogService.ShowMessageBox("Error generating image",
+            _ = await DialogService.ShowMessageBoxAsync("Error generating image",
                 string.Join("; ", image.Reasons.Select(r => r.Message)), Loc[FogResource.Common_Ok]);
         }
     }

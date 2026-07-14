@@ -1,6 +1,5 @@
-@using Ingweland.Fog.Application.Client.Web.CommandCenter
-@using Ingweland.Fog.Application.Client.Web.CommandCenter.Models
 @using Ingweland.Fog.Application.Client.Web.ViewModels.Hoh.Units
+@using Ingweland.Fog.WebApp.Client.Extensions
 @using MudBlazor.Utilities
 @using Size = MudBlazor.Size
 <div class="@Classname" @onclick="() => OnClick.InvokeAsync(Profile.Identifier.HeroId)">
@@ -44,15 +43,15 @@
     public bool Dense { get; set; } = false;
 
     private string Classname => new CssBuilder("cc-hero-collection-item")
-        .AddClass($"cc-hero-collection-item-{Size?.ToDescriptionString()}", Size != null)
+        .AddClass($"cc-hero-collection-item-{Size?.GetDescription()}", Size != null)
         .AddClass("cc-hero-collection-item-shadow", HasShadow)
         .AddClass("user-select-none")
         .Build();
-    
+
     private string IconContainerClassname => new CssBuilder("icon-label-container")
         .AddClass("icon-label-container-dense", Dense)
         .Build();
-    
+
     private string IconClassname => new CssBuilder("icon")
         .AddClass("icon-dense", Dense)
         .Build();

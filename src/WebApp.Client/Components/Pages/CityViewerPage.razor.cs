@@ -72,7 +72,7 @@ public partial class CityViewerPage : FogPageBase
 
         if (!settings.CityViewerIntroMessageViewed && _isSmallScreen)
         {
-            _ = DialogService.ShowMessageBox(
+            _ = DialogService.ShowMessageBoxAsync(
                 null,
                 Loc[FogResource.CityViewer_FirstTimeMessage],
                 Loc[FogResource.Common_Ok],

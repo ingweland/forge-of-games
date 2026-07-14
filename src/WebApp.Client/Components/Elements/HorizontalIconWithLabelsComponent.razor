@@ -1,4 +1,5 @@
 @using Ingweland.Fog.Application.Client.Web.ViewModels.Hoh
+@using Ingweland.Fog.WebApp.Client.Extensions
 @using MudBlazor.Utilities
 @using Size = MudBlazor.Size
 <div class="@ValueContainerClass">
@@ -18,15 +19,15 @@
     public Size Size { get; set; } = Size.Medium;
 
     private string ValueContainerClass => new CssBuilder("value-container")
-        .AddClass($"value-container-size-{Size.ToDescriptionString()}")
+        .AddClass($"value-container-size-{Size.GetDescription()}")
         .Build();
 
     private string ValueIconClass => new CssBuilder("value-icon")
-        .AddClass($"value-icon-size-{Size.ToDescriptionString()}")
+        .AddClass($"value-icon-size-{Size.GetDescription()}")
         .Build();
 
     private string LabelClass => new CssBuilder("value-label")
-        .AddClass($"value-label-size-{Size.ToDescriptionString()}")
+        .AddClass($"value-label-size-{Size.GetDescription()}")
         .Build();
 
 }
