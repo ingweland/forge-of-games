@@ -205,7 +205,10 @@ public class ProductionRenderer : IProductionRenderer
     {
         var urls = _assetUrlProvider.GetHohIconAtlasUrl();
         await using var imageStream = await _httpClient.GetStreamAsync(urls.Image);
-        _atlasCache = SKImage.FromEncodedData(imageStream);
+        using var memoryStream = new MemoryStream();
+        await imageStream.CopyToAsync(memoryStream);
+        memoryStream.Position = 0;
+        _atlasCache = SKImage.FromEncodedData(memoryStream);
 
         var atlasMeta = await _httpClient.GetFromJsonAsync<FreeTexturePackerAtlas>(urls.Meta);
         if (atlasMeta != null)

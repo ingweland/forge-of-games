@@ -37,12 +37,15 @@ public class TypefaceProvider : ITypefaceProvider
         try
         {
             await using var fontStream = await _httpClient.GetStreamAsync(url);
-            MainTypeface = SKTypeface.FromStream(fontStream);
+            using var memoryStream = new MemoryStream();
+            await fontStream.CopyToAsync(memoryStream);
+            memoryStream.Position = 0;
+            MainTypeface = SKTypeface.FromStream(memoryStream);
         }
         catch (Exception e)
         {
-            _logger.LogError(e, "Error setting up Noto Sans font for {target}. Falling back to the default.",
-                nameof(BuildingRenderer));
+            _logger.LogError(e, "Error setting up {font} font for {target}. Falling back to the default.",
+                MAIN_FONT, nameof(BuildingRenderer));
             MainTypeface = SKTypeface.CreateDefault();
         }
     }

@@ -1,7 +1,7 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
     <PropertyGroup>
-        <TargetFramework>net9.0</TargetFramework>
+        <TargetFramework>net10.0</TargetFramework>
         <ImplicitUsings>enable</ImplicitUsings>
         <Nullable>enable</Nullable>
         <AssemblyName>Ingweland.Fog.Infrastructure</AssemblyName>
@@ -11,20 +11,20 @@
     </PropertyGroup>
 
     <ItemGroup>
-      <ProjectReference Include="..\Application.Server\Application.Server.csproj" />
+        <ProjectReference Include="..\Application.Server\Application.Server.csproj"/>
     </ItemGroup>
 
     <ItemGroup>
-      <PackageReference Include="AutoMapper" Version="13.0.1" />
-      <PackageReference Include="Azure.Data.Tables" Version="12.10.0" />
-      <PackageReference Include="Azure.Storage.Blobs" Version="12.26.0" />
-      <PackageReference Include="Azure.Storage.Queues" Version="12.23.0" />
-      <PackageReference Include="Microsoft.EntityFrameworkCore" Version="9.0.14" />
-      <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="9.0.14" />
-      <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="9.0.14">
-        <PrivateAssets>all</PrivateAssets>
-        <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
-      </PackageReference>
+        <PackageReference Include="AutoMapper" Version="13.0.1"/>
+        <PackageReference Include="Azure.Data.Tables" Version="12.10.0"/>
+        <PackageReference Include="Azure.Storage.Blobs" Version="12.26.0" />
+        <PackageReference Include="Azure.Storage.Queues" Version="12.26.0" />
+        <PackageReference Include="Microsoft.EntityFrameworkCore" Version="10.0.9"/>
+        <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="10.0.9"/>
+        <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="10.0.9">
+            <PrivateAssets>all</PrivateAssets>
+            <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+        </PackageReference>
     </ItemGroup>
 
 </Project>
