@@ -1,3 +1,20 @@
 # Renaming of portrait icons
 Get-ChildItem -Filter "player_portrait_*.png" | Where-Object { $_.Name -match "^player_portrait_(\d+)_.*\.png$" } | Rename-Item -NewName { "player_portrait_$($matches[1]).png" }
 
+az ad sp create-for-rbac --name "github-actions-deploy" --role contributor --scopes /subscriptions/<subscription-id>/resourceGroups/<resource-group-name>/providers/Microsoft.Web/sites/<side-name> --json-auth
+
+openssl pkcs12 -export -out certificate.pfx -inkey privatkey.key -in certificate.pem
+
+# Sync assets to AWS S3
+aws login
+aws s3 sync ./ s3://fogcdn/1/images/hoh --cache-control "public, max-age=31536000, immutable"
+
+# EF Core database migration
+dotnet ef migrations add <name> --project .\src\Infrastructure\ --startup-project .\src\WebApp\
+dotnet ef database update --project .\src\Infrastructure\ --startup-project .\src\WebApp\
+dotnet ef migrations script <from-name> <to-name> --project .\src\Infrastructure\ --startup-project .\src\WebApp\
+
+# PowerShell: decode binary proto to txt
+Get-Content -Raw -AsByteStream <bin-input> | protoc --decode_raw > <txt-output>
+
+
