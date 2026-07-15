@@ -3912,6 +3912,15 @@ namespace Ingweland.Fog.Application.Client.Core.Localization {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Atlantis on {0}.
+        /// </summary>
+        public static string StatsHub_Worlds_TopAllianceWoaRankingListTitle {
+            get {
+                return ResourceManager.GetString("StatsHub.Worlds.TopAllianceWoaRankingListTitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Event cities on {0}.
         /// </summary>
         public static string StatsHub_Worlds_TopEventCityListTitle {
@@ -4610,6 +4619,33 @@ namespace Ingweland.Fog.Application.Client.Core.Localization {
         public static string UnitStats_MaxHitPointsPercentAbbrev {
             get {
                 return ResourceManager.GetString("UnitStats.MaxHitPointsPercentAbbrev", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Atlantis Points.
+        /// </summary>
+        public static string WoaPointsCategory_Atlantis {
+            get {
+                return ResourceManager.GetString("WoaPointsCategory.Atlantis", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Victory Points.
+        /// </summary>
+        public static string WoaPointsCategory_Victory {
+            get {
+                return ResourceManager.GetString("WoaPointsCategory.Victory", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Points category.
+        /// </summary>
+        public static string WoaPointsCategorySelector_Label {
+            get {
+                return ResourceManager.GetString("WoaPointsCategorySelector.Label", resourceCulture);
             }
         }
         

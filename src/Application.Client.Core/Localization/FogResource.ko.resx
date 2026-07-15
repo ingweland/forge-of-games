@@ -1557,4 +1557,16 @@
     <data name="StatsHub.Player.WoaStats.Table.WonDefenses" xml:space="preserve">
         <value>승리한 방어</value>
     </data>
+    <data name="StatsHub.Worlds.TopAllianceWoaRankingListTitle" xml:space="preserve">
+    <value>{0}의 아틀란티스</value>
+</data>
+    <data name="WoaPointsCategorySelector.Label" xml:space="preserve">
+    <value>포인트 카테고리</value>
+</data>
+    <data name="WoaPointsCategory.Atlantis" xml:space="preserve">
+    <value>아틀란티스 포인트</value>
+</data>
+    <data name="WoaPointsCategory.Victory" xml:space="preserve">
+    <value>승리 포인트</value>
+</data>
 </root>

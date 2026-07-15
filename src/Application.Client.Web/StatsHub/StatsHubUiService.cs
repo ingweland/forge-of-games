@@ -15,6 +15,7 @@ using Ingweland.Fog.Dtos.Hoh;
 using Ingweland.Fog.Dtos.Hoh.Battle;
 using Ingweland.Fog.Dtos.Hoh.Stats;
 using Ingweland.Fog.Models.Fog;
+using Ingweland.Fog.Models.Fog.Enums;
 using Ingweland.Fog.Models.Hoh.Enums;
 using Ingweland.Fog.Shared.Constants;
 using Microsoft.Extensions.Caching.Memory;
@@ -217,6 +218,15 @@ public class StatsHubUiService : UiServiceBase, IStatsHubUiService
         return _statsHubViewModelsFactory.CreateAlliances(result);
     }
 
+    public async Task<PaginatedList<AllianceViewModel>> GetAlliancesWoaRankingsAsync(string worldId, int startIndex,
+        int pageSize, WoaPointsCategory pointsCategory,
+        CancellationToken ct = default)
+    {
+        var result =
+            await _statsHubService.GetAlliancesWoaRankingsAsync(worldId, startIndex, pageSize, pointsCategory, ct);
+        return _statsHubViewModelsFactory.CreateAlliances(result);
+    }
+
     public async Task<PaginatedList<PlayerViewModel>> GetEventCityRankingsAsync(string worldId,
         CancellationToken ct = default)
     {
@@ -340,6 +350,19 @@ public class StatsHubUiService : UiServiceBase, IStatsHubUiService
 
                 var heroes = await _heroProfileUiService.GetHeroes(HeroFilterRequest.Empty, playerHeroes.ToHashSet());
                 return heroes.OrderBy(x => x.Name).ToList();
+            },
+            []);
+    }
+
+    public async Task<IReadOnlyCollection<AllianceViewModel>> GetTopAlliancesWoaRankingsAsync(string worldId,
+        WoaPointsCategory pointsCategory, CancellationToken ct = default)
+    {
+        return await ExecuteSafeAsync(
+            async () =>
+            {
+                var result = await _statsHubService.GetAlliancesWoaRankingsAsync(worldId, 0,
+                    FogConstants.DEFAULT_STATS_PAGE_SIZE, pointsCategory, ct);
+                return _statsHubViewModelsFactory.CreateAlliances(result.Items);
             },
             []);
     }

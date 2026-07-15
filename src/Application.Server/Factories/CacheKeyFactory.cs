@@ -76,6 +76,8 @@ public class CacheKeyFactory : ICacheKeyFactory
             GetAllianceWoaRankingsQuery q => $"AllianceWoaRankings:{q.AllianceId}",
             GetWoaPlayerStatsQuery q => $"WoaPlayerStats:{q.PlayerId}",
             GetPlayerHeroesQuery q => $"PlayerHeroes:{q.PlayerId}",
+            GetAlliancesWoaRankingsQuery q =>
+                $"AlliancesWoaRankings:{q.WorldId}:{q.PointsCategory}:{q.StartIndex}:{q.PageSize}",
             _ => typeof(TRequest).FullName ?? Guid.NewGuid().ToString(),
         };
     }

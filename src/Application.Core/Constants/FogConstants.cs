@@ -17,19 +17,20 @@ public static class FogConstants
     public const int MAX_DISPLAYED_WOA_EVENTS = 10;
     public const int MAX_DISPLAYED_WONDER_RANKINGS = 10;
     public const int MAX_ALLIANCES_ATH_RANKINGS = 100;
+    public const int MAX_ALLIANCES_WOA_RANKINGS = 100;
     public const int MAX_EVENT_CITY_RANKINGS = 100;
     public const int CITY_STRATEGY_TIMELINE_ITEM_TITLE_MAX_LENGTH = 60;
     public const int CITY_PLANNER_REQUIRED_SCREEN_WIDTH = 880;
     public const int MAX_LEADERBOARD_PAGE_SIZE = 100;
     public const int LEADERBOARD_SEARCH_RESULT_PAGE_SIZE = 30;
 
+    public const string AD_SENSE_PUBLISHER_ID = "ca-pub-9697370175465282";
+    public const int DAYS_BEFORE_SHOWING_ADS = 3;
+
     public static readonly int MaxHohCitySnapshots = 5;
     public static readonly int DisplayedStatsDays = 30;
     public static readonly int MaxDisplayedBattles = 30;
     public static readonly int MaxDisplayedUnitBattles = 30;
     public static readonly int MaxPlayerCitySnapshotSearchResults = 20;
-
-    public const string AD_SENSE_PUBLISHER_ID = "ca-pub-9697370175465282";
-    public const int DAYS_BEFORE_SHOWING_ADS = 3;
     public static readonly HashSet<string> NoHeroIds = ["CatherineTheGreat"];
 }

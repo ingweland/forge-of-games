@@ -1586,4 +1586,16 @@ Forge of Games nie jest powiązany ani oficjalnie związany z twórcami lub wyda
     <data name="StatsHub.Player.WoaStats.Table.WonDefenses" xml:space="preserve">
         <value>Wygrane obrony</value>
     </data>
+    <data name="StatsHub.Worlds.TopAllianceWoaRankingListTitle" xml:space="preserve">
+    <value>Atlantyda w {0}</value>
+</data>
+    <data name="WoaPointsCategorySelector.Label" xml:space="preserve">
+    <value>Kategoria punktów</value>
+</data>
+    <data name="WoaPointsCategory.Atlantis" xml:space="preserve">
+    <value>Punkty Atlantydy</value>
+</data>
+    <data name="WoaPointsCategory.Victory" xml:space="preserve">
+    <value>Punkty Zwycięstwa</value>
+</data>
 </root>

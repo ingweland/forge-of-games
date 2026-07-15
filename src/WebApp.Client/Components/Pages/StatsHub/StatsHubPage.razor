@@ -36,6 +36,11 @@
                 Title="@Loc[FogResource.StatsHub_Worlds_TopAllianceAthRankingListTitle, _worldIdToTitleMap[_selectedWorldId]]"/>
         </div>
         <div class="column">
+            <AllianceTopWoaRankingsComponent
+                WorldId="@_selectedWorldId"
+                Title="@Loc[FogResource.StatsHub_Worlds_TopAllianceWoaRankingListTitle, _worldIdToTitleMap[_selectedWorldId]]"/>
+        </div>
+        <div class="column">
             <TopHeroesComponent Title="@Loc[FogResource.StatsHub_HeroInsights_ListTitle]"/>
         </div>
     </div>

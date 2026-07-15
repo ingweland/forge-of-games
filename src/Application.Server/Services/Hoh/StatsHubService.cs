@@ -44,6 +44,21 @@ public class StatsHubService(ISender sender) : IStatsHubService
         return sender.Send(query, ct);
     }
 
+    public Task<PaginatedList<AllianceDto>> GetAlliancesWoaRankingsAsync(string worldId, int startIndex = 0,
+        int pageSize = FogConstants.DEFAULT_STATS_PAGE_SIZE,
+        WoaPointsCategory pointsCategory = WoaPointsCategory.Atlantis,
+        CancellationToken ct = default)
+    {
+        var query = new GetAlliancesWoaRankingsQuery
+        {
+            WorldId = worldId,
+            PointsCategory = pointsCategory,
+            StartIndex = startIndex,
+            PageSize = pageSize,
+        };
+        return sender.Send(query, ct);
+    }
+
     public Task<IReadOnlyCollection<PlayerDto>> GetTopPlayersAsync(string worldId, CancellationToken ct = default)
     {
         var query = new GetTopPlayersQuery

@@ -92,4 +92,10 @@ public interface IStatsHubService
 
     [Get(FogUrlBuilder.ApiRoutes.PLAYER_HEROES_TEMPLATE_REFIT)]
     Task<IReadOnlyCollection<string>> GetPlayerHeroesAsync(int playerId, CancellationToken ct = default);
+
+    [Get(FogUrlBuilder.ApiRoutes.ALLIANCES_WOA_RANKINGS_TEMPLATE)]
+    Task<PaginatedList<AllianceDto>> GetAlliancesWoaRankingsAsync(string worldId, [Query] int startIndex = 0,
+        [Query] int pageSize = FogConstants.DEFAULT_STATS_PAGE_SIZE,
+        [Query] WoaPointsCategory pointsCategory = WoaPointsCategory.Atlantis,
+        CancellationToken ct = default);
 }

@@ -4,6 +4,7 @@ using Ingweland.Fog.Application.Client.Web.ViewModels.Hoh.Units;
 using Ingweland.Fog.Dtos.Hoh.Battle;
 using Ingweland.Fog.Dtos.Hoh.Stats;
 using Ingweland.Fog.Models.Fog;
+using Ingweland.Fog.Models.Fog.Enums;
 using Ingweland.Fog.Models.Hoh.Enums;
 
 namespace Ingweland.Fog.Application.Client.Web.StatsHub.Abstractions;
@@ -37,6 +38,9 @@ public interface IStatsHubUiService
     Task<PaginatedList<AllianceViewModel>> GetAlliancesAthRankingsAsync(string worldId, int startIndex, int pageSize,
         TreasureHuntLeague league, CancellationToken ct = default);
 
+    Task<PaginatedList<AllianceViewModel>> GetAlliancesWoaRankingsAsync(string worldId, int startIndex, int pageSize,
+        WoaPointsCategory pointsCategory, CancellationToken ct = default);
+
     Task<PaginatedList<PlayerViewModel>> GetEventCityRankingsAsync(string worldId, CancellationToken ct = default);
     Task<IReadOnlyCollection<PlayerViewModel>> GetTopPlayersAsync(string worldId, CancellationToken ct = default);
     Task<IReadOnlyCollection<PlayerViewModel>> GetTopEventCitiesAsync(string worldId, CancellationToken ct = default);
@@ -61,4 +65,7 @@ public interface IStatsHubUiService
         CancellationToken ct = default);
 
     Task<IReadOnlyCollection<HeroBasicViewModel>> GetPlayerHeroesAsync(int playerId, CancellationToken ct);
+
+    Task<IReadOnlyCollection<AllianceViewModel>> GetTopAlliancesWoaRankingsAsync(string worldId,
+        WoaPointsCategory pointsCategory, CancellationToken ct = default);
 }

@@ -1577,4 +1577,16 @@ Forge of Games není přidružený ani oficiálně spojený s tvůrci nebo vydav
     <data name="StatsHub.Player.WoaStats.Table.WonDefenses" xml:space="preserve">
         <value>Vyhrané obrany</value>
     </data>
+    <data name="StatsHub.Worlds.TopAllianceWoaRankingListTitle" xml:space="preserve">
+    <value>Atlantida na {0}</value>
+</data>
+    <data name="WoaPointsCategorySelector.Label" xml:space="preserve">
+    <value>Kategorie bodů</value>
+</data>
+    <data name="WoaPointsCategory.Atlantis" xml:space="preserve">
+    <value>Body Atlantidy</value>
+</data>
+    <data name="WoaPointsCategory.Victory" xml:space="preserve">
+    <value>Vítězné body</value>
+</data>
 </root>

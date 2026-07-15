@@ -1,0 +1,104 @@
+@inject IStringLocalizer<FogResource> Loc
+@using Ingweland.Fog.Application.Client.Core.Localization
+@using Ingweland.Fog.Application.Client.Web.Services.Hoh.Abstractions
+@using Ingweland.Fog.Application.Client.Web.StatsHub.ViewModels
+@using Ingweland.Fog.Application.Client.Web.ViewModels
+@using Ingweland.Fog.Application.Core.Helpers
+@using Ingweland.Fog.Models.Fog.Enums
+@using Microsoft.Extensions.Localization
+@inherits StatsHubTopListComponentBase<Ingweland.Fog.Application.Client.Web.StatsHub.ViewModels.AllianceViewModel>
+@{
+    base.BuildRenderTree(__builder);
+}
+
+<style>
+    .woa-button-container {
+        display: flex;
+        align-items: center;
+        justify-content: space-evenly;
+        width: 100%;
+        height: 52px;
+        margin: 8px 0;
+    }
+
+    .woa-wrapper {
+        align-self: center;
+        justify-self: center;
+    }
+</style>
+
+@code {
+
+    protected override RenderFragment RenderItem(AllianceViewModel alliance) => __builder =>
+    {
+        <a class="anchor-inherited-style" href="@FogUrlBuilder.PageRoutes.Alliance(alliance.Id)">
+            <AllianceListItemComponent Alliance="@alliance"/>
+        </a>
+    };
+
+    protected override RenderFragment RenderBottomContainer() => __builder =>
+    {
+        if (_pointsCategories != null)
+        {
+            <div class="woa-button-container">
+                <div class="woa-wrapper">
+                    <WoaPointsCategorySelectorComponent Categories="@_pointsCategories"
+                                                        SelectedCategory="@_selectedPointsCategory"
+                                                        CategoryChanged="@OnPointsCategoryChanged"/>
+                </div>
+                <div class="woa-wrapper">
+                    <MudButton Variant="Variant.Filled" Color="Color.Primary" Style="margin-top: 4px"
+                               Href="@ViewAllUrl">@Loc[FogResource.StatsHub_ViewAll]</MudButton>
+                </div>
+            </div>
+        }
+    };
+
+    [Inject]
+    private ICommonUiService CommonUiService { get; set; }
+
+    private WoaPointsCategory _selectedPointsCategory = WoaPointsCategory.Atlantis;
+
+    private IReadOnlyCollection<WoaPointsCategoryViewModel>? _pointsCategories;
+
+    protected override void OnInitialized()
+    {
+        base.OnInitialized();
+
+        if (!OperatingSystem.IsBrowser())
+        {
+            return;
+        }
+
+        _pointsCategories = CommonUiService.GetWoaPointsCategories();
+    }
+
+    protected override async Task OnParametersSetAsync()
+    {
+        await base.OnParametersSetAsync();
+
+        if (!OperatingSystem.IsBrowser())
+        {
+            return;
+        }
+
+        await GetItemsAsync();
+    }
+
+    private async Task OnPointsCategoryChanged(WoaPointsCategory pointsCategory)
+    {
+        _selectedPointsCategory = pointsCategory;
+        await GetItemsAsync();
+    }
+
+    protected override async Task GetItemsAsync()
+    {
+        IsLoading = true;
+        StateHasChanged();
+        Items = await StatsHubUiService.GetTopAlliancesWoaRankingsAsync(WorldId, _selectedPointsCategory, DataLoadingCts.Token);
+        IsLoading = false;
+        StateHasChanged();
+    }
+
+    protected override string ViewAllUrl => FogUrlBuilder.PageRoutes.WorldAlliancesWoa(WorldId);
+}

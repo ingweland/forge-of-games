@@ -1618,4 +1618,16 @@
     <data name="StatsHub.Player.WoaStats.Table.WonDefenses" xml:space="preserve">
         <value>Defenses Won</value>
     </data>
+    <data name="StatsHub.Worlds.TopAllianceWoaRankingListTitle" xml:space="preserve">
+        <value>Atlantis on {0}</value>
+    </data>
+    <data name="WoaPointsCategorySelector.Label" xml:space="preserve">
+        <value>Points category</value>
+    </data>
+    <data name="WoaPointsCategory.Atlantis" xml:space="preserve">
+        <value>Atlantis Points</value>
+    </data>
+    <data name="WoaPointsCategory.Victory" xml:space="preserve">
+        <value>Victory Points</value>
+    </data>
 </root>

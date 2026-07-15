@@ -1,0 +1,23 @@
+
+.league-selector-item {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 4px;
+}
+
+.league-selector-item > img {
+    height: 16px;
+    width: 16px;
+}
+
+@media (min-width: 576px) {
+    .league-selector-item {
+        gap: 8px;
+    }
+
+    .league-selector-item > img {
+        height: 24px;
+        width: 24px;
+    }
+}
