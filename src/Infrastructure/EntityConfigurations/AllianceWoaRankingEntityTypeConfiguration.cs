@@ -13,7 +13,6 @@ public class AllianceWoaRankingEntityTypeConfiguration : IEntityTypeConfiguratio
         builder.HasKey(p => p.Id);
 
         builder.Property(p => p.EloRating).IsRequired();
-        builder.Property(p => p.EloDelta).IsRequired();
         builder.Property(p => p.VictoryPoints).IsRequired();
         builder.Property(p => p.DivisionId).IsRequired();
         builder.Property(p => p.ExpectedVictoryPointsShare).IsRequired();

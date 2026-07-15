@@ -82,17 +82,13 @@ public class AllianceWoaService(
                 continue;
             }
 
-            if (!division.EloDeltaByAllianceId.TryGetValue(allianceId, out var eloDelta))
-            {
-                continue;
-            }
-
             if (!division.ExpectedVpShareByAllianceId.TryGetValue(allianceId, out var expectedVpShare))
             {
                 continue;
             }
 
             var woaRanking = alliance.WoaRankings.FirstOrDefault();
+            var eloDelta = division.EloDeltaByAllianceId.GetValueOrDefault(allianceId, 0);
             if (woaRanking == null)
             {
                 woaRanking = new AllianceWoaRanking

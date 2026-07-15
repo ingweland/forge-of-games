@@ -8,8 +8,7 @@ public class AllianceWoaRankingDto
     [JsonIgnore(Condition = JsonIgnoreCondition.Never)]
     public required int DivisionId { get; init; }
 
-    [JsonIgnore(Condition = JsonIgnoreCondition.Never)]
-    public required int EloDelta { get; init; }
+    public int EloDelta { get; init; }
 
     [JsonIgnore(Condition = JsonIgnoreCondition.Never)]
     public required int EloRating { get; init; }

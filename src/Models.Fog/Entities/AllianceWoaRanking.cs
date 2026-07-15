@@ -6,7 +6,7 @@ public class AllianceWoaRanking
     public required DateTime CollectedAt { get; set; }
 
     public required int DivisionId { get; set; }
-    public required int EloDelta { get; set; }
+    public int EloDelta { get; set; }
     public required int EloRating { get; set; }
     public required double ExpectedVictoryPointsShare { get; set; }
     public int Id { get; set; }
