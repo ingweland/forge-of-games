@@ -1,10 +1,13 @@
 = https://www.reddit.com/r/playHeroesOfHistory/comments/1rrobca/maya_tikal_interactive_strategy/ =
 ?utm_source=reddit&utm_medium=social&utm_campaign=community-strategies&utm_content=r-playHeroesOfHistory-tikal-announcement
+=  =
+?utm_source=reddit&utm_medium=social&utm_campaign=community-strategies&utm_content=r-playHeroesOfHistory-horusTemple-announcement
 
 = HoH Discord strategie threads =
 ?utm_source=discord&utm_medium=social&utm_campaign=community-strategies&utm_content=maya-discussion-thread
 ?utm_source=discord&utm_medium=social&utm_campaign=community-strategies&utm_content=arabia-discussion-thread
 ?utm_source=discord&utm_medium=social&utm_campaign=community-strategies&utm_content=egypt-discussion-thread
+?utm_source=discord&utm_medium=social&utm_campaign=community-strategies&utm_content=vikings-discussion-thread
 
 = In-game =
 ?utm_source=game_beta&utm_medium=in_game_news&utm_campaign=event_id_51001

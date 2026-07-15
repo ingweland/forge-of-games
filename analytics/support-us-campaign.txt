@@ -17,3 +17,9 @@
 = Egypt: Great Sphinx =
 ?utm_source=website-fog&utm_medium=internal&utm_campaign=support-us&utm_content=strategy-greatSphinx-intro
 ?utm_source=website-fog&utm_medium=internal&utm_campaign=support-us&utm_content=strategy-greatSphinx-authorNotes
+= Vikings: Dragonship Ellida =
+?utm_source=website-fog&utm_medium=internal&utm_campaign=support-us&utm_content=strategy-dragonshipEllida-intro
+?utm_source=website-fog&utm_medium=internal&utm_campaign=support-us&utm_content=strategy-dragonshipEllida-authorNotes
+
+===== Discord =====
+?utm_source=discord&utm_medium=social&utm_campaign=support-us&utm_content=maya-discussion-thread
