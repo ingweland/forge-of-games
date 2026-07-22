@@ -346,3 +346,4 @@ local.settings.json
 /assets/
 /src/WebApp/WebApp/wwwroot/assets/
 /src/WebApp.Client/Providers/FogSyncfusionLicenseProvider.Key.cs
+/code-reviews/
