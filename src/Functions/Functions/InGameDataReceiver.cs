@@ -16,6 +16,7 @@ namespace Ingweland.Fog.Functions.Functions;
 public class InGameDataReceiver(
     ILogger<InGameDataReceiver> logger,
     IInGameRawDataTableRepository inGameRawDataTableRepository,
+    IInGameRawDataBlobRepository inGameRawDataBlobRepository,
     HohHelperResponseDtoToTablePkConverter hohHelperResponseDtoToTablePkConverter,
     DatabaseWarmUpService databaseWarmUpService,
     HohHelperResponseDtoValidator dtoValidator,
@@ -67,6 +68,17 @@ public class InGameDataReceiver(
                 var rowKey = await inGameRawDataTableRepository.SaveAsync(rawData, t.PartitionKey);
                 keys.Add((t.ProcessingServiceType, t.PartitionKey, rowKey));
                 logger.LogDebug("Saved raw data for partition key: {PartitionKey}", t.PartitionKey);
+
+                try
+                {
+                    var blobName = await inGameRawDataBlobRepository.SaveAsync(rawData, t.PartitionKey);
+                    logger.LogDebug("Saved raw data blob: {BlobName}", blobName);
+                }
+                catch (Exception e)
+                {
+                    logger.LogError(e, "Error occurred while saving raw data blob for partition key: {PartitionKey}",
+                        t.PartitionKey);
+                }
             }
 
             logger.LogDebug("Processing raw data completed");

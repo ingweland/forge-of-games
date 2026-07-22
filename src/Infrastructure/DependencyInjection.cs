@@ -68,6 +68,12 @@ public static class DependencyInjection
             return new FogSharedDataRepository(options.ConnectionString, options.FogSharedDataContainer);
         });
 
+        services.AddSingleton<IInGameRawDataBlobRepository>(sp =>
+        {
+            var options = sp.GetRequiredService<IOptions<StorageSettings>>().Value;
+            return new InGameRawDataBlobRepository(options.ConnectionString, options.InGameRawDataTempContainer);
+        });
+
         services.AddSingleton<ISharedImageStorageRepository>(sp =>
         {
             var options = sp.GetRequiredService<IOptions<StorageSettings>>().Value;
