@@ -1598,4 +1598,7 @@ Forge of Games nie jest powiązany ani oficjalnie związany z twórcami lub wyda
     <data name="WoaPointsCategory.Victory" xml:space="preserve">
     <value>Punkty Zwycięstwa</value>
 </data>
+    <data name="StatsHub.Worlds.TopWoaPlayersListTitle" xml:space="preserve">
+    <value>Gracze Atlantydy na {0}</value>
+</data>
 </root>

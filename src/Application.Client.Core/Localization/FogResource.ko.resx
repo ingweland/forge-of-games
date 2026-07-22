@@ -1569,4 +1569,7 @@
     <data name="WoaPointsCategory.Victory" xml:space="preserve">
     <value>승리 포인트</value>
 </data>
+    <data name="StatsHub.Worlds.TopWoaPlayersListTitle" xml:space="preserve">
+    <value>{0}의 아틀란티스 플레이어</value>
+</data>
 </root>

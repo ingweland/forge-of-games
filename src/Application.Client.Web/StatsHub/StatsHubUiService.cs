@@ -227,6 +227,15 @@ public class StatsHubUiService : UiServiceBase, IStatsHubUiService
         return _statsHubViewModelsFactory.CreateAlliances(result);
     }
 
+    public async Task<PaginatedList<PlayerViewModel>> GetWoaPlayerRankingsAsync(string worldId, int startIndex,
+        int pageSize, WoaPlayerStatsCategory statsCategory,
+        CancellationToken ct = default)
+    {
+        var result =
+            await _statsHubService.GetPlayersWoaRankingsAsync(worldId, startIndex, pageSize, statsCategory, ct);
+        return _statsHubViewModelsFactory.CreatePlayers(result, await _ages.Value);
+    }
+
     public async Task<PaginatedList<PlayerViewModel>> GetEventCityRankingsAsync(string worldId,
         CancellationToken ct = default)
     {
@@ -363,6 +372,19 @@ public class StatsHubUiService : UiServiceBase, IStatsHubUiService
                 var result = await _statsHubService.GetAlliancesWoaRankingsAsync(worldId, 0,
                     FogConstants.DEFAULT_STATS_PAGE_SIZE, pointsCategory, ct);
                 return _statsHubViewModelsFactory.CreateAlliances(result.Items);
+            },
+            []);
+    }
+
+    public async Task<IReadOnlyCollection<PlayerViewModel>> GetTopWoaPlayerRankingsAsync(string worldId,
+        WoaPlayerStatsCategory statsCategory, CancellationToken ct = default)
+    {
+        return await ExecuteSafeAsync(
+            async () =>
+            {
+                var result = await _statsHubService.GetPlayersWoaRankingsAsync(worldId, 0,
+                    FogConstants.DEFAULT_STATS_PAGE_SIZE, statsCategory, ct);
+                return _statsHubViewModelsFactory.CreatePlayers(result.Items, await _ages.Value);
             },
             []);
     }

@@ -44,6 +44,7 @@ public static class FogUrlBuilder
         public const string WOA_PLAYER_STATS_TEMPLATE_REFIT = PLAYER_TEMPLATE_REFIT + "/woaStats";
         public const string PLAYER_HEROES_TEMPLATE = PLAYER_TEMPLATE + "/heroes";
         public const string PLAYER_HEROES_TEMPLATE_REFIT = PLAYER_TEMPLATE_REFIT + "/heroes";
+        public const string PLAYERS_WOA_RANKINGS_TEMPLATE = PLAYERS_TEMPLATE + "/woaRankings";
 
         public const string WORLD_EVENT_CITY_TEMPLATE = "/" + BASE_STATS_PATH + "/worlds/{worldId}/eventCities";
 
@@ -158,6 +159,7 @@ public static class FogUrlBuilder
         public const string WORLD_ALLIANCES_TEMPLATE = BASE_STATS_HUB_PATH + "/worlds/{worldId}/alliances";
         public const string WORLD_ALLIANCES_ATH_TEMPLATE = WORLD_ALLIANCES_TEMPLATE + "/ath";
         public const string WORLD_ALLIANCES_WOA_TEMPLATE = WORLD_ALLIANCES_TEMPLATE + "/woa";
+        public const string WORLD_PLAYERS_WOA_TEMPLATE = WORLD_PLAYERS_TEMPLATE + "/woa";
         public const string PLAYER_PROFILE_TEMPLATE = BASE_STATS_HUB_PATH + "/players/{playerId:int}/profile";
         public const string PLAYER_BATTLES_TEMPLATE = BASE_STATS_HUB_PATH + "/players/{playerId:int}/battles";
         public const string ALLIANCE_TEMPLATE = BASE_STATS_HUB_PATH + "/alliances/{allianceId:int}";
@@ -308,6 +310,16 @@ public static class FogUrlBuilder
             }
 
             return WORLD_ALLIANCES_WOA_TEMPLATE.Replace("{worldId}", worldId);
+        }
+
+        public static string WorldPlayersWoa(string worldId)
+        {
+            if (string.IsNullOrWhiteSpace(worldId))
+            {
+                throw new ArgumentNullException(nameof(worldId));
+            }
+
+            return WORLD_PLAYERS_WOA_TEMPLATE.Replace("{worldId}", worldId);
         }
     }
 }

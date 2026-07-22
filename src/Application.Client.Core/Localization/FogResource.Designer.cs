@@ -3939,6 +3939,15 @@ namespace Ingweland.Fog.Application.Client.Core.Localization {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Atlantis Players on {0}.
+        /// </summary>
+        public static string StatsHub_Worlds_TopWoaPlayersListTitle {
+            get {
+                return ResourceManager.GetString("StatsHub.Worlds.TopWoaPlayersListTitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Click here to pay with Binance Pay.
         /// </summary>
         public static string SupportUs_Binance_Link {

@@ -24,6 +24,8 @@ public class CommonUiService : ICommonUiService
 
     private readonly Lazy<IReadOnlyCollection<WoaPointsCategoryViewModel>> _lazyWoaPointsCategories;
 
+    private readonly Lazy<IReadOnlyCollection<WoaPlayerStatsCategoryViewModel>> _lazyWoaPlayerStatsCategories;
+
     private readonly Lazy<Task<IReadOnlyDictionary<WoaTier, WoaTierDto>>> _lazyWoaTiers;
     private readonly IStringLocalizer<FogResource> _loc;
 
@@ -46,6 +48,8 @@ public class CommonUiService : ICommonUiService
                 InitializeWoaTiers, true);
         _lazyWoaPointsCategories =
             new Lazy<IReadOnlyCollection<WoaPointsCategoryViewModel>>(InitializeWoaPointCategories, true);
+        _lazyWoaPlayerStatsCategories =
+            new Lazy<IReadOnlyCollection<WoaPlayerStatsCategoryViewModel>>(InitializeWoaPlayerStatsCategories, true);
     }
 
     public Task<IReadOnlyDictionary<string, AgeViewModel>> GetAgesAsync()
@@ -77,6 +81,48 @@ public class CommonUiService : ICommonUiService
     public IReadOnlyCollection<WoaPointsCategoryViewModel> GetWoaPointsCategories()
     {
         return _lazyWoaPointsCategories.Value;
+    }
+
+    public IReadOnlyCollection<WoaPlayerStatsCategoryViewModel> GetWoaPlayerStatsCategories()
+    {
+        return _lazyWoaPlayerStatsCategories.Value;
+    }
+
+    private IReadOnlyCollection<WoaPlayerStatsCategoryViewModel> InitializeWoaPlayerStatsCategories()
+    {
+        return
+        [
+            new WoaPlayerStatsCategoryViewModel
+            {
+                Category = WoaPlayerStatsCategory.VictoryPoints,
+                Name = _loc[FogResource.StatsHub_Player_WoaStats_Table_VictoryPoints],
+            },
+            new WoaPlayerStatsCategoryViewModel
+            {
+                Category = WoaPlayerStatsCategory.ContributionPoints,
+                Name = _loc[FogResource.StatsHub_Player_WoaStats_Table_ContributionPoints],
+            },
+            new WoaPlayerStatsCategoryViewModel
+            {
+                Category = WoaPlayerStatsCategory.WonAttacks,
+                Name = _loc[FogResource.StatsHub_Player_WoaStats_Table_WonAttacks],
+            },
+            new WoaPlayerStatsCategoryViewModel
+            {
+                Category = WoaPlayerStatsCategory.WonDefenses,
+                Name = _loc[FogResource.StatsHub_Player_WoaStats_Table_WonDefenses],
+            },
+            new WoaPlayerStatsCategoryViewModel
+            {
+                Category = WoaPlayerStatsCategory.HealingDone,
+                Name = _loc[FogResource.StatsHub_Player_WoaStats_Table_HealingDone],
+            },
+            new WoaPlayerStatsCategoryViewModel
+            {
+                Category = WoaPlayerStatsCategory.RepairsStarted,
+                Name = _loc[FogResource.StatsHub_Player_WoaStats_Table_RepairsStarted],
+            },
+        ];
     }
 
     private IReadOnlyCollection<WoaPointsCategoryViewModel> InitializeWoaPointCategories()

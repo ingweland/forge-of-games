@@ -1601,4 +1601,7 @@ Forge of Games no está afiliado ni tiene conexión oficial con los creadores o 
     <data name="WoaPointsCategory.Victory" xml:space="preserve">
     <value>Puntos de Victoria</value>
 </data>
+    <data name="StatsHub.Worlds.TopWoaPlayersListTitle" xml:space="preserve">
+    <value>Jugadores de Atlantis en {0}</value>
+</data>
 </root>

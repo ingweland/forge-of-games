@@ -41,6 +41,9 @@ public interface IStatsHubUiService
     Task<PaginatedList<AllianceViewModel>> GetAlliancesWoaRankingsAsync(string worldId, int startIndex, int pageSize,
         WoaPointsCategory pointsCategory, CancellationToken ct = default);
 
+    Task<PaginatedList<PlayerViewModel>> GetWoaPlayerRankingsAsync(string worldId, int startIndex, int pageSize,
+        WoaPlayerStatsCategory statsCategory, CancellationToken ct = default);
+
     Task<PaginatedList<PlayerViewModel>> GetEventCityRankingsAsync(string worldId, CancellationToken ct = default);
     Task<IReadOnlyCollection<PlayerViewModel>> GetTopPlayersAsync(string worldId, CancellationToken ct = default);
     Task<IReadOnlyCollection<PlayerViewModel>> GetTopEventCitiesAsync(string worldId, CancellationToken ct = default);
@@ -68,4 +71,7 @@ public interface IStatsHubUiService
 
     Task<IReadOnlyCollection<AllianceViewModel>> GetTopAlliancesWoaRankingsAsync(string worldId,
         WoaPointsCategory pointsCategory, CancellationToken ct = default);
+
+    Task<IReadOnlyCollection<PlayerViewModel>> GetTopWoaPlayerRankingsAsync(string worldId,
+        WoaPlayerStatsCategory statsCategory, CancellationToken ct = default);
 }

@@ -1,0 +1,38 @@
+@using Ingweland.Fog.Application.Client.Core.Localization
+@using Ingweland.Fog.Application.Client.Web.ViewModels
+@using Ingweland.Fog.Models.Fog.Enums
+@using Microsoft.Extensions.Localization
+@inject IStringLocalizer<FogResource> Loc
+<MudSelect Label="@Loc[FogResource.WoaPointsCategorySelector_Label]" Margin="Margin.Dense"
+           Value="@_selectedCategory" T="WoaPlayerStatsCategoryViewModel"
+           ValueChanged="@(x => CategoryChanged.InvokeAsync(x.Category))"
+           Variant="Variant.Outlined" Dense="true" FullWidth="true">
+
+    @foreach (var category in Categories)
+    {
+        <MudSelectItem Value="@category">
+            <span>@category.Name</span>
+        </MudSelectItem>
+    }
+</MudSelect>
+
+@code {
+    private WoaPlayerStatsCategoryViewModel? _selectedCategory;
+
+    [Parameter]
+    [EditorRequired]
+    public required IReadOnlyCollection<WoaPlayerStatsCategoryViewModel> Categories { get; init; } = [];
+
+    [Parameter]
+    public EventCallback<WoaPlayerStatsCategory> CategoryChanged { get; set; }
+
+    [Parameter]
+    public WoaPlayerStatsCategory SelectedCategory { get; set; } = WoaPlayerStatsCategory.VictoryPoints;
+
+    protected override void OnParametersSet()
+    {
+        base.OnParametersSet();
+        _selectedCategory = Categories.First(x => x.Category == SelectedCategory);
+    }
+
+}

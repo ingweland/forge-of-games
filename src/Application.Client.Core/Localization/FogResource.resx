@@ -1630,4 +1630,7 @@
     <data name="WoaPointsCategory.Victory" xml:space="preserve">
         <value>Victory Points</value>
     </data>
+    <data name="StatsHub.Worlds.TopWoaPlayersListTitle" xml:space="preserve">
+        <value>Atlantis Players on {0}</value>
+    </data>
 </root>

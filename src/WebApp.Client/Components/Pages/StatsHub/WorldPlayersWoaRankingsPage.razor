@@ -1,0 +1,35 @@
+@attribute [Route(FogUrlBuilder.PageRoutes.WORLD_PLAYERS_WOA_TEMPLATE)]
+@using Ingweland.Fog.Application.Core.Helpers
+@using Ingweland.Fog.WebApp.Client.Components.Elements.StatsHub
+@inherits WorldStatsPageBase<Ingweland.Fog.Application.Client.Web.StatsHub.ViewModels.PlayerViewModel>
+<AdSenseComponent AdSlot="7526140641" AdClass="side-ad side-ad-160"
+                  CssClass="side-ad-container side-ad-container-left side-ad-container-160"/>
+<AdSenseComponent AdSlot="2924115885" AdClass="side-ad side-ad-300"
+                  CssClass="side-ad-container side-ad-container-left side-ad-container-300"/>
+@if (IsInitialized)
+{
+    <StatsListComponent Title="@Title" Items="@Items" IsLoading="@IsLoading">
+        <FilterTemplate>
+            <WoaPlayerStatsCategorySelectorComponent Categories="@_statsCategories"
+                                                     SelectedCategory="@_selectedStatsCategory"
+                                                     CategoryChanged="@OnStatsCategoryChanged"/>
+        </FilterTemplate>
+        <ItemTemplate>
+            <a class="anchor-inherited-style" href="@FogUrlBuilder.PageRoutes.Player(context.Id)"
+               @onclick="OnItemClicked">
+                <PlayerListItemComponent ShowRank="true" Player="@context"/>
+            </a>
+        </ItemTemplate>
+    </StatsListComponent>
+}
+else
+{
+    <LoadingIndicator/>
+}
+<AdSenseComponent AdSlot="7526140641" AdClass="side-ad side-ad-160"
+                  CssClass="side-ad-container side-ad-container-right side-ad-container-160"/>
+<AdSenseComponent AdSlot="2924115885" AdClass="side-ad side-ad-300"
+                  CssClass="side-ad-container side-ad-container-right side-ad-container-300"/>
+
+@code {
+}

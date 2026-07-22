@@ -31,6 +31,7 @@ public static class StatsApi
         api.MapGet(FogUrlBuilder.ApiRoutes.PLAYER_ATH_RANKINGS_TEMPLATE, GetPlayerAthRankingsAsync);
         api.MapGet(FogUrlBuilder.ApiRoutes.WOA_PLAYER_STATS_TEMPLATE, GetWoaPlayerStatsAsync);
         api.MapGet(FogUrlBuilder.ApiRoutes.PLAYER_HEROES_TEMPLATE, GetPlayerHeroesAsync);
+        api.MapGet(FogUrlBuilder.ApiRoutes.PLAYERS_WOA_RANKINGS_TEMPLATE, GetPlayersWoaRankingsAsync);
 
         api.MapGet(FogUrlBuilder.ApiRoutes.ALLIANCES_TEMPLATE, GetAlliancesAsync);
         api.MapGet(FogUrlBuilder.ApiRoutes.ALLIANCE_TEMPLATE, GetAllianceAsync);
@@ -353,6 +354,16 @@ public static class StatsApi
     private static async Task<Results<Ok<PaginatedList<AllianceDto>>, BadRequest<string>>>
         GetAlliancesWoaRankingsAsync([AsParameters] StatsServices services, HttpContext context,
             [AsParameters] GetAlliancesWoaRankingsQuery query,
+            CancellationToken ct = default)
+    {
+        var result = await services.Mediator.Send(query, ct);
+
+        return TypedResults.Ok(result);
+    }
+
+    private static async Task<Results<Ok<PaginatedList<PlayerDto>>, BadRequest<string>>>
+        GetPlayersWoaRankingsAsync([AsParameters] StatsServices services, HttpContext context,
+            [AsParameters] GetPlayersWoaRankingsQuery query,
             CancellationToken ct = default)
     {
         var result = await services.Mediator.Send(query, ct);

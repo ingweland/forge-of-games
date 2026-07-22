@@ -98,4 +98,10 @@ public interface IStatsHubService
         [Query] int pageSize = FogConstants.DEFAULT_STATS_PAGE_SIZE,
         [Query] WoaPointsCategory pointsCategory = WoaPointsCategory.Atlantis,
         CancellationToken ct = default);
+
+    [Get(FogUrlBuilder.ApiRoutes.PLAYERS_WOA_RANKINGS_TEMPLATE)]
+    Task<PaginatedList<PlayerDto>> GetPlayersWoaRankingsAsync(string worldId, [Query] int startIndex = 0,
+        [Query] int pageSize = FogConstants.DEFAULT_STATS_PAGE_SIZE,
+        [Query] WoaPlayerStatsCategory statsCategory = WoaPlayerStatsCategory.VictoryPoints,
+        CancellationToken ct = default);
 }

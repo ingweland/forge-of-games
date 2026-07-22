@@ -13,4 +13,5 @@ public interface ICommonUiService
     Task<IReadOnlyDictionary<TreasureHuntLeague, TreasureHuntLeagueDto>> GetTreasureHuntLeaguesAsync();
     Task<IReadOnlyDictionary<WoaTier, WoaTierDto>> GetWoaTiersAsync();
     IReadOnlyCollection<WoaPointsCategoryViewModel> GetWoaPointsCategories();
+    IReadOnlyCollection<WoaPlayerStatsCategoryViewModel> GetWoaPlayerStatsCategories();
 }

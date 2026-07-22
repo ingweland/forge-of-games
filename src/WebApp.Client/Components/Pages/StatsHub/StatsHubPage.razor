@@ -21,6 +21,11 @@
                 WorldId="@_selectedWorldId"/>
         </div>
         <div class="column">
+            <TopWoaPlayerRankingsComponent
+                WorldId="@_selectedWorldId"
+                Title="@Loc[FogResource.StatsHub_Worlds_TopWoaPlayersListTitle, _worldIdToTitleMap[_selectedWorldId]]"/>
+        </div>
+        <div class="column">
             <EventCityTopListComponent
                 Title="@Loc[FogResource.StatsHub_Worlds_TopEventCityListTitle, _worldIdToTitleMap[_selectedWorldId]]"
                 WorldId="@_selectedWorldId"/>

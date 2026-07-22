@@ -1589,4 +1589,7 @@ Forge of Games není přidružený ani oficiálně spojený s tvůrci nebo vydav
     <data name="WoaPointsCategory.Victory" xml:space="preserve">
     <value>Vítězné body</value>
 </data>
+    <data name="StatsHub.Worlds.TopWoaPlayersListTitle" xml:space="preserve">
+    <value>Hráči Atlantidy na {0}</value>
+</data>
 </root>
