@@ -29,7 +29,11 @@ public class WebAuthenticationService(
         var payload = authPayloadFactory.CreateForLogin(credentials.Username, credentials.Password);
         //login
         var url = string.Format(GameEndpoints.WebLoginUrl, world.SignInSubdomain);
-        var response = await httpClient.PostAsJsonAsync(url, payload);
+        using var loginRequest = new HttpRequestMessage(HttpMethod.Post, url);
+        loginRequest.Content = JsonContent.Create(payload);
+        // The game now requires a Cookie header on the initial call.
+        loginRequest.Headers.TryAddWithoutValidation("Cookie", "FoG");
+        var response = await httpClient.SendAsync(loginRequest);
         try
         {
             response.EnsureSuccessStatusCode();
