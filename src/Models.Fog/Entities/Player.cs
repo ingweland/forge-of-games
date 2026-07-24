@@ -35,6 +35,8 @@ public class Player
     public required string Name { get; set; }
     public ICollection<PlayerNameHistoryEntry> NameHistory { get; set; } = new List<PlayerNameHistoryEntry>();
     public DateOnly ProfileUpdatedAt { get; set; }
+
+    public ICollection<PvpEliteRanking> PvpEliteRankings { get; set; } = new List<PvpEliteRanking>();
     public ICollection<PvpBattle> PvpLosses { get; set; } = new List<PvpBattle>();
 
     [Obsolete($"Use {nameof(PvpRankings2)} instead.")]

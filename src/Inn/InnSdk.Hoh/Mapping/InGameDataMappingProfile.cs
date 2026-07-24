@@ -240,6 +240,11 @@ public class InGameDataMappingProfile : Profile
                 opt.PreCondition(src => !string.IsNullOrWhiteSpace(src.PvpTier));
                 opt.MapFrom(src => HohStringParser.ParseEnumFromString<PvpTier>(src.PvpTier));
             })
+            .ForMember(dest => dest.PvpEliteTier, opt =>
+            {
+                opt.PreCondition(src => !string.IsNullOrWhiteSpace(src.PvpEliteTier));
+                opt.MapFrom(src => HohStringParser.ParseEnumFromString<EliteArenaTier>(src.PvpEliteTier));
+            })
             .ForMember(dest => dest.TreasureHuntDifficulty, opt =>
             {
                 opt.PreCondition(src => src.HasTreasureHuntDifficulty && src.TreasureHuntDifficulty >= 0);

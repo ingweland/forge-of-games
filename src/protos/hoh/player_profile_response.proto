@@ -12,6 +12,7 @@ message PlayerProfileResponse {
   repeated ProfileSquadDto squads = 5;
   optional string pvp_tier = 6;
   optional int32 treasure_hunt_difficulty = 7;
+  optional string pvp_elite_tier = 9;
 }
 
 message ProfileSquadDto {

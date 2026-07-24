@@ -243,6 +243,7 @@ public class FogPlayerService(IFogDbContext context, ILogger<FogPlayerService> l
             .Include(p => p.Squads)
             .Include(p => p.AllianceMembership)
             .Include(p => p.PvpRankings2.Where(x => x.CollectedAt == today))
+            .Include(p => p.PvpEliteRankings.Where(x => x.CollectedAt == today))
             .Include(p => p.Heroes)
             .AsSplitQuery()
             .FirstOrDefaultAsync(x => x.InGamePlayerId == player.Id && x.WorldId == worldId);
@@ -388,6 +389,24 @@ public class FogPlayerService(IFogDbContext context, ILogger<FogPlayerService> l
             logger.LogDebug("Updating PVP tier for player {PlayerId} from {OldPvpTier} to {NewPvpTier}",
                 profile.Player.Id, pvpTier.Tier, profile.PvpTier);
             pvpTier.Tier = profile.PvpTier;
+        }
+
+        var pvpEliteTier = modifiedPlayer.PvpEliteRankings.FirstOrDefault(x => x.CollectedAt == today);
+        if (pvpEliteTier == null)
+        {
+            logger.LogDebug("Adding new PVP elite tier {PvpEliteTier} for player {PlayerId}", profile.PvpEliteTier,
+                profile.Player.Id);
+            modifiedPlayer.PvpEliteRankings.Add(new PvpEliteRanking
+            {
+                CollectedAt = today,
+                Tier = profile.PvpEliteTier,
+            });
+        }
+        else if (pvpEliteTier.Tier != profile.PvpEliteTier)
+        {
+            logger.LogDebug("Updating PVP elite tier for player {PlayerId} from {OldPvpEliteTier} to {NewPvpEliteTier}",
+                profile.Player.Id, pvpEliteTier.Tier, profile.PvpEliteTier);
+            pvpEliteTier.Tier = profile.PvpEliteTier;
         }
 
         UpsertSquads(modifiedPlayer, profile.Squads, today);

@@ -7,13 +7,13 @@ public interface IFogDbContext
 {
     DbSet<AllianceAthRanking> AllianceAthRankings { get; set; }
     DbSet<AllianceRanking> AllianceRankings { get; set; }
-    DbSet<Alliance> Alliances { get; set; }
     DbSet<AllianceWoaRanking> AllianceWoaRankings { get; set; }
+    DbSet<Alliance> Alliances { get; set; }
     DbSet<AnnualBudget> AnnualBudgets { get; set; }
-    DbSet<BattleSummaryEntity> Battles { get; set; }
     DbSet<BattleStatsEntity> BattleStats { get; set; }
     DbSet<BattleTimelineEntity> BattleTimelines { get; set; }
     DbSet<BattleUnitEntity> BattleUnits { get; set; }
+    DbSet<BattleSummaryEntity> Battles { get; set; }
     public DbSet<CommunityCityGuideEntity> CommunityCityGuides { get; set; }
     public DbSet<CommunityCityStrategyEntity> CommunityCityStrategies { get; set; }
     DbSet<EquipmentInsightsEntity> EquipmentInsights { get; set; }
@@ -31,6 +31,7 @@ public interface IFogDbContext
     DbSet<ProfileSquadDataEntity> ProfileSquadDataItems { get; set; }
     DbSet<ProfileSquadEntity> ProfileSquads { get; set; }
     DbSet<PvpBattle> PvpBattles { get; set; }
+    DbSet<PvpEliteRanking> PvpEliteRankings { get; set; }
     DbSet<PvpRanking2> PvpRankings { get; set; }
     DbSet<RelicInsightsEntity> RelicInsights { get; set; }
     DbSet<SharedSubmissionIdEntity> SharedSubmissionIds { get; set; }

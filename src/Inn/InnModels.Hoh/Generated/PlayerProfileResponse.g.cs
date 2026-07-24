@@ -25,21 +25,22 @@ namespace Ingweland.Fog.Inn.Models.Hoh {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
             "Ch1wbGF5ZXJfcHJvZmlsZV9yZXNwb25zZS5wcm90bxoWYmF0dGxlX3NxdWFk",
-            "X2R0by5wcm90bxoecGxheWVyX3dpdGhfYWxsaWFuY2VfZHRvLnByb3RvIpAC",
+            "X2R0by5wcm90bxoecGxheWVyX3dpdGhfYWxsaWFuY2VfZHRvLnByb3RvIsAC",
             "ChVQbGF5ZXJQcm9maWxlUmVzcG9uc2USEQoJcGxheWVyX2lkGAEgASgFEjQK",
             "FHBsYXllcl93aXRoX2FsbGlhbmNlGAIgASgLMhYuUGxheWVyV2l0aEFsbGlh",
             "bmNlRHRvEgwKBHJhbmsYAyABKAUSFgoOcmFua2luZ19wb2ludHMYBCABKAUS",
             "IAoGc3F1YWRzGAUgAygLMhAuUHJvZmlsZVNxdWFkRHRvEhUKCHB2cF90aWVy",
             "GAYgASgJSACIAQESJQoYdHJlYXN1cmVfaHVudF9kaWZmaWN1bHR5GAcgASgF",
-            "SAGIAQFCCwoJX3B2cF90aWVyQhsKGV90cmVhc3VyZV9odW50X2RpZmZpY3Vs",
-            "dHkieAoPUHJvZmlsZVNxdWFkRHRvEg0KBXBsYWNlGAEgASgFEiYKBGhlcm8Y",
-            "AiABKAsyGC5CYXR0bGVVbml0UHJvcGVydGllc0R0bxIuCgxzdXBwb3J0X3Vu",
-            "aXQYAyABKAsyGC5CYXR0bGVVbml0UHJvcGVydGllc0R0b0IfqgIcSW5nd2Vs",
-            "YW5kLkZvZy5Jbm4uTW9kZWxzLkhvaGIGcHJvdG8z"));
+            "SAGIAQESGwoOcHZwX2VsaXRlX3RpZXIYCSABKAlIAogBAUILCglfcHZwX3Rp",
+            "ZXJCGwoZX3RyZWFzdXJlX2h1bnRfZGlmZmljdWx0eUIRCg9fcHZwX2VsaXRl",
+            "X3RpZXIieAoPUHJvZmlsZVNxdWFkRHRvEg0KBXBsYWNlGAEgASgFEiYKBGhl",
+            "cm8YAiABKAsyGC5CYXR0bGVVbml0UHJvcGVydGllc0R0bxIuCgxzdXBwb3J0",
+            "X3VuaXQYAyABKAsyGC5CYXR0bGVVbml0UHJvcGVydGllc0R0b0IfqgIcSW5n",
+            "d2VsYW5kLkZvZy5Jbm4uTW9kZWxzLkhvaGIGcHJvdG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Ingweland.Fog.Inn.Models.Hoh.BattleSquadDtoReflection.Descriptor, global::Ingweland.Fog.Inn.Models.Hoh.PlayerWithAllianceDtoReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::Ingweland.Fog.Inn.Models.Hoh.PlayerProfileResponse), global::Ingweland.Fog.Inn.Models.Hoh.PlayerProfileResponse.Parser, new[]{ "PlayerId", "PlayerWithAlliance", "Rank", "RankingPoints", "Squads", "PvpTier", "TreasureHuntDifficulty" }, new[]{ "PvpTier", "TreasureHuntDifficulty" }, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Ingweland.Fog.Inn.Models.Hoh.PlayerProfileResponse), global::Ingweland.Fog.Inn.Models.Hoh.PlayerProfileResponse.Parser, new[]{ "PlayerId", "PlayerWithAlliance", "Rank", "RankingPoints", "Squads", "PvpTier", "TreasureHuntDifficulty", "PvpEliteTier" }, new[]{ "PvpTier", "TreasureHuntDifficulty", "PvpEliteTier" }, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Ingweland.Fog.Inn.Models.Hoh.ProfileSquadDto), global::Ingweland.Fog.Inn.Models.Hoh.ProfileSquadDto.Parser, new[]{ "Place", "Hero", "SupportUnit" }, null, null, null, null)
           }));
     }
@@ -91,6 +92,7 @@ namespace Ingweland.Fog.Inn.Models.Hoh {
       squads_ = other.squads_.Clone();
       pvpTier_ = other.pvpTier_;
       treasureHuntDifficulty_ = other.treasureHuntDifficulty_;
+      pvpEliteTier_ = other.pvpEliteTier_;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
@@ -212,6 +214,32 @@ namespace Ingweland.Fog.Inn.Models.Hoh {
       _hasBits0 &= ~1;
     }
 
+    /// <summary>Field number for the "pvp_elite_tier" field.</summary>
+    public const int PvpEliteTierFieldNumber = 9;
+    private readonly static string PvpEliteTierDefaultValue = "";
+
+    private string pvpEliteTier_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public string PvpEliteTier {
+      get { return pvpEliteTier_ ?? PvpEliteTierDefaultValue; }
+      set {
+        pvpEliteTier_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+      }
+    }
+    /// <summary>Gets whether the "pvp_elite_tier" field is set</summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public bool HasPvpEliteTier {
+      get { return pvpEliteTier_ != null; }
+    }
+    /// <summary>Clears the value of the "pvp_elite_tier" field</summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void ClearPvpEliteTier() {
+      pvpEliteTier_ = null;
+    }
+
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override bool Equals(object other) {
@@ -234,6 +262,7 @@ namespace Ingweland.Fog.Inn.Models.Hoh {
       if(!squads_.Equals(other.squads_)) return false;
       if (PvpTier != other.PvpTier) return false;
       if (TreasureHuntDifficulty != other.TreasureHuntDifficulty) return false;
+      if (PvpEliteTier != other.PvpEliteTier) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
 
@@ -248,6 +277,7 @@ namespace Ingweland.Fog.Inn.Models.Hoh {
       hash ^= squads_.GetHashCode();
       if (HasPvpTier) hash ^= PvpTier.GetHashCode();
       if (HasTreasureHuntDifficulty) hash ^= TreasureHuntDifficulty.GetHashCode();
+      if (HasPvpEliteTier) hash ^= PvpEliteTier.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -291,6 +321,10 @@ namespace Ingweland.Fog.Inn.Models.Hoh {
         output.WriteRawTag(56);
         output.WriteInt32(TreasureHuntDifficulty);
       }
+      if (HasPvpEliteTier) {
+        output.WriteRawTag(74);
+        output.WriteString(PvpEliteTier);
+      }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
       }
@@ -326,6 +360,10 @@ namespace Ingweland.Fog.Inn.Models.Hoh {
         output.WriteRawTag(56);
         output.WriteInt32(TreasureHuntDifficulty);
       }
+      if (HasPvpEliteTier) {
+        output.WriteRawTag(74);
+        output.WriteString(PvpEliteTier);
+      }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(ref output);
       }
@@ -354,6 +392,9 @@ namespace Ingweland.Fog.Inn.Models.Hoh {
       }
       if (HasTreasureHuntDifficulty) {
         size += 1 + pb::CodedOutputStream.ComputeInt32Size(TreasureHuntDifficulty);
+      }
+      if (HasPvpEliteTier) {
+        size += 1 + pb::CodedOutputStream.ComputeStringSize(PvpEliteTier);
       }
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
@@ -388,6 +429,9 @@ namespace Ingweland.Fog.Inn.Models.Hoh {
       }
       if (other.HasTreasureHuntDifficulty) {
         TreasureHuntDifficulty = other.TreasureHuntDifficulty;
+      }
+      if (other.HasPvpEliteTier) {
+        PvpEliteTier = other.PvpEliteTier;
       }
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
@@ -435,6 +479,10 @@ namespace Ingweland.Fog.Inn.Models.Hoh {
             TreasureHuntDifficulty = input.ReadInt32();
             break;
           }
+          case 74: {
+            PvpEliteTier = input.ReadString();
+            break;
+          }
         }
       }
     #endif
@@ -479,6 +527,10 @@ namespace Ingweland.Fog.Inn.Models.Hoh {
           }
           case 56: {
             TreasureHuntDifficulty = input.ReadInt32();
+            break;
+          }
+          case 74: {
+            PvpEliteTier = input.ReadString();
             break;
           }
         }
