@@ -1165,6 +1165,9 @@ Forge of Games ist weder mit den Erstellern noch mit den Herausgebern von Heroes
         <value>Arena-Platzierung
 </value>
     </data>
+    <data name="StatsHub.Player.EliteArenaRanking" xml:space="preserve">
+        <value>Elite-Arena-Platzierung</value>
+    </data>
     <data name="TreasureHuntLeagueSelector.Label" xml:space="preserve">
   <value>Liga</value>
 </data>

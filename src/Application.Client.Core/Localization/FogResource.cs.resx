@@ -1162,6 +1162,9 @@ Forge of Games není přidružený ani oficiálně spojený s tvůrci nebo vydav
         <value>Pořadí arény
 </value>
     </data>
+    <data name="StatsHub.Player.EliteArenaRanking" xml:space="preserve">
+        <value>Pořadí elitní arény</value>
+    </data>
     <data name="TreasureHuntLeagueSelector.Label" xml:space="preserve">
   <value>Liga</value>
 </data>

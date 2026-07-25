@@ -1171,6 +1171,9 @@ Forge of Gamesは、Heroes of Historyの開発者または発行者と提携し�
         <value>闘技場ランキング
 </value>
     </data>
+    <data name="StatsHub.Player.EliteArenaRanking" xml:space="preserve">
+        <value>エリート闘技場ランキング</value>
+    </data>
     <data name="TreasureHuntLeagueSelector.Label" xml:space="preserve">
   <value>リーグ</value>
 </data>

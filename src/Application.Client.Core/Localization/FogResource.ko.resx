@@ -1140,6 +1140,9 @@
     <data name="StatsHub.Player.PvpRanking" xml:space="preserve">
     <value>경기장 랭킹</value>
 </data>
+    <data name="StatsHub.Player.EliteArenaRanking" xml:space="preserve">
+    <value>정예 투기장 랭킹</value>
+</data>
     <data name="TreasureHuntLeagueSelector.Label" xml:space="preserve">
     <value>리그</value>
 </data>

@@ -1182,6 +1182,9 @@ Forge of Games 與 Heroes of History 的創作者或出版商無關，也沒有�
         <value>競技場排名
 </value>
     </data>
+    <data name="StatsHub.Player.EliteArenaRanking" xml:space="preserve">
+        <value>精英競技場排名</value>
+    </data>
     <data name="TreasureHuntLeagueSelector.Label" xml:space="preserve">
   <value>聯盟</value>
 </data>

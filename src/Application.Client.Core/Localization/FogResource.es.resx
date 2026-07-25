@@ -1174,6 +1174,9 @@ Forge of Games no está afiliado ni tiene conexión oficial con los creadores o 
         <value>Clasificación de Arena
 </value>
     </data>
+    <data name="StatsHub.Player.EliteArenaRanking" xml:space="preserve">
+        <value>Clasificación de Arena de Élite</value>
+    </data>
     <data name="TreasureHuntLeagueSelector.Label" xml:space="preserve">
   <value>Liga</value>
 </data>
