@@ -22,19 +22,19 @@
         <PackageReference Include="Azure.Monitor.OpenTelemetry.AspNetCore" Version="1.5.0" />
         <PackageReference Include="FluentResults.Extensions.AspNetCore" Version="0.2.0"/>
         <PackageReference Include="MediatR" Version="12.4.1"/>
-        <PackageReference Include="Microsoft.AspNetCore.OpenApi" Version="10.0.9"/>
+        <PackageReference Include="Microsoft.AspNetCore.OpenApi" Version="10.0.10"/>
         <PackageReference Include="Microsoft.Azure.AppConfiguration.AspNetCore" Version="8.5.0"/>
-        <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="10.0.9">
+        <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="10.0.10">
             <PrivateAssets>all</PrivateAssets>
             <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
         </PackageReference>
-        <PackageReference Include="Microsoft.Extensions.Localization" Version="10.0.9"/>
+        <PackageReference Include="Microsoft.Extensions.Localization" Version="10.0.10"/>
         <PackageReference Include="MudBlazor" Version="9.7.0"/>
         <ProjectReference Include="..\Application.Client.Web\Application.Client.Web.csproj"/>
         <ProjectReference Include="..\Application.Server\Application.Server.csproj"/>
         <ProjectReference Include="..\Infrastructure\Infrastructure.csproj"/>
         <ProjectReference Include="..\WebApp.Client\WebApp.Client.csproj"/>
-        <PackageReference Include="Microsoft.AspNetCore.Components.WebAssembly.Server" Version="10.0.9"/>
+        <PackageReference Include="Microsoft.AspNetCore.Components.WebAssembly.Server" Version="10.0.10"/>
     </ItemGroup>
 
     <ItemGroup>
