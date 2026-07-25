@@ -110,6 +110,13 @@ public class HohGameLocalizationService(IHohGameLocalizationDataRepository local
         return GetValue(key) ?? tier.ToString();
     }
 
+    public string GetEliteArenaTierName(EliteArenaTier tier)
+    {
+        var key = HohLocalizationKeyBuilder.BuildKey(HohLocalizationCategory.PvpTiers, HohLocalizationProperty.Name,
+            tier.ToString());
+        return GetValue(key) ?? tier.ToString();
+    }
+
     public string GetTreasureHuntLeagueName(TreasureHuntLeague league)
     {
         var key = HohLocalizationKeyBuilder.BuildKey(HohLocalizationCategory.TreasureHuntRankingPanel,

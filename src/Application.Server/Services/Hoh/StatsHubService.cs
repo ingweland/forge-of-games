@@ -193,6 +193,16 @@ public class StatsHubService(ISender sender) : IStatsHubService
         return sender.Send(query, ct);
     }
 
+    public Task<IReadOnlyCollection<PvpEliteRankingDto>> GetPlayerPvpEliteRankingsAsync(int playerId,
+        CancellationToken ct = default)
+    {
+        var query = new GetPlayerPvpEliteRankingsQuery
+        {
+            PlayerId = playerId,
+        };
+        return sender.Send(query, ct);
+    }
+
     public Task<PaginatedList<AllianceDto>> GetAlliancesAthRankingsAsync(string worldId, int startIndex = 0,
         int pageSize = FogConstants.DEFAULT_STATS_PAGE_SIZE, TreasureHuntLeague league = TreasureHuntLeague.Overlord,
         CancellationToken ct = default)

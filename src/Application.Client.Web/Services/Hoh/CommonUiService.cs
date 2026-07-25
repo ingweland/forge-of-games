@@ -17,14 +17,15 @@ public class CommonUiService : ICommonUiService
     private readonly IAssetUrlProvider _assetUrlProvider;
     private readonly ICommonService _commonService;
     private readonly Lazy<Task<IReadOnlyDictionary<string, AgeViewModel>>> _lazyAges;
+    private readonly Lazy<Task<IReadOnlyDictionary<EliteArenaTier, EliteArenaTierDto>>> _lazyEliteArenaTiers;
     private readonly Lazy<Task<IReadOnlyDictionary<PvpTier, PvpTierDto>>> _lazyPvpTiers;
 
     private readonly Lazy<Task<IReadOnlyDictionary<TreasureHuntLeague, TreasureHuntLeagueDto>>>
         _lazyTreasureHuntLeagues;
 
-    private readonly Lazy<IReadOnlyCollection<WoaPointsCategoryViewModel>> _lazyWoaPointsCategories;
-
     private readonly Lazy<IReadOnlyCollection<WoaPlayerStatsCategoryViewModel>> _lazyWoaPlayerStatsCategories;
+
+    private readonly Lazy<IReadOnlyCollection<WoaPointsCategoryViewModel>> _lazyWoaPointsCategories;
 
     private readonly Lazy<Task<IReadOnlyDictionary<WoaTier, WoaTierDto>>> _lazyWoaTiers;
     private readonly IStringLocalizer<FogResource> _loc;
@@ -40,6 +41,8 @@ public class CommonUiService : ICommonUiService
         _assetUrlProvider = assetUrlProvider;
         _lazyAges = new Lazy<Task<IReadOnlyDictionary<string, AgeViewModel>>>(InitializeAges, true);
         _lazyPvpTiers = new Lazy<Task<IReadOnlyDictionary<PvpTier, PvpTierDto>>>(InitializePvpTiers, true);
+        _lazyEliteArenaTiers =
+            new Lazy<Task<IReadOnlyDictionary<EliteArenaTier, EliteArenaTierDto>>>(InitializeEliteArenaTiers, true);
         _lazyTreasureHuntLeagues =
             new Lazy<Task<IReadOnlyDictionary<TreasureHuntLeague, TreasureHuntLeagueDto>>>(
                 InitializeTreasureHuntLeagues, true);
@@ -66,6 +69,11 @@ public class CommonUiService : ICommonUiService
     public Task<IReadOnlyDictionary<PvpTier, PvpTierDto>> GetPvpTiersAsync()
     {
         return _lazyPvpTiers.Value;
+    }
+
+    public Task<IReadOnlyDictionary<EliteArenaTier, EliteArenaTierDto>> GetEliteArenaTiersAsync()
+    {
+        return _lazyEliteArenaTiers.Value;
     }
 
     public Task<IReadOnlyDictionary<TreasureHuntLeague, TreasureHuntLeagueDto>> GetTreasureHuntLeaguesAsync()
@@ -153,6 +161,12 @@ public class CommonUiService : ICommonUiService
     private async Task<IReadOnlyDictionary<PvpTier, PvpTierDto>> InitializePvpTiers()
     {
         var tiers = await _commonService.GetPvpTiersAsync();
+        return tiers.ToDictionary(x => x.Tier);
+    }
+
+    private async Task<IReadOnlyDictionary<EliteArenaTier, EliteArenaTierDto>> InitializeEliteArenaTiers()
+    {
+        var tiers = await _commonService.GetEliteArenaTiersAsync();
         return tiers.ToDictionary(x => x.Tier);
     }
 

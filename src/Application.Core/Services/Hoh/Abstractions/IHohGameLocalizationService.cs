@@ -32,6 +32,7 @@ public interface IHohGameLocalizationService
     string GetUnitStatName(UnitStatType unitStat);
     string GetEquipmentSetName(EquipmentSet set);
     string GetPvpTierName(PvpTier tier);
+    string GetEliteArenaTierName(EliteArenaTier tier);
     string GetTreasureHuntLeagueName(TreasureHuntLeague league);
     string GetWoaTierName(WoaTier tier);
     string GetConcreteEquipmentSetName(EquipmentSet set, EquipmentSlotType slot);

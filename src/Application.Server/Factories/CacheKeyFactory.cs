@@ -56,6 +56,7 @@ public class CacheKeyFactory : ICacheKeyFactory
             GetAllianceAthRankingsQuery q => $"AllianceAthRankings:{q.AllianceId}",
             GetAllianceRankingsQuery q => $"AllianceRankings:{q.AllianceId}",
             GetPlayerPvpRankingsQuery q => $"PlayerPvpRankings:{q.PlayerId}",
+            GetPlayerPvpEliteRankingsQuery q => $"PlayerPvpEliteRankings:{q.PlayerId}",
             GetPlayerRankingsQuery q => $"PlayerRankings:{q.PlayerId}",
             GetEventsQuery q => $"InGameEvents:{q.WorldId}:{q.EventDefinitionId}",
             GetCurrentInGameEventQuery q => $"CurrentInGameEvent:{q.WorldId}:{q.EventDefinitionId}",

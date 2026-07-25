@@ -71,6 +71,10 @@ public interface IStatsHubService
     Task<IReadOnlyCollection<PvpRankingDto>> GetPlayerPvpRankingsAsync(int playerId,
         CancellationToken ct = default);
 
+    [Get(FogUrlBuilder.ApiRoutes.PLAYER_PVP_ELITE_RANKINGS_TEMPLATE_REFIT)]
+    Task<IReadOnlyCollection<PvpEliteRankingDto>> GetPlayerPvpEliteRankingsAsync(int playerId,
+        CancellationToken ct = default);
+
     [Get(FogUrlBuilder.ApiRoutes.ALLIANCES_ATH_RANKINGS_TEMPLATE)]
     Task<PaginatedList<AllianceDto>> GetAlliancesAthRankingsAsync(string worldId, [Query] int startIndex = 0,
         [Query] int pageSize = FogConstants.DEFAULT_STATS_PAGE_SIZE,

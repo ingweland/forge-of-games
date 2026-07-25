@@ -10,6 +10,7 @@ public interface IHohDataCacheKeyFactory
     string HeroesBasicData(Guid version);
     string HohAges(Guid version);
     string PvpTiers(Guid version);
+    string EliteArenaTiers(Guid version);
     string TreasureHuntLeagues(Guid version);
     string WoaTiers(Guid version);
     string HohResources(Guid version);

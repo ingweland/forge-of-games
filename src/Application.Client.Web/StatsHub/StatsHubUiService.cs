@@ -186,6 +186,13 @@ public class StatsHubUiService : UiServiceBase, IStatsHubUiService
         return _mapper.Map<IReadOnlyCollection<PvpRankingViewModel>>(rankings.OrderBy(x => x.CollectedAt));
     }
 
+    public async Task<IReadOnlyCollection<PvpEliteRankingViewModel>> GetPlayerPvpEliteRankingsAsync(int playerId)
+    {
+        var rankings = await _statsHubService.GetPlayerPvpEliteRankingsAsync(playerId);
+
+        return _mapper.Map<IReadOnlyCollection<PvpEliteRankingViewModel>>(rankings.OrderBy(x => x.CollectedAt));
+    }
+
     public async Task<PaginatedList<AllianceViewModel>> GetAllianceStatsAsync(string worldId, int startIndex,
         int pageSize,
         string? allianceName = null, CancellationToken ct = default)

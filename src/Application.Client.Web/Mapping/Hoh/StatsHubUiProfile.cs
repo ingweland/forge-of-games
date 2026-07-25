@@ -112,5 +112,9 @@ public class StatsHubUiProfile : Profile
         CreateMap<PvpRankingDto, PvpRankingViewModel>()
             .ForMember(dest => dest.CollectedAt,
                 opt => opt.MapFrom(src => src.CollectedAt.ToDateTime(TimeOnly.MinValue)));
+
+        CreateMap<PvpEliteRankingDto, PvpEliteRankingViewModel>()
+            .ForMember(dest => dest.CollectedAt,
+                opt => opt.MapFrom(src => src.CollectedAt.ToDateTime(TimeOnly.MinValue)));
     }
 }

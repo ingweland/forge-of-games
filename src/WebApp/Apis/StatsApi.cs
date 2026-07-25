@@ -51,6 +51,7 @@ public static class StatsApi
         api.MapPost(FogUrlBuilder.ApiRoutes.PLAYER_CITY_SNAPSHOTS_SEARCH, SearchCityInspirationsAsync);
         api.MapGet(FogUrlBuilder.ApiRoutes.PLAYER_CITY_SNAPSHOT_TEMPLATE, GetPlayerCitySnapshotAsync);
         api.MapGet(FogUrlBuilder.ApiRoutes.PLAYER_PVP_RANKINGS_TEMPLATE, GetPvpRankingsAsync);
+        api.MapGet(FogUrlBuilder.ApiRoutes.PLAYER_PVP_ELITE_RANKINGS_TEMPLATE, GetPvpEliteRankingsAsync);
         api.MapGet(FogUrlBuilder.ApiRoutes.PLAYER_RANKINGS_TEMPLATE, GetPlayerRankingsAsync);
         api.MapGet(FogUrlBuilder.ApiRoutes.PLAYER_PRODUCTION_CAPACITY_TEMPLATE, GetPlayerProductionCapacityAsync);
 
@@ -318,6 +319,15 @@ public static class StatsApi
             CancellationToken ct = default)
     {
         var result = await services.StatsHubService.GetPlayerPvpRankingsAsync(playerId, ct);
+
+        return TypedResults.Ok(result);
+    }
+
+    private static async Task<Ok<IReadOnlyCollection<PvpEliteRankingDto>>>
+        GetPvpEliteRankingsAsync([AsParameters] StatsServices services, HttpContext context, int playerId,
+            CancellationToken ct = default)
+    {
+        var result = await services.StatsHubService.GetPlayerPvpEliteRankingsAsync(playerId, ct);
 
         return TypedResults.Ok(result);
     }

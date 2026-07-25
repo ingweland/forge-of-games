@@ -64,6 +64,7 @@ public static class AnalyticsParams
             public const string PLAYER_INFO_COMPONENT = "player_info_component";
             public const string PLAYER_PRODUCTION_CAPACITY_VIEW = "player_production_capacity_view";
             public const string PLAYER_PVP_RANKING_CHART = "player_pvp_ranking_chart";
+            public const string PLAYER_PVP_ELITE_RANKING_CHART = "player_pvp_elite_ranking_chart";
             public const string PLAYER_RANKING_CHART = "player_ranking_chart";
             public const string PVP_BATTLE = "pvp_battle";
             public const string TOP_HEROES = "top_heroes";

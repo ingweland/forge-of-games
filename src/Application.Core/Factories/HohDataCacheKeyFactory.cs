@@ -36,6 +36,11 @@ public class HohDataCacheKeyFactory : IHohDataCacheKeyFactory
         return $"pvp-tiers:{CultureInfo.CurrentCulture.Name}:{version}";
     }
 
+    public string EliteArenaTiers(Guid version)
+    {
+        return $"elite-arena-tiers:{CultureInfo.CurrentCulture.Name}:{version}";
+    }
+
     public string TreasureHuntLeagues(Guid version)
     {
         return $"ath-leagues:{CultureInfo.CurrentCulture.Name}:{version}";

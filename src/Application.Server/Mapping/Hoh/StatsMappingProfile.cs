@@ -77,6 +77,7 @@ public class StatsMappingProfile : Profile
         CreateMap<EquipmentInsightsEntity, EquipmentInsightsDto>();
         CreateMap<RelicInsightsEntity, RelicInsightsDto>();
         CreateMap<PvpRanking2, PvpRankingDto>();
+        CreateMap<PvpEliteRanking, PvpEliteRankingDto>();
         CreateMap<Alliance, AllianceBanner>()
             .ForMember(dest => dest.IconId, opt => opt.MapFrom(x => x.BannerIconId))
             .ForMember(dest => dest.CrestId, opt => opt.MapFrom(x => x.BannerCrestId))

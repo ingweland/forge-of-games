@@ -57,6 +57,25 @@ public class CommonService(
         return Task.FromResult(result);
     }
 
+    public Task<IReadOnlyCollection<EliteArenaTierDto>> GetEliteArenaTiersAsync()
+    {
+        var version = hohCoreDataRepository.Version;
+
+        var result = dataCache.GetOrAdd(cacheKeyFactory.EliteArenaTiers(version),
+            IReadOnlyCollection<EliteArenaTierDto> () =>
+            {
+                return Enum.GetValues<EliteArenaTier>().Select(x => new EliteArenaTierDto
+                    {
+                        Tier = x,
+                        Name = localizationService.GetEliteArenaTierName(x),
+                    })
+                    .OrderBy(x => x.Tier).ToList();
+            },
+            version);
+
+        return Task.FromResult(result);
+    }
+
     public Task<IReadOnlyCollection<TreasureHuntLeagueDto>> GetTreasureHuntLeaguesAsync()
     {
         var version = hohCoreDataRepository.Version;

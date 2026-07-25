@@ -33,6 +33,8 @@ public static class FogUrlBuilder
         public const string PLAYER_BATTLES_TEMPLATE_REFIT = "/" + BASE_STATS_PATH + "/players/{playerId}/battles";
         public const string PLAYER_PVP_RANKINGS_TEMPLATE = PLAYER_TEMPLATE + "/pvpRankings";
         public const string PLAYER_PVP_RANKINGS_TEMPLATE_REFIT = PLAYER_TEMPLATE_REFIT + "/pvpRankings";
+        public const string PLAYER_PVP_ELITE_RANKINGS_TEMPLATE = PLAYER_TEMPLATE + "/pvpEliteRankings";
+        public const string PLAYER_PVP_ELITE_RANKINGS_TEMPLATE_REFIT = PLAYER_TEMPLATE_REFIT + "/pvpEliteRankings";
         public const string TOP_PLAYERS_TEMPLATE = PLAYERS_TEMPLATE + "/top";
         public const string PLAYER_RANKINGS_TEMPLATE = PLAYER_TEMPLATE + "/rankings";
         public const string PLAYER_RANKINGS_TEMPLATE_REFIT = PLAYER_TEMPLATE_REFIT + "/rankings";

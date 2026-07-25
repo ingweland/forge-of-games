@@ -1196,6 +1196,9 @@
     <data name="StatsHub.Player.PvpRanking" xml:space="preserve">
         <value>Arena Ranking</value>
     </data>
+    <data name="StatsHub.Player.EliteArenaRanking" xml:space="preserve">
+        <value>Elite Arena Ranking</value>
+    </data>
 
     <data name="TreasureHuntLeagueSelector.Label" xml:space="preserve">
         <value>League</value>

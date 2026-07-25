@@ -172,6 +172,55 @@
                     </ChartSeriesCollection>
                 </SfChart>
             </ExpandableContainer>
+
+            <ExpandableContainer Title="@Loc[FogResource.StatsHub_Player_EliteArenaRanking]"
+                                 IsLoading="@_pvpEliteRankingsAreLoading"
+                                 ExpandedChanged="@ToggleEliteArenaChart">
+                <SfChart Focusable="false" Height="300">
+                    <ChartArea>
+                        <ChartAreaBorder Width="0"/>
+                    </ChartArea>
+
+                    <ChartMargin Top="12"/>
+
+                    <ChartEvents OnAxisLabelRender="EliteArenaAxisLabelEvent"/>
+
+                    <ChartPrimaryXAxis IntervalType="IntervalType.Days"
+                                       Minimum="@_minEliteRankingsChartDate"
+                                       Maximum="@_maxEliteRankingsChartDate"
+                                       ValueType="ValueType.DateTime"
+                                       Format="dd/MM">
+                        <ChartAxisMajorGridLines Color="var(--fog-border-color)" Width="1"/>
+                        <ChartAxisLabelStyle FontFamily="var(--main-font-family)"
+                                             Color="var(--fog-text-color)"/>
+                        <ChartAxisMajorTickLines Color="var(--fog-border-color)"/>
+                        <ChartAxisLineStyle Color="var(--fog-border-color)" Width="2"/>
+                    </ChartPrimaryXAxis>
+
+                    <ChartPrimaryYAxis
+                        Minimum="@_minEliteTier"
+                        Maximum="@_maxEliteTier"
+                        Interval="1">
+                        <ChartAxisMajorGridLines Color="var(--fog-border-color)" Width="1"/>
+                        <ChartAxisLabelStyle FontFamily="var(--main-font-family)"
+                                             Color="var(--fog-text-color)"/>
+                        <ChartAxisMajorTickLines Color="var(--fog-border-color)"/>
+                        <ChartAxisLineStyle Color="var(--fog-border-color)" Width="2"/>
+                    </ChartPrimaryYAxis>
+
+                    <ChartSeriesCollection>
+                        <ChartSeries
+                            DataSource="@_pvpEliteRankings"
+                            XName="CollectedAt"
+                            YName="Tier"
+                            Type="ChartSeriesType.Scatter">
+                            <ChartEmptyPointSettings Mode="EmptyPointMode.Drop"/>
+                            <ChartSeriesAnimation Enable="false"/>
+                            <ChartMarker Height="7" Width="7" Fill="var(--fog-chart-line-color)"/>
+                        </ChartSeries>
+                    </ChartSeriesCollection>
+                </SfChart>
+            </ExpandableContainer>
         }
 
         <ExpandableContainer Title="@Loc[FogResource.StatsHub_Player_AthRanking]"

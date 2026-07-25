@@ -3597,6 +3597,15 @@ namespace Ingweland.Fog.Application.Client.Core.Localization {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Elite Arena Ranking.
+        /// </summary>
+        public static string StatsHub_Player_EliteArenaRanking {
+            get {
+                return ResourceManager.GetString("StatsHub.Player.EliteArenaRanking", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Names.
         /// </summary>
         public static string StatsHub_Player_Names {

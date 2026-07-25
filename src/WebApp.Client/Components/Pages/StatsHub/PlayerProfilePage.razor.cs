@@ -37,16 +37,27 @@ public partial class PlayerProfilePage : StatsHubPageBase, IAsyncDisposable
     private CancellationTokenSource? _cityPropertiesCts;
     private DateTime? _citySnapshotDate = DateTime.Today;
     private Dictionary<string, object> _defaultAnalyticsParameters = [];
+
+    private IReadOnlyDictionary<EliteArenaTier, EliteArenaTierDto> _eliteArenaTiers =
+        new Dictionary<EliteArenaTier, EliteArenaTierDto>();
+
     private bool _fetchingCity;
     private IReadOnlyCollection<HeroBasicViewModel>? _heroes;
     private bool _heroesAreLoading;
     private CancellationTokenSource? _heroesCts;
     private bool _isDisposed;
+    private DateTime _maxEliteRankingsChartDate = DateTime.Today.AddDays(5);
+    private EliteArenaTier _maxEliteTier = EliteArenaTier.EliteArena_Tier_Overlord_3;
     private DateTime _maxPvpRankingsChartDate = DateTime.Today.AddDays(5);
     private PvpTier _maxPvpTier = PvpTier.PvP_Tier_Overlord_1;
+    private DateTime _minEliteRankingsChartDate = DateTime.Today.AddDays(-5);
+    private EliteArenaTier _minEliteTier = EliteArenaTier.Undefined;
     private DateTime _minPvpRankingsChartDate = DateTime.Today.AddDays(-5);
     private PvpTier _minPvpTier = PvpTier.Undefined;
     private PlayerProfileViewModel? _player;
+    private IReadOnlyCollection<PvpEliteRankingViewModel>? _pvpEliteRankings;
+    private bool _pvpEliteRankingsAreLoading;
+    private CancellationTokenSource? _pvpEliteRankingsCts;
     private IReadOnlyCollection<PvpRankingViewModel>? _pvpRankings;
     private bool _pvpRankingsAreLoading;
     private CancellationTokenSource? _pvpRankingsCts;
@@ -392,6 +403,25 @@ public partial class PlayerProfilePage : StatsHubPageBase, IAsyncDisposable
         _pvpTiers = await CommonUiService.GetPvpTiersAsync();
     }
 
+    private async Task ToggleEliteArenaChart(bool expanded)
+    {
+        AnalyticsService.TrackChartView(AnalyticsEvents.TOGGLE_CHART, _defaultAnalyticsParameters,
+            AnalyticsParams.Values.Sources.PLAYER_PVP_ELITE_RANKING_CHART, expanded);
+
+        await GetEliteArenaTiers();
+        await GetPvpEliteRankings();
+    }
+
+    private async Task GetEliteArenaTiers()
+    {
+        if (_eliteArenaTiers.Count > 0)
+        {
+            return;
+        }
+
+        _eliteArenaTiers = await CommonUiService.GetEliteArenaTiersAsync();
+    }
+
     private async Task OpenBattleSquadProfile(HeroProfileViewModel squad)
     {
         var options = GetDefaultDialogOptions();
@@ -473,6 +503,71 @@ public partial class PlayerProfilePage : StatsHubPageBase, IAsyncDisposable
         {
             _pvpRankingsAreLoading = false;
             Console.Error.WriteLine(e);
+        }
+    }
+
+    private async Task GetPvpEliteRankings()
+    {
+        if (_pvpEliteRankings != null)
+        {
+            return;
+        }
+
+        if (_pvpEliteRankingsCts != null)
+        {
+            await _pvpEliteRankingsCts.CancelAsync();
+        }
+
+        _pvpEliteRankingsAreLoading = true;
+        StateHasChanged();
+
+        _pvpEliteRankingsCts = new CancellationTokenSource();
+
+        try
+        {
+            _pvpEliteRankings = await StatsHubUiService.GetPlayerPvpEliteRankingsAsync(PlayerId);
+            _minEliteRankingsChartDate =
+                _pvpEliteRankings.MinBy(x => x.CollectedAt)?.CollectedAt.AddDays(-1) ?? DateTime.Today;
+            _maxEliteRankingsChartDate =
+                _pvpEliteRankings.MaxBy(x => x.CollectedAt)?.CollectedAt.AddDays(1) ?? DateTime.Today;
+            _minEliteTier = _pvpEliteRankings.MinBy(x => x.Tier)?.Tier - 1 ?? EliteArenaTier.Undefined;
+            _maxEliteTier = _pvpEliteRankings.MaxBy(x => x.Tier)?.Tier + 1 ?? EliteArenaTier.EliteArena_Tier_Overlord_3;
+            _pvpEliteRankingsAreLoading = false;
+        }
+        catch (OperationCanceledException _)
+        {
+        }
+        catch (ApiException apiEx) when (apiEx.InnerException is TaskCanceledException)
+        {
+            _pvpEliteRankingsAreLoading = false;
+        }
+        catch (Exception e)
+        {
+            _pvpEliteRankingsAreLoading = false;
+            Console.Error.WriteLine(e);
+        }
+    }
+
+    public void EliteArenaAxisLabelEvent(AxisLabelRenderEventArgs args)
+    {
+        if (args.Axis.Name == "PrimaryYAxis")
+        {
+            if (Enum.TryParse<EliteArenaTier>(args.Text, out var value) &&
+                _eliteArenaTiers.TryGetValue(value, out var eliteArenaTier))
+            {
+                if (eliteArenaTier.Tier is > EliteArenaTier.Undefined and <= EliteArenaTier.EliteArena_Tier_Overlord_3)
+                {
+                    args.Text = eliteArenaTier.Name;
+                }
+                else
+                {
+                    args.Text = "";
+                }
+            }
+            else
+            {
+                args.Text = "";
+            }
         }
     }
 
