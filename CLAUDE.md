@@ -9,7 +9,7 @@ Forge of Games (forgeofgames.com) — a companion website for the mobile game *H
 ## Rules for working in this repo
 
 - **Never build the whole solution.** To verify your changes, build only the affected project(s), e.g. `dotnet build .\src\WebApp\WebApp.csproj`. Success criterion is simply that it compiles without errors.
-- **Never run anything** — no `dotnet run`, no `func start`, no launching WebApp or Functions locally. Build-only verification.
+- **Never run anything** — no `dotnet run`, no `func start`, no launching WebApp or Functions locally. Build-only verification. One exception: `src/Misc/FogLocalizationHelper/FogLocalizationHelper.csproj`
 - **Never run scripts** from `src/scripts/`.
 - **Database:** never apply or push migrations (`dotnet ef database update` is forbidden). The only allowed EF command is creating a migration:
   ```powershell

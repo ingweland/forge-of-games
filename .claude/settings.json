@@ -1,0 +1,11 @@
+{
+  "permissions": {
+    "allow": [
+      "PowerShell(dotnet build .\\src\\*)",
+      "Bash(dotnet build ./src/*)",
+	  "Bash(dotnet run --project src/Misc/FogLocalizationHelper/FogLocalizationHelper.csproj)",
+	  "PowerShell(dotnet run --project .\\src\\Misc\\FogLocalizationHelper\\FogLocalizationHelper.csproj)"
+
+    ]
+  }
+}
