@@ -86,6 +86,7 @@ var searchKeys = new HashSet<string>
     "Tutorial.JoystickBattle.LostOverlayTitle",
     "Base.PvpFightPanel.Attack",
     "Tutorial.WoARankingResultPopup.AtlantisPoints",
+    "Base.UnlockableFeatures.Elitearena",
 };
 
 var result = new Dictionary<string, List<Translations>>();
