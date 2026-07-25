@@ -18,6 +18,4 @@ public enum EliteArenaTier
     EliteArena_Tier_Platinum_2 = 11,
     EliteArena_Tier_Platinum_3 = 12,
     EliteArena_Tier_Overlord_1 = 13,
-    EliteArena_Tier_Overlord_2 = 14,
-    EliteArena_Tier_Overlord_3 = 15,
 }

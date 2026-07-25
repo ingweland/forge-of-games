@@ -47,7 +47,7 @@ public partial class PlayerProfilePage : StatsHubPageBase, IAsyncDisposable
     private CancellationTokenSource? _heroesCts;
     private bool _isDisposed;
     private DateTime _maxEliteRankingsChartDate = DateTime.Today.AddDays(5);
-    private EliteArenaTier _maxEliteTier = EliteArenaTier.EliteArena_Tier_Overlord_3;
+    private EliteArenaTier _maxEliteTier = EliteArenaTier.EliteArena_Tier_Overlord_1;
     private DateTime _maxPvpRankingsChartDate = DateTime.Today.AddDays(5);
     private PvpTier _maxPvpTier = PvpTier.PvP_Tier_Overlord_1;
     private DateTime _minEliteRankingsChartDate = DateTime.Today.AddDays(-5);
@@ -531,7 +531,7 @@ public partial class PlayerProfilePage : StatsHubPageBase, IAsyncDisposable
             _maxEliteRankingsChartDate =
                 _pvpEliteRankings.MaxBy(x => x.CollectedAt)?.CollectedAt.AddDays(1) ?? DateTime.Today;
             _minEliteTier = _pvpEliteRankings.MinBy(x => x.Tier)?.Tier - 1 ?? EliteArenaTier.Undefined;
-            _maxEliteTier = _pvpEliteRankings.MaxBy(x => x.Tier)?.Tier + 1 ?? EliteArenaTier.EliteArena_Tier_Overlord_3;
+            _maxEliteTier = _pvpEliteRankings.MaxBy(x => x.Tier)?.Tier + 1 ?? EliteArenaTier.EliteArena_Tier_Overlord_1;
             _pvpEliteRankingsAreLoading = false;
         }
         catch (OperationCanceledException _)
@@ -555,7 +555,7 @@ public partial class PlayerProfilePage : StatsHubPageBase, IAsyncDisposable
             if (Enum.TryParse<EliteArenaTier>(args.Text, out var value) &&
                 _eliteArenaTiers.TryGetValue(value, out var eliteArenaTier))
             {
-                if (eliteArenaTier.Tier is > EliteArenaTier.Undefined and <= EliteArenaTier.EliteArena_Tier_Overlord_3)
+                if (eliteArenaTier.Tier is > EliteArenaTier.Undefined and <= EliteArenaTier.EliteArena_Tier_Overlord_1)
                 {
                     args.Text = eliteArenaTier.Name;
                 }
