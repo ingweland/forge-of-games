@@ -87,9 +87,6 @@ public class InGameDataMappingProfile : Profile
             .ForMember(dest => dest.WoaAlliances, opt => opt.MapFrom(src => src.WoAAlliancePushs))
             .ForMember(dest => dest.Alliances, opt => opt.MapFrom(src => src.Alliances));
 
-        CreateMap<PvpBattleDto, PvpBattle>()
-            .ForMember(dest => dest.PerformedAt, opt => opt.MapFrom(src => src.PerformedAt.ToDateTime()));
-
         CreateMap<EquipmentItemDto, EquipmentItem>()
             .ForMember(dest => dest.EquippedOnHero, opt =>
             {

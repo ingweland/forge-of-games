@@ -27,24 +27,29 @@ namespace Ingweland.Fog.Inn.Models.Hoh {
             "CiFwdnBfYmF0dGxlX2hpc3RvcnlfcmVzcG9uc2UucHJvdG8aEHBsYXllcl9k",
             "dG8ucHJvdG8aEmFsbGlhbmNlX2R0by5wcm90bxofZ29vZ2xlL3Byb3RvYnVm",
             "L3RpbWVzdGFtcC5wcm90bxoeZ29vZ2xlL3Byb3RvYnVmL3dyYXBwZXJzLnBy",
-            "b3RvGhZiYXR0bGVfc3F1YWRfZHRvLnByb3RvInUKGFB2cEJhdHRsZUhpc3Rv",
-            "cnlSZXNwb25zZRIeCgdiYXR0bGVzGAEgAygLMg0uUHZwQmF0dGxlRHRvEjkK",
-            "FHBsYXllcnNfdG9fYWxsaWFuY2VzGAIgAygLMhsuUHZwQmF0dGxlUGxheWVy",
-            "QWxsaWFuY2VEdG8iiQIKDFB2cEJhdHRsZUR0bxIbCgdwbGF5ZXIxGAEgASgL",
-            "MgouUGxheWVyRHRvEhsKB3BsYXllcjIYAiABKAsyCi5QbGF5ZXJEdG8SFAoM",
-            "cG9pbnRzX2RlbHRhGAQgASgDEiYKDXBsYXllcjFfdW5pdHMYByADKAsyDy5C",
-            "YXR0bGVTcXVhZER0bxImCg1wbGF5ZXIyX3VuaXRzGAggAygLMg8uQmF0dGxl",
-            "U3F1YWREdG8SMAoMcGVyZm9ybWVkX2F0GAkgASgLMhouZ29vZ2xlLnByb3Rv",
-            "YnVmLlRpbWVzdGFtcBInCgJpZBgKIAEoCzIbLmdvb2dsZS5wcm90b2J1Zi5C",
-            "eXRlc1ZhbHVlIk8KGlB2cEJhdHRsZVBsYXllckFsbGlhbmNlRHRvEhEKCXBs",
-            "YXllcl9pZBgBIAEoBRIeCghhbGxpYW5jZRgCIAEoCzIMLkFsbGlhbmNlRHRv",
-            "Qh+qAhxJbmd3ZWxhbmQuRm9nLklubi5Nb2RlbHMuSG9oYgZwcm90bzM="));
+            "b3RvGhZiYXR0bGVfc3F1YWRfZHRvLnByb3RvIuEBChhQdnBCYXR0bGVIaXN0",
+            "b3J5UmVzcG9uc2USKgoHaGlzdG9yeRgBIAMoCzIZLlB2cEJhdHRsZUhpc3Rv",
+            "cnlFbnRyeURUTxJQChVhbGxpYW5jZV9ieV9wbGF5ZXJfaWQYAiADKAsyMS5Q",
+            "dnBCYXR0bGVIaXN0b3J5UmVzcG9uc2UuQWxsaWFuY2VCeVBsYXllcklkRW50",
+            "cnkaRwoXQWxsaWFuY2VCeVBsYXllcklkRW50cnkSCwoDa2V5GAEgASgFEhsK",
+            "BXZhbHVlGAIgASgLMgwuQWxsaWFuY2VEdG86AjgBIuwDChhQdnBCYXR0bGVI",
+            "aXN0b3J5RW50cnlEVE8SHAoIYXR0YWNrZXIYASABKAsyCi5QbGF5ZXJEdG8S",
+            "GgoGdGFyZ2V0GAIgASgLMgouUGxheWVyRHRvEhUKDXBvaW50c19iZWZvcmUY",
+            "AyABKAUSFQoNcG9pbnRzX2NoYW5nZRgEIAEoBRIUCgxlbmVteV9wb2ludHMY",
+            "BSABKAUSMAoMYmF0dGxlX2VuZGVkGAkgASgLMhouZ29vZ2xlLnByb3RvYnVm",
+            "LlRpbWVzdGFtcBIUCgxyZXZlbmdlX3VzZWQYDCABKAgSFgoOcmV2ZW5nZV9i",
+            "YXR0bGUYDSABKAgSPwoNc3RhZ2VfcmVzdWx0cxgOIAMoCzIoLlB2cEJhdHRs",
+            "ZUhpc3RvcnlFbnRyeURUTy5TdGFnZVJlc3VsdERUTxqwAQoOU3RhZ2VSZXN1",
+            "bHREVE8SJQoMcGxheWVyX3VuaXRzGAIgAygLMg8uQmF0dGxlU3F1YWREdG8S",
+            "JAoLZW5lbXlfdW5pdHMYAyADKAsyDy5CYXR0bGVTcXVhZER0bxIuCgliYXR0",
+            "bGVfaWQYBCABKAsyGy5nb29nbGUucHJvdG9idWYuQnl0ZXNWYWx1ZRILCgN3",
+            "b24YBSABKAgSFAoMcG9pbnRfY2hhbmdlGAYgASgFQh+qAhxJbmd3ZWxhbmQu",
+            "Rm9nLklubi5Nb2RlbHMuSG9oYgZwcm90bzM="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Ingweland.Fog.Inn.Models.Hoh.PlayerDtoReflection.Descriptor, global::Ingweland.Fog.Inn.Models.Hoh.AllianceDtoReflection.Descriptor, global::Google.Protobuf.WellKnownTypes.TimestampReflection.Descriptor, global::Google.Protobuf.WellKnownTypes.WrappersReflection.Descriptor, global::Ingweland.Fog.Inn.Models.Hoh.BattleSquadDtoReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::Ingweland.Fog.Inn.Models.Hoh.PvpBattleHistoryResponse), global::Ingweland.Fog.Inn.Models.Hoh.PvpBattleHistoryResponse.Parser, new[]{ "Battles", "PlayersToAlliances" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Ingweland.Fog.Inn.Models.Hoh.PvpBattleDto), global::Ingweland.Fog.Inn.Models.Hoh.PvpBattleDto.Parser, new[]{ "Player1", "Player2", "PointsDelta", "Player1Units", "Player2Units", "PerformedAt", "Id" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Ingweland.Fog.Inn.Models.Hoh.PvpBattlePlayerAllianceDto), global::Ingweland.Fog.Inn.Models.Hoh.PvpBattlePlayerAllianceDto.Parser, new[]{ "PlayerId", "Alliance" }, null, null, null, null)
+            new pbr::GeneratedClrTypeInfo(typeof(global::Ingweland.Fog.Inn.Models.Hoh.PvpBattleHistoryResponse), global::Ingweland.Fog.Inn.Models.Hoh.PvpBattleHistoryResponse.Parser, new[]{ "History", "AllianceByPlayerId" }, null, null, null, new pbr::GeneratedClrTypeInfo[] { null, }),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Ingweland.Fog.Inn.Models.Hoh.PvpBattleHistoryEntryDTO), global::Ingweland.Fog.Inn.Models.Hoh.PvpBattleHistoryEntryDTO.Parser, new[]{ "Attacker", "Target", "PointsBefore", "PointsChange", "EnemyPoints", "BattleEnded", "RevengeUsed", "RevengeBattle", "StageResults" }, null, null, null, new pbr::GeneratedClrTypeInfo[] { new pbr::GeneratedClrTypeInfo(typeof(global::Ingweland.Fog.Inn.Models.Hoh.PvpBattleHistoryEntryDTO.Types.StageResultDTO), global::Ingweland.Fog.Inn.Models.Hoh.PvpBattleHistoryEntryDTO.Types.StageResultDTO.Parser, new[]{ "PlayerUnits", "EnemyUnits", "BattleId", "Won", "PointChange" }, null, null, null, null)})
           }));
     }
     #endregion
@@ -86,8 +91,8 @@ namespace Ingweland.Fog.Inn.Models.Hoh {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public PvpBattleHistoryResponse(PvpBattleHistoryResponse other) : this() {
-      battles_ = other.battles_.Clone();
-      playersToAlliances_ = other.playersToAlliances_.Clone();
+      history_ = other.history_.Clone();
+      allianceByPlayerId_ = other.allianceByPlayerId_.Clone();
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
@@ -97,26 +102,26 @@ namespace Ingweland.Fog.Inn.Models.Hoh {
       return new PvpBattleHistoryResponse(this);
     }
 
-    /// <summary>Field number for the "battles" field.</summary>
-    public const int BattlesFieldNumber = 1;
-    private static readonly pb::FieldCodec<global::Ingweland.Fog.Inn.Models.Hoh.PvpBattleDto> _repeated_battles_codec
-        = pb::FieldCodec.ForMessage(10, global::Ingweland.Fog.Inn.Models.Hoh.PvpBattleDto.Parser);
-    private readonly pbc::RepeatedField<global::Ingweland.Fog.Inn.Models.Hoh.PvpBattleDto> battles_ = new pbc::RepeatedField<global::Ingweland.Fog.Inn.Models.Hoh.PvpBattleDto>();
+    /// <summary>Field number for the "history" field.</summary>
+    public const int HistoryFieldNumber = 1;
+    private static readonly pb::FieldCodec<global::Ingweland.Fog.Inn.Models.Hoh.PvpBattleHistoryEntryDTO> _repeated_history_codec
+        = pb::FieldCodec.ForMessage(10, global::Ingweland.Fog.Inn.Models.Hoh.PvpBattleHistoryEntryDTO.Parser);
+    private readonly pbc::RepeatedField<global::Ingweland.Fog.Inn.Models.Hoh.PvpBattleHistoryEntryDTO> history_ = new pbc::RepeatedField<global::Ingweland.Fog.Inn.Models.Hoh.PvpBattleHistoryEntryDTO>();
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public pbc::RepeatedField<global::Ingweland.Fog.Inn.Models.Hoh.PvpBattleDto> Battles {
-      get { return battles_; }
+    public pbc::RepeatedField<global::Ingweland.Fog.Inn.Models.Hoh.PvpBattleHistoryEntryDTO> History {
+      get { return history_; }
     }
 
-    /// <summary>Field number for the "players_to_alliances" field.</summary>
-    public const int PlayersToAlliancesFieldNumber = 2;
-    private static readonly pb::FieldCodec<global::Ingweland.Fog.Inn.Models.Hoh.PvpBattlePlayerAllianceDto> _repeated_playersToAlliances_codec
-        = pb::FieldCodec.ForMessage(18, global::Ingweland.Fog.Inn.Models.Hoh.PvpBattlePlayerAllianceDto.Parser);
-    private readonly pbc::RepeatedField<global::Ingweland.Fog.Inn.Models.Hoh.PvpBattlePlayerAllianceDto> playersToAlliances_ = new pbc::RepeatedField<global::Ingweland.Fog.Inn.Models.Hoh.PvpBattlePlayerAllianceDto>();
+    /// <summary>Field number for the "alliance_by_player_id" field.</summary>
+    public const int AllianceByPlayerIdFieldNumber = 2;
+    private static readonly pbc::MapField<int, global::Ingweland.Fog.Inn.Models.Hoh.AllianceDto>.Codec _map_allianceByPlayerId_codec
+        = new pbc::MapField<int, global::Ingweland.Fog.Inn.Models.Hoh.AllianceDto>.Codec(pb::FieldCodec.ForInt32(8, 0), pb::FieldCodec.ForMessage(18, global::Ingweland.Fog.Inn.Models.Hoh.AllianceDto.Parser), 18);
+    private readonly pbc::MapField<int, global::Ingweland.Fog.Inn.Models.Hoh.AllianceDto> allianceByPlayerId_ = new pbc::MapField<int, global::Ingweland.Fog.Inn.Models.Hoh.AllianceDto>();
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public pbc::RepeatedField<global::Ingweland.Fog.Inn.Models.Hoh.PvpBattlePlayerAllianceDto> PlayersToAlliances {
-      get { return playersToAlliances_; }
+    public pbc::MapField<int, global::Ingweland.Fog.Inn.Models.Hoh.AllianceDto> AllianceByPlayerId {
+      get { return allianceByPlayerId_; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -134,8 +139,8 @@ namespace Ingweland.Fog.Inn.Models.Hoh {
       if (ReferenceEquals(other, this)) {
         return true;
       }
-      if(!battles_.Equals(other.battles_)) return false;
-      if(!playersToAlliances_.Equals(other.playersToAlliances_)) return false;
+      if(!history_.Equals(other.history_)) return false;
+      if (!AllianceByPlayerId.Equals(other.AllianceByPlayerId)) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
 
@@ -143,8 +148,8 @@ namespace Ingweland.Fog.Inn.Models.Hoh {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override int GetHashCode() {
       int hash = 1;
-      hash ^= battles_.GetHashCode();
-      hash ^= playersToAlliances_.GetHashCode();
+      hash ^= history_.GetHashCode();
+      hash ^= AllianceByPlayerId.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -163,8 +168,8 @@ namespace Ingweland.Fog.Inn.Models.Hoh {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       output.WriteRawMessage(this);
     #else
-      battles_.WriteTo(output, _repeated_battles_codec);
-      playersToAlliances_.WriteTo(output, _repeated_playersToAlliances_codec);
+      history_.WriteTo(output, _repeated_history_codec);
+      allianceByPlayerId_.WriteTo(output, _map_allianceByPlayerId_codec);
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
       }
@@ -175,8 +180,8 @@ namespace Ingweland.Fog.Inn.Models.Hoh {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
-      battles_.WriteTo(ref output, _repeated_battles_codec);
-      playersToAlliances_.WriteTo(ref output, _repeated_playersToAlliances_codec);
+      history_.WriteTo(ref output, _repeated_history_codec);
+      allianceByPlayerId_.WriteTo(ref output, _map_allianceByPlayerId_codec);
       if (_unknownFields != null) {
         _unknownFields.WriteTo(ref output);
       }
@@ -187,8 +192,8 @@ namespace Ingweland.Fog.Inn.Models.Hoh {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public int CalculateSize() {
       int size = 0;
-      size += battles_.CalculateSize(_repeated_battles_codec);
-      size += playersToAlliances_.CalculateSize(_repeated_playersToAlliances_codec);
+      size += history_.CalculateSize(_repeated_history_codec);
+      size += allianceByPlayerId_.CalculateSize(_map_allianceByPlayerId_codec);
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
       }
@@ -201,8 +206,8 @@ namespace Ingweland.Fog.Inn.Models.Hoh {
       if (other == null) {
         return;
       }
-      battles_.Add(other.battles_);
-      playersToAlliances_.Add(other.playersToAlliances_);
+      history_.Add(other.history_);
+      allianceByPlayerId_.MergeFrom(other.allianceByPlayerId_);
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
 
@@ -219,11 +224,11 @@ namespace Ingweland.Fog.Inn.Models.Hoh {
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
           case 10: {
-            battles_.AddEntriesFrom(input, _repeated_battles_codec);
+            history_.AddEntriesFrom(input, _repeated_history_codec);
             break;
           }
           case 18: {
-            playersToAlliances_.AddEntriesFrom(input, _repeated_playersToAlliances_codec);
+            allianceByPlayerId_.AddEntriesFrom(input, _map_allianceByPlayerId_codec);
             break;
           }
         }
@@ -242,11 +247,11 @@ namespace Ingweland.Fog.Inn.Models.Hoh {
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
           case 10: {
-            battles_.AddEntriesFrom(ref input, _repeated_battles_codec);
+            history_.AddEntriesFrom(ref input, _repeated_history_codec);
             break;
           }
           case 18: {
-            playersToAlliances_.AddEntriesFrom(ref input, _repeated_playersToAlliances_codec);
+            allianceByPlayerId_.AddEntriesFrom(ref input, _map_allianceByPlayerId_codec);
             break;
           }
         }
@@ -257,16 +262,16 @@ namespace Ingweland.Fog.Inn.Models.Hoh {
   }
 
   [global::System.Diagnostics.DebuggerDisplayAttribute("{ToString(),nq}")]
-  public sealed partial class PvpBattleDto : pb::IMessage<PvpBattleDto>
+  public sealed partial class PvpBattleHistoryEntryDTO : pb::IMessage<PvpBattleHistoryEntryDTO>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       , pb::IBufferMessage
   #endif
   {
-    private static readonly pb::MessageParser<PvpBattleDto> _parser = new pb::MessageParser<PvpBattleDto>(() => new PvpBattleDto());
+    private static readonly pb::MessageParser<PvpBattleHistoryEntryDTO> _parser = new pb::MessageParser<PvpBattleHistoryEntryDTO>(() => new PvpBattleHistoryEntryDTO());
     private pb::UnknownFieldSet _unknownFields;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public static pb::MessageParser<PvpBattleDto> Parser { get { return _parser; } }
+    public static pb::MessageParser<PvpBattleHistoryEntryDTO> Parser { get { return _parser; } }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -282,7 +287,7 @@ namespace Ingweland.Fog.Inn.Models.Hoh {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public PvpBattleDto() {
+    public PvpBattleHistoryEntryDTO() {
       OnConstruction();
     }
 
@@ -290,129 +295,156 @@ namespace Ingweland.Fog.Inn.Models.Hoh {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public PvpBattleDto(PvpBattleDto other) : this() {
-      player1_ = other.player1_ != null ? other.player1_.Clone() : null;
-      player2_ = other.player2_ != null ? other.player2_.Clone() : null;
-      pointsDelta_ = other.pointsDelta_;
-      player1Units_ = other.player1Units_.Clone();
-      player2Units_ = other.player2Units_.Clone();
-      performedAt_ = other.performedAt_ != null ? other.performedAt_.Clone() : null;
-      Id = other.Id;
+    public PvpBattleHistoryEntryDTO(PvpBattleHistoryEntryDTO other) : this() {
+      attacker_ = other.attacker_ != null ? other.attacker_.Clone() : null;
+      target_ = other.target_ != null ? other.target_.Clone() : null;
+      pointsBefore_ = other.pointsBefore_;
+      pointsChange_ = other.pointsChange_;
+      enemyPoints_ = other.enemyPoints_;
+      battleEnded_ = other.battleEnded_ != null ? other.battleEnded_.Clone() : null;
+      revengeUsed_ = other.revengeUsed_;
+      revengeBattle_ = other.revengeBattle_;
+      stageResults_ = other.stageResults_.Clone();
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public PvpBattleDto Clone() {
-      return new PvpBattleDto(this);
+    public PvpBattleHistoryEntryDTO Clone() {
+      return new PvpBattleHistoryEntryDTO(this);
     }
 
-    /// <summary>Field number for the "player1" field.</summary>
-    public const int Player1FieldNumber = 1;
-    private global::Ingweland.Fog.Inn.Models.Hoh.PlayerDto player1_;
+    /// <summary>Field number for the "attacker" field.</summary>
+    public const int AttackerFieldNumber = 1;
+    private global::Ingweland.Fog.Inn.Models.Hoh.PlayerDto attacker_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public global::Ingweland.Fog.Inn.Models.Hoh.PlayerDto Player1 {
-      get { return player1_; }
+    public global::Ingweland.Fog.Inn.Models.Hoh.PlayerDto Attacker {
+      get { return attacker_; }
       set {
-        player1_ = value;
+        attacker_ = value;
       }
     }
 
-    /// <summary>Field number for the "player2" field.</summary>
-    public const int Player2FieldNumber = 2;
-    private global::Ingweland.Fog.Inn.Models.Hoh.PlayerDto player2_;
+    /// <summary>Field number for the "target" field.</summary>
+    public const int TargetFieldNumber = 2;
+    private global::Ingweland.Fog.Inn.Models.Hoh.PlayerDto target_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public global::Ingweland.Fog.Inn.Models.Hoh.PlayerDto Player2 {
-      get { return player2_; }
+    public global::Ingweland.Fog.Inn.Models.Hoh.PlayerDto Target {
+      get { return target_; }
       set {
-        player2_ = value;
+        target_ = value;
       }
     }
 
-    /// <summary>Field number for the "points_delta" field.</summary>
-    public const int PointsDeltaFieldNumber = 4;
-    private long pointsDelta_;
+    /// <summary>Field number for the "points_before" field.</summary>
+    public const int PointsBeforeFieldNumber = 3;
+    private int pointsBefore_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public long PointsDelta {
-      get { return pointsDelta_; }
+    public int PointsBefore {
+      get { return pointsBefore_; }
       set {
-        pointsDelta_ = value;
+        pointsBefore_ = value;
       }
     }
 
-    /// <summary>Field number for the "player1_units" field.</summary>
-    public const int Player1UnitsFieldNumber = 7;
-    private static readonly pb::FieldCodec<global::Ingweland.Fog.Inn.Models.Hoh.BattleSquadDto> _repeated_player1Units_codec
-        = pb::FieldCodec.ForMessage(58, global::Ingweland.Fog.Inn.Models.Hoh.BattleSquadDto.Parser);
-    private readonly pbc::RepeatedField<global::Ingweland.Fog.Inn.Models.Hoh.BattleSquadDto> player1Units_ = new pbc::RepeatedField<global::Ingweland.Fog.Inn.Models.Hoh.BattleSquadDto>();
+    /// <summary>Field number for the "points_change" field.</summary>
+    public const int PointsChangeFieldNumber = 4;
+    private int pointsChange_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public pbc::RepeatedField<global::Ingweland.Fog.Inn.Models.Hoh.BattleSquadDto> Player1Units {
-      get { return player1Units_; }
-    }
-
-    /// <summary>Field number for the "player2_units" field.</summary>
-    public const int Player2UnitsFieldNumber = 8;
-    private static readonly pb::FieldCodec<global::Ingweland.Fog.Inn.Models.Hoh.BattleSquadDto> _repeated_player2Units_codec
-        = pb::FieldCodec.ForMessage(66, global::Ingweland.Fog.Inn.Models.Hoh.BattleSquadDto.Parser);
-    private readonly pbc::RepeatedField<global::Ingweland.Fog.Inn.Models.Hoh.BattleSquadDto> player2Units_ = new pbc::RepeatedField<global::Ingweland.Fog.Inn.Models.Hoh.BattleSquadDto>();
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public pbc::RepeatedField<global::Ingweland.Fog.Inn.Models.Hoh.BattleSquadDto> Player2Units {
-      get { return player2Units_; }
-    }
-
-    /// <summary>Field number for the "performed_at" field.</summary>
-    public const int PerformedAtFieldNumber = 9;
-    private global::Google.Protobuf.WellKnownTypes.Timestamp performedAt_;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public global::Google.Protobuf.WellKnownTypes.Timestamp PerformedAt {
-      get { return performedAt_; }
+    public int PointsChange {
+      get { return pointsChange_; }
       set {
-        performedAt_ = value;
+        pointsChange_ = value;
       }
     }
 
-    /// <summary>Field number for the "id" field.</summary>
-    public const int IdFieldNumber = 10;
-    private static readonly pb::FieldCodec<pb::ByteString> _single_id_codec = pb::FieldCodec.ForClassWrapper<pb::ByteString>(82);
-    private pb::ByteString id_;
+    /// <summary>Field number for the "enemy_points" field.</summary>
+    public const int EnemyPointsFieldNumber = 5;
+    private int enemyPoints_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public pb::ByteString Id {
-      get { return id_; }
+    public int EnemyPoints {
+      get { return enemyPoints_; }
       set {
-        id_ = value;
+        enemyPoints_ = value;
       }
     }
 
+    /// <summary>Field number for the "battle_ended" field.</summary>
+    public const int BattleEndedFieldNumber = 9;
+    private global::Google.Protobuf.WellKnownTypes.Timestamp battleEnded_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public global::Google.Protobuf.WellKnownTypes.Timestamp BattleEnded {
+      get { return battleEnded_; }
+      set {
+        battleEnded_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "revenge_used" field.</summary>
+    public const int RevengeUsedFieldNumber = 12;
+    private bool revengeUsed_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public bool RevengeUsed {
+      get { return revengeUsed_; }
+      set {
+        revengeUsed_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "revenge_battle" field.</summary>
+    public const int RevengeBattleFieldNumber = 13;
+    private bool revengeBattle_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public bool RevengeBattle {
+      get { return revengeBattle_; }
+      set {
+        revengeBattle_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "stage_results" field.</summary>
+    public const int StageResultsFieldNumber = 14;
+    private static readonly pb::FieldCodec<global::Ingweland.Fog.Inn.Models.Hoh.PvpBattleHistoryEntryDTO.Types.StageResultDTO> _repeated_stageResults_codec
+        = pb::FieldCodec.ForMessage(114, global::Ingweland.Fog.Inn.Models.Hoh.PvpBattleHistoryEntryDTO.Types.StageResultDTO.Parser);
+    private readonly pbc::RepeatedField<global::Ingweland.Fog.Inn.Models.Hoh.PvpBattleHistoryEntryDTO.Types.StageResultDTO> stageResults_ = new pbc::RepeatedField<global::Ingweland.Fog.Inn.Models.Hoh.PvpBattleHistoryEntryDTO.Types.StageResultDTO>();
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public pbc::RepeatedField<global::Ingweland.Fog.Inn.Models.Hoh.PvpBattleHistoryEntryDTO.Types.StageResultDTO> StageResults {
+      get { return stageResults_; }
+    }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override bool Equals(object other) {
-      return Equals(other as PvpBattleDto);
+      return Equals(other as PvpBattleHistoryEntryDTO);
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public bool Equals(PvpBattleDto other) {
+    public bool Equals(PvpBattleHistoryEntryDTO other) {
       if (ReferenceEquals(other, null)) {
         return false;
       }
       if (ReferenceEquals(other, this)) {
         return true;
       }
-      if (!object.Equals(Player1, other.Player1)) return false;
-      if (!object.Equals(Player2, other.Player2)) return false;
-      if (PointsDelta != other.PointsDelta) return false;
-      if(!player1Units_.Equals(other.player1Units_)) return false;
-      if(!player2Units_.Equals(other.player2Units_)) return false;
-      if (!object.Equals(PerformedAt, other.PerformedAt)) return false;
-      if (Id != other.Id) return false;
+      if (!object.Equals(Attacker, other.Attacker)) return false;
+      if (!object.Equals(Target, other.Target)) return false;
+      if (PointsBefore != other.PointsBefore) return false;
+      if (PointsChange != other.PointsChange) return false;
+      if (EnemyPoints != other.EnemyPoints) return false;
+      if (!object.Equals(BattleEnded, other.BattleEnded)) return false;
+      if (RevengeUsed != other.RevengeUsed) return false;
+      if (RevengeBattle != other.RevengeBattle) return false;
+      if(!stageResults_.Equals(other.stageResults_)) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
 
@@ -420,13 +452,15 @@ namespace Ingweland.Fog.Inn.Models.Hoh {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override int GetHashCode() {
       int hash = 1;
-      if (player1_ != null) hash ^= Player1.GetHashCode();
-      if (player2_ != null) hash ^= Player2.GetHashCode();
-      if (PointsDelta != 0L) hash ^= PointsDelta.GetHashCode();
-      hash ^= player1Units_.GetHashCode();
-      hash ^= player2Units_.GetHashCode();
-      if (performedAt_ != null) hash ^= PerformedAt.GetHashCode();
-      if (id_ != null) hash ^= Id.GetHashCode();
+      if (attacker_ != null) hash ^= Attacker.GetHashCode();
+      if (target_ != null) hash ^= Target.GetHashCode();
+      if (PointsBefore != 0) hash ^= PointsBefore.GetHashCode();
+      if (PointsChange != 0) hash ^= PointsChange.GetHashCode();
+      if (EnemyPoints != 0) hash ^= EnemyPoints.GetHashCode();
+      if (battleEnded_ != null) hash ^= BattleEnded.GetHashCode();
+      if (RevengeUsed != false) hash ^= RevengeUsed.GetHashCode();
+      if (RevengeBattle != false) hash ^= RevengeBattle.GetHashCode();
+      hash ^= stageResults_.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -445,27 +479,39 @@ namespace Ingweland.Fog.Inn.Models.Hoh {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       output.WriteRawMessage(this);
     #else
-      if (player1_ != null) {
+      if (attacker_ != null) {
         output.WriteRawTag(10);
-        output.WriteMessage(Player1);
+        output.WriteMessage(Attacker);
       }
-      if (player2_ != null) {
+      if (target_ != null) {
         output.WriteRawTag(18);
-        output.WriteMessage(Player2);
+        output.WriteMessage(Target);
       }
-      if (PointsDelta != 0L) {
+      if (PointsBefore != 0) {
+        output.WriteRawTag(24);
+        output.WriteInt32(PointsBefore);
+      }
+      if (PointsChange != 0) {
         output.WriteRawTag(32);
-        output.WriteInt64(PointsDelta);
+        output.WriteInt32(PointsChange);
       }
-      player1Units_.WriteTo(output, _repeated_player1Units_codec);
-      player2Units_.WriteTo(output, _repeated_player2Units_codec);
-      if (performedAt_ != null) {
+      if (EnemyPoints != 0) {
+        output.WriteRawTag(40);
+        output.WriteInt32(EnemyPoints);
+      }
+      if (battleEnded_ != null) {
         output.WriteRawTag(74);
-        output.WriteMessage(PerformedAt);
+        output.WriteMessage(BattleEnded);
       }
-      if (id_ != null) {
-        _single_id_codec.WriteTagAndValue(output, Id);
+      if (RevengeUsed != false) {
+        output.WriteRawTag(96);
+        output.WriteBool(RevengeUsed);
       }
+      if (RevengeBattle != false) {
+        output.WriteRawTag(104);
+        output.WriteBool(RevengeBattle);
+      }
+      stageResults_.WriteTo(output, _repeated_stageResults_codec);
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
       }
@@ -476,27 +522,39 @@ namespace Ingweland.Fog.Inn.Models.Hoh {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
-      if (player1_ != null) {
+      if (attacker_ != null) {
         output.WriteRawTag(10);
-        output.WriteMessage(Player1);
+        output.WriteMessage(Attacker);
       }
-      if (player2_ != null) {
+      if (target_ != null) {
         output.WriteRawTag(18);
-        output.WriteMessage(Player2);
+        output.WriteMessage(Target);
       }
-      if (PointsDelta != 0L) {
+      if (PointsBefore != 0) {
+        output.WriteRawTag(24);
+        output.WriteInt32(PointsBefore);
+      }
+      if (PointsChange != 0) {
         output.WriteRawTag(32);
-        output.WriteInt64(PointsDelta);
+        output.WriteInt32(PointsChange);
       }
-      player1Units_.WriteTo(ref output, _repeated_player1Units_codec);
-      player2Units_.WriteTo(ref output, _repeated_player2Units_codec);
-      if (performedAt_ != null) {
+      if (EnemyPoints != 0) {
+        output.WriteRawTag(40);
+        output.WriteInt32(EnemyPoints);
+      }
+      if (battleEnded_ != null) {
         output.WriteRawTag(74);
-        output.WriteMessage(PerformedAt);
+        output.WriteMessage(BattleEnded);
       }
-      if (id_ != null) {
-        _single_id_codec.WriteTagAndValue(ref output, Id);
+      if (RevengeUsed != false) {
+        output.WriteRawTag(96);
+        output.WriteBool(RevengeUsed);
       }
+      if (RevengeBattle != false) {
+        output.WriteRawTag(104);
+        output.WriteBool(RevengeBattle);
+      }
+      stageResults_.WriteTo(ref output, _repeated_stageResults_codec);
       if (_unknownFields != null) {
         _unknownFields.WriteTo(ref output);
       }
@@ -507,23 +565,31 @@ namespace Ingweland.Fog.Inn.Models.Hoh {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public int CalculateSize() {
       int size = 0;
-      if (player1_ != null) {
-        size += 1 + pb::CodedOutputStream.ComputeMessageSize(Player1);
+      if (attacker_ != null) {
+        size += 1 + pb::CodedOutputStream.ComputeMessageSize(Attacker);
       }
-      if (player2_ != null) {
-        size += 1 + pb::CodedOutputStream.ComputeMessageSize(Player2);
+      if (target_ != null) {
+        size += 1 + pb::CodedOutputStream.ComputeMessageSize(Target);
       }
-      if (PointsDelta != 0L) {
-        size += 1 + pb::CodedOutputStream.ComputeInt64Size(PointsDelta);
+      if (PointsBefore != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeInt32Size(PointsBefore);
       }
-      size += player1Units_.CalculateSize(_repeated_player1Units_codec);
-      size += player2Units_.CalculateSize(_repeated_player2Units_codec);
-      if (performedAt_ != null) {
-        size += 1 + pb::CodedOutputStream.ComputeMessageSize(PerformedAt);
+      if (PointsChange != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeInt32Size(PointsChange);
       }
-      if (id_ != null) {
-        size += _single_id_codec.CalculateSizeWithTag(Id);
+      if (EnemyPoints != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeInt32Size(EnemyPoints);
       }
+      if (battleEnded_ != null) {
+        size += 1 + pb::CodedOutputStream.ComputeMessageSize(BattleEnded);
+      }
+      if (RevengeUsed != false) {
+        size += 1 + 1;
+      }
+      if (RevengeBattle != false) {
+        size += 1 + 1;
+      }
+      size += stageResults_.CalculateSize(_repeated_stageResults_codec);
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
       }
@@ -532,38 +598,44 @@ namespace Ingweland.Fog.Inn.Models.Hoh {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public void MergeFrom(PvpBattleDto other) {
+    public void MergeFrom(PvpBattleHistoryEntryDTO other) {
       if (other == null) {
         return;
       }
-      if (other.player1_ != null) {
-        if (player1_ == null) {
-          Player1 = new global::Ingweland.Fog.Inn.Models.Hoh.PlayerDto();
+      if (other.attacker_ != null) {
+        if (attacker_ == null) {
+          Attacker = new global::Ingweland.Fog.Inn.Models.Hoh.PlayerDto();
         }
-        Player1.MergeFrom(other.Player1);
+        Attacker.MergeFrom(other.Attacker);
       }
-      if (other.player2_ != null) {
-        if (player2_ == null) {
-          Player2 = new global::Ingweland.Fog.Inn.Models.Hoh.PlayerDto();
+      if (other.target_ != null) {
+        if (target_ == null) {
+          Target = new global::Ingweland.Fog.Inn.Models.Hoh.PlayerDto();
         }
-        Player2.MergeFrom(other.Player2);
+        Target.MergeFrom(other.Target);
       }
-      if (other.PointsDelta != 0L) {
-        PointsDelta = other.PointsDelta;
+      if (other.PointsBefore != 0) {
+        PointsBefore = other.PointsBefore;
       }
-      player1Units_.Add(other.player1Units_);
-      player2Units_.Add(other.player2Units_);
-      if (other.performedAt_ != null) {
-        if (performedAt_ == null) {
-          PerformedAt = new global::Google.Protobuf.WellKnownTypes.Timestamp();
+      if (other.PointsChange != 0) {
+        PointsChange = other.PointsChange;
+      }
+      if (other.EnemyPoints != 0) {
+        EnemyPoints = other.EnemyPoints;
+      }
+      if (other.battleEnded_ != null) {
+        if (battleEnded_ == null) {
+          BattleEnded = new global::Google.Protobuf.WellKnownTypes.Timestamp();
         }
-        PerformedAt.MergeFrom(other.PerformedAt);
+        BattleEnded.MergeFrom(other.BattleEnded);
       }
-      if (other.id_ != null) {
-        if (id_ == null || other.Id != pb::ByteString.Empty) {
-          Id = other.Id;
-        }
+      if (other.RevengeUsed != false) {
+        RevengeUsed = other.RevengeUsed;
       }
+      if (other.RevengeBattle != false) {
+        RevengeBattle = other.RevengeBattle;
+      }
+      stageResults_.Add(other.stageResults_);
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
 
@@ -580,43 +652,48 @@ namespace Ingweland.Fog.Inn.Models.Hoh {
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
           case 10: {
-            if (player1_ == null) {
-              Player1 = new global::Ingweland.Fog.Inn.Models.Hoh.PlayerDto();
+            if (attacker_ == null) {
+              Attacker = new global::Ingweland.Fog.Inn.Models.Hoh.PlayerDto();
             }
-            input.ReadMessage(Player1);
+            input.ReadMessage(Attacker);
             break;
           }
           case 18: {
-            if (player2_ == null) {
-              Player2 = new global::Ingweland.Fog.Inn.Models.Hoh.PlayerDto();
+            if (target_ == null) {
+              Target = new global::Ingweland.Fog.Inn.Models.Hoh.PlayerDto();
             }
-            input.ReadMessage(Player2);
+            input.ReadMessage(Target);
+            break;
+          }
+          case 24: {
+            PointsBefore = input.ReadInt32();
             break;
           }
           case 32: {
-            PointsDelta = input.ReadInt64();
+            PointsChange = input.ReadInt32();
             break;
           }
-          case 58: {
-            player1Units_.AddEntriesFrom(input, _repeated_player1Units_codec);
-            break;
-          }
-          case 66: {
-            player2Units_.AddEntriesFrom(input, _repeated_player2Units_codec);
+          case 40: {
+            EnemyPoints = input.ReadInt32();
             break;
           }
           case 74: {
-            if (performedAt_ == null) {
-              PerformedAt = new global::Google.Protobuf.WellKnownTypes.Timestamp();
+            if (battleEnded_ == null) {
+              BattleEnded = new global::Google.Protobuf.WellKnownTypes.Timestamp();
             }
-            input.ReadMessage(PerformedAt);
+            input.ReadMessage(BattleEnded);
             break;
           }
-          case 82: {
-            pb::ByteString value = _single_id_codec.Read(input);
-            if (id_ == null || value != pb::ByteString.Empty) {
-              Id = value;
-            }
+          case 96: {
+            RevengeUsed = input.ReadBool();
+            break;
+          }
+          case 104: {
+            RevengeBattle = input.ReadBool();
+            break;
+          }
+          case 114: {
+            stageResults_.AddEntriesFrom(input, _repeated_stageResults_codec);
             break;
           }
         }
@@ -635,43 +712,48 @@ namespace Ingweland.Fog.Inn.Models.Hoh {
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
           case 10: {
-            if (player1_ == null) {
-              Player1 = new global::Ingweland.Fog.Inn.Models.Hoh.PlayerDto();
+            if (attacker_ == null) {
+              Attacker = new global::Ingweland.Fog.Inn.Models.Hoh.PlayerDto();
             }
-            input.ReadMessage(Player1);
+            input.ReadMessage(Attacker);
             break;
           }
           case 18: {
-            if (player2_ == null) {
-              Player2 = new global::Ingweland.Fog.Inn.Models.Hoh.PlayerDto();
+            if (target_ == null) {
+              Target = new global::Ingweland.Fog.Inn.Models.Hoh.PlayerDto();
             }
-            input.ReadMessage(Player2);
+            input.ReadMessage(Target);
+            break;
+          }
+          case 24: {
+            PointsBefore = input.ReadInt32();
             break;
           }
           case 32: {
-            PointsDelta = input.ReadInt64();
+            PointsChange = input.ReadInt32();
             break;
           }
-          case 58: {
-            player1Units_.AddEntriesFrom(ref input, _repeated_player1Units_codec);
-            break;
-          }
-          case 66: {
-            player2Units_.AddEntriesFrom(ref input, _repeated_player2Units_codec);
+          case 40: {
+            EnemyPoints = input.ReadInt32();
             break;
           }
           case 74: {
-            if (performedAt_ == null) {
-              PerformedAt = new global::Google.Protobuf.WellKnownTypes.Timestamp();
+            if (battleEnded_ == null) {
+              BattleEnded = new global::Google.Protobuf.WellKnownTypes.Timestamp();
             }
-            input.ReadMessage(PerformedAt);
+            input.ReadMessage(BattleEnded);
             break;
           }
-          case 82: {
-            pb::ByteString value = _single_id_codec.Read(ref input);
-            if (id_ == null || value != pb::ByteString.Empty) {
-              Id = value;
-            }
+          case 96: {
+            RevengeUsed = input.ReadBool();
+            break;
+          }
+          case 104: {
+            RevengeBattle = input.ReadBool();
+            break;
+          }
+          case 114: {
+            stageResults_.AddEntriesFrom(ref input, _repeated_stageResults_codec);
             break;
           }
         }
@@ -679,241 +761,337 @@ namespace Ingweland.Fog.Inn.Models.Hoh {
     }
     #endif
 
-  }
-
-  [global::System.Diagnostics.DebuggerDisplayAttribute("{ToString(),nq}")]
-  public sealed partial class PvpBattlePlayerAllianceDto : pb::IMessage<PvpBattlePlayerAllianceDto>
-  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-      , pb::IBufferMessage
-  #endif
-  {
-    private static readonly pb::MessageParser<PvpBattlePlayerAllianceDto> _parser = new pb::MessageParser<PvpBattlePlayerAllianceDto>(() => new PvpBattlePlayerAllianceDto());
-    private pb::UnknownFieldSet _unknownFields;
+    #region Nested types
+    /// <summary>Container for nested types declared in the PvpBattleHistoryEntryDTO message type.</summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public static pb::MessageParser<PvpBattlePlayerAllianceDto> Parser { get { return _parser; } }
+    public static partial class Types {
+      [global::System.Diagnostics.DebuggerDisplayAttribute("{ToString(),nq}")]
+      public sealed partial class StageResultDTO : pb::IMessage<StageResultDTO>
+      #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+          , pb::IBufferMessage
+      #endif
+      {
+        private static readonly pb::MessageParser<StageResultDTO> _parser = new pb::MessageParser<StageResultDTO>(() => new StageResultDTO());
+        private pb::UnknownFieldSet _unknownFields;
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+        public static pb::MessageParser<StageResultDTO> Parser { get { return _parser; } }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public static pbr::MessageDescriptor Descriptor {
-      get { return global::Ingweland.Fog.Inn.Models.Hoh.PvpBattleHistoryResponseReflection.Descriptor.MessageTypes[2]; }
-    }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    pbr::MessageDescriptor pb::IMessage.Descriptor {
-      get { return Descriptor; }
-    }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public PvpBattlePlayerAllianceDto() {
-      OnConstruction();
-    }
-
-    partial void OnConstruction();
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public PvpBattlePlayerAllianceDto(PvpBattlePlayerAllianceDto other) : this() {
-      playerId_ = other.playerId_;
-      alliance_ = other.alliance_ != null ? other.alliance_.Clone() : null;
-      _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
-    }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public PvpBattlePlayerAllianceDto Clone() {
-      return new PvpBattlePlayerAllianceDto(this);
-    }
-
-    /// <summary>Field number for the "player_id" field.</summary>
-    public const int PlayerIdFieldNumber = 1;
-    private int playerId_;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public int PlayerId {
-      get { return playerId_; }
-      set {
-        playerId_ = value;
-      }
-    }
-
-    /// <summary>Field number for the "alliance" field.</summary>
-    public const int AllianceFieldNumber = 2;
-    private global::Ingweland.Fog.Inn.Models.Hoh.AllianceDto alliance_;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public global::Ingweland.Fog.Inn.Models.Hoh.AllianceDto Alliance {
-      get { return alliance_; }
-      set {
-        alliance_ = value;
-      }
-    }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public override bool Equals(object other) {
-      return Equals(other as PvpBattlePlayerAllianceDto);
-    }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public bool Equals(PvpBattlePlayerAllianceDto other) {
-      if (ReferenceEquals(other, null)) {
-        return false;
-      }
-      if (ReferenceEquals(other, this)) {
-        return true;
-      }
-      if (PlayerId != other.PlayerId) return false;
-      if (!object.Equals(Alliance, other.Alliance)) return false;
-      return Equals(_unknownFields, other._unknownFields);
-    }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public override int GetHashCode() {
-      int hash = 1;
-      if (PlayerId != 0) hash ^= PlayerId.GetHashCode();
-      if (alliance_ != null) hash ^= Alliance.GetHashCode();
-      if (_unknownFields != null) {
-        hash ^= _unknownFields.GetHashCode();
-      }
-      return hash;
-    }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public override string ToString() {
-      return pb::JsonFormatter.ToDiagnosticString(this);
-    }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public void WriteTo(pb::CodedOutputStream output) {
-    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-      output.WriteRawMessage(this);
-    #else
-      if (PlayerId != 0) {
-        output.WriteRawTag(8);
-        output.WriteInt32(PlayerId);
-      }
-      if (alliance_ != null) {
-        output.WriteRawTag(18);
-        output.WriteMessage(Alliance);
-      }
-      if (_unknownFields != null) {
-        _unknownFields.WriteTo(output);
-      }
-    #endif
-    }
-
-    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
-      if (PlayerId != 0) {
-        output.WriteRawTag(8);
-        output.WriteInt32(PlayerId);
-      }
-      if (alliance_ != null) {
-        output.WriteRawTag(18);
-        output.WriteMessage(Alliance);
-      }
-      if (_unknownFields != null) {
-        _unknownFields.WriteTo(ref output);
-      }
-    }
-    #endif
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public int CalculateSize() {
-      int size = 0;
-      if (PlayerId != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeInt32Size(PlayerId);
-      }
-      if (alliance_ != null) {
-        size += 1 + pb::CodedOutputStream.ComputeMessageSize(Alliance);
-      }
-      if (_unknownFields != null) {
-        size += _unknownFields.CalculateSize();
-      }
-      return size;
-    }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public void MergeFrom(PvpBattlePlayerAllianceDto other) {
-      if (other == null) {
-        return;
-      }
-      if (other.PlayerId != 0) {
-        PlayerId = other.PlayerId;
-      }
-      if (other.alliance_ != null) {
-        if (alliance_ == null) {
-          Alliance = new global::Ingweland.Fog.Inn.Models.Hoh.AllianceDto();
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+        public static pbr::MessageDescriptor Descriptor {
+          get { return global::Ingweland.Fog.Inn.Models.Hoh.PvpBattleHistoryEntryDTO.Descriptor.NestedTypes[0]; }
         }
-        Alliance.MergeFrom(other.Alliance);
-      }
-      _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
-    }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public void MergeFrom(pb::CodedInputStream input) {
-    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-      input.ReadRawMessage(this);
-    #else
-      uint tag;
-      while ((tag = input.ReadTag()) != 0) {
-        switch(tag) {
-          default:
-            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
-            break;
-          case 8: {
-            PlayerId = input.ReadInt32();
-            break;
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+        pbr::MessageDescriptor pb::IMessage.Descriptor {
+          get { return Descriptor; }
+        }
+
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+        public StageResultDTO() {
+          OnConstruction();
+        }
+
+        partial void OnConstruction();
+
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+        public StageResultDTO(StageResultDTO other) : this() {
+          playerUnits_ = other.playerUnits_.Clone();
+          enemyUnits_ = other.enemyUnits_.Clone();
+          BattleId = other.BattleId;
+          won_ = other.won_;
+          pointChange_ = other.pointChange_;
+          _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
+        }
+
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+        public StageResultDTO Clone() {
+          return new StageResultDTO(this);
+        }
+
+        /// <summary>Field number for the "player_units" field.</summary>
+        public const int PlayerUnitsFieldNumber = 2;
+        private static readonly pb::FieldCodec<global::Ingweland.Fog.Inn.Models.Hoh.BattleSquadDto> _repeated_playerUnits_codec
+            = pb::FieldCodec.ForMessage(18, global::Ingweland.Fog.Inn.Models.Hoh.BattleSquadDto.Parser);
+        private readonly pbc::RepeatedField<global::Ingweland.Fog.Inn.Models.Hoh.BattleSquadDto> playerUnits_ = new pbc::RepeatedField<global::Ingweland.Fog.Inn.Models.Hoh.BattleSquadDto>();
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+        public pbc::RepeatedField<global::Ingweland.Fog.Inn.Models.Hoh.BattleSquadDto> PlayerUnits {
+          get { return playerUnits_; }
+        }
+
+        /// <summary>Field number for the "enemy_units" field.</summary>
+        public const int EnemyUnitsFieldNumber = 3;
+        private static readonly pb::FieldCodec<global::Ingweland.Fog.Inn.Models.Hoh.BattleSquadDto> _repeated_enemyUnits_codec
+            = pb::FieldCodec.ForMessage(26, global::Ingweland.Fog.Inn.Models.Hoh.BattleSquadDto.Parser);
+        private readonly pbc::RepeatedField<global::Ingweland.Fog.Inn.Models.Hoh.BattleSquadDto> enemyUnits_ = new pbc::RepeatedField<global::Ingweland.Fog.Inn.Models.Hoh.BattleSquadDto>();
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+        public pbc::RepeatedField<global::Ingweland.Fog.Inn.Models.Hoh.BattleSquadDto> EnemyUnits {
+          get { return enemyUnits_; }
+        }
+
+        /// <summary>Field number for the "battle_id" field.</summary>
+        public const int BattleIdFieldNumber = 4;
+        private static readonly pb::FieldCodec<pb::ByteString> _single_battleId_codec = pb::FieldCodec.ForClassWrapper<pb::ByteString>(34);
+        private pb::ByteString battleId_;
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+        public pb::ByteString BattleId {
+          get { return battleId_; }
+          set {
+            battleId_ = value;
           }
-          case 18: {
-            if (alliance_ == null) {
-              Alliance = new global::Ingweland.Fog.Inn.Models.Hoh.AllianceDto();
+        }
+
+
+        /// <summary>Field number for the "won" field.</summary>
+        public const int WonFieldNumber = 5;
+        private bool won_;
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+        public bool Won {
+          get { return won_; }
+          set {
+            won_ = value;
+          }
+        }
+
+        /// <summary>Field number for the "point_change" field.</summary>
+        public const int PointChangeFieldNumber = 6;
+        private int pointChange_;
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+        public int PointChange {
+          get { return pointChange_; }
+          set {
+            pointChange_ = value;
+          }
+        }
+
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+        public override bool Equals(object other) {
+          return Equals(other as StageResultDTO);
+        }
+
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+        public bool Equals(StageResultDTO other) {
+          if (ReferenceEquals(other, null)) {
+            return false;
+          }
+          if (ReferenceEquals(other, this)) {
+            return true;
+          }
+          if(!playerUnits_.Equals(other.playerUnits_)) return false;
+          if(!enemyUnits_.Equals(other.enemyUnits_)) return false;
+          if (BattleId != other.BattleId) return false;
+          if (Won != other.Won) return false;
+          if (PointChange != other.PointChange) return false;
+          return Equals(_unknownFields, other._unknownFields);
+        }
+
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+        public override int GetHashCode() {
+          int hash = 1;
+          hash ^= playerUnits_.GetHashCode();
+          hash ^= enemyUnits_.GetHashCode();
+          if (battleId_ != null) hash ^= BattleId.GetHashCode();
+          if (Won != false) hash ^= Won.GetHashCode();
+          if (PointChange != 0) hash ^= PointChange.GetHashCode();
+          if (_unknownFields != null) {
+            hash ^= _unknownFields.GetHashCode();
+          }
+          return hash;
+        }
+
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+        public override string ToString() {
+          return pb::JsonFormatter.ToDiagnosticString(this);
+        }
+
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+        public void WriteTo(pb::CodedOutputStream output) {
+        #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+          output.WriteRawMessage(this);
+        #else
+          playerUnits_.WriteTo(output, _repeated_playerUnits_codec);
+          enemyUnits_.WriteTo(output, _repeated_enemyUnits_codec);
+          if (battleId_ != null) {
+            _single_battleId_codec.WriteTagAndValue(output, BattleId);
+          }
+          if (Won != false) {
+            output.WriteRawTag(40);
+            output.WriteBool(Won);
+          }
+          if (PointChange != 0) {
+            output.WriteRawTag(48);
+            output.WriteInt32(PointChange);
+          }
+          if (_unknownFields != null) {
+            _unknownFields.WriteTo(output);
+          }
+        #endif
+        }
+
+        #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+        void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
+          playerUnits_.WriteTo(ref output, _repeated_playerUnits_codec);
+          enemyUnits_.WriteTo(ref output, _repeated_enemyUnits_codec);
+          if (battleId_ != null) {
+            _single_battleId_codec.WriteTagAndValue(ref output, BattleId);
+          }
+          if (Won != false) {
+            output.WriteRawTag(40);
+            output.WriteBool(Won);
+          }
+          if (PointChange != 0) {
+            output.WriteRawTag(48);
+            output.WriteInt32(PointChange);
+          }
+          if (_unknownFields != null) {
+            _unknownFields.WriteTo(ref output);
+          }
+        }
+        #endif
+
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+        public int CalculateSize() {
+          int size = 0;
+          size += playerUnits_.CalculateSize(_repeated_playerUnits_codec);
+          size += enemyUnits_.CalculateSize(_repeated_enemyUnits_codec);
+          if (battleId_ != null) {
+            size += _single_battleId_codec.CalculateSizeWithTag(BattleId);
+          }
+          if (Won != false) {
+            size += 1 + 1;
+          }
+          if (PointChange != 0) {
+            size += 1 + pb::CodedOutputStream.ComputeInt32Size(PointChange);
+          }
+          if (_unknownFields != null) {
+            size += _unknownFields.CalculateSize();
+          }
+          return size;
+        }
+
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+        public void MergeFrom(StageResultDTO other) {
+          if (other == null) {
+            return;
+          }
+          playerUnits_.Add(other.playerUnits_);
+          enemyUnits_.Add(other.enemyUnits_);
+          if (other.battleId_ != null) {
+            if (battleId_ == null || other.BattleId != pb::ByteString.Empty) {
+              BattleId = other.BattleId;
             }
-            input.ReadMessage(Alliance);
-            break;
           }
+          if (other.Won != false) {
+            Won = other.Won;
+          }
+          if (other.PointChange != 0) {
+            PointChange = other.PointChange;
+          }
+          _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
         }
-      }
-    #endif
-    }
 
-    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
-      uint tag;
-      while ((tag = input.ReadTag()) != 0) {
-        switch(tag) {
-          default:
-            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
-            break;
-          case 8: {
-            PlayerId = input.ReadInt32();
-            break;
-          }
-          case 18: {
-            if (alliance_ == null) {
-              Alliance = new global::Ingweland.Fog.Inn.Models.Hoh.AllianceDto();
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+        public void MergeFrom(pb::CodedInputStream input) {
+        #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+          input.ReadRawMessage(this);
+        #else
+          uint tag;
+          while ((tag = input.ReadTag()) != 0) {
+            switch(tag) {
+              default:
+                _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
+                break;
+              case 18: {
+                playerUnits_.AddEntriesFrom(input, _repeated_playerUnits_codec);
+                break;
+              }
+              case 26: {
+                enemyUnits_.AddEntriesFrom(input, _repeated_enemyUnits_codec);
+                break;
+              }
+              case 34: {
+                pb::ByteString value = _single_battleId_codec.Read(input);
+                if (battleId_ == null || value != pb::ByteString.Empty) {
+                  BattleId = value;
+                }
+                break;
+              }
+              case 40: {
+                Won = input.ReadBool();
+                break;
+              }
+              case 48: {
+                PointChange = input.ReadInt32();
+                break;
+              }
             }
-            input.ReadMessage(Alliance);
-            break;
+          }
+        #endif
+        }
+
+        #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+        void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
+          uint tag;
+          while ((tag = input.ReadTag()) != 0) {
+            switch(tag) {
+              default:
+                _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
+                break;
+              case 18: {
+                playerUnits_.AddEntriesFrom(ref input, _repeated_playerUnits_codec);
+                break;
+              }
+              case 26: {
+                enemyUnits_.AddEntriesFrom(ref input, _repeated_enemyUnits_codec);
+                break;
+              }
+              case 34: {
+                pb::ByteString value = _single_battleId_codec.Read(ref input);
+                if (battleId_ == null || value != pb::ByteString.Empty) {
+                  BattleId = value;
+                }
+                break;
+              }
+              case 40: {
+                Won = input.ReadBool();
+                break;
+              }
+              case 48: {
+                PointChange = input.ReadInt32();
+                break;
+              }
+            }
           }
         }
+        #endif
+
       }
+
     }
-    #endif
+    #endregion
 
   }
 

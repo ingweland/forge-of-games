@@ -8,22 +8,27 @@ import "battle_squad_dto.proto";
 option csharp_namespace = "Ingweland.Fog.Inn.Models.Hoh";
 
 message PvpBattleHistoryResponse {
-  repeated PvpBattleDto battles = 1;
-  repeated PvpBattlePlayerAllianceDto players_to_alliances = 2;
+  repeated PvpBattleHistoryEntryDTO history = 1;
+  map<int32, AllianceDto> alliance_by_player_id = 2;
 }
 
-message PvpBattleDto {
-  PlayerDto player1 = 1; 
-  PlayerDto player2 = 2; 
-  int64 points_delta = 4;
-  repeated BattleSquadDto player1_units = 7;
-  repeated BattleSquadDto player2_units = 8;
-  google.protobuf.Timestamp performed_at = 9;
-  google.protobuf.BytesValue id = 10;
-}
+message PvpBattleHistoryEntryDTO {
+  message StageResultDTO {
+    repeated BattleSquadDto player_units = 2;
+    repeated BattleSquadDto enemy_units = 3;
+    google.protobuf.BytesValue battle_id = 4;
+    bool won = 5;
+    int32 point_change = 6;
+  }
 
-message PvpBattlePlayerAllianceDto {
-  int32 player_id = 1;
-  AllianceDto alliance = 2;
+  PlayerDto attacker = 1;
+  PlayerDto target = 2;
+  int32 points_before = 3;
+  int32 points_change = 4;
+  int32 enemy_points = 5;
+  google.protobuf.Timestamp battle_ended = 9;
+  bool revenge_used = 12;
+  bool revenge_battle = 13;
+  repeated StageResultDTO stage_results = 14;
 }
 

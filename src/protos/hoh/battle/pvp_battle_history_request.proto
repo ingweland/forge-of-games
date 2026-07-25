@@ -1,0 +1,8 @@
+syntax = "proto3";
+
+option csharp_namespace = "Ingweland.Fog.Inn.Models.Hoh";
+
+message PvpBattleHistoryRequest {
+  int64 event_id = 2;
+  string pvp_event_component_id = 3;
+}

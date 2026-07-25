@@ -192,34 +192,24 @@ public class DataParsingService(IMapper mapper) : IDataParsingService
             throw new InvalidOperationException(msg, ex);
         }
 
-        var battlesOwner = GetPvpBattlesOwner(battlesDto.Battles);
-
-        if (battlesOwner == -1)
-        {
-            const string msg = "Could not identify the owner of pvp battles";
-            throw new InvalidOperationException(msg);
-        }
-
-        return (from battleDto in battlesDto.Battles
-            let player1IsOwner = battleDto.Player1.Id == battlesOwner
-            let isVictory = battleDto.PointsDelta > 0
-            let isPlayer1Winner = (player1IsOwner && isVictory) || (!player1IsOwner && !isVictory)
-            let winnerDto = isPlayer1Winner ? battleDto.Player1 : battleDto.Player2
-            let winnerUnitsDto = isPlayer1Winner ? battleDto.Player1Units : battleDto.Player2Units
-            let loserDto = isPlayer1Winner ? battleDto.Player2 : battleDto.Player1
-            let loserUnitsDto = isPlayer1Winner ? battleDto.Player2Units : battleDto.Player1Units
+        return (from battleDto in battlesDto.History
+            let firstResult = battleDto.StageResults.First()
+            let winnerDto = firstResult.Won ? battleDto.Attacker : battleDto.Target
+            let winnerUnitsDto = firstResult.Won ? firstResult.PlayerUnits : firstResult.EnemyUnits
+            let loserDto = firstResult.Won ? battleDto.Target : battleDto.Attacker
+            let loserUnitsDto = firstResult.Won ? firstResult.EnemyUnits : firstResult.PlayerUnits
             let winner = mapper.Map<HohPlayer>(winnerDto)
             let winnerUnits = mapper.Map<IReadOnlyCollection<BattleSquad>>(winnerUnitsDto)
             let loser = mapper.Map<HohPlayer>(loserDto)
             let loserUnits = mapper.Map<IReadOnlyCollection<BattleSquad>>(loserUnitsDto)
             select new PvpBattle
             {
-                Id = battleDto.Id.ToByteArray(),
+                Id = firstResult.BattleId.ToByteArray(),
                 Winner = winner,
                 Loser = loser,
                 WinnerUnits = winnerUnits,
                 LoserUnits = loserUnits,
-                PerformedAt = battleDto.PerformedAt.ToDateTime(),
+                PerformedAt = battleDto.BattleEnded.ToDateTime(),
             }).ToList();
     }
 
@@ -297,27 +287,5 @@ public class DataParsingService(IMapper mapper) : IDataParsingService
         return communicationDto.Value.HasError
             ? Result.Fail<T>(new HohSoftError(communicationDto.Value.Error))
             : communicationDto.Value.Response.FindAndUnpackToResult<T>();
-    }
-
-    private int GetPvpBattlesOwner(IList<PvpBattleDto> battles)
-    {
-        if (battles.Count == 0)
-        {
-            return -1;
-        }
-
-        var grouped = battles
-            .SelectMany(b => new[] {b.Player1.Id, b.Player2.Id})
-            .GroupBy(n => n)
-            .ToDictionary(g => g.Key, g => g.Count());
-
-        var max = grouped.MaxBy(kvp => kvp.Value);
-
-        if (grouped.Count(kvp => kvp.Value == max.Value) > 1)
-        {
-            return -1;
-        }
-
-        return max.Key;
     }
 }
