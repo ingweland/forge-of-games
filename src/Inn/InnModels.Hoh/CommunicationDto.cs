@@ -60,6 +60,8 @@ public sealed partial class CommunicationDto
         }
     }
 
+    public StartupPlayerDTO Player => RootContext.Messages.FindAndUnpack<StartupPlayerDTO>();
+
     public PlayerRanksDTO PlayerRanks => Response.FindAndUnpack<PlayerRanksDTO>();
 
     public PvpBattleHistoryResponse PvpBattleHistoryResponse => Response.FindAndUnpack<PvpBattleHistoryResponse>();

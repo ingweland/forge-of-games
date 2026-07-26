@@ -1,0 +1,27 @@
+syntax = "proto3";
+
+import "google/protobuf/timestamp.proto";
+
+option csharp_namespace = "Ingweland.Fog.Inn.Models.Hoh";
+
+message StartupPlayerDTO {
+  int64 id = 1;
+  string username = 2;
+  string display_name = 3;
+  // repeated UnlockedCityDTO unlocked_cities = 4;
+  PlayerSpecificDTO player_specific = 5;
+  string current_age = 6;
+  int64 random_seed = 8;
+  repeated string finished_tutorials = 9;
+  google.protobuf.Timestamp registration_date = 10;
+  google.protobuf.Timestamp last_login = 11;
+  int32 portrait_id = 12;
+  bool receives_alliance_invites = 13;
+  bool is_payer = 14;
+  repeated string finished_stories = 15;
+  bool public1_on1_allowed = 16;
+}
+
+message PlayerSpecificDTO {
+  repeated string unlocked_goods = 1;
+}

@@ -31,10 +31,11 @@ public class PlayerHeroesProcessor(
         {
             logger.LogInformation("Processing game world {gameWorldId}", gameWorld.Id);
 
-            var data = await GetDataAsync(InGameRawDataTablePartitionKeyProvider.HeroesWakeup(gameWorld.Id, date),
-                dataPage);
             var allUnits = new Dictionary<int, HashSet<string>>();
             var allHeroes = new Dictionary<int, HashSet<string>>();
+
+            var data = await GetDataAsync(InGameRawDataTablePartitionKeyProvider.HeroesWakeup(gameWorld.Id, date),
+                dataPage);
             foreach (var valueTuple in data)
             {
                 foreach (var inGameEvent in valueTuple.CommunicationDto.InGameEvents)
@@ -47,14 +48,7 @@ public class PlayerHeroesProcessor(
 
                         foreach (var kvp in units)
                         {
-                            if (!allUnits.TryGetValue(kvp.Key, out var existing))
-                            {
-                                allUnits[kvp.Key] = new HashSet<string>(kvp.Value);
-                            }
-                            else
-                            {
-                                existing.UnionWith(kvp.Value);
-                            }
+                            Merge(allUnits, kvp.Key, kvp.Value);
                         }
                     }
                 }
@@ -66,14 +60,23 @@ public class PlayerHeroesProcessor(
                         g => g.SelectMany(x => x.Heroes).Select(y => y.HeroDefinitionId).ToHashSet());
                 foreach (var kvp in heroes)
                 {
-                    if (!allHeroes.TryGetValue(kvp.Key, out var existing))
-                    {
-                        allHeroes[kvp.Key] = new HashSet<string>(kvp.Value);
-                    }
-                    else
-                    {
-                        existing.UnionWith(kvp.Value);
-                    }
+                    Merge(allHeroes, kvp.Key, kvp.Value);
+                }
+            }
+
+            var startupData =
+                await GetDataAsync(InGameRawDataTablePartitionKeyProvider.HeroesStartup(gameWorld.Id, date), dataPage);
+            foreach (var valueTuple in startupData)
+            {
+                try
+                {
+                    Merge(allHeroes, (int) valueTuple.CommunicationDto.Player.Id,
+                        valueTuple.CommunicationDto.HeroPush.Unlocked.Select(x => x.HeroId));
+                }
+                catch (Exception e)
+                {
+                    logger.LogError(e, "Error extracting startup heroes from data collected on {collectedAt}",
+                        valueTuple.CollectedAt);
                 }
             }
 
@@ -86,5 +89,17 @@ public class PlayerHeroesProcessor(
         }
 
         return HasMoreData;
+    }
+
+    private static void Merge(Dictionary<int, HashSet<string>> target, int key, IEnumerable<string> values)
+    {
+        if (!target.TryGetValue(key, out var existing))
+        {
+            target[key] = new HashSet<string>(values);
+        }
+        else
+        {
+            existing.UnionWith(values);
+        }
     }
 }
