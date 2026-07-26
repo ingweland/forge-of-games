@@ -1,0 +1,63 @@
+syntax = "proto3";
+
+import "google/protobuf/timestamp.proto";
+import "player_dto.proto";
+
+option csharp_namespace = "Ingweland.Fog.Inn.Models.Hoh";
+
+message WoAAlliancePush {
+  int32 event_id = 1;
+  int32 alliance_id = 2;
+  google.protobuf.Timestamp version = 3;
+  float victory_points = 10;
+  float victory_points_generation_rate = 11;
+  google.protobuf.Timestamp last_victory_points_generation = 12;
+}
+
+message WoADivisionPush {
+  int32 event_id = 1;
+  int32 division_id = 2;
+  repeated int32 alliance_ids = 10;
+  map<int32, double> elo_rating_by_alliance_id = 11;
+  map<int32, double> expected_vp_share_by_alliance_id = 12;
+  map<int32, int32> enrolled_members_by_alliance_id = 13;
+  map<int32, double> elo_delta_by_alliance_id = 14;
+}
+
+message WoAGetPlayerStatsRequest {
+  int32 event_id = 1;
+}
+
+message WoAGetPlayerStatsResponse {
+  repeated WoAPlayerStatsDTO entries = 1;
+}
+
+message WoAPlayerStatsDTO {
+  PlayerDto player = 1;
+  float victory_points = 2;
+  int32 won_attacks = 3;
+  int32 won_defenses = 4;
+  int32 repairs_started = 5;
+  int64 contribution_points = 6;
+  int32 event_id = 7;
+  google.protobuf.Timestamp contribution_points_gained_at = 8;
+  int32 healing_done = 9;
+  int32 lost_attacks = 10;
+}
+
+message WoAHeroRosterPush {
+  int64 event_id = 1;
+  int32 player_id = 2;
+  google.protobuf.Timestamp version = 3;
+  repeated WoAHeroDTO heroes = 10;
+}
+
+message WoAHeroDTO {
+  google.protobuf.Timestamp version = 1;
+  string hero_definition_id = 2;
+  float stored_stat_value = 3;
+  google.protobuf.Timestamp regen_starting_at = 4;
+  bool knocked_out = 5;
+  int32 stationed_in_poi = 6;
+  google.protobuf.Timestamp stationed_until = 7;
+}
