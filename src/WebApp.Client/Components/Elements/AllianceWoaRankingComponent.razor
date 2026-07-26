@@ -27,6 +27,23 @@
             <img class="value-icon" src="@AssetUrlProvider.GetHohIconUrl("woa_victory_points")"/>
             <span> @Ranking.VictoryPointsFormatted</span>
         </div>
+        @if (Ranking.CurrentVictoryPointsShareFormatted != null)
+        {
+            <div class="v-divider"></div>
+            <div class="value-container">
+                <img class="value-icon" src="@AssetUrlProvider.GetHohIconUrl("woa_victory_points")"/>
+                <div class="shares-container">
+                    <span class="share-value @(Ranking.VictoryPointsShareComparison > 0
+                                                 ? "positive"
+                                                 : Ranking.VictoryPointsShareComparison < 0
+                                                     ? "negative"
+                                                     : "")">
+                        @Ranking.CurrentVictoryPointsShareFormatted
+                    </span>
+                    <span class="share-value">@Ranking.ExpectedVictoryPointsShareFormatted</span>
+                </div>
+            </div>
+        }
     </div>
 </div>
 

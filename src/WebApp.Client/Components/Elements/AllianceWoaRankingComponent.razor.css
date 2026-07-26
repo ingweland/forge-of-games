@@ -76,6 +76,25 @@
     color: var(--fog-negative-color);
 }
 
+.shares-container {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    line-height: 1;
+}
+
+.share-value {
+    font-size: 10px;
+}
+
+.share-value.positive {
+    color: var(--fog-positive-color);
+}
+
+.share-value.negative {
+    color: var(--fog-negative-color);
+}
+
 .league-name {
     color: var(--fog-text-on-container-color);
 }
@@ -132,6 +151,10 @@
     }
 
     .value-delta {
+        font-size: 12px;
+    }
+
+    .share-value {
         font-size: 12px;
     }
 

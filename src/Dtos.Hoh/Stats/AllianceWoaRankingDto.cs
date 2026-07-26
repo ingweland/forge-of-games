@@ -5,6 +5,9 @@ namespace Ingweland.Fog.Dtos.Hoh.Stats;
 
 public class AllianceWoaRankingDto
 {
+    [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
+    public double? CurrentVictoryPointsShare { get; init; }
+
     [JsonIgnore(Condition = JsonIgnoreCondition.Never)]
     public required int DivisionId { get; init; }
 
@@ -18,6 +21,9 @@ public class AllianceWoaRankingDto
 
     [JsonIgnore(Condition = JsonIgnoreCondition.Never)]
     public required int EventId { get; init; }
+
+    [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
+    public double? ExpectedVictoryPointsShare { get; init; }
 
     [JsonIgnore(Condition = JsonIgnoreCondition.Never)]
     public required DateTime StartedAt { get; init; }

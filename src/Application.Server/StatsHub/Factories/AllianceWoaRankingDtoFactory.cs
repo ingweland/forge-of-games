@@ -6,7 +6,8 @@ namespace Ingweland.Fog.Application.Server.StatsHub.Factories;
 
 public class AllianceWoaRankingDtoFactory(IWoaTierHelper tierHelper) : IAllianceWoaRankingDtoFactory
 {
-    public AllianceWoaRankingDto Create(AllianceWoaRanking entity, InGameEventEntity inGameEvent)
+    public AllianceWoaRankingDto Create(AllianceWoaRanking entity, InGameEventEntity inGameEvent,
+        double? expectedVictoryPointsShare = null, double? currentVictoryPointsShare = null)
     {
         return new AllianceWoaRankingDto
         {
@@ -18,6 +19,12 @@ public class AllianceWoaRankingDtoFactory(IWoaTierHelper tierHelper) : IAlliance
             StartedAt = inGameEvent.StartAt,
             EndedAt = inGameEvent.EndAt,
             Tier = tierHelper.GetTier(entity.EloRating),
+            ExpectedVictoryPointsShare = expectedVictoryPointsShare.HasValue
+                ? Math.Round(expectedVictoryPointsShare.Value, 3)
+                : null,
+            CurrentVictoryPointsShare = currentVictoryPointsShare.HasValue
+                ? Math.Round(currentVictoryPointsShare.Value, 3)
+                : null,
         };
     }
 }
