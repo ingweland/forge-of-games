@@ -1,9 +1,36 @@
 syntax = "proto3";
 
 import "google/protobuf/timestamp.proto";
+import "google/protobuf/duration.proto";
 import "player_dto.proto";
+import "battle_squad_dto.proto";
 
 option csharp_namespace = "Ingweland.Fog.Inn.Models.Hoh";
+
+enum WoAPoiSlotStateDTO {
+  EMPTY = 0;
+  GARRISONED = 1;
+  GARRISONED_NPC = 2;
+  BREACHED = 3;
+  REPAIRING = 4;
+  REPAIRED_SHIELD = 5;
+  REPAIRED_SHIELD_GARRISONED = 6;
+  ABANDONED = 7;
+}
+
+enum WoABattleLogTypeDTO {
+  UNKNOWN = 0;
+  DAMAGED_ENEMIES = 1;
+  SLOT_BREACHED = 2;
+  DEFENSE_WON = 3;
+  SLOT_BREACHED_DEFENSE = 4;
+  SLOT_GARRISONED = 5;
+  HEALED_HEROES = 6;
+  REPAIR_STARTED = 7;
+  POI_CAPTURED = 8;
+  POI_LOST = 9;
+  SLOT_WITHDRAWN = 10;
+}
 
 message WoAAlliancePush {
   int32 event_id = 1;
@@ -60,4 +87,96 @@ message WoAHeroDTO {
   bool knocked_out = 5;
   int32 stationed_in_poi = 6;
   google.protobuf.Timestamp stationed_until = 7;
+}
+
+message WoAPoiPush {
+  int64 event_id = 1;
+  int64 division_id = 2;
+  int32 poi_index = 3;
+  google.protobuf.Timestamp version = 4;
+  string poi_definition_id = 10;
+  int64 controlled_by_alliance_id = 11;
+  repeated WoAPoiSlotDTO slots = 12;
+  google.protobuf.Timestamp conquered_at = 15;
+  WoAMarkerDTO marker = 16;
+}
+
+message WoAMarkerDTO {
+  string marker_definition_id = 1;
+  google.protobuf.Timestamp marker_set_at = 2;
+  int32 marker_set_by = 3;
+  string text = 4;
+}
+
+message WoAPoiSlotDTO {
+  google.protobuf.Timestamp version = 1;
+  google.protobuf.Timestamp state_set_at = 2;
+  WoAPoiSlotStateDTO state = 3;
+  repeated WoAStationedHeroDTO heroes = 4;
+  int64 breached_by_alliance_id = 5;
+  google.protobuf.Timestamp breached_at = 6;
+  google.protobuf.Timestamp shielded_until = 7;
+  WoAPoiSlotStateDTO base_state = 8;
+}
+
+message WoAStationedHeroDTO {
+  int32 player_id = 1;
+  string hero_definition_id = 2;
+  BattleSquadDto hero_and_support_unit = 3;
+  float current_hp = 4;
+}
+
+message WoAPoiDefinitionDTO {
+  string id = 1;
+  google.protobuf.Duration unlock_after = 2;
+  google.protobuf.Duration vp_generation_interval = 3;
+  float vp_generation_amount = 4;
+  int32 slots = 5;
+  float vp_for_victory = 6;
+  float vp_for_defense_victory = 7;
+  float vp_for_conquering = 8;
+  string asset_id = 14;
+}
+
+message WoAMarkerDefinitionDTO {
+  string id = 1;
+}
+
+message WoAPoiPositionDTO {
+  WoAPoiDefinitionDTO poi = 1;
+  int32 index = 2;
+  repeated int32 reachable_pois = 3;
+  int32 x = 4;
+  int32 y = 5;
+  int32 initial_owner = 6;
+  int32 asset_variant_index = 7;
+  string display_id = 8;
+  repeated float region_points = 9;
+}
+
+message WoAMapDefinitionDTO {
+  string id = 1;
+  repeated WoAPoiPositionDTO poi_positions = 2;
+  int32 grid_rows = 3;
+  int32 grid_columns = 4;
+}
+
+message WoABattleLogRequest {
+  int64 event_id = 1;
+  google.protobuf.Timestamp before = 2;
+  int32 page_size = 3;
+}
+
+message WoABattleLogResponse {
+  repeated WoABattleLogEntryDTO entries = 1;
+}
+
+message WoABattleLogEntryDTO {
+  int64 id = 1;
+  google.protobuf.Timestamp created_at = 2;
+  WoABattleLogTypeDTO log_type = 3;
+  int32 player_id = 4;
+  int32 poi_index = 5;
+  int32 opponent_player_id = 6;
+  int64 opponent_alliance_id = 7;
 }
