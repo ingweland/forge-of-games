@@ -10,15 +10,16 @@ public static class AnyHelper
 {
     public static T FindAndUnpack<T>(this RepeatedField<Any> items) where T : IMessage<T>, new()
     {
-        var message = new T();
-        var unpacked = items
-            .Where(item => Any.GetTypeName(item.TypeUrl) == message.Descriptor.Name)
-            .Select(item => item.Unpack<T>())
-            .ToList();
+        return items.FindAndUnpack<T>(TypeName<T>.Value);
+    }
+
+    public static T FindAndUnpack<T>(this RepeatedField<Any> items, string typeName) where T : IMessage<T>, new()
+    {
+        var unpacked = items.FindAndUnpackToList<T>(typeName);
         if (unpacked.Count != 1)
         {
-            throw new InvalidOperationException($"Expected exactly one instance of {message.Descriptor.Name
-            }, but found {unpacked.Count}.");
+            throw new InvalidOperationException($"Expected exactly one instance of {typeName}, but found {unpacked.Count
+            }.");
         }
 
         return unpacked[0];
@@ -26,11 +27,7 @@ public static class AnyHelper
 
     public static IList<T> FindAndUnpackToList<T>(this RepeatedField<Any> items) where T : IMessage<T>, new()
     {
-        var message = new T();
-        return items
-            .Where(item => Any.GetTypeName(item.TypeUrl) == message.Descriptor.Name)
-            .Select(item => item.Unpack<T>())
-            .ToList();
+        return items.FindAndUnpackToList<T>(TypeName<T>.Value);
     }
 
     public static IList<T> FindAndUnpackToList<T>(this RepeatedField<Any> items, string typeName)
@@ -75,5 +72,10 @@ public static class AnyHelper
     public static bool Contains<T>(this RepeatedField<Any> items) where T : IMessage<T>, new()
     {
         return items.Any(item => Any.GetTypeName(item.TypeUrl) == new T().Descriptor.Name);
+    }
+
+    private static class TypeName<T> where T : IMessage<T>, new()
+    {
+        public static readonly string Value = new T().Descriptor.Name;
     }
 }

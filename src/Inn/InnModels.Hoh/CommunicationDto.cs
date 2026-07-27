@@ -60,7 +60,7 @@ public sealed partial class CommunicationDto
         }
     }
 
-    public StartupPlayerDTO Player => RootContext.Messages.FindAndUnpack<StartupPlayerDTO>();
+    public StartupPlayerDTO Player => RootContext.Messages.FindAndUnpack<StartupPlayerDTO>("PlayerDTO");
 
     public PlayerRanksDTO PlayerRanks => Response.FindAndUnpack<PlayerRanksDTO>();
 
