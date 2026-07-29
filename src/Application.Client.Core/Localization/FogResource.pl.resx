@@ -1604,4 +1604,7 @@ Forge of Games nie jest powiązany ani oficjalnie związany z twórcami lub wyda
     <data name="StatsHub.Worlds.TopWoaPlayersListTitle" xml:space="preserve">
     <value>Gracze Atlantydy na {0}</value>
 </data>
+    <data name="Common.Premium" xml:space="preserve">
+    <value>Premium</value>
+</data>
 </root>

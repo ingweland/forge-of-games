@@ -5,6 +5,10 @@
     position: relative;
 }
 
+.command-center-card.premium {
+    border: 4px solid var(--fog-accent-color);
+}
+
 .main-container {
     display: flex;
     flex-direction: column;

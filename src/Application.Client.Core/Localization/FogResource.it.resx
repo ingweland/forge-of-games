@@ -1604,4 +1604,7 @@ Forge of Games non è affiliato né ufficialmente connesso ai creatori o editori
     <data name="StatsHub.Worlds.TopWoaPlayersListTitle" xml:space="preserve">
     <value>Giocatori di Atlantide su {0}</value>
 </data>
+    <data name="Common.Premium" xml:space="preserve">
+    <value>Premium</value>
+</data>
 </root>

@@ -1575,4 +1575,7 @@
     <data name="StatsHub.Worlds.TopWoaPlayersListTitle" xml:space="preserve">
     <value>{0}의 아틀란티스 플레이어</value>
 </data>
+    <data name="Common.Premium" xml:space="preserve">
+    <value>프리미엄</value>
+</data>
 </root>

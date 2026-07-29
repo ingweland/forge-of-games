@@ -1615,4 +1615,7 @@ Forge of Games 與 Heroes of History 的創作者或出版商無關，也沒有�
     <data name="StatsHub.Worlds.TopWoaPlayersListTitle" xml:space="preserve">
     <value>{0} 的亞特蘭提斯玩家</value>
 </data>
+    <data name="Common.Premium" xml:space="preserve">
+    <value>高級</value>
+</data>
 </root>
