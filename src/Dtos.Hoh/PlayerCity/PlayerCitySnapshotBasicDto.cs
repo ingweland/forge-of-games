@@ -10,7 +10,7 @@ public class PlayerCitySnapshotBasicDto
     public int Coins { get; init; }
     public int Food { get; init; }
     public int Goods { get; init; }
-    public required float HappinessUsageRatio { get; init; }
+    public float HappinessUsageRatio { get; init; }
     public bool HasPremiumFarmBuildings { get; init; }
     public bool HasPremiumCultureBuildings { get; init; }
     public bool HasPremiumHomeBuildings { get; init; }
