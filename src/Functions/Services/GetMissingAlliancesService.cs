@@ -31,8 +31,9 @@ public class GetMissingAlliancesService(
     ILogger<ManualTriggerFunction> logger) : IGetMissingAlliancesService
 {
     private const int BLOCK_SIZE = 100;
-    private const int JUMP_STEP = 10;
+    private const int JUMP_STEP = 5;
     private const int MISSES_BEFORE_JUMP = 2;
+    private const int MAX_JUMP_PROBES = 2;
     private const int PROBE_DELAY_MS = 500;
     private const int MEMBER_UPDATE_DELAY_MS = 200;
     private const int MAX_CONSECUTIVE_FETCH_ERRORS = 10;
@@ -76,8 +77,9 @@ public class GetMissingAlliancesService(
     ///     Scans a single block of <see cref="BLOCK_SIZE" /> in-game ids forward, starting at <paramref name="blockStart" />.
     ///     In-game ids fill a block from its first id upward, so the scan steps one id at a time while alliances keep
     ///     turning up, and switches to <see cref="JUMP_STEP" /> strides once <see cref="MISSES_BEFORE_JUMP" /> consecutive
-    ///     ids come back empty. A hit at a stride target drops the scan back to single stepping. The scan never crosses
-    ///     into the neighbouring block.
+    ///     ids come back empty. After <see cref="MAX_JUMP_PROBES" /> strides in a row also come back empty the block is
+    ///     treated as exhausted and the scan moves on. A hit at a stride target drops the scan back to single stepping
+    ///     and restores the full stride allowance. The scan never crosses into the neighbouring block.
     /// </summary>
     private async Task<BlockScanResult> ScanBlockAsync(GameWorldConfig gw, int blockStart, HashSet<int> knownIds)
     {
@@ -115,6 +117,14 @@ public class GetMissingAlliancesService(
             {
                 _consecutiveFetchErrors = 0;
                 consecutiveMisses++;
+
+                // The first MISSES_BEFORE_JUMP misses are single steps, every miss after that is a stride. Once the
+                // strides have used up MAX_JUMP_PROBES the rest of the block is taken to be empty.
+                if (consecutiveMisses >= MISSES_BEFORE_JUMP + MAX_JUMP_PROBES)
+                {
+                    break;
+                }
+
                 id += consecutiveMisses < MISSES_BEFORE_JUMP ? 1 : JUMP_STEP;
                 continue;
             }
