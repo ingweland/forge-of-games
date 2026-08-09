@@ -50,4 +50,5 @@ public enum EquipmentSet
     Berserker,
     Warden,
     HornedKing,
+    Countess,
 }
