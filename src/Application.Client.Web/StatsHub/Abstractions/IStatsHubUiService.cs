@@ -66,6 +66,8 @@ public interface IStatsHubUiService
     Task<IReadOnlyCollection<AllianceWoaRankingViewModel>> GetAllianceWoaRankingsAsync(int allianceId,
         CancellationToken ct = default);
 
+    Task<WoaDivisionViewModel?> GetWoaDivisionAsync(int divisionId, CancellationToken ct = default);
+
     Task<IReadOnlyCollection<WoaPlayerStatsViewModel>> GetWoaPlayerStatsAsync(int playerId,
         CancellationToken ct = default);
 

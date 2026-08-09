@@ -1,0 +1,36 @@
+@attribute [Route(FogUrlBuilder.PageRoutes.WOA_DIVISION_TEMPLATE)]
+@using Ingweland.Fog.Application.Client.Core.Localization
+@using Ingweland.Fog.Application.Core.Helpers
+@inherits StatsHubPageBase
+@if (IsInitialized && _division != null)
+{
+    <div class="page-container">
+        <div class="fog-container section-container">
+            <span class="section-title">@Loc[FogResource.StatsHub_WoaDivision_Title]</span>
+            <span class="event-label">@_division.EventLabel</span>
+        </div>
+
+        <div class="alliances-container">
+            @foreach (var item in _division.Alliances)
+            {
+                <a class="anchor-inherited-style" href="@FogUrlBuilder.PageRoutes.Alliance(item.Alliance.Id)">
+                    <AllianceWoaRankingComponent Ranking="@item.Ranking">
+                        <HeaderContent>
+                            <div class="alliance-header">
+                                <div class="avatar">
+                                    <img class="avatar-background" src="@item.Alliance.Banner.CrestUrl"/>
+                                    <img class="avatar-icon" src="@item.Alliance.Banner.IconUrl"/>
+                                </div>
+                                <span class="alliance-name">@item.Alliance.Name</span>
+                            </div>
+                        </HeaderContent>
+                    </AllianceWoaRankingComponent>
+                </a>
+            }
+        </div>
+    </div>
+}
+else
+{
+    <LoadingIndicator/>
+}

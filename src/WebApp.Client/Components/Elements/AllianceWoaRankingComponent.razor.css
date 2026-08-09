@@ -3,6 +3,7 @@
     flex-direction: column;
     border-radius: var(--fog-border-radius);
     border: 1px solid var(--fog-container-color);
+    background: var(--fog-surface-color);
     overflow: hidden;
     align-items: center;
     user-select: none;
@@ -114,7 +115,7 @@
 }
 
 .v-divider {
-    height: 100%;
+    align-self: stretch;
     border-right: 1px solid var(--fog-container-color);
 }
 

@@ -11,6 +11,7 @@ public class AllianceWoaRankingViewModelFactory : IAllianceWoaRankingViewModelFa
     {
         return new AllianceWoaRankingViewModel
         {
+            DivisionId = dto.DivisionId,
             EventLabel = $"{dto.StartedAt:d} - {dto.EndedAt:d}",
             EloRatingFormatted = dto.EloRating.ToString("N0"),
             EloDelta = dto.EloDelta,

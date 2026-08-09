@@ -244,6 +244,15 @@ public class StatsHubService(ISender sender) : IStatsHubService
         return sender.Send(query, ct);
     }
 
+    public Task<WoaDivisionDto?> GetWoaDivisionAsync(int divisionId, CancellationToken ct = default)
+    {
+        var query = new GetWoaDivisionQuery
+        {
+            DivisionId = divisionId,
+        };
+        return sender.Send(query, ct);
+    }
+
     public Task<IReadOnlyCollection<StatsTimedIntValue>> GetAllianceRankingsAsync(int allianceId,
         CancellationToken ct = default)
     {

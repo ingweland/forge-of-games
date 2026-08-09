@@ -1573,6 +1573,9 @@ Forge of Games 與 Heroes of History 的創作者或出版商無關，也沒有�
     <data name="StatsHub.Alliance.WoaRanking" xml:space="preserve">
         <value>亞特蘭提斯之戰排名</value>
     </data>
+    <data name="StatsHub.WoaDivision.Title" xml:space="preserve">
+        <value>亞特蘭提斯分組</value>
+    </data>
     <data name="StatsHub.Player.WoaStats" xml:space="preserve">
         <value>亞特蘭提斯之戰統計</value>
     </data>

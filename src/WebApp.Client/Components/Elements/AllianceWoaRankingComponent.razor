@@ -3,7 +3,14 @@
 @inject IAssetUrlProvider AssetUrlProvider
 <div class="component-root">
     <div class="event-label-container">
-        @Ranking.EventLabel
+        @if (HeaderContent != null)
+        {
+            @HeaderContent
+        }
+        else
+        {
+            @Ranking.EventLabel
+        }
     </div>
     <div class="league-container">
         <img class="league-icon" src="@AssetUrlProvider.GetHohWoaLeagueIconUrl(Ranking.Tier.Tier)"/>
@@ -52,5 +59,8 @@
     [Parameter]
     [EditorRequired]
     public required AllianceWoaRankingViewModel Ranking { get; set; }
+
+    [Parameter]
+    public RenderFragment? HeaderContent { get; set; }
 
 }

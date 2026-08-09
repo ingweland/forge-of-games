@@ -63,6 +63,9 @@ public static class FogUrlBuilder
         public const string ALLIANCE_WOA_RANKINGS_TEMPLATE_REFIT = ALLIANCE_TEMPLATE_REFIT + "/woaRankings";
         public const string ALLIANCES_WOA_RANKINGS_TEMPLATE = ALLIANCES_TEMPLATE + "/woaRankings";
 
+        public const string WOA_DIVISION_TEMPLATE = "/" + BASE_STATS_PATH + "/woa/divisions/{divisionId:int}";
+        public const string WOA_DIVISION_TEMPLATE_REFIT = "/" + BASE_STATS_PATH + "/woa/divisions/{divisionId}";
+
         public const string BATTLE_LOG_SEARCH = "/battle-log/search";
         public const string BATTLE_STATS_TEMPLATE = "/" + BASE_BATTLES_PATH + "/stats/{battleStatsId:int}";
         public const string BATTLE_STATS_TEMPLATE_REFIT = "/" + BASE_BATTLES_PATH + "/stats/{battleStatsId}";
@@ -163,6 +166,7 @@ public static class FogUrlBuilder
         public const string WORLD_ALLIANCES_ATH_TEMPLATE = WORLD_ALLIANCES_TEMPLATE + "/ath";
         public const string WORLD_ALLIANCES_WOA_TEMPLATE = WORLD_ALLIANCES_TEMPLATE + "/woa";
         public const string WORLD_PLAYERS_WOA_TEMPLATE = WORLD_PLAYERS_TEMPLATE + "/woa";
+        public const string WOA_DIVISION_TEMPLATE = BASE_STATS_HUB_PATH + "/woa/divisions/{divisionId:int}";
         public const string PLAYER_PROFILE_TEMPLATE = BASE_STATS_HUB_PATH + "/players/{playerId:int}/profile";
         public const string PLAYER_BATTLES_TEMPLATE = BASE_STATS_HUB_PATH + "/players/{playerId:int}/battles";
         public const string ALLIANCE_TEMPLATE = BASE_STATS_HUB_PATH + "/alliances/{allianceId:int}";
@@ -327,6 +331,11 @@ public static class FogUrlBuilder
             }
 
             return WORLD_PLAYERS_WOA_TEMPLATE.Replace("{worldId}", worldId);
+        }
+
+        public static string WoaDivision(int divisionId)
+        {
+            return WOA_DIVISION_TEMPLATE.Replace("{divisionId:int}", divisionId.ToString());
         }
     }
 }

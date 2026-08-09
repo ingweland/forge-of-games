@@ -1562,6 +1562,9 @@ Forge of Gamesは、Heroes of Historyの開発者または発行者と提携し�
     <data name="StatsHub.Alliance.WoaRanking" xml:space="preserve">
         <value>アトランティス大決戦のランキング</value>
     </data>
+    <data name="StatsHub.WoaDivision.Title" xml:space="preserve">
+        <value>アトランティスディビジョン</value>
+    </data>
     <data name="StatsHub.Player.WoaStats" xml:space="preserve">
         <value>アトランティス大決戦の統計</value>
     </data>

@@ -126,7 +126,9 @@
                 <div class="ath-ranking-items-container">
                     @foreach (var r in _woaRankings)
                     {
-                        <AllianceWoaRankingComponent Ranking="@r"/>
+                        <a class="anchor-inherited-style" href="@FogUrlBuilder.PageRoutes.WoaDivision(r.DivisionId)">
+                            <AllianceWoaRankingComponent Ranking="@r"/>
+                        </a>
                     }
                 </div>
             }

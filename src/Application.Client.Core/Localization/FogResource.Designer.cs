@@ -3291,6 +3291,15 @@ namespace Ingweland.Fog.Application.Client.Core.Localization {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Atlantis Division.
+        /// </summary>
+        public static string StatsHub_WoaDivision_Title {
+            get {
+                return ResourceManager.GetString("StatsHub.WoaDivision.Title", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Alliance Profile | Heroes of History | Forge of Games.
         /// </summary>
         public static string StatsHub_AllianceProfile_PageTitle {

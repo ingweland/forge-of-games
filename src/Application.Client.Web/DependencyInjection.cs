@@ -169,6 +169,7 @@ public static class DependencyInjection
         services.AddScoped<IAlliedCultureCityGuidesUiService, AlliedCultureCityGuidesUiService>();
         services.AddScoped<IAlliedCultureCityGuideViewModelFactory, AlliedCultureCityGuideViewModelFactory>();
         services.AddScoped<IAllianceWoaRankingViewModelFactory, AllianceWoaRankingViewModelFactory>();
+        services.AddScoped<IWoaDivisionViewModelFactory, WoaDivisionViewModelFactory>();
         services.AddScoped<IWoaPlayerStatsViewModelFactory, WoaPlayerStatsViewModelFactory>();
 
         services.AddScoped<CityPlannerSettings>();

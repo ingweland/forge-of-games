@@ -75,6 +75,7 @@ public class CacheKeyFactory : ICacheKeyFactory
             GetHeroAbilityFeaturesQuery q => HeroAbilityFeatures(CultureInfo.CurrentCulture.Name),
             GetHohCoreDataVersionQuery q => "HohCoreDataVersion",
             GetAllianceWoaRankingsQuery q => $"AllianceWoaRankings:{q.AllianceId}",
+            GetWoaDivisionQuery q => $"WoaDivision:{q.DivisionId}",
             GetWoaPlayerStatsQuery q => $"WoaPlayerStats:{q.PlayerId}",
             GetPlayerHeroesQuery q => $"PlayerHeroes:{q.PlayerId}",
             GetAlliancesWoaRankingsQuery q =>

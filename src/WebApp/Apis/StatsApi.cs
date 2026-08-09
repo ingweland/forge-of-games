@@ -41,6 +41,7 @@ public static class StatsApi
         api.MapGet(FogUrlBuilder.ApiRoutes.ALLIANCES_ATH_RANKINGS_TEMPLATE, GetAlliancesAthRankingsAsync);
         api.MapGet(FogUrlBuilder.ApiRoutes.TOP_ALLIANCES_TEMPLATE, GetTopAlliancesAsync);
         api.MapGet(FogUrlBuilder.ApiRoutes.ALLIANCES_WOA_RANKINGS_TEMPLATE, GetAlliancesWoaRankingsAsync);
+        api.MapGet(FogUrlBuilder.ApiRoutes.WOA_DIVISION_TEMPLATE, GetWoaDivisionAsync);
 
         api.MapGet(FogUrlBuilder.ApiRoutes.WORLD_EVENT_CITY_TEMPLATE, GetEventCityRankingsAsync);
 
@@ -265,6 +266,19 @@ public static class StatsApi
             CancellationToken ct = default)
     {
         var result = await services.StatsHubService.GetAllianceWoaRankingsAsync(allianceId, ct);
+
+        return TypedResults.Ok(result);
+    }
+
+    private static async Task<Results<Ok<WoaDivisionDto>, NotFound>>
+        GetWoaDivisionAsync([AsParameters] StatsServices services, HttpContext context, int divisionId,
+            CancellationToken ct = default)
+    {
+        var result = await services.StatsHubService.GetWoaDivisionAsync(divisionId, ct);
+        if (result == null)
+        {
+            return TypedResults.NotFound();
+        }
 
         return TypedResults.Ok(result);
     }

@@ -1562,6 +1562,9 @@ Forge of Games non è affiliato né ufficialmente connesso ai creatori o editori
     <data name="StatsHub.Alliance.WoaRanking" xml:space="preserve">
         <value>Classifica della Battaglia per Atlantide</value>
     </data>
+    <data name="StatsHub.WoaDivision.Title" xml:space="preserve">
+        <value>Divisione Atlantide</value>
+    </data>
     <data name="StatsHub.Player.WoaStats" xml:space="preserve">
         <value>Statistiche della Battaglia per Atlantide</value>
     </data>

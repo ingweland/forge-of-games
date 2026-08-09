@@ -46,6 +46,7 @@ public class StatsHubUiService : UiServiceBase, IStatsHubUiService
     private readonly IStatsHubService _statsHubService;
     private readonly IStatsHubViewModelsFactory _statsHubViewModelsFactory;
     private readonly ITreasureHuntUiService _treasureHuntUiService;
+    private readonly IWoaDivisionViewModelFactory _woaDivisionViewModelFactory;
     private readonly IWoaPlayerStatsViewModelFactory _woaPlayerStatsViewModelFactory;
 
     public StatsHubUiService(IStatsHubService statsHubService,
@@ -63,6 +64,7 @@ public class StatsHubUiService : UiServiceBase, IStatsHubUiService
         IPlayerCityStrategyInfoViewModelFactory playerCityStrategyInfoViewModelFactory,
         IPlayerAthRankingViewModelFactory playerAthRankingViewModelFactory,
         IWoaPlayerStatsViewModelFactory woaPlayerStatsViewModelFactory,
+        IWoaDivisionViewModelFactory woaDivisionViewModelFactory,
         IHeroProfileUiService heroProfileUiService,
         ILogger<StatsHubUiService> logger,
         IMemoryCache memoryCache) : base(logger)
@@ -83,6 +85,7 @@ public class StatsHubUiService : UiServiceBase, IStatsHubUiService
         _memoryCache = memoryCache;
         _playerAthRankingViewModelFactory = playerAthRankingViewModelFactory;
         _woaPlayerStatsViewModelFactory = woaPlayerStatsViewModelFactory;
+        _woaDivisionViewModelFactory = woaDivisionViewModelFactory;
         _heroProfileUiService = heroProfileUiService;
 
         _ages = new Lazy<Task<IReadOnlyDictionary<string, AgeDto>>>(GetAgesAsync);
@@ -339,6 +342,20 @@ public class StatsHubUiService : UiServiceBase, IStatsHubUiService
 
         return rankings.OrderBy(x => x.StartedAt).Select(x => _allianceWoaRankingViewModelFactory.Create(x,
             tiers.GetValueOrDefault(x.Tier, WoaTierDto.Default))).ToList();
+    }
+
+    public Task<WoaDivisionViewModel?> GetWoaDivisionAsync(int divisionId, CancellationToken ct = default)
+    {
+        return ExecuteSafeAsync<WoaDivisionViewModel?>(
+            async () =>
+            {
+                var tiersTask = _commonUiService.GetWoaTiersAsync();
+                var division = await _statsHubService.GetWoaDivisionAsync(divisionId, ct);
+                var tiers = await tiersTask;
+
+                return division == null ? null : _woaDivisionViewModelFactory.Create(division, tiers);
+            },
+            null);
     }
 
     public Task<IReadOnlyCollection<WoaPlayerStatsViewModel>> GetWoaPlayerStatsAsync(int playerId,

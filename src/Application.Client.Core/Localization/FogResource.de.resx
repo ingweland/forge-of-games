@@ -1557,6 +1557,9 @@ Forge of Games ist weder mit den Erstellern noch mit den Herausgebern von Heroes
     <data name="StatsHub.Alliance.WoaRanking" xml:space="preserve">
         <value>Rangliste der Schlacht um Atlantis</value>
     </data>
+    <data name="StatsHub.WoaDivision.Title" xml:space="preserve">
+        <value>Atlantis-Division</value>
+    </data>
     <data name="StatsHub.Player.WoaStats" xml:space="preserve">
         <value>Statistiken zur Schlacht um Atlantis</value>
     </data>

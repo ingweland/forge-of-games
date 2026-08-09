@@ -91,6 +91,9 @@ public interface IStatsHubService
     Task<IReadOnlyCollection<AllianceWoaRankingDto>> GetAllianceWoaRankingsAsync(int allianceId,
         CancellationToken ct = default);
 
+    [Get(FogUrlBuilder.ApiRoutes.WOA_DIVISION_TEMPLATE_REFIT)]
+    Task<WoaDivisionDto?> GetWoaDivisionAsync(int divisionId, CancellationToken ct = default);
+
     [Get(FogUrlBuilder.ApiRoutes.WOA_PLAYER_STATS_TEMPLATE_REFIT)]
     Task<IReadOnlyCollection<WoaPlayerStatsDto>> GetWoaPlayerStatsAsync(int playerId, CancellationToken ct = default);
 

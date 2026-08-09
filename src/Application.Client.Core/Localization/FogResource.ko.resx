@@ -1533,6 +1533,9 @@
     <data name="StatsHub.Alliance.WoaRanking" xml:space="preserve">
         <value>아틀란티스 전투 순위</value>
     </data>
+    <data name="StatsHub.WoaDivision.Title" xml:space="preserve">
+        <value>아틀란티스 디비전</value>
+    </data>
     <data name="StatsHub.Player.WoaStats" xml:space="preserve">
         <value>아틀란티스 전투 통계</value>
     </data>
