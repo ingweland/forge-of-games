@@ -6,7 +6,7 @@ namespace Ingweland.Fog.Dtos.Hoh.Stats;
 public class AllianceWoaRankingDto
 {
     [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
-    public double? CurrentVictoryPointsShare { get; init; }
+    public double? ActualVictoryPointsShare { get; init; }
 
     [JsonIgnore(Condition = JsonIgnoreCondition.Never)]
     public required int DivisionId { get; init; }

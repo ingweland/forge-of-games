@@ -17,11 +17,11 @@ public class AllianceWoaRankingViewModelFactory : IAllianceWoaRankingViewModelFa
             EloDelta = dto.EloDelta,
             VictoryPointsFormatted = dto.VictoryPoints.ToString("N0"),
             Tier = tier,
-            CurrentVictoryPointsShareFormatted = dto.CurrentVictoryPointsShare?.ToString("P1"),
+            ActualVictoryPointsShareFormatted = dto.ActualVictoryPointsShare?.ToString("P1"),
             ExpectedVictoryPointsShareFormatted = dto.ExpectedVictoryPointsShare?.ToString("P1"),
             VictoryPointsShareComparison =
-                dto.CurrentVictoryPointsShare.HasValue && dto.ExpectedVictoryPointsShare.HasValue
-                    ? dto.CurrentVictoryPointsShare.Value.CompareTo(dto.ExpectedVictoryPointsShare.Value)
+                dto.ActualVictoryPointsShare.HasValue && dto.ExpectedVictoryPointsShare.HasValue
+                    ? dto.ActualVictoryPointsShare.Value.CompareTo(dto.ExpectedVictoryPointsShare.Value)
                     : 0,
         };
     }

@@ -2,7 +2,6 @@ using Ingweland.Fog.Application.Core.Constants;
 using Ingweland.Fog.Application.Server.Interfaces;
 using Ingweland.Fog.Application.Server.StatsHub.Factories;
 using Ingweland.Fog.Dtos.Hoh.Stats;
-using Ingweland.Fog.Models.Hoh.Enums;
 using MediatR;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Logging;
@@ -45,32 +44,22 @@ public class GetAllianceWoaRankingsQueryHandler(
         var events = await context.InGameEvents.Where(x => eventIds.Contains(x.Id))
             .ToDictionaryAsync(x => x.Id, cancellationToken);
 
-        var now = DateTime.UtcNow;
-        var currentEvent = events.Values.FirstOrDefault(x =>
-            x.DefinitionId == EventDefinitionId.WoAEvent && x.StartAt <= now && x.EndAt >= now);
-        var currentRanking = currentEvent == null
-            ? null
-            : existingAlliance.WoaRankings.FirstOrDefault(x => x.InGameEventId == currentEvent.Id);
-
-        double? expectedVictoryPointsShare = null;
-        double? currentVictoryPointsShare = null;
-        if (currentRanking != null)
-        {
-            var divisionVictoryPoints = await context.AllianceWoaRankings
-                .Where(x => x.InGameEventId == currentRanking.InGameEventId &&
-                    x.DivisionId == currentRanking.DivisionId)
-                .SumAsync(x => (long) x.VictoryPoints, cancellationToken);
-            if (divisionVictoryPoints > 0)
-            {
-                expectedVictoryPointsShare = currentRanking.ExpectedVictoryPointsShare;
-                currentVictoryPointsShare = (double) currentRanking.VictoryPoints / divisionVictoryPoints;
-            }
-        }
+        var divisionIds = existingAlliance.WoaRankings.Select(x => x.DivisionId).ToHashSet();
+        var divisionVictoryPoints = (await context.AllianceWoaRankings
+                .Where(x => divisionIds.Contains(x.DivisionId))
+                .GroupBy(x => x.DivisionId)
+                .Select(g => new
+                    {DivisionId = g.Key, VictoryPoints = g.Sum(y => (long) y.VictoryPoints)})
+                .ToListAsync(cancellationToken))
+            .ToDictionary(x => x.DivisionId, x => x.VictoryPoints);
 
         return existingAlliance.WoaRankings.Where(x => events.ContainsKey(x.InGameEventId))
-            .Select(x => woaRankingDtoFactory.Create(x, events[x.InGameEventId],
-                x == currentRanking ? expectedVictoryPointsShare : null,
-                x == currentRanking ? currentVictoryPointsShare : null))
+            .Select(x =>
+            {
+                var totalVictoryPoints = divisionVictoryPoints.GetValueOrDefault(x.DivisionId);
+                return woaRankingDtoFactory.Create(x, events[x.InGameEventId], x.ExpectedVictoryPointsShare,
+                    totalVictoryPoints > 0 ? (double) x.VictoryPoints / totalVictoryPoints : null);
+            })
             .ToList();
     }
 }

@@ -4,7 +4,7 @@ namespace Ingweland.Fog.Application.Client.Web.StatsHub.ViewModels;
 
 public class AllianceWoaRankingViewModel
 {
-    public string? CurrentVictoryPointsShareFormatted { get; init; }
+    public string? ActualVictoryPointsShareFormatted { get; init; }
     public required int DivisionId { get; init; }
     public int EloDelta { get; set; }
     public required string EloRatingFormatted { get; set; }

@@ -34,7 +34,7 @@
             <img class="value-icon" src="@AssetUrlProvider.GetHohIconUrl("woa_victory_points")"/>
             <span> @Ranking.VictoryPointsFormatted</span>
         </div>
-        @if (Ranking.CurrentVictoryPointsShareFormatted != null)
+        @if (Ranking.ActualVictoryPointsShareFormatted != null)
         {
             <div class="v-divider"></div>
             <div class="value-container">
@@ -45,7 +45,7 @@
                                                  : Ranking.VictoryPointsShareComparison < 0
                                                      ? "negative"
                                                      : "")">
-                        @Ranking.CurrentVictoryPointsShareFormatted
+                        @Ranking.ActualVictoryPointsShareFormatted
                     </span>
                     <span class="share-value">@Ranking.ExpectedVictoryPointsShareFormatted</span>
                 </div>

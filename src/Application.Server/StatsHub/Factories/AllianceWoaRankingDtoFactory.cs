@@ -22,7 +22,7 @@ public class AllianceWoaRankingDtoFactory(IWoaTierHelper tierHelper) : IAlliance
             ExpectedVictoryPointsShare = expectedVictoryPointsShare.HasValue
                 ? Math.Round(expectedVictoryPointsShare.Value, 3)
                 : null,
-            CurrentVictoryPointsShare = currentVictoryPointsShare.HasValue
+            ActualVictoryPointsShare = currentVictoryPointsShare.HasValue
                 ? Math.Round(currentVictoryPointsShare.Value, 3)
                 : null,
         };
