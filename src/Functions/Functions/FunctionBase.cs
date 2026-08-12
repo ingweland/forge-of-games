@@ -17,7 +17,7 @@ public class FunctionBase(
     InGameRawDataTablePartitionKeyProvider inGameRawDataTablePartitionKeyProvider,
     ILogger logger)
 {
-    private const int BATCH_SIZE = 100;
+    private const int BATCH_SIZE = 80;
     protected IGameWorldsProvider GameWorldsProvider { get; } = gameWorldsProvider;
     protected bool HasMoreData { get; private set; }
 
