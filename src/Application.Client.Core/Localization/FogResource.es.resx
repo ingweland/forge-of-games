@@ -1610,7 +1610,4 @@ Forge of Games no está afiliado ni tiene conexión oficial con los creadores o 
     <data name="StatsHub.Worlds.TopWoaPlayersListTitle" xml:space="preserve">
     <value>Jugadores de Atlantis en {0}</value>
 </data>
-    <data name="Common.Premium" xml:space="preserve">
-    <value>Premium</value>
-</data>
 </root>

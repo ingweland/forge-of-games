@@ -4,6 +4,7 @@ using Ingweland.Fog.Application.Client.Web.Models;
 using Ingweland.Fog.Application.Client.Web.Services.Abstractions;
 using Ingweland.Fog.Application.Client.Web.ViewModels;
 using Ingweland.Fog.Application.Core.Helpers;
+using Ingweland.Fog.Models.Hoh.Enums;
 using Ingweland.Fog.WebApp.Client.Components.Pages.Abstractions;
 using Microsoft.AspNetCore.Components;
 
@@ -58,33 +59,15 @@ public partial class AlliedCultureCityGuides : FogPageBase
         StateHasChanged();
     }
 
-    private async Task OpenCalendarItem(AlliedCultureCalendarItemViewModel item)
+    private async Task OpenCalendarItem(WonderId wonderId)
     {
-        if (item.PremiumHelpPagePath != null)
-        {
-            NavigationManager.NavigateTo(item.PremiumHelpPagePath);
-            return;
-        }
-
-        var s = _guides.SelectMany(x => x.Guides)
-            .FirstOrDefault(x => x.Wonder.Id == item.WonderId && x.PremiumHelpPagePath == null);
+        var s = _guides.SelectMany(x => x.Guides).FirstOrDefault(x => x.Wonder.Id == wonderId);
         if (s == null)
         {
             return;
         }
 
         await OpenCommunityStrategy(s);
-    }
-
-    private async Task OpenGuide(AlliedCultureCityGuideViewModel guide)
-    {
-        if (guide.PremiumHelpPagePath != null)
-        {
-            NavigationManager.NavigateTo(guide.PremiumHelpPagePath);
-            return;
-        }
-
-        await OpenCommunityStrategy(guide);
     }
 
     private async Task OpenCommunityStrategy(AlliedCultureCityGuideViewModel communityStrategy)

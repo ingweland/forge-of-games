@@ -6,5 +6,5 @@ namespace Ingweland.Fog.Application.Client.Web.Factories.Interfaces;
 public interface IAlliedCultureCalendarItemViewModelFactory
 {
     AlliedCultureCalendarItemViewModel Create(WonderId wonderId, string wonderName, DateTime startAt,
-        DateTime endAt, string? premiumHelpPagePath = null);
+        DateTime endAt);
 }

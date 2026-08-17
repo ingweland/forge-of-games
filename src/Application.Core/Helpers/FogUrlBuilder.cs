@@ -146,7 +146,6 @@ public static class FogUrlBuilder
         public const string HELP_TOOLS_PATH = BASE_HELP_PATH + "/tools";
         public const string HELP_SUBMISSION_ID_PATH = BASE_HELP_PATH + "/submission-id";
         public const string HELP_MY_BATTLES_PATH = BASE_HELP_PATH + "/my-battles";
-        public const string HELP_ITHACA_PREMIUM_GUIDE_PATH = BASE_HELP_PATH + "/ithaca-premium-guide";
         public const string HERO_TEMPLATE = BASE_HEROES_PATH + "/{heroId}";
         public const string CAMPAIGN_REGION_TEMPLATE = BASE_CAMPAIGN_PATH + "/region/{regionId}";
         public const string BASE_BATTLE_EVENTS_PATH = "/battle-events";
@@ -181,10 +180,6 @@ public static class FogUrlBuilder
 
         public const string HOH_HELPER_RELEASES_GITHUB_URL = HOH_HELPER_GITHUB_URL + "/releases";
         public const string FOG_DISCORD_URL = "https://discord.gg/4vFeeh7CZn";
-
-        public const string FOG_DISCORD_ITHACA_PREMIUM_GUIDE_THREAD_URL =
-            "https://discord.com/channels/1299802355260325899/1531352245776420924";
-
         public const string CITIES_STATS_PATH = "/cities-stats";
         public const string BATTLE_LOG_PATH = "/battle-log";
         public const string BATTLE_TEMPLATE = "/battle-log/battles/{battleId:int}";

@@ -6,6 +6,5 @@ namespace Ingweland.Fog.Application.Client.Web.Factories.Interfaces;
 
 public interface IAlliedCultureCityGuideViewModelFactory
 {
-    AlliedCultureCityGuideViewModel Create(CommunityCityStrategyDto dto, WonderBasicDto wonderDto,
-        string? premiumHelpPagePath = null);
+    AlliedCultureCityGuideViewModel Create(CommunityCityStrategyDto dto, WonderBasicDto wonderDto);
 }

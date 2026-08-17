@@ -1607,7 +1607,4 @@ Forge of Gamesは、Heroes of Historyの開発者または発行者と提携し�
     <data name="StatsHub.Worlds.TopWoaPlayersListTitle" xml:space="preserve">
     <value>{0} のアトランティスプレイヤー</value>
 </data>
-    <data name="Common.Premium" xml:space="preserve">
-    <value>プレミアム</value>
-</data>
 </root>

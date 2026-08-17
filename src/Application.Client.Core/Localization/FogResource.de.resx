@@ -1602,7 +1602,4 @@ Forge of Games ist weder mit den Erstellern noch mit den Herausgebern von Heroes
     <data name="StatsHub.Worlds.TopWoaPlayersListTitle" xml:space="preserve">
     <value>Atlantis-Spieler auf {0}</value>
 </data>
-    <data name="Common.Premium" xml:space="preserve">
-    <value>Premium</value>
-</data>
 </root>

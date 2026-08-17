@@ -2,7 +2,6 @@ using System.Collections.Concurrent;
 using Ingweland.Fog.Application.Client.Web.Factories.Interfaces;
 using Ingweland.Fog.Application.Client.Web.Services.Abstractions;
 using Ingweland.Fog.Application.Client.Web.ViewModels;
-using Ingweland.Fog.Application.Core.Helpers;
 using Ingweland.Fog.Application.Core.Services.Hoh.Abstractions;
 using Ingweland.Fog.Dtos.Hoh;
 using Ingweland.Fog.Models.Fog.Entities;
@@ -21,16 +20,6 @@ public class AlliedCultureCityGuidesUiService(
     IAlliedCultureCityGuideViewModelFactory alliedCultureCityGuideViewModelFactory,
     ILogger<AlliedCultureCityGuidesUiService> logger) : UiServiceBase(logger), IAlliedCultureCityGuidesUiService
 {
-    /// <summary>
-    ///     Wonders that additionally have a premium guide. These are rendered as an extra item next to the regular one
-    ///     and open the mapped help page instead of a community strategy.
-    /// </summary>
-    private static readonly IReadOnlyDictionary<WonderId, string> PremiumGuideHelpPages =
-        new Dictionary<WonderId, string>
-        {
-            [WonderId.Ithaka_PenelopesHearth] = FogUrlBuilder.PageRoutes.HELP_ITHACA_PREMIUM_GUIDE_PATH,
-        };
-
     private readonly ConcurrentDictionary<string, Lazy<Task<IReadOnlyCollection<AlliedCultureCalendarItemViewModel>>>>
         _calendarItemsCache = new();
 
@@ -63,11 +52,6 @@ public class AlliedCultureCityGuidesUiService(
                 }
 
                 guideVms.Add(alliedCultureCityGuideViewModelFactory.Create(guide, w));
-
-                if (PremiumGuideHelpPages.TryGetValue(w.Id, out var helpPagePath))
-                {
-                    guideVms.Add(alliedCultureCityGuideViewModelFactory.Create(guide, w, helpPagePath));
-                }
             }
 
             if (guideVms.Count > 0)
@@ -127,12 +111,6 @@ public class AlliedCultureCityGuidesUiService(
 
                     calendar.Add(alliedCultureCalendarItemViewModelFactory.Create(wonderId, wonder.WonderName,
                         inGameEventDto.StartAt, inGameEventDto.EndAt));
-
-                    if (PremiumGuideHelpPages.TryGetValue(wonderId, out var helpPagePath))
-                    {
-                        calendar.Add(alliedCultureCalendarItemViewModelFactory.Create(wonderId, wonder.WonderName,
-                            inGameEventDto.StartAt, inGameEventDto.EndAt, helpPagePath));
-                    }
                 }
 
                 return calendar;

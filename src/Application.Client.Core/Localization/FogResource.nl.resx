@@ -1618,7 +1618,4 @@ Forge of Games is niet verbonden met of officieel gelieerd aan de makers of uitg
     <data name="StatsHub.Worlds.TopWoaPlayersListTitle" xml:space="preserve">
     <value>Atlantis-spelers op {0}</value>
 </data>
-    <data name="Common.Premium" xml:space="preserve">
-    <value>Premium</value>
-</data>
 </root>

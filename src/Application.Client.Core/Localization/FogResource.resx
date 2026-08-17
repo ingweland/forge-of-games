@@ -1639,7 +1639,4 @@
     <data name="StatsHub.Worlds.TopWoaPlayersListTitle" xml:space="preserve">
         <value>Atlantis Players on {0}</value>
     </data>
-    <data name="Common.Premium" xml:space="preserve">
-        <value>Premium</value>
-    </data>
 </root>

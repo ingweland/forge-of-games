@@ -13,10 +13,6 @@
     cursor: pointer;
 }
 
-.card-wrapper.premium .item {
-    outline: 4px solid var(--fog-accent-color);
-}
-
 .item > img {
     width: 100%;
     aspect-ratio: 1/1;
