@@ -182,7 +182,7 @@ public class GameDesignDataParser(
             .Select(bd =>
             {
                 var parts = bd.Id.Split('_');
-                return parts[^3];
+                return parts[2];
             })
             .ToHashSet();
         foreach (var difficultyLevel in difficultyLevels)
@@ -192,7 +192,12 @@ public class GameDesignDataParser(
                 .Where(bd =>
                 {
                     var parts = bd.Id.Split('_');
-                    return parts[^3] == difficultyLevel;
+                    if (difficultyLevel == "9" && parts[^1] != "New")
+                    {
+                        return false;
+                    }
+
+                    return parts[2] == difficultyLevel;
                 }).ToList();
             for (var i = 0; i < 4; i++)
             {
@@ -200,7 +205,7 @@ public class GameDesignDataParser(
                     .Where(bd =>
                     {
                         var parts = bd.Id.Split('_');
-                        return parts[^2] == i.ToString();
+                        return parts[3] == i.ToString();
                     });
                 stages.Add(new TreasureHuntStage
                 {
@@ -208,7 +213,7 @@ public class GameDesignDataParser(
                     Battles = stageBattles.OrderBy(bd =>
                     {
                         var parts = bd.Id.Split('_');
-                        return int.Parse(parts[^1]);
+                        return int.Parse(parts[4]);
                     }).ToList(),
                 });
             }

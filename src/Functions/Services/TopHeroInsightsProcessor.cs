@@ -2,7 +2,6 @@ using System.Diagnostics;
 using FluentResults;
 using Ingweland.Fog.Application.Server.Interfaces;
 using Ingweland.Fog.Application.Server.Services.Interfaces;
-using Ingweland.Fog.Application.Server.StatsHub.Queries;
 using Ingweland.Fog.Models.Fog.Entities;
 using Ingweland.Fog.Models.Fog.Enums;
 using Ingweland.Fog.Models.Hoh.Constants;
@@ -36,6 +35,7 @@ public class TopHeroInsightsProcessor(
         AgeIds.KINGDOM_OF_SICILY,
         AgeIds.HIGH_MIDDLE_AGE,
         AgeIds.EARLY_GOTHIC_ERA,
+        AgeIds.LATE_GOTHIC_ERA,
     };
 
     private static readonly IReadOnlyCollection<HeroLevelRange> LevelRanges =
@@ -69,7 +69,7 @@ public class TopHeroInsightsProcessor(
                 results.Add(await Process(HeroInsightsMode.MostPopular, age, levelRange.From, levelRange.To));
             }
         }
-        
+
         results.Add(await Process(HeroInsightsMode.PlayersTop100));
         results.Add(await Process(HeroInsightsMode.PlayersTop500));
         results.Add(await Process(HeroInsightsMode.PlayersTop1000));
@@ -92,10 +92,11 @@ public class TopHeroInsightsProcessor(
 
         if (existingInsights != null)
         {
-            logger.LogInformation("Skipping: mode - {mode}, age - {age}, from = {from}, to = {to}.", mode, age, from, to);
+            logger.LogInformation("Skipping: mode - {mode}, age - {age}, from = {from}, to = {to}.", mode, age, from,
+                to);
             return Result.Ok();
         }
-        
+
         var sw = new Stopwatch();
         logger.LogInformation(
             "Processing: mode - {mode}, age - {age}, from = {from}, to = {to}.", mode, age, from, to);
@@ -122,7 +123,7 @@ public class TopHeroInsightsProcessor(
         logger.LogInformation(
             "Processed: mode - {mode}, age - {age}, from = {from}, to = {to}. Elapsed: {elapsed}", mode, age,
             from, to, sw.Elapsed);
-        
+
         return Result.Ok();
     }
 }

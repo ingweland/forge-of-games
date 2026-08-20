@@ -31,7 +31,9 @@ public class TreasureHuntUiService(
         }
 
         var difficulties = await treasureHuntService.GetDifficultiesAsync();
-        _difficulties = mapper.Map<IReadOnlyCollection<TreasureHuntDifficultyBasicViewModel>>(difficulties);
+        _difficulties =
+            mapper.Map<IReadOnlyCollection<TreasureHuntDifficultyBasicViewModel>>(
+                difficulties.OrderBy(x => x.Difficulty));
         return _difficulties;
     }
 

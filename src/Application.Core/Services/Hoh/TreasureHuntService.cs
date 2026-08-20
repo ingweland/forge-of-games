@@ -4,6 +4,7 @@ using Ingweland.Fog.Application.Core.Repository.Abstractions;
 using Ingweland.Fog.Application.Core.Services.Hoh.Abstractions;
 using Ingweland.Fog.Dtos.Hoh.Battle;
 using Ingweland.Fog.Dtos.Hoh.Units;
+using Ingweland.Fog.Shared.Helpers;
 using Microsoft.Extensions.Logging;
 
 namespace Ingweland.Fog.Application.Core.Services.Hoh;
@@ -68,7 +69,12 @@ public class TreasureHuntService(
         {
             foreach (var stageData in difficulty.Stages)
             {
-                encounters.AddRange(stageData.Battles.Select(b => int.Parse(b.Id[(b.Id.LastIndexOf('_') + 1)..]))
+                encounters.AddRange(stageData.Battles.Select(b =>
+                    {
+                        var concreteId = HohStringParser.GetConcreteId(b.Id);
+                        var parts = concreteId.Split('_');
+                        return int.Parse(parts[3]);
+                    })
                     .Order()
                     .Select((src, index) => new TreasureHuntEncounterBasicDataDto
                     {

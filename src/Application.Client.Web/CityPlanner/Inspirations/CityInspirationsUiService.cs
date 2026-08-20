@@ -36,7 +36,7 @@ public class CityInspirationsUiService(
     {
         var cities = await persistenceService.GetCities();
         var ages = await commonUiService.GetAgesAsync();
-        var comingSoonAgeIndex = 15;
+        var comingSoonAgeIndex = 16;
         if (ages.TryGetValue(AgeIds.COMING_SOON, out var comingSoonAge))
         {
             comingSoonAgeIndex = comingSoonAge.Index;
