@@ -10,4 +10,5 @@ public interface IInnSdkClient
     IPlayerService PlayerService { get; }
     IRankingsService RankingsService { get; }
     IStaticDataService StaticDataService { get; }
+    IWoaService WoaService { get; }
 }

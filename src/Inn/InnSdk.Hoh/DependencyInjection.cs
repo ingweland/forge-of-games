@@ -40,6 +40,7 @@ public static class DependencyInjection
         services.AddScoped<ICityService, CityService>();
         services.AddScoped<IPlayerService, PlayerService>();
         services.AddScoped<IAllianceService, AllianceService>();
+        services.AddScoped<IWoaService, WoaService>();
 
         services.AddScoped<Lazy<IStaticDataService>>(sp =>
             new Lazy<IStaticDataService>(sp.GetRequiredService<IStaticDataService>));
@@ -53,6 +54,8 @@ public static class DependencyInjection
             new Lazy<IPlayerService>(sp.GetRequiredService<IPlayerService>));
         services.AddScoped<Lazy<IAllianceService>>(sp =>
             new Lazy<IAllianceService>(sp.GetRequiredService<IAllianceService>));
+        services.AddScoped<Lazy<IWoaService>>(sp =>
+            new Lazy<IWoaService>(sp.GetRequiredService<IWoaService>));
 
         services.AddHttpClient<IWebAuthenticationService, WebAuthenticationService>();
 

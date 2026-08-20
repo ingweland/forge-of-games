@@ -21,6 +21,7 @@ public static class GameEndpoints
     public static readonly string PvpRankingPath = "game/pvp/get-ranking";
     public static readonly string StartupPath = "game/startup";
     public static readonly string VisitCityPath = "game/visit-city";
+    public static readonly string WoaConquestLogPath = "game/woa/conquest-log";
 
     public static string CreateUrl(string serverId, string path)
     {

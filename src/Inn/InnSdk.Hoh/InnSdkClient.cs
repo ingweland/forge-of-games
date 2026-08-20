@@ -9,7 +9,8 @@ public class InnSdkClient(
     Lazy<IBattleService> battleService,
     Lazy<ICityService> cityService,
     Lazy<IPlayerService> playerService,
-    Lazy<IAllianceService> allianceService)
+    Lazy<IAllianceService> allianceService,
+    Lazy<IWoaService> woaService)
     : IInnSdkClient
 {
     public ICityService CityService => cityService.Value;
@@ -18,4 +19,5 @@ public class InnSdkClient(
     public IStaticDataService StaticDataService => staticDataService.Value;
     public IPlayerService PlayerService => playerService.Value;
     public IAllianceService AllianceService => allianceService.Value;
+    public IWoaService WoaService => woaService.Value;
 }
