@@ -25,7 +25,4 @@ public sealed partial class HeroDefinitionDTO
 
     public HeroProgressionComponentDTO ProgressionComponent => PackedComponents
         .Single(any => any.Is(HeroProgressionComponentDTO.Descriptor)).Unpack<HeroProgressionComponentDTO>();
-
-    public string SupportUnitType => PackedComponents
-        .Single(any => any.Is(HeroSupportUnitComponentDTO.Descriptor)).Unpack<HeroSupportUnitComponentDTO>().UnitType;
 }

@@ -7,7 +7,7 @@ option csharp_namespace = "Ingweland.Fog.Inn.Models.Hoh";
 message HeroStarUpDefinitionDTO {
   string id = 1;
   string unit_id = 3;
-  // GameDesignReference, HeroSupportUnitComponentDTO, HeroProgressionComponentDTO
+  // GameDesignReference, HeroProgressionComponentDTO
   repeated google.protobuf.Any packed_components = 5;
   string origin_hero_definition_id = 6;
 }

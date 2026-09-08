@@ -1,7 +1,0 @@
-syntax = "proto3";
-
-option csharp_namespace = "Ingweland.Fog.Inn.Models.Hoh";
-
-message HeroSupportUnitComponentDTO {
-  string unit_type = 1;
-}

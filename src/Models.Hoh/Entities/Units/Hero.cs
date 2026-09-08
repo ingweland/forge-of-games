@@ -4,6 +4,7 @@ using ProtoBuf;
 namespace Ingweland.Fog.Models.Hoh.Entities.Units;
 
 [ProtoContract]
+[ProtoReserved(3, "SupportUnitType - removed from game data; use Unit.Type instead")]
 public class Hero
 {
     [ProtoMember(1)]
@@ -11,9 +12,7 @@ public class Hero
 
     [ProtoMember(2)]
     public required string UnitId { get; init; }
-    
-    [ProtoMember(3)]
-    public required UnitType SupportUnitType { get; init; }
+
     [ProtoMember(4)]
     public required HeroClassId ClassId { get; init; }
     [ProtoMember(5)]

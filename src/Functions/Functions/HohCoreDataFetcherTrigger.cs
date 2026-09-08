@@ -6,7 +6,7 @@ namespace Ingweland.Fog.Functions.Functions;
 public class HohCoreDataFetcherTrigger(IHohCoreDataFetcher coreDataFetcher)
 {
     [Function(nameof(HohCoreDataFetcherTrigger))]
-    public async Task Run([TimerTrigger("0 0 0 1 1 1", RunOnStartup = false)] TimerInfo myTimer)
+    public async Task Run([TimerTrigger("0 0 0 1 1 1", RunOnStartup = true)] TimerInfo myTimer)
     {
         await coreDataFetcher.RunAsync();
     }

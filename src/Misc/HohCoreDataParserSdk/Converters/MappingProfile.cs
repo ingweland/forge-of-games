@@ -250,15 +250,11 @@ public class MappingProfile : Profile
         CreateMap<HeroDefinitionDTO, Hero>()
             .ForMember(dest => dest.Id,
                 opt => opt.MapFrom(hd => HohStringParser.GetConcreteId(hd.Id)))
-            .ForMember(dest => dest.SupportUnitType,
-                opt => opt.MapFrom(hd => HohStringParser.ParseEnumFromString<UnitType>(hd.SupportUnitType)))
             .ForMember(dest => dest.ClassId,
                 opt => opt.MapFrom(hd => HohStringParser.ParseEnumFromString<HeroClassId>(hd.ClassId)));
         CreateMap<HeroStarUpDefinitionDTO, Hero>()
             .ForMember(dest => dest.Id,
                 opt => opt.MapFrom(hd => HohStringParser.GetConcreteId(hd.Id)))
-            .ForMember(dest => dest.SupportUnitType,
-                opt => opt.MapFrom(hd => HohStringParser.ParseEnumFromString<UnitType>(hd.SupportUnitType)))
             .ForMember(dest => dest.ClassId,
                 opt => opt.MapFrom(hd => HohStringParser.ParseEnumFromString<HeroClassId>(hd.ClassId)));
         CreateMap<HeroBattleConstantsDefinitionDTO, UnitBattleConstants>()

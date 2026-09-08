@@ -146,7 +146,7 @@ public class UnitService(
             .AsReadOnly();
         var sortedAscensionCosts = ascensionCosts.LevelCosts.OrderBy(kvp => kvp.Key).ToDictionary().AsReadOnly();
 
-        var units = await hohCoreDataRepository.GetUnitsAsync(hero.SupportUnitType);
+        var units = await hohCoreDataRepository.GetUnitsAsync(unit.Type);
         var baseSupportUnit = units.Single(u => u.Id.StartsWith("unit.Unit_StoneAge_Player"));
 
         return heroDtoFactory.Create(hero, unit, sortedProgressionCosts, sortedAscensionCosts,

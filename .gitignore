@@ -349,3 +349,4 @@ local.settings.json
 /code-reviews/
 /code-review/
 /.serena/memories/
+/.claude/settings.local.json

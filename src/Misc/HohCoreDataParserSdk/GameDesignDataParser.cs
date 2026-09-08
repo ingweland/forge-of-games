@@ -301,7 +301,6 @@ public class GameDesignDataParser(
                 AwakeningId = h.AwakeningId,
                 ClassId = h.ClassId,
                 ProgressionComponent = h.ProgressionComponent,
-                SupportUnitType = h.SupportUnitType,
             })
             .ToList();
         var legacyUnits = units

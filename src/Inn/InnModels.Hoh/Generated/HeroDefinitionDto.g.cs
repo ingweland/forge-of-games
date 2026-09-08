@@ -116,7 +116,7 @@ namespace Ingweland.Fog.Inn.Models.Hoh {
         = pb::FieldCodec.ForMessage(26, global::Google.Protobuf.WellKnownTypes.Any.Parser);
     private readonly pbc::RepeatedField<global::Google.Protobuf.WellKnownTypes.Any> packedComponents_ = new pbc::RepeatedField<global::Google.Protobuf.WellKnownTypes.Any>();
     /// <summary>
-    /// GameDesignReference, HeroSupportUnitComponentDTO, HeroProgressionComponentDTO
+    /// GameDesignReference, HeroProgressionComponentDTO
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -245,7 +245,11 @@ namespace Ingweland.Fog.Inn.Models.Hoh {
     #else
       uint tag;
       while ((tag = input.ReadTag()) != 0) {
-        switch(tag) {
+      if ((tag & 7) == 4) {
+        // Abort on any end group tag.
+        return;
+      }
+      switch(tag) {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
@@ -272,7 +276,11 @@ namespace Ingweland.Fog.Inn.Models.Hoh {
     void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
       uint tag;
       while ((tag = input.ReadTag()) != 0) {
-        switch(tag) {
+      if ((tag & 7) == 4) {
+        // Abort on any end group tag.
+        return;
+      }
+      switch(tag) {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
