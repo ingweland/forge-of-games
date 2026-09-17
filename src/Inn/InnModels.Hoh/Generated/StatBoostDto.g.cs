@@ -24,17 +24,18 @@ namespace Ingweland.Fog.Inn.Models.Hoh {
     static StatBoostDtoReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "ChRzdGF0X2Jvb3N0X2R0by5wcm90bxoRY2FsY3VsYXRpb24ucHJvdG8iuwEK",
-            "DFN0YXRCb29zdER0bxINCgVvcmRlchgBIAEoBRIhCgtjYWxjdWxhdGlvbhgC",
-            "IAEoDjIMLkNhbGN1bGF0aW9uEhwKFHVuaXRTdGF0RGVmaW5pdGlvbklkGAMg",
-            "ASgJEg0KBXZhbHVlGAQgASgCEioKHXVuaXRTdGF0QXR0cmlidXRlRGVmaW5p",
-            "dGlvbklkGAYgASgJSACIAQFCIAoeX3VuaXRTdGF0QXR0cmlidXRlRGVmaW5p",
-            "dGlvbklkQh+qAhxJbmd3ZWxhbmQuRm9nLklubi5Nb2RlbHMuSG9oYgZwcm90",
+            "ChRzdGF0X2Jvb3N0X2R0by5wcm90bxoRY2FsY3VsYXRpb24ucHJvdG8aFWZp",
+            "eGVkX3BvaW50X2R0by5wcm90byLRAQoMU3RhdEJvb3N0RHRvEg0KBW9yZGVy",
+            "GAEgASgFEiEKC2NhbGN1bGF0aW9uGAIgASgOMgwuQ2FsY3VsYXRpb24SHAoU",
+            "dW5pdFN0YXREZWZpbml0aW9uSWQYAyABKAkSKgoddW5pdFN0YXRBdHRyaWJ1",
+            "dGVEZWZpbml0aW9uSWQYBiABKAlIAIgBARIdCgV2YWx1ZRgJIAEoCzIOLkZp",
+            "eGVkUG9pbnREVE9CIAoeX3VuaXRTdGF0QXR0cmlidXRlRGVmaW5pdGlvbklk",
+            "SgQIBBAFQh+qAhxJbmd3ZWxhbmQuRm9nLklubi5Nb2RlbHMuSG9oYgZwcm90",
             "bzM="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
-          new pbr::FileDescriptor[] { global::Ingweland.Fog.Inn.Models.Hoh.CalculationReflection.Descriptor, },
+          new pbr::FileDescriptor[] { global::Ingweland.Fog.Inn.Models.Hoh.CalculationReflection.Descriptor, global::Ingweland.Fog.Inn.Models.Hoh.FixedPointDtoReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::Ingweland.Fog.Inn.Models.Hoh.StatBoostDto), global::Ingweland.Fog.Inn.Models.Hoh.StatBoostDto.Parser, new[]{ "Order", "Calculation", "UnitStatDefinitionId", "Value", "UnitStatAttributeDefinitionId" }, new[]{ "UnitStatAttributeDefinitionId" }, null, null, null)
+            new pbr::GeneratedClrTypeInfo(typeof(global::Ingweland.Fog.Inn.Models.Hoh.StatBoostDto), global::Ingweland.Fog.Inn.Models.Hoh.StatBoostDto.Parser, new[]{ "Order", "Calculation", "UnitStatDefinitionId", "UnitStatAttributeDefinitionId", "Value" }, new[]{ "UnitStatAttributeDefinitionId" }, null, null, null)
           }));
     }
     #endregion
@@ -79,8 +80,8 @@ namespace Ingweland.Fog.Inn.Models.Hoh {
       order_ = other.order_;
       calculation_ = other.calculation_;
       unitStatDefinitionId_ = other.unitStatDefinitionId_;
-      value_ = other.value_;
       unitStatAttributeDefinitionId_ = other.unitStatAttributeDefinitionId_;
+      value_ = other.value_ != null ? other.value_.Clone() : null;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
@@ -126,18 +127,6 @@ namespace Ingweland.Fog.Inn.Models.Hoh {
       }
     }
 
-    /// <summary>Field number for the "value" field.</summary>
-    public const int ValueFieldNumber = 4;
-    private float value_;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public float Value {
-      get { return value_; }
-      set {
-        value_ = value;
-      }
-    }
-
     /// <summary>Field number for the "unitStatAttributeDefinitionId" field.</summary>
     public const int UnitStatAttributeDefinitionIdFieldNumber = 6;
     private readonly static string UnitStatAttributeDefinitionIdDefaultValue = "";
@@ -164,6 +153,18 @@ namespace Ingweland.Fog.Inn.Models.Hoh {
       unitStatAttributeDefinitionId_ = null;
     }
 
+    /// <summary>Field number for the "value" field.</summary>
+    public const int ValueFieldNumber = 9;
+    private global::Ingweland.Fog.Inn.Models.Hoh.FixedPointDTO value_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public global::Ingweland.Fog.Inn.Models.Hoh.FixedPointDTO Value {
+      get { return value_; }
+      set {
+        value_ = value;
+      }
+    }
+
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override bool Equals(object other) {
@@ -182,8 +183,8 @@ namespace Ingweland.Fog.Inn.Models.Hoh {
       if (Order != other.Order) return false;
       if (Calculation != other.Calculation) return false;
       if (UnitStatDefinitionId != other.UnitStatDefinitionId) return false;
-      if (!pbc::ProtobufEqualityComparers.BitwiseSingleEqualityComparer.Equals(Value, other.Value)) return false;
       if (UnitStatAttributeDefinitionId != other.UnitStatAttributeDefinitionId) return false;
+      if (!object.Equals(Value, other.Value)) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
 
@@ -194,8 +195,8 @@ namespace Ingweland.Fog.Inn.Models.Hoh {
       if (Order != 0) hash ^= Order.GetHashCode();
       if (Calculation != global::Ingweland.Fog.Inn.Models.Hoh.Calculation.Add) hash ^= Calculation.GetHashCode();
       if (UnitStatDefinitionId.Length != 0) hash ^= UnitStatDefinitionId.GetHashCode();
-      if (Value != 0F) hash ^= pbc::ProtobufEqualityComparers.BitwiseSingleEqualityComparer.GetHashCode(Value);
       if (HasUnitStatAttributeDefinitionId) hash ^= UnitStatAttributeDefinitionId.GetHashCode();
+      if (value_ != null) hash ^= Value.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -226,13 +227,13 @@ namespace Ingweland.Fog.Inn.Models.Hoh {
         output.WriteRawTag(26);
         output.WriteString(UnitStatDefinitionId);
       }
-      if (Value != 0F) {
-        output.WriteRawTag(37);
-        output.WriteFloat(Value);
-      }
       if (HasUnitStatAttributeDefinitionId) {
         output.WriteRawTag(50);
         output.WriteString(UnitStatAttributeDefinitionId);
+      }
+      if (value_ != null) {
+        output.WriteRawTag(74);
+        output.WriteMessage(Value);
       }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
@@ -256,13 +257,13 @@ namespace Ingweland.Fog.Inn.Models.Hoh {
         output.WriteRawTag(26);
         output.WriteString(UnitStatDefinitionId);
       }
-      if (Value != 0F) {
-        output.WriteRawTag(37);
-        output.WriteFloat(Value);
-      }
       if (HasUnitStatAttributeDefinitionId) {
         output.WriteRawTag(50);
         output.WriteString(UnitStatAttributeDefinitionId);
+      }
+      if (value_ != null) {
+        output.WriteRawTag(74);
+        output.WriteMessage(Value);
       }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(ref output);
@@ -283,11 +284,11 @@ namespace Ingweland.Fog.Inn.Models.Hoh {
       if (UnitStatDefinitionId.Length != 0) {
         size += 1 + pb::CodedOutputStream.ComputeStringSize(UnitStatDefinitionId);
       }
-      if (Value != 0F) {
-        size += 1 + 4;
-      }
       if (HasUnitStatAttributeDefinitionId) {
         size += 1 + pb::CodedOutputStream.ComputeStringSize(UnitStatAttributeDefinitionId);
+      }
+      if (value_ != null) {
+        size += 1 + pb::CodedOutputStream.ComputeMessageSize(Value);
       }
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
@@ -310,11 +311,14 @@ namespace Ingweland.Fog.Inn.Models.Hoh {
       if (other.UnitStatDefinitionId.Length != 0) {
         UnitStatDefinitionId = other.UnitStatDefinitionId;
       }
-      if (other.Value != 0F) {
-        Value = other.Value;
-      }
       if (other.HasUnitStatAttributeDefinitionId) {
         UnitStatAttributeDefinitionId = other.UnitStatAttributeDefinitionId;
+      }
+      if (other.value_ != null) {
+        if (value_ == null) {
+          Value = new global::Ingweland.Fog.Inn.Models.Hoh.FixedPointDTO();
+        }
+        Value.MergeFrom(other.Value);
       }
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
@@ -327,7 +331,11 @@ namespace Ingweland.Fog.Inn.Models.Hoh {
     #else
       uint tag;
       while ((tag = input.ReadTag()) != 0) {
-        switch(tag) {
+      if ((tag & 7) == 4) {
+        // Abort on any end group tag.
+        return;
+      }
+      switch(tag) {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
@@ -343,12 +351,15 @@ namespace Ingweland.Fog.Inn.Models.Hoh {
             UnitStatDefinitionId = input.ReadString();
             break;
           }
-          case 37: {
-            Value = input.ReadFloat();
-            break;
-          }
           case 50: {
             UnitStatAttributeDefinitionId = input.ReadString();
+            break;
+          }
+          case 74: {
+            if (value_ == null) {
+              Value = new global::Ingweland.Fog.Inn.Models.Hoh.FixedPointDTO();
+            }
+            input.ReadMessage(Value);
             break;
           }
         }
@@ -362,7 +373,11 @@ namespace Ingweland.Fog.Inn.Models.Hoh {
     void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
       uint tag;
       while ((tag = input.ReadTag()) != 0) {
-        switch(tag) {
+      if ((tag & 7) == 4) {
+        // Abort on any end group tag.
+        return;
+      }
+      switch(tag) {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
@@ -378,12 +393,15 @@ namespace Ingweland.Fog.Inn.Models.Hoh {
             UnitStatDefinitionId = input.ReadString();
             break;
           }
-          case 37: {
-            Value = input.ReadFloat();
-            break;
-          }
           case 50: {
             UnitStatAttributeDefinitionId = input.ReadString();
+            break;
+          }
+          case 74: {
+            if (value_ == null) {
+              Value = new global::Ingweland.Fog.Inn.Models.Hoh.FixedPointDTO();
+            }
+            input.ReadMessage(Value);
             break;
           }
         }

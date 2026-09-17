@@ -1,0 +1,8 @@
+syntax = "proto3";
+
+option csharp_namespace = "Ingweland.Fog.Inn.Models.Hoh";
+
+// 16.16 fixed-point number: value = raw_value / 65536
+message FixedPointDTO {
+  int64 raw_value = 1;
+}

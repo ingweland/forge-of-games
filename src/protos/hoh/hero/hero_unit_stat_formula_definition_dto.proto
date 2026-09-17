@@ -1,4 +1,5 @@
 syntax = "proto3";
+import "fixed_point_dto.proto";
 
 option csharp_namespace = "Ingweland.Fog.Inn.Models.Hoh";
 
@@ -14,6 +15,7 @@ message HeroUnitStatFormulaDefinitionUnitRarityFactorsDto {
 }
 
 message HeroUnitStatFormulaDefinitionFactorsDto {
-  float normal = 1;
-  float ascension = 2;
+  reserved 1, 2;
+  FixedPointDTO normal = 3;
+  FixedPointDTO ascension = 4;
 }

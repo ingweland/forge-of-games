@@ -26,39 +26,40 @@ namespace Ingweland.Fog.Inn.Models.Hoh {
           string.Concat(
             "ChZiYXR0bGVfc3F1YWRfZHRvLnByb3RvGhRzdGF0X2Jvb3N0X2R0by5wcm90",
             "bxoUZXF1aXBtZW50X2l0ZW0ucHJvdG8aGWdvb2dsZS9wcm90b2J1Zi9hbnku",
-            "cHJvdG8iZgoOQmF0dGxlU3F1YWREdG8SGAoQYmF0dGxlZmllbGRfc2xvdBgB",
-            "IAEoBRIcCgRoZXJvGAIgASgLMg4uQmF0dGxlVW5pdER0bxIcCgR1bml0GAMg",
-            "ASgLMg4uQmF0dGxlVW5pdER0byJmCg1CYXR0bGVVbml0RHRvEiwKCnByb3Bl",
-            "cnRpZXMYASABKAsyGC5CYXR0bGVVbml0UHJvcGVydGllc0R0bxInCgp1bml0",
-            "X3N0YXRlGAIgASgLMhMuQmF0dGxlVW5pdFN0YXRlRHRvIu8CChdCYXR0bGVV",
-            "bml0UHJvcGVydGllc0R0bxIPCgd1bml0X2lkGAEgASgJEg0KBWxldmVsGAIg",
-            "ASgFEhcKD2FzY2Vuc2lvbl9sZXZlbBgDIAEoBRIRCglhYmlsaXRpZXMYBCAD",
-            "KAkSTgoUdW5pdF9zdGF0c19vdmVycmlkZXMYBSADKAsyMC5CYXR0bGVVbml0",
-            "UHJvcGVydGllc0R0by5Vbml0U3RhdHNPdmVycmlkZXNFbnRyeRIiCgtzdGF0",
-            "X2Jvb3N0cxgGIAMoCzINLlN0YXRCb29zdER0bxIpCgtkb21haW5fZGF0YRgH",
-            "IAMoCzIULmdvb2dsZS5wcm90b2J1Zi5BbnkSFQoNYWJpbGl0eV9sZXZlbBgJ",
-            "IAEoBRIXCg9hd2FrZW5pbmdfbGV2ZWwYCiABKAUaOQoXVW5pdFN0YXRzT3Zl",
-            "cnJpZGVzRW50cnkSCwoDa2V5GAEgASgJEg0KBXZhbHVlGAIgASgCOgI4ASKU",
+            "cHJvdG8aFWZpeGVkX3BvaW50X2R0by5wcm90byJmCg5CYXR0bGVTcXVhZER0",
+            "bxIYChBiYXR0bGVmaWVsZF9zbG90GAEgASgFEhwKBGhlcm8YAiABKAsyDi5C",
+            "YXR0bGVVbml0RHRvEhwKBHVuaXQYAyABKAsyDi5CYXR0bGVVbml0RHRvImYK",
+            "DUJhdHRsZVVuaXREdG8SLAoKcHJvcGVydGllcxgBIAEoCzIYLkJhdHRsZVVu",
+            "aXRQcm9wZXJ0aWVzRHRvEicKCnVuaXRfc3RhdGUYAiABKAsyEy5CYXR0bGVV",
+            "bml0U3RhdGVEdG8ihQMKF0JhdHRsZVVuaXRQcm9wZXJ0aWVzRHRvEg8KB3Vu",
+            "aXRfaWQYASABKAkSDQoFbGV2ZWwYAiABKAUSFwoPYXNjZW5zaW9uX2xldmVs",
+            "GAMgASgFEhEKCWFiaWxpdGllcxgEIAMoCRIiCgtzdGF0X2Jvb3N0cxgGIAMo",
+            "CzINLlN0YXRCb29zdER0bxIpCgtkb21haW5fZGF0YRgHIAMoCzIULmdvb2ds",
+            "ZS5wcm90b2J1Zi5BbnkSFQoNYWJpbGl0eV9sZXZlbBgJIAEoBRIXCg9hd2Fr",
+            "ZW5pbmdfbGV2ZWwYCiABKAUSTgoUdW5pdF9zdGF0c19vdmVycmlkZXMYDCAD",
+            "KAsyMC5CYXR0bGVVbml0UHJvcGVydGllc0R0by5Vbml0U3RhdHNPdmVycmlk",
+            "ZXNFbnRyeRpJChdVbml0U3RhdHNPdmVycmlkZXNFbnRyeRILCgNrZXkYASAB",
+            "KAkSHQoFdmFsdWUYAiABKAsyDi5GaXhlZFBvaW50RFRPOgI4AUoECAUQBiKq",
             "AQoSQmF0dGxlVW5pdFN0YXRlRHRvEhQKDGluX2JhdHRsZV9pZBgBIAEoBRI2",
-            "Cgp1bml0X3N0YXRzGAIgAygLMiIuQmF0dGxlVW5pdFN0YXRlRHRvLlVuaXRT",
-            "dGF0c0VudHJ5GjAKDlVuaXRTdGF0c0VudHJ5EgsKA2tleRgBIAEoCRINCgV2",
-            "YWx1ZRgCIAEoAjoCOAEiQAoXQWxsRXF1aXBtZW50VW5pdERhdGFEVE8SJQoF",
-            "aXRlbXMYASADKAsyFi5TcXVhZEVxdWlwbWVudEl0ZW1EdG8i8gEKFVNxdWFk",
-            "RXF1aXBtZW50SXRlbUR0bxIlCh1lcXVpcG1lbnRTbG90VHlwZURlZmluaXRp",
-            "b25JZBgBIAEoCRIgChhlcXVpcG1lbnRTZXREZWZpbml0aW9uSWQYAiABKAkS",
-            "IwobZXF1aXBtZW50UmFyaXR5RGVmaW5pdGlvbklkGAMgASgJEg0KBWxldmVs",
-            "GAQgASgFEi0KDW1haW5BdHRyaWJ1dGUYBSABKAsyFi5FcXVpcG1lbnRBdHRy",
-            "aWJ1dGVEdG8SLQoNc3ViQXR0cmlidXRlcxgGIAMoCzIWLkVxdWlwbWVudEF0",
-            "dHJpYnV0ZUR0byJeChBSZWxpY1VuaXREYXRhRFRPEhUKDWRlZmluaXRpb25f",
-            "aWQYASABKAkSDQoFbGV2ZWwYAiABKAUSFwoPYXNjZW5zaW9uX2xldmVsGAMg",
-            "ASgFEgsKA2FnZRgEIAEoCUIfqgIcSW5nd2VsYW5kLkZvZy5Jbm4uTW9kZWxz",
-            "LkhvaGIGcHJvdG8z"));
+            "Cgp1bml0X3N0YXRzGAMgAygLMiIuQmF0dGxlVW5pdFN0YXRlRHRvLlVuaXRT",
+            "dGF0c0VudHJ5GkAKDlVuaXRTdGF0c0VudHJ5EgsKA2tleRgBIAEoCRIdCgV2",
+            "YWx1ZRgCIAEoCzIOLkZpeGVkUG9pbnREVE86AjgBSgQIAhADIkAKF0FsbEVx",
+            "dWlwbWVudFVuaXREYXRhRFRPEiUKBWl0ZW1zGAEgAygLMhYuU3F1YWRFcXVp",
+            "cG1lbnRJdGVtRHRvIvIBChVTcXVhZEVxdWlwbWVudEl0ZW1EdG8SJQodZXF1",
+            "aXBtZW50U2xvdFR5cGVEZWZpbml0aW9uSWQYASABKAkSIAoYZXF1aXBtZW50",
+            "U2V0RGVmaW5pdGlvbklkGAIgASgJEiMKG2VxdWlwbWVudFJhcml0eURlZmlu",
+            "aXRpb25JZBgDIAEoCRINCgVsZXZlbBgEIAEoBRItCg1tYWluQXR0cmlidXRl",
+            "GAUgASgLMhYuRXF1aXBtZW50QXR0cmlidXRlRHRvEi0KDXN1YkF0dHJpYnV0",
+            "ZXMYBiADKAsyFi5FcXVpcG1lbnRBdHRyaWJ1dGVEdG8iXgoQUmVsaWNVbml0",
+            "RGF0YURUTxIVCg1kZWZpbml0aW9uX2lkGAEgASgJEg0KBWxldmVsGAIgASgF",
+            "EhcKD2FzY2Vuc2lvbl9sZXZlbBgDIAEoBRILCgNhZ2UYBCABKAlCH6oCHElu",
+            "Z3dlbGFuZC5Gb2cuSW5uLk1vZGVscy5Ib2hiBnByb3RvMw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
-          new pbr::FileDescriptor[] { global::Ingweland.Fog.Inn.Models.Hoh.StatBoostDtoReflection.Descriptor, global::Ingweland.Fog.Inn.Models.Hoh.EquipmentItemReflection.Descriptor, global::Google.Protobuf.WellKnownTypes.AnyReflection.Descriptor, },
+          new pbr::FileDescriptor[] { global::Ingweland.Fog.Inn.Models.Hoh.StatBoostDtoReflection.Descriptor, global::Ingweland.Fog.Inn.Models.Hoh.EquipmentItemReflection.Descriptor, global::Google.Protobuf.WellKnownTypes.AnyReflection.Descriptor, global::Ingweland.Fog.Inn.Models.Hoh.FixedPointDtoReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
             new pbr::GeneratedClrTypeInfo(typeof(global::Ingweland.Fog.Inn.Models.Hoh.BattleSquadDto), global::Ingweland.Fog.Inn.Models.Hoh.BattleSquadDto.Parser, new[]{ "BattlefieldSlot", "Hero", "Unit" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Ingweland.Fog.Inn.Models.Hoh.BattleUnitDto), global::Ingweland.Fog.Inn.Models.Hoh.BattleUnitDto.Parser, new[]{ "Properties", "UnitState" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Ingweland.Fog.Inn.Models.Hoh.BattleUnitPropertiesDto), global::Ingweland.Fog.Inn.Models.Hoh.BattleUnitPropertiesDto.Parser, new[]{ "UnitId", "Level", "AscensionLevel", "Abilities", "UnitStatsOverrides", "StatBoosts", "DomainData", "AbilityLevel", "AwakeningLevel" }, null, null, null, new pbr::GeneratedClrTypeInfo[] { null, }),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Ingweland.Fog.Inn.Models.Hoh.BattleUnitPropertiesDto), global::Ingweland.Fog.Inn.Models.Hoh.BattleUnitPropertiesDto.Parser, new[]{ "UnitId", "Level", "AscensionLevel", "Abilities", "StatBoosts", "DomainData", "AbilityLevel", "AwakeningLevel", "UnitStatsOverrides" }, null, null, null, new pbr::GeneratedClrTypeInfo[] { null, }),
             new pbr::GeneratedClrTypeInfo(typeof(global::Ingweland.Fog.Inn.Models.Hoh.BattleUnitStateDto), global::Ingweland.Fog.Inn.Models.Hoh.BattleUnitStateDto.Parser, new[]{ "InBattleId", "UnitStats" }, null, null, null, new pbr::GeneratedClrTypeInfo[] { null, }),
             new pbr::GeneratedClrTypeInfo(typeof(global::Ingweland.Fog.Inn.Models.Hoh.AllEquipmentUnitDataDTO), global::Ingweland.Fog.Inn.Models.Hoh.AllEquipmentUnitDataDTO.Parser, new[]{ "Items" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Ingweland.Fog.Inn.Models.Hoh.SquadEquipmentItemDto), global::Ingweland.Fog.Inn.Models.Hoh.SquadEquipmentItemDto.Parser, new[]{ "EquipmentSlotTypeDefinitionId", "EquipmentSetDefinitionId", "EquipmentRarityDefinitionId", "Level", "MainAttribute", "SubAttributes" }, null, null, null, null),
@@ -289,7 +290,11 @@ namespace Ingweland.Fog.Inn.Models.Hoh {
     #else
       uint tag;
       while ((tag = input.ReadTag()) != 0) {
-        switch(tag) {
+      if ((tag & 7) == 4) {
+        // Abort on any end group tag.
+        return;
+      }
+      switch(tag) {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
@@ -322,7 +327,11 @@ namespace Ingweland.Fog.Inn.Models.Hoh {
     void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
       uint tag;
       while ((tag = input.ReadTag()) != 0) {
-        switch(tag) {
+      if ((tag & 7) == 4) {
+        // Abort on any end group tag.
+        return;
+      }
+      switch(tag) {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
@@ -542,7 +551,11 @@ namespace Ingweland.Fog.Inn.Models.Hoh {
     #else
       uint tag;
       while ((tag = input.ReadTag()) != 0) {
-        switch(tag) {
+      if ((tag & 7) == 4) {
+        // Abort on any end group tag.
+        return;
+      }
+      switch(tag) {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
@@ -571,7 +584,11 @@ namespace Ingweland.Fog.Inn.Models.Hoh {
     void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
       uint tag;
       while ((tag = input.ReadTag()) != 0) {
-        switch(tag) {
+      if ((tag & 7) == 4) {
+        // Abort on any end group tag.
+        return;
+      }
+      switch(tag) {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
@@ -635,11 +652,11 @@ namespace Ingweland.Fog.Inn.Models.Hoh {
       level_ = other.level_;
       ascensionLevel_ = other.ascensionLevel_;
       abilities_ = other.abilities_.Clone();
-      unitStatsOverrides_ = other.unitStatsOverrides_.Clone();
       statBoosts_ = other.statBoosts_.Clone();
       domainData_ = other.domainData_.Clone();
       abilityLevel_ = other.abilityLevel_;
       awakeningLevel_ = other.awakeningLevel_;
+      unitStatsOverrides_ = other.unitStatsOverrides_.Clone();
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
@@ -696,17 +713,6 @@ namespace Ingweland.Fog.Inn.Models.Hoh {
       get { return abilities_; }
     }
 
-    /// <summary>Field number for the "unit_stats_overrides" field.</summary>
-    public const int UnitStatsOverridesFieldNumber = 5;
-    private static readonly pbc::MapField<string, float>.Codec _map_unitStatsOverrides_codec
-        = new pbc::MapField<string, float>.Codec(pb::FieldCodec.ForString(10, ""), pb::FieldCodec.ForFloat(21, 0F), 42);
-    private readonly pbc::MapField<string, float> unitStatsOverrides_ = new pbc::MapField<string, float>();
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public pbc::MapField<string, float> UnitStatsOverrides {
-      get { return unitStatsOverrides_; }
-    }
-
     /// <summary>Field number for the "stat_boosts" field.</summary>
     public const int StatBoostsFieldNumber = 6;
     private static readonly pb::FieldCodec<global::Ingweland.Fog.Inn.Models.Hoh.StatBoostDto> _repeated_statBoosts_codec
@@ -756,6 +762,17 @@ namespace Ingweland.Fog.Inn.Models.Hoh {
       }
     }
 
+    /// <summary>Field number for the "unit_stats_overrides" field.</summary>
+    public const int UnitStatsOverridesFieldNumber = 12;
+    private static readonly pbc::MapField<string, global::Ingweland.Fog.Inn.Models.Hoh.FixedPointDTO>.Codec _map_unitStatsOverrides_codec
+        = new pbc::MapField<string, global::Ingweland.Fog.Inn.Models.Hoh.FixedPointDTO>.Codec(pb::FieldCodec.ForString(10, ""), pb::FieldCodec.ForMessage(18, global::Ingweland.Fog.Inn.Models.Hoh.FixedPointDTO.Parser), 98);
+    private readonly pbc::MapField<string, global::Ingweland.Fog.Inn.Models.Hoh.FixedPointDTO> unitStatsOverrides_ = new pbc::MapField<string, global::Ingweland.Fog.Inn.Models.Hoh.FixedPointDTO>();
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public pbc::MapField<string, global::Ingweland.Fog.Inn.Models.Hoh.FixedPointDTO> UnitStatsOverrides {
+      get { return unitStatsOverrides_; }
+    }
+
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override bool Equals(object other) {
@@ -775,11 +792,11 @@ namespace Ingweland.Fog.Inn.Models.Hoh {
       if (Level != other.Level) return false;
       if (AscensionLevel != other.AscensionLevel) return false;
       if(!abilities_.Equals(other.abilities_)) return false;
-      if (!UnitStatsOverrides.Equals(other.UnitStatsOverrides)) return false;
       if(!statBoosts_.Equals(other.statBoosts_)) return false;
       if(!domainData_.Equals(other.domainData_)) return false;
       if (AbilityLevel != other.AbilityLevel) return false;
       if (AwakeningLevel != other.AwakeningLevel) return false;
+      if (!UnitStatsOverrides.Equals(other.UnitStatsOverrides)) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
 
@@ -791,11 +808,11 @@ namespace Ingweland.Fog.Inn.Models.Hoh {
       if (Level != 0) hash ^= Level.GetHashCode();
       if (AscensionLevel != 0) hash ^= AscensionLevel.GetHashCode();
       hash ^= abilities_.GetHashCode();
-      hash ^= UnitStatsOverrides.GetHashCode();
       hash ^= statBoosts_.GetHashCode();
       hash ^= domainData_.GetHashCode();
       if (AbilityLevel != 0) hash ^= AbilityLevel.GetHashCode();
       if (AwakeningLevel != 0) hash ^= AwakeningLevel.GetHashCode();
+      hash ^= UnitStatsOverrides.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -827,7 +844,6 @@ namespace Ingweland.Fog.Inn.Models.Hoh {
         output.WriteInt32(AscensionLevel);
       }
       abilities_.WriteTo(output, _repeated_abilities_codec);
-      unitStatsOverrides_.WriteTo(output, _map_unitStatsOverrides_codec);
       statBoosts_.WriteTo(output, _repeated_statBoosts_codec);
       domainData_.WriteTo(output, _repeated_domainData_codec);
       if (AbilityLevel != 0) {
@@ -838,6 +854,7 @@ namespace Ingweland.Fog.Inn.Models.Hoh {
         output.WriteRawTag(80);
         output.WriteInt32(AwakeningLevel);
       }
+      unitStatsOverrides_.WriteTo(output, _map_unitStatsOverrides_codec);
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
       }
@@ -861,7 +878,6 @@ namespace Ingweland.Fog.Inn.Models.Hoh {
         output.WriteInt32(AscensionLevel);
       }
       abilities_.WriteTo(ref output, _repeated_abilities_codec);
-      unitStatsOverrides_.WriteTo(ref output, _map_unitStatsOverrides_codec);
       statBoosts_.WriteTo(ref output, _repeated_statBoosts_codec);
       domainData_.WriteTo(ref output, _repeated_domainData_codec);
       if (AbilityLevel != 0) {
@@ -872,6 +888,7 @@ namespace Ingweland.Fog.Inn.Models.Hoh {
         output.WriteRawTag(80);
         output.WriteInt32(AwakeningLevel);
       }
+      unitStatsOverrides_.WriteTo(ref output, _map_unitStatsOverrides_codec);
       if (_unknownFields != null) {
         _unknownFields.WriteTo(ref output);
       }
@@ -892,7 +909,6 @@ namespace Ingweland.Fog.Inn.Models.Hoh {
         size += 1 + pb::CodedOutputStream.ComputeInt32Size(AscensionLevel);
       }
       size += abilities_.CalculateSize(_repeated_abilities_codec);
-      size += unitStatsOverrides_.CalculateSize(_map_unitStatsOverrides_codec);
       size += statBoosts_.CalculateSize(_repeated_statBoosts_codec);
       size += domainData_.CalculateSize(_repeated_domainData_codec);
       if (AbilityLevel != 0) {
@@ -901,6 +917,7 @@ namespace Ingweland.Fog.Inn.Models.Hoh {
       if (AwakeningLevel != 0) {
         size += 1 + pb::CodedOutputStream.ComputeInt32Size(AwakeningLevel);
       }
+      size += unitStatsOverrides_.CalculateSize(_map_unitStatsOverrides_codec);
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
       }
@@ -923,7 +940,6 @@ namespace Ingweland.Fog.Inn.Models.Hoh {
         AscensionLevel = other.AscensionLevel;
       }
       abilities_.Add(other.abilities_);
-      unitStatsOverrides_.MergeFrom(other.unitStatsOverrides_);
       statBoosts_.Add(other.statBoosts_);
       domainData_.Add(other.domainData_);
       if (other.AbilityLevel != 0) {
@@ -932,6 +948,7 @@ namespace Ingweland.Fog.Inn.Models.Hoh {
       if (other.AwakeningLevel != 0) {
         AwakeningLevel = other.AwakeningLevel;
       }
+      unitStatsOverrides_.MergeFrom(other.unitStatsOverrides_);
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
 
@@ -943,7 +960,11 @@ namespace Ingweland.Fog.Inn.Models.Hoh {
     #else
       uint tag;
       while ((tag = input.ReadTag()) != 0) {
-        switch(tag) {
+      if ((tag & 7) == 4) {
+        // Abort on any end group tag.
+        return;
+      }
+      switch(tag) {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
@@ -963,10 +984,6 @@ namespace Ingweland.Fog.Inn.Models.Hoh {
             abilities_.AddEntriesFrom(input, _repeated_abilities_codec);
             break;
           }
-          case 42: {
-            unitStatsOverrides_.AddEntriesFrom(input, _map_unitStatsOverrides_codec);
-            break;
-          }
           case 50: {
             statBoosts_.AddEntriesFrom(input, _repeated_statBoosts_codec);
             break;
@@ -983,6 +1000,10 @@ namespace Ingweland.Fog.Inn.Models.Hoh {
             AwakeningLevel = input.ReadInt32();
             break;
           }
+          case 98: {
+            unitStatsOverrides_.AddEntriesFrom(input, _map_unitStatsOverrides_codec);
+            break;
+          }
         }
       }
     #endif
@@ -994,7 +1015,11 @@ namespace Ingweland.Fog.Inn.Models.Hoh {
     void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
       uint tag;
       while ((tag = input.ReadTag()) != 0) {
-        switch(tag) {
+      if ((tag & 7) == 4) {
+        // Abort on any end group tag.
+        return;
+      }
+      switch(tag) {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
@@ -1014,10 +1039,6 @@ namespace Ingweland.Fog.Inn.Models.Hoh {
             abilities_.AddEntriesFrom(ref input, _repeated_abilities_codec);
             break;
           }
-          case 42: {
-            unitStatsOverrides_.AddEntriesFrom(ref input, _map_unitStatsOverrides_codec);
-            break;
-          }
           case 50: {
             statBoosts_.AddEntriesFrom(ref input, _repeated_statBoosts_codec);
             break;
@@ -1032,6 +1053,10 @@ namespace Ingweland.Fog.Inn.Models.Hoh {
           }
           case 80: {
             AwakeningLevel = input.ReadInt32();
+            break;
+          }
+          case 98: {
+            unitStatsOverrides_.AddEntriesFrom(ref input, _map_unitStatsOverrides_codec);
             break;
           }
         }
@@ -1100,13 +1125,13 @@ namespace Ingweland.Fog.Inn.Models.Hoh {
     }
 
     /// <summary>Field number for the "unit_stats" field.</summary>
-    public const int UnitStatsFieldNumber = 2;
-    private static readonly pbc::MapField<string, float>.Codec _map_unitStats_codec
-        = new pbc::MapField<string, float>.Codec(pb::FieldCodec.ForString(10, ""), pb::FieldCodec.ForFloat(21, 0F), 18);
-    private readonly pbc::MapField<string, float> unitStats_ = new pbc::MapField<string, float>();
+    public const int UnitStatsFieldNumber = 3;
+    private static readonly pbc::MapField<string, global::Ingweland.Fog.Inn.Models.Hoh.FixedPointDTO>.Codec _map_unitStats_codec
+        = new pbc::MapField<string, global::Ingweland.Fog.Inn.Models.Hoh.FixedPointDTO>.Codec(pb::FieldCodec.ForString(10, ""), pb::FieldCodec.ForMessage(18, global::Ingweland.Fog.Inn.Models.Hoh.FixedPointDTO.Parser), 26);
+    private readonly pbc::MapField<string, global::Ingweland.Fog.Inn.Models.Hoh.FixedPointDTO> unitStats_ = new pbc::MapField<string, global::Ingweland.Fog.Inn.Models.Hoh.FixedPointDTO>();
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public pbc::MapField<string, float> UnitStats {
+    public pbc::MapField<string, global::Ingweland.Fog.Inn.Models.Hoh.FixedPointDTO> UnitStats {
       get { return unitStats_; }
     }
 
@@ -1215,7 +1240,11 @@ namespace Ingweland.Fog.Inn.Models.Hoh {
     #else
       uint tag;
       while ((tag = input.ReadTag()) != 0) {
-        switch(tag) {
+      if ((tag & 7) == 4) {
+        // Abort on any end group tag.
+        return;
+      }
+      switch(tag) {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
@@ -1223,7 +1252,7 @@ namespace Ingweland.Fog.Inn.Models.Hoh {
             InBattleId = input.ReadInt32();
             break;
           }
-          case 18: {
+          case 26: {
             unitStats_.AddEntriesFrom(input, _map_unitStats_codec);
             break;
           }
@@ -1238,7 +1267,11 @@ namespace Ingweland.Fog.Inn.Models.Hoh {
     void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
       uint tag;
       while ((tag = input.ReadTag()) != 0) {
-        switch(tag) {
+      if ((tag & 7) == 4) {
+        // Abort on any end group tag.
+        return;
+      }
+      switch(tag) {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
@@ -1246,7 +1279,7 @@ namespace Ingweland.Fog.Inn.Models.Hoh {
             InBattleId = input.ReadInt32();
             break;
           }
-          case 18: {
+          case 26: {
             unitStats_.AddEntriesFrom(ref input, _map_unitStats_codec);
             break;
           }
@@ -1402,7 +1435,11 @@ namespace Ingweland.Fog.Inn.Models.Hoh {
     #else
       uint tag;
       while ((tag = input.ReadTag()) != 0) {
-        switch(tag) {
+      if ((tag & 7) == 4) {
+        // Abort on any end group tag.
+        return;
+      }
+      switch(tag) {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
@@ -1421,7 +1458,11 @@ namespace Ingweland.Fog.Inn.Models.Hoh {
     void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
       uint tag;
       while ((tag = input.ReadTag()) != 0) {
-        switch(tag) {
+      if ((tag & 7) == 4) {
+        // Abort on any end group tag.
+        return;
+      }
+      switch(tag) {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
@@ -1729,7 +1770,11 @@ namespace Ingweland.Fog.Inn.Models.Hoh {
     #else
       uint tag;
       while ((tag = input.ReadTag()) != 0) {
-        switch(tag) {
+      if ((tag & 7) == 4) {
+        // Abort on any end group tag.
+        return;
+      }
+      switch(tag) {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
@@ -1771,7 +1816,11 @@ namespace Ingweland.Fog.Inn.Models.Hoh {
     void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
       uint tag;
       while ((tag = input.ReadTag()) != 0) {
-        switch(tag) {
+      if ((tag & 7) == 4) {
+        // Abort on any end group tag.
+        return;
+      }
+      switch(tag) {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
@@ -2052,7 +2101,11 @@ namespace Ingweland.Fog.Inn.Models.Hoh {
     #else
       uint tag;
       while ((tag = input.ReadTag()) != 0) {
-        switch(tag) {
+      if ((tag & 7) == 4) {
+        // Abort on any end group tag.
+        return;
+      }
+      switch(tag) {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
@@ -2083,7 +2136,11 @@ namespace Ingweland.Fog.Inn.Models.Hoh {
     void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
       uint tag;
       while ((tag = input.ReadTag()) != 0) {
-        switch(tag) {
+      if ((tag & 7) == 4) {
+        // Abort on any end group tag.
+        return;
+      }
+      switch(tag) {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;

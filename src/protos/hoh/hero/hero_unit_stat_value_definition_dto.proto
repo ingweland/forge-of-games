@@ -1,9 +1,11 @@
 syntax = "proto3";
+import "fixed_point_dto.proto";
 
 option csharp_namespace = "Ingweland.Fog.Inn.Models.Hoh";
 
 message HeroUnitStatValueDefinitionDTO {
+  reserved 3;
   string value_id = 1;
   string stat_id = 2;
-  float value = 3;
+  FixedPointDTO value = 5;
 }

@@ -160,19 +160,20 @@ public class InGameDataMappingProfile : Profile
                 opt.MapFrom(src =>
                     HohStringParser.ParseEnumFromString<StatAttribute>(src.UnitStatAttributeDefinitionId));
             })
-            .ForMember(dest => dest.Calculation, opt => opt.MapFrom(src => src.Calculation));
+            .ForMember(dest => dest.Calculation, opt => opt.MapFrom(src => src.Calculation))
+            .ForMember(dest => dest.Value, opt => opt.MapFrom(src => src.Value.ToFloat()));
 
         CreateMap<PvpResultPointsDto, PvpResultPoints>();
         CreateMap<BattleUnitStateDto, BattleUnitState>()
             .ForMember(dest => dest.UnitStats,
                 opt => opt.MapFrom(src =>
                     src.UnitStats.ToDictionary(kvp => HohStringParser.ParseEnumFromString<UnitStatType>(kvp.Key),
-                        kvp => kvp.Value)));
+                        kvp => kvp.Value.ToFloat())));
         CreateMap<BattleUnitPropertiesDto, BattleUnitProperties>()
             .ForMember(dest => dest.UnitStatsOverrides,
                 opt => opt.MapFrom(src =>
                     src.UnitStatsOverrides.ToDictionary(kvp =>
-                        HohStringParser.ParseEnumFromString<UnitStatType>(kvp.Key), kvp => kvp.Value)))
+                        HohStringParser.ParseEnumFromString<UnitStatType>(kvp.Key), kvp => kvp.Value.ToFloat())))
             .ForMember(dest => dest.Equipment,
                 opt =>
                 {

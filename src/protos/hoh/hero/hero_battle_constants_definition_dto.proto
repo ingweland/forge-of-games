@@ -1,13 +1,15 @@
 syntax = "proto3";
+import "fixed_point_dto.proto";
 
 option csharp_namespace = "Ingweland.Fog.Inn.Models.Hoh";
 
 message HeroBattleConstantsDefinitionDTO {
+  reserved 6;
   map<string, string> stat_to_formula = 4;
-  repeated HeroUnitStatBaseValueDto base_values = 6;
+  repeated HeroUnitStatBaseValueDto base_values = 11;
 }
 
 message HeroUnitStatBaseValueDto {
   string stat_id = 1;
-  float value = 2;
+  FixedPointDTO value = 2;
 }

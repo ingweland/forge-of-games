@@ -1,12 +1,14 @@
 syntax = "proto3";
 import "calculation.proto";
+import "fixed_point_dto.proto";
 
 option csharp_namespace = "Ingweland.Fog.Inn.Models.Hoh";
 
 message StatBoostDto {
+  reserved 4;
   int32 order = 1;
   Calculation calculation = 2;
   string unitStatDefinitionId = 3;
-  float value = 4;
   optional string unitStatAttributeDefinitionId = 6;
+  FixedPointDTO value = 9;
 }

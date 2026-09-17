@@ -2,6 +2,7 @@ syntax = "proto3";
 import "stat_boost_dto.proto";
 import "equipment_item.proto";
 import "google/protobuf/any.proto";
+import "fixed_point_dto.proto";
 
 option csharp_namespace = "Ingweland.Fog.Inn.Models.Hoh";
 
@@ -17,21 +18,23 @@ message BattleUnitDto {
 }
 
 message BattleUnitPropertiesDto {
+  reserved 5;
   string unit_id = 1;
   int32 level = 2;
   int32 ascension_level = 3;
   repeated string abilities = 4;
-  map<string, float> unit_stats_overrides = 5;
   repeated StatBoostDto stat_boosts = 6;
   //AllEquipmentUnitDataDTO, RelicUnitDataDTO
   repeated google.protobuf.Any domain_data = 7;
   int32 ability_level = 9;
   int32 awakening_level = 10;
+  map<string, FixedPointDTO> unit_stats_overrides = 12;
 }
 
 message BattleUnitStateDto {
+  reserved 2;
   int32 in_battle_id = 1;
-  map<string, float> unit_stats = 2;
+  map<string, FixedPointDTO> unit_stats = 3;
 }
 
 message AllEquipmentUnitDataDTO {

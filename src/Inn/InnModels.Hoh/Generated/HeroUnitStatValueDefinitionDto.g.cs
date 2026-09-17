@@ -24,12 +24,13 @@ namespace Ingweland.Fog.Inn.Models.Hoh {
     static HeroUnitStatValueDefinitionDtoReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "CiloZXJvX3VuaXRfc3RhdF92YWx1ZV9kZWZpbml0aW9uX2R0by5wcm90byJS",
-            "Ch5IZXJvVW5pdFN0YXRWYWx1ZURlZmluaXRpb25EVE8SEAoIdmFsdWVfaWQY",
-            "ASABKAkSDwoHc3RhdF9pZBgCIAEoCRINCgV2YWx1ZRgDIAEoAkIfqgIcSW5n",
+            "CiloZXJvX3VuaXRfc3RhdF92YWx1ZV9kZWZpbml0aW9uX2R0by5wcm90bxoV",
+            "Zml4ZWRfcG9pbnRfZHRvLnByb3RvImgKHkhlcm9Vbml0U3RhdFZhbHVlRGVm",
+            "aW5pdGlvbkRUTxIQCgh2YWx1ZV9pZBgBIAEoCRIPCgdzdGF0X2lkGAIgASgJ",
+            "Eh0KBXZhbHVlGAUgASgLMg4uRml4ZWRQb2ludERUT0oECAMQBEIfqgIcSW5n",
             "d2VsYW5kLkZvZy5Jbm4uTW9kZWxzLkhvaGIGcHJvdG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
-          new pbr::FileDescriptor[] { },
+          new pbr::FileDescriptor[] { global::Ingweland.Fog.Inn.Models.Hoh.FixedPointDtoReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
             new pbr::GeneratedClrTypeInfo(typeof(global::Ingweland.Fog.Inn.Models.Hoh.HeroUnitStatValueDefinitionDTO), global::Ingweland.Fog.Inn.Models.Hoh.HeroUnitStatValueDefinitionDTO.Parser, new[]{ "ValueId", "StatId", "Value" }, null, null, null, null)
           }));
@@ -75,7 +76,7 @@ namespace Ingweland.Fog.Inn.Models.Hoh {
     public HeroUnitStatValueDefinitionDTO(HeroUnitStatValueDefinitionDTO other) : this() {
       valueId_ = other.valueId_;
       statId_ = other.statId_;
-      value_ = other.value_;
+      value_ = other.value_ != null ? other.value_.Clone() : null;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
@@ -110,11 +111,11 @@ namespace Ingweland.Fog.Inn.Models.Hoh {
     }
 
     /// <summary>Field number for the "value" field.</summary>
-    public const int ValueFieldNumber = 3;
-    private float value_;
+    public const int ValueFieldNumber = 5;
+    private global::Ingweland.Fog.Inn.Models.Hoh.FixedPointDTO value_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public float Value {
+    public global::Ingweland.Fog.Inn.Models.Hoh.FixedPointDTO Value {
       get { return value_; }
       set {
         value_ = value;
@@ -138,7 +139,7 @@ namespace Ingweland.Fog.Inn.Models.Hoh {
       }
       if (ValueId != other.ValueId) return false;
       if (StatId != other.StatId) return false;
-      if (!pbc::ProtobufEqualityComparers.BitwiseSingleEqualityComparer.Equals(Value, other.Value)) return false;
+      if (!object.Equals(Value, other.Value)) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
 
@@ -148,7 +149,7 @@ namespace Ingweland.Fog.Inn.Models.Hoh {
       int hash = 1;
       if (ValueId.Length != 0) hash ^= ValueId.GetHashCode();
       if (StatId.Length != 0) hash ^= StatId.GetHashCode();
-      if (Value != 0F) hash ^= pbc::ProtobufEqualityComparers.BitwiseSingleEqualityComparer.GetHashCode(Value);
+      if (value_ != null) hash ^= Value.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -175,9 +176,9 @@ namespace Ingweland.Fog.Inn.Models.Hoh {
         output.WriteRawTag(18);
         output.WriteString(StatId);
       }
-      if (Value != 0F) {
-        output.WriteRawTag(29);
-        output.WriteFloat(Value);
+      if (value_ != null) {
+        output.WriteRawTag(42);
+        output.WriteMessage(Value);
       }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
@@ -197,9 +198,9 @@ namespace Ingweland.Fog.Inn.Models.Hoh {
         output.WriteRawTag(18);
         output.WriteString(StatId);
       }
-      if (Value != 0F) {
-        output.WriteRawTag(29);
-        output.WriteFloat(Value);
+      if (value_ != null) {
+        output.WriteRawTag(42);
+        output.WriteMessage(Value);
       }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(ref output);
@@ -217,8 +218,8 @@ namespace Ingweland.Fog.Inn.Models.Hoh {
       if (StatId.Length != 0) {
         size += 1 + pb::CodedOutputStream.ComputeStringSize(StatId);
       }
-      if (Value != 0F) {
-        size += 1 + 4;
+      if (value_ != null) {
+        size += 1 + pb::CodedOutputStream.ComputeMessageSize(Value);
       }
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
@@ -238,8 +239,11 @@ namespace Ingweland.Fog.Inn.Models.Hoh {
       if (other.StatId.Length != 0) {
         StatId = other.StatId;
       }
-      if (other.Value != 0F) {
-        Value = other.Value;
+      if (other.value_ != null) {
+        if (value_ == null) {
+          Value = new global::Ingweland.Fog.Inn.Models.Hoh.FixedPointDTO();
+        }
+        Value.MergeFrom(other.Value);
       }
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
@@ -252,7 +256,11 @@ namespace Ingweland.Fog.Inn.Models.Hoh {
     #else
       uint tag;
       while ((tag = input.ReadTag()) != 0) {
-        switch(tag) {
+      if ((tag & 7) == 4) {
+        // Abort on any end group tag.
+        return;
+      }
+      switch(tag) {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
@@ -264,8 +272,11 @@ namespace Ingweland.Fog.Inn.Models.Hoh {
             StatId = input.ReadString();
             break;
           }
-          case 29: {
-            Value = input.ReadFloat();
+          case 42: {
+            if (value_ == null) {
+              Value = new global::Ingweland.Fog.Inn.Models.Hoh.FixedPointDTO();
+            }
+            input.ReadMessage(Value);
             break;
           }
         }
@@ -279,7 +290,11 @@ namespace Ingweland.Fog.Inn.Models.Hoh {
     void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
       uint tag;
       while ((tag = input.ReadTag()) != 0) {
-        switch(tag) {
+      if ((tag & 7) == 4) {
+        // Abort on any end group tag.
+        return;
+      }
+      switch(tag) {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
@@ -291,8 +306,11 @@ namespace Ingweland.Fog.Inn.Models.Hoh {
             StatId = input.ReadString();
             break;
           }
-          case 29: {
-            Value = input.ReadFloat();
+          case 42: {
+            if (value_ == null) {
+              Value = new global::Ingweland.Fog.Inn.Models.Hoh.FixedPointDTO();
+            }
+            input.ReadMessage(Value);
             break;
           }
         }

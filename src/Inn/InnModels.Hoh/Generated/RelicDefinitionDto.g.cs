@@ -25,22 +25,23 @@ namespace Ingweland.Fog.Inn.Models.Hoh {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
             "ChpyZWxpY19kZWZpbml0aW9uX2R0by5wcm90bxoUc3RhdF9ib29zdF9kdG8u",
-            "cHJvdG8iUwoSUmVsaWNEZWZpbml0aW9uRFRPEgoKAmlkGAEgASgJEg4KBnJh",
-            "cml0eRgCIAEoCRIhCglsZXZlbERhdGEYBCADKAsyDi5SZWxpY0xldmVsRHRv",
-            "IqQBCg1SZWxpY0xldmVsRHRvEhEKCWFzY2Vuc2lvbhgBIAEoCBINCgVsZXZl",
-            "bBgCIAEoBRIXCg9hc2NlbnNpb25fbGV2ZWwYAyABKAUSHQoVcmVsaWNDb3N0",
-            "RGVmaW5pdGlvbklkGAQgASgJEhEKCWFiaWxpdGllcxgKIAMoCRImCgpzdGF0",
-            "Qm9vc3RzGAsgAygLMhIuUmVsaWNTdGF0Qm9vc3REdG8iYQoRUmVsaWNTdGF0",
-            "Qm9vc3REdG8SIQoKc3RhdEJvb3N0cxgBIAEoCzINLlN0YXRCb29zdER0bxIp",
-            "CiFyZWxpY0Jvb3N0QWdlTW9kaWZpZXJEZWZpbml0aW9uSWQYAiABKAki2QEK",
-            "IlJlbGljQm9vc3RBZ2VNb2RpZmllckRlZmluaXRpb25EVE8SCgoCaWQYASAB",
-            "KAkSZQoZbW9kaWZpZXJCeUFnZURlZmluaXRpb25JZBgCIAMoCzJCLlJlbGlj",
-            "Qm9vc3RBZ2VNb2RpZmllckRlZmluaXRpb25EVE8uTW9kaWZpZXJCeUFnZURl",
-            "ZmluaXRpb25JZEVudHJ5GkAKHk1vZGlmaWVyQnlBZ2VEZWZpbml0aW9uSWRF",
-            "bnRyeRILCgNrZXkYASABKAkSDQoFdmFsdWUYAiABKAI6AjgBQh+qAhxJbmd3",
+            "cHJvdG8aFWZpeGVkX3BvaW50X2R0by5wcm90byJTChJSZWxpY0RlZmluaXRp",
+            "b25EVE8SCgoCaWQYASABKAkSDgoGcmFyaXR5GAIgASgJEiEKCWxldmVsRGF0",
+            "YRgEIAMoCzIOLlJlbGljTGV2ZWxEdG8ipAEKDVJlbGljTGV2ZWxEdG8SEQoJ",
+            "YXNjZW5zaW9uGAEgASgIEg0KBWxldmVsGAIgASgFEhcKD2FzY2Vuc2lvbl9s",
+            "ZXZlbBgDIAEoBRIdChVyZWxpY0Nvc3REZWZpbml0aW9uSWQYBCABKAkSEQoJ",
+            "YWJpbGl0aWVzGAogAygJEiYKCnN0YXRCb29zdHMYCyADKAsyEi5SZWxpY1N0",
+            "YXRCb29zdER0byJhChFSZWxpY1N0YXRCb29zdER0bxIhCgpzdGF0Qm9vc3Rz",
+            "GAEgASgLMg0uU3RhdEJvb3N0RHRvEikKIXJlbGljQm9vc3RBZ2VNb2RpZmll",
+            "ckRlZmluaXRpb25JZBgCIAEoCSLvAQoiUmVsaWNCb29zdEFnZU1vZGlmaWVy",
+            "RGVmaW5pdGlvbkRUTxIKCgJpZBgBIAEoCRJlChltb2RpZmllckJ5QWdlRGVm",
+            "aW5pdGlvbklkGAQgAygLMkIuUmVsaWNCb29zdEFnZU1vZGlmaWVyRGVmaW5p",
+            "dGlvbkRUTy5Nb2RpZmllckJ5QWdlRGVmaW5pdGlvbklkRW50cnkaUAoeTW9k",
+            "aWZpZXJCeUFnZURlZmluaXRpb25JZEVudHJ5EgsKA2tleRgBIAEoCRIdCgV2",
+            "YWx1ZRgCIAEoCzIOLkZpeGVkUG9pbnREVE86AjgBSgQIAhADQh+qAhxJbmd3",
             "ZWxhbmQuRm9nLklubi5Nb2RlbHMuSG9oYgZwcm90bzM="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
-          new pbr::FileDescriptor[] { global::Ingweland.Fog.Inn.Models.Hoh.StatBoostDtoReflection.Descriptor, },
+          new pbr::FileDescriptor[] { global::Ingweland.Fog.Inn.Models.Hoh.StatBoostDtoReflection.Descriptor, global::Ingweland.Fog.Inn.Models.Hoh.FixedPointDtoReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
             new pbr::GeneratedClrTypeInfo(typeof(global::Ingweland.Fog.Inn.Models.Hoh.RelicDefinitionDTO), global::Ingweland.Fog.Inn.Models.Hoh.RelicDefinitionDTO.Parser, new[]{ "Id", "Rarity", "LevelData" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Ingweland.Fog.Inn.Models.Hoh.RelicLevelDto), global::Ingweland.Fog.Inn.Models.Hoh.RelicLevelDto.Parser, new[]{ "Ascension", "Level", "AscensionLevel", "RelicCostDefinitionId", "Abilities", "StatBoosts" }, null, null, null, null),
@@ -255,7 +256,11 @@ namespace Ingweland.Fog.Inn.Models.Hoh {
     #else
       uint tag;
       while ((tag = input.ReadTag()) != 0) {
-        switch(tag) {
+      if ((tag & 7) == 4) {
+        // Abort on any end group tag.
+        return;
+      }
+      switch(tag) {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
@@ -282,7 +287,11 @@ namespace Ingweland.Fog.Inn.Models.Hoh {
     void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
       uint tag;
       while ((tag = input.ReadTag()) != 0) {
-        switch(tag) {
+      if ((tag & 7) == 4) {
+        // Abort on any end group tag.
+        return;
+      }
+      switch(tag) {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
@@ -584,7 +593,11 @@ namespace Ingweland.Fog.Inn.Models.Hoh {
     #else
       uint tag;
       while ((tag = input.ReadTag()) != 0) {
-        switch(tag) {
+      if ((tag & 7) == 4) {
+        // Abort on any end group tag.
+        return;
+      }
+      switch(tag) {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
@@ -623,7 +636,11 @@ namespace Ingweland.Fog.Inn.Models.Hoh {
     void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
       uint tag;
       while ((tag = input.ReadTag()) != 0) {
-        switch(tag) {
+      if ((tag & 7) == 4) {
+        // Abort on any end group tag.
+        return;
+      }
+      switch(tag) {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
@@ -846,7 +863,11 @@ namespace Ingweland.Fog.Inn.Models.Hoh {
     #else
       uint tag;
       while ((tag = input.ReadTag()) != 0) {
-        switch(tag) {
+      if ((tag & 7) == 4) {
+        // Abort on any end group tag.
+        return;
+      }
+      switch(tag) {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
@@ -872,7 +893,11 @@ namespace Ingweland.Fog.Inn.Models.Hoh {
     void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
       uint tag;
       while ((tag = input.ReadTag()) != 0) {
-        switch(tag) {
+      if ((tag & 7) == 4) {
+        // Abort on any end group tag.
+        return;
+      }
+      switch(tag) {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
@@ -953,13 +978,13 @@ namespace Ingweland.Fog.Inn.Models.Hoh {
     }
 
     /// <summary>Field number for the "modifierByAgeDefinitionId" field.</summary>
-    public const int ModifierByAgeDefinitionIdFieldNumber = 2;
-    private static readonly pbc::MapField<string, float>.Codec _map_modifierByAgeDefinitionId_codec
-        = new pbc::MapField<string, float>.Codec(pb::FieldCodec.ForString(10, ""), pb::FieldCodec.ForFloat(21, 0F), 18);
-    private readonly pbc::MapField<string, float> modifierByAgeDefinitionId_ = new pbc::MapField<string, float>();
+    public const int ModifierByAgeDefinitionIdFieldNumber = 4;
+    private static readonly pbc::MapField<string, global::Ingweland.Fog.Inn.Models.Hoh.FixedPointDTO>.Codec _map_modifierByAgeDefinitionId_codec
+        = new pbc::MapField<string, global::Ingweland.Fog.Inn.Models.Hoh.FixedPointDTO>.Codec(pb::FieldCodec.ForString(10, ""), pb::FieldCodec.ForMessage(18, global::Ingweland.Fog.Inn.Models.Hoh.FixedPointDTO.Parser), 34);
+    private readonly pbc::MapField<string, global::Ingweland.Fog.Inn.Models.Hoh.FixedPointDTO> modifierByAgeDefinitionId_ = new pbc::MapField<string, global::Ingweland.Fog.Inn.Models.Hoh.FixedPointDTO>();
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public pbc::MapField<string, float> ModifierByAgeDefinitionId {
+    public pbc::MapField<string, global::Ingweland.Fog.Inn.Models.Hoh.FixedPointDTO> ModifierByAgeDefinitionId {
       get { return modifierByAgeDefinitionId_; }
     }
 
@@ -1068,7 +1093,11 @@ namespace Ingweland.Fog.Inn.Models.Hoh {
     #else
       uint tag;
       while ((tag = input.ReadTag()) != 0) {
-        switch(tag) {
+      if ((tag & 7) == 4) {
+        // Abort on any end group tag.
+        return;
+      }
+      switch(tag) {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
@@ -1076,7 +1105,7 @@ namespace Ingweland.Fog.Inn.Models.Hoh {
             Id = input.ReadString();
             break;
           }
-          case 18: {
+          case 34: {
             modifierByAgeDefinitionId_.AddEntriesFrom(input, _map_modifierByAgeDefinitionId_codec);
             break;
           }
@@ -1091,7 +1120,11 @@ namespace Ingweland.Fog.Inn.Models.Hoh {
     void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
       uint tag;
       while ((tag = input.ReadTag()) != 0) {
-        switch(tag) {
+      if ((tag & 7) == 4) {
+        // Abort on any end group tag.
+        return;
+      }
+      switch(tag) {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
@@ -1099,7 +1132,7 @@ namespace Ingweland.Fog.Inn.Models.Hoh {
             Id = input.ReadString();
             break;
           }
-          case 18: {
+          case 34: {
             modifierByAgeDefinitionId_.AddEntriesFrom(ref input, _map_modifierByAgeDefinitionId_codec);
             break;
           }

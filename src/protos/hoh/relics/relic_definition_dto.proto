@@ -1,5 +1,6 @@
 syntax = "proto3";
 import "stat_boost_dto.proto";
+import "fixed_point_dto.proto";
 
 option csharp_namespace = "Ingweland.Fog.Inn.Models.Hoh";
 
@@ -24,6 +25,7 @@ message RelicStatBoostDto {
 }
 
 message RelicBoostAgeModifierDefinitionDTO {
+  reserved 2;
   string id = 1;
-  map<string, float> modifierByAgeDefinitionId = 2;
+  map<string, FixedPointDTO> modifierByAgeDefinitionId = 4;
 }

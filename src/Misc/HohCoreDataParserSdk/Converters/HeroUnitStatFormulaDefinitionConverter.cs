@@ -1,6 +1,7 @@
 using System.Collections.ObjectModel;
 using AutoMapper;
 using Ingweland.Fog.Inn.Models.Hoh;
+using Ingweland.Fog.Inn.Models.Hoh.Extensions;
 using Ingweland.Fog.Models.Hoh.Entities.Units;
 using Ingweland.Fog.Models.Hoh.Enums;
 using Ingweland.Fog.Shared.Helpers;
@@ -15,10 +16,10 @@ public class
     {
         var rarityFactors = new Dictionary<string, UnitStatFormulaFactors>();
         //rarityFactors = source.RarityUnits.ToDictionary(dto => dto.RarityId, dto => dto.Factors);
-        return new UnitStatFormulaData()
+        return new UnitStatFormulaData
         {
             Type = HohStringParser.ParseEnumFromString<UnitStatFormulaType>(source.Id),
-            BaseFactor = source.Unit.Normal,
+            BaseFactor = source.Unit.Normal.ToFloat(),
             RarityFactors =
                 new ReadOnlyDictionary<string, UnitStatFormulaFactors>(
                     new Dictionary<string, UnitStatFormulaFactors>()),

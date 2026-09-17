@@ -1,4 +1,5 @@
 syntax = "proto3";
+import "fixed_point_dto.proto";
 
 option csharp_namespace = "Ingweland.Fog.Inn.Models.Hoh";
 
@@ -13,7 +14,8 @@ message AwakeningLevelDto {
 }
 
 message AwakeningLevelValueDto {
+  reserved 4;
   bool is_percentage = 2;
   string unit_stat_id = 3;
-  float value = 4;
+  FixedPointDTO value = 9;
 }

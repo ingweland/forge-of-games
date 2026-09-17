@@ -25,18 +25,20 @@ namespace Ingweland.Fog.Inn.Models.Hoh {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
             "CitoZXJvX3VuaXRfc3RhdF9mb3JtdWxhX2RlZmluaXRpb25fZHRvLnByb3Rv",
-            "IrABCiBIZXJvVW5pdFN0YXRGb3JtdWxhRGVmaW5pdGlvbkRUTxIKCgJpZBgB",
-            "IAEoCRI2CgR1bml0GAIgASgLMiguSGVyb1VuaXRTdGF0Rm9ybXVsYURlZmlu",
-            "aXRpb25GYWN0b3JzRHRvEkgKDHJhcml0eV91bml0cxgDIAMoCzIyLkhlcm9V",
-            "bml0U3RhdEZvcm11bGFEZWZpbml0aW9uVW5pdFJhcml0eUZhY3RvcnNEdG8i",
-            "gQEKMUhlcm9Vbml0U3RhdEZvcm11bGFEZWZpbml0aW9uVW5pdFJhcml0eUZh",
-            "Y3RvcnNEdG8SEQoJcmFyaXR5X2lkGAEgASgJEjkKB2ZhY3RvcnMYAiABKAsy",
-            "KC5IZXJvVW5pdFN0YXRGb3JtdWxhRGVmaW5pdGlvbkZhY3RvcnNEdG8iTAon",
-            "SGVyb1VuaXRTdGF0Rm9ybXVsYURlZmluaXRpb25GYWN0b3JzRHRvEg4KBm5v",
-            "cm1hbBgBIAEoAhIRCglhc2NlbnNpb24YAiABKAJCH6oCHEluZ3dlbGFuZC5G",
-            "b2cuSW5uLk1vZGVscy5Ib2hiBnByb3RvMw=="));
+            "GhVmaXhlZF9wb2ludF9kdG8ucHJvdG8isAEKIEhlcm9Vbml0U3RhdEZvcm11",
+            "bGFEZWZpbml0aW9uRFRPEgoKAmlkGAEgASgJEjYKBHVuaXQYAiABKAsyKC5I",
+            "ZXJvVW5pdFN0YXRGb3JtdWxhRGVmaW5pdGlvbkZhY3RvcnNEdG8SSAoMcmFy",
+            "aXR5X3VuaXRzGAMgAygLMjIuSGVyb1VuaXRTdGF0Rm9ybXVsYURlZmluaXRp",
+            "b25Vbml0UmFyaXR5RmFjdG9yc0R0byKBAQoxSGVyb1VuaXRTdGF0Rm9ybXVs",
+            "YURlZmluaXRpb25Vbml0UmFyaXR5RmFjdG9yc0R0bxIRCglyYXJpdHlfaWQY",
+            "ASABKAkSOQoHZmFjdG9ycxgCIAEoCzIoLkhlcm9Vbml0U3RhdEZvcm11bGFE",
+            "ZWZpbml0aW9uRmFjdG9yc0R0byJ4CidIZXJvVW5pdFN0YXRGb3JtdWxhRGVm",
+            "aW5pdGlvbkZhY3RvcnNEdG8SHgoGbm9ybWFsGAMgASgLMg4uRml4ZWRQb2lu",
+            "dERUTxIhCglhc2NlbnNpb24YBCABKAsyDi5GaXhlZFBvaW50RFRPSgQIARAC",
+            "SgQIAhADQh+qAhxJbmd3ZWxhbmQuRm9nLklubi5Nb2RlbHMuSG9oYgZwcm90",
+            "bzM="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
-          new pbr::FileDescriptor[] { },
+          new pbr::FileDescriptor[] { global::Ingweland.Fog.Inn.Models.Hoh.FixedPointDtoReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
             new pbr::GeneratedClrTypeInfo(typeof(global::Ingweland.Fog.Inn.Models.Hoh.HeroUnitStatFormulaDefinitionDTO), global::Ingweland.Fog.Inn.Models.Hoh.HeroUnitStatFormulaDefinitionDTO.Parser, new[]{ "Id", "Unit", "RarityUnits" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Ingweland.Fog.Inn.Models.Hoh.HeroUnitStatFormulaDefinitionUnitRarityFactorsDto), global::Ingweland.Fog.Inn.Models.Hoh.HeroUnitStatFormulaDefinitionUnitRarityFactorsDto.Parser, new[]{ "RarityId", "Factors" }, null, null, null, null),
@@ -253,7 +255,11 @@ namespace Ingweland.Fog.Inn.Models.Hoh {
     #else
       uint tag;
       while ((tag = input.ReadTag()) != 0) {
-        switch(tag) {
+      if ((tag & 7) == 4) {
+        // Abort on any end group tag.
+        return;
+      }
+      switch(tag) {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
@@ -283,7 +289,11 @@ namespace Ingweland.Fog.Inn.Models.Hoh {
     void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
       uint tag;
       while ((tag = input.ReadTag()) != 0) {
-        switch(tag) {
+      if ((tag & 7) == 4) {
+        // Abort on any end group tag.
+        return;
+      }
+      switch(tag) {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
@@ -497,7 +507,11 @@ namespace Ingweland.Fog.Inn.Models.Hoh {
     #else
       uint tag;
       while ((tag = input.ReadTag()) != 0) {
-        switch(tag) {
+      if ((tag & 7) == 4) {
+        // Abort on any end group tag.
+        return;
+      }
+      switch(tag) {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
@@ -523,7 +537,11 @@ namespace Ingweland.Fog.Inn.Models.Hoh {
     void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
       uint tag;
       while ((tag = input.ReadTag()) != 0) {
-        switch(tag) {
+      if ((tag & 7) == 4) {
+        // Abort on any end group tag.
+        return;
+      }
+      switch(tag) {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
@@ -580,8 +598,8 @@ namespace Ingweland.Fog.Inn.Models.Hoh {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public HeroUnitStatFormulaDefinitionFactorsDto(HeroUnitStatFormulaDefinitionFactorsDto other) : this() {
-      normal_ = other.normal_;
-      ascension_ = other.ascension_;
+      normal_ = other.normal_ != null ? other.normal_.Clone() : null;
+      ascension_ = other.ascension_ != null ? other.ascension_.Clone() : null;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
@@ -592,11 +610,11 @@ namespace Ingweland.Fog.Inn.Models.Hoh {
     }
 
     /// <summary>Field number for the "normal" field.</summary>
-    public const int NormalFieldNumber = 1;
-    private float normal_;
+    public const int NormalFieldNumber = 3;
+    private global::Ingweland.Fog.Inn.Models.Hoh.FixedPointDTO normal_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public float Normal {
+    public global::Ingweland.Fog.Inn.Models.Hoh.FixedPointDTO Normal {
       get { return normal_; }
       set {
         normal_ = value;
@@ -604,11 +622,11 @@ namespace Ingweland.Fog.Inn.Models.Hoh {
     }
 
     /// <summary>Field number for the "ascension" field.</summary>
-    public const int AscensionFieldNumber = 2;
-    private float ascension_;
+    public const int AscensionFieldNumber = 4;
+    private global::Ingweland.Fog.Inn.Models.Hoh.FixedPointDTO ascension_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public float Ascension {
+    public global::Ingweland.Fog.Inn.Models.Hoh.FixedPointDTO Ascension {
       get { return ascension_; }
       set {
         ascension_ = value;
@@ -630,8 +648,8 @@ namespace Ingweland.Fog.Inn.Models.Hoh {
       if (ReferenceEquals(other, this)) {
         return true;
       }
-      if (!pbc::ProtobufEqualityComparers.BitwiseSingleEqualityComparer.Equals(Normal, other.Normal)) return false;
-      if (!pbc::ProtobufEqualityComparers.BitwiseSingleEqualityComparer.Equals(Ascension, other.Ascension)) return false;
+      if (!object.Equals(Normal, other.Normal)) return false;
+      if (!object.Equals(Ascension, other.Ascension)) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
 
@@ -639,8 +657,8 @@ namespace Ingweland.Fog.Inn.Models.Hoh {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override int GetHashCode() {
       int hash = 1;
-      if (Normal != 0F) hash ^= pbc::ProtobufEqualityComparers.BitwiseSingleEqualityComparer.GetHashCode(Normal);
-      if (Ascension != 0F) hash ^= pbc::ProtobufEqualityComparers.BitwiseSingleEqualityComparer.GetHashCode(Ascension);
+      if (normal_ != null) hash ^= Normal.GetHashCode();
+      if (ascension_ != null) hash ^= Ascension.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -659,13 +677,13 @@ namespace Ingweland.Fog.Inn.Models.Hoh {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       output.WriteRawMessage(this);
     #else
-      if (Normal != 0F) {
-        output.WriteRawTag(13);
-        output.WriteFloat(Normal);
+      if (normal_ != null) {
+        output.WriteRawTag(26);
+        output.WriteMessage(Normal);
       }
-      if (Ascension != 0F) {
-        output.WriteRawTag(21);
-        output.WriteFloat(Ascension);
+      if (ascension_ != null) {
+        output.WriteRawTag(34);
+        output.WriteMessage(Ascension);
       }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
@@ -677,13 +695,13 @@ namespace Ingweland.Fog.Inn.Models.Hoh {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
-      if (Normal != 0F) {
-        output.WriteRawTag(13);
-        output.WriteFloat(Normal);
+      if (normal_ != null) {
+        output.WriteRawTag(26);
+        output.WriteMessage(Normal);
       }
-      if (Ascension != 0F) {
-        output.WriteRawTag(21);
-        output.WriteFloat(Ascension);
+      if (ascension_ != null) {
+        output.WriteRawTag(34);
+        output.WriteMessage(Ascension);
       }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(ref output);
@@ -695,11 +713,11 @@ namespace Ingweland.Fog.Inn.Models.Hoh {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public int CalculateSize() {
       int size = 0;
-      if (Normal != 0F) {
-        size += 1 + 4;
+      if (normal_ != null) {
+        size += 1 + pb::CodedOutputStream.ComputeMessageSize(Normal);
       }
-      if (Ascension != 0F) {
-        size += 1 + 4;
+      if (ascension_ != null) {
+        size += 1 + pb::CodedOutputStream.ComputeMessageSize(Ascension);
       }
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
@@ -713,11 +731,17 @@ namespace Ingweland.Fog.Inn.Models.Hoh {
       if (other == null) {
         return;
       }
-      if (other.Normal != 0F) {
-        Normal = other.Normal;
+      if (other.normal_ != null) {
+        if (normal_ == null) {
+          Normal = new global::Ingweland.Fog.Inn.Models.Hoh.FixedPointDTO();
+        }
+        Normal.MergeFrom(other.Normal);
       }
-      if (other.Ascension != 0F) {
-        Ascension = other.Ascension;
+      if (other.ascension_ != null) {
+        if (ascension_ == null) {
+          Ascension = new global::Ingweland.Fog.Inn.Models.Hoh.FixedPointDTO();
+        }
+        Ascension.MergeFrom(other.Ascension);
       }
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
@@ -730,16 +754,26 @@ namespace Ingweland.Fog.Inn.Models.Hoh {
     #else
       uint tag;
       while ((tag = input.ReadTag()) != 0) {
-        switch(tag) {
+      if ((tag & 7) == 4) {
+        // Abort on any end group tag.
+        return;
+      }
+      switch(tag) {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
-          case 13: {
-            Normal = input.ReadFloat();
+          case 26: {
+            if (normal_ == null) {
+              Normal = new global::Ingweland.Fog.Inn.Models.Hoh.FixedPointDTO();
+            }
+            input.ReadMessage(Normal);
             break;
           }
-          case 21: {
-            Ascension = input.ReadFloat();
+          case 34: {
+            if (ascension_ == null) {
+              Ascension = new global::Ingweland.Fog.Inn.Models.Hoh.FixedPointDTO();
+            }
+            input.ReadMessage(Ascension);
             break;
           }
         }
@@ -753,16 +787,26 @@ namespace Ingweland.Fog.Inn.Models.Hoh {
     void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
       uint tag;
       while ((tag = input.ReadTag()) != 0) {
-        switch(tag) {
+      if ((tag & 7) == 4) {
+        // Abort on any end group tag.
+        return;
+      }
+      switch(tag) {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
-          case 13: {
-            Normal = input.ReadFloat();
+          case 26: {
+            if (normal_ == null) {
+              Normal = new global::Ingweland.Fog.Inn.Models.Hoh.FixedPointDTO();
+            }
+            input.ReadMessage(Normal);
             break;
           }
-          case 21: {
-            Ascension = input.ReadFloat();
+          case 34: {
+            if (ascension_ == null) {
+              Ascension = new global::Ingweland.Fog.Inn.Models.Hoh.FixedPointDTO();
+            }
+            input.ReadMessage(Ascension);
             break;
           }
         }

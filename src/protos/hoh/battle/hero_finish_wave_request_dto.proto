@@ -1,5 +1,6 @@
 syntax = "proto3";
 import "google/protobuf/wrappers.proto";
+import "fixed_point_dto.proto";
 
 option csharp_namespace = "Ingweland.Fog.Inn.Models.Hoh";
 
@@ -10,13 +11,14 @@ message HeroFinishWaveRequestDto {
 }
 
 message WaveResultUnitStatDto {
+  reserved 2;
   string unit_stat = 1;
-  repeated WaveResultUnitStatValueDto values = 2;
+  repeated WaveResultUnitStatValueDto values = 3;
 }
 
 message WaveResultUnitStatValueDto {
   int32 in_battle_id = 1;
-  float value = 2;
+  FixedPointDTO value = 2;
 }
 
 message WaveTimelineDto {

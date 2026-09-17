@@ -3,6 +3,7 @@ using Google.Protobuf.Collections;
 using Google.Protobuf.WellKnownTypes;
 using Ingweland.Fog.HohCoreDataParserSdk.Extensions;
 using Ingweland.Fog.Inn.Models.Hoh;
+using Ingweland.Fog.Inn.Models.Hoh.Extensions;
 using Ingweland.Fog.Models.Hoh.Entities;
 using Ingweland.Fog.Models.Hoh.Entities.Abstractions;
 using Ingweland.Fog.Models.Hoh.Entities.Battle;
@@ -30,13 +31,16 @@ public class MappingProfile : Profile
             .ForMember(dest => dest.ResourceId, opt => opt.MapFrom(bbr => bbr.ResourceType));
         CreateMap<HeroUnitStatValueDefinitionDTO, UnitStat>()
             .ForMember(dest => dest.Type,
-                opt => opt.MapFrom(husvd => HohStringParser.ParseEnumFromString<UnitStatType>(husvd.StatId)));
+                opt => opt.MapFrom(husvd => HohStringParser.ParseEnumFromString<UnitStatType>(husvd.StatId)))
+            .ForMember(dest => dest.Value, opt => opt.MapFrom(husvd => husvd.Value.ToFloat()));
         CreateMap<HeroUnitStatBaseValueDto, UnitStat>()
             .ForMember(dest => dest.Type,
-                opt => opt.MapFrom(src => HohStringParser.ParseEnumFromString<UnitStatType>(src.StatId)));
+                opt => opt.MapFrom(src => HohStringParser.ParseEnumFromString<UnitStatType>(src.StatId)))
+            .ForMember(dest => dest.Value, opt => opt.MapFrom(src => src.Value.ToFloat()));
         CreateMap<UnitStatDto, UnitStat>()
             .ForMember(dest => dest.Type,
-                opt => opt.MapFrom(src => HohStringParser.ParseEnumFromString<UnitStatType>(src.Type)));
+                opt => opt.MapFrom(src => HohStringParser.ParseEnumFromString<UnitStatType>(src.Type)))
+            .ForMember(dest => dest.Value, opt => opt.MapFrom(src => src.Value.ToFloat()));
         CreateMap<HeroUnitDefinitionDTO, Unit>()
             .ForMember(dest => dest.Type,
                 opt => opt.MapFrom(hud => HohStringParser.ParseEnumFromString<UnitType>(hud.Type)))
@@ -55,7 +59,9 @@ public class MappingProfile : Profile
             .ForMember(dest => dest.LevelCosts,
                 opt => opt.MapFrom(src => src.Cost.ToDictionary(hpc => hpc.Level,
                     hpc => hpc.Resources.Resources)));
-        CreateMap<HeroUnitStatFormulaDefinitionFactorsDto, UnitStatFormulaFactors>();
+        CreateMap<HeroUnitStatFormulaDefinitionFactorsDto, UnitStatFormulaFactors>()
+            .ForMember(dest => dest.Normal, opt => opt.MapFrom(src => src.Normal.ToFloat()))
+            .ForMember(dest => dest.Ascension, opt => opt.MapFrom(src => src.Ascension.ToFloat()));
         CreateMap<BattleAbilityDefinitionDescriptionItemDto, BattleAbilityDescriptionItem>();
         CreateMap<BattleAbilityDefinitionDescriptionItemValueDto, BattleAbilityDescriptionItemValue>()
             .ForMember(dest => dest.Type,
@@ -64,7 +70,7 @@ public class MappingProfile : Profile
         CreateMap<WonderCrateDto, WonderCrate>();
         CreateMap<AwakeningLevelDto, AwakeningLevel>()
             .ForMember(dest => dest.IsPercentage, opt => opt.MapFrom(src => src.LevelValue.IsPercentage))
-            .ForMember(dest => dest.Value, opt => opt.MapFrom(src => src.LevelValue.Value))
+            .ForMember(dest => dest.Value, opt => opt.MapFrom(src => src.LevelValue.Value.ToFloat()))
             .ForMember(dest => dest.StatType,
                 opt => opt.MapFrom(src =>
                     HohStringParser.ParseEnumFromString<UnitStatType>(src.LevelValue.UnitStatId)));
@@ -115,7 +121,8 @@ public class MappingProfile : Profile
         CreateMap<RelicStatBoostDto, RelicStatBoost>();
         CreateMap<RelicBoostAgeModifierDefinitionDTO, IDictionary<string, float>>()
             .ConvertUsing((src, _, _) =>
-                src.ModifierByAgeDefinitionId.ToDictionary(x => HohStringParser.GetConcreteId(x.Key), x => x.Value)
+                src.ModifierByAgeDefinitionId.ToDictionary(x => HohStringParser.GetConcreteId(x.Key),
+                    x => x.Value.ToFloat())
             );
         CreateMap<WorkerBehaviourDTO, WorkerBehaviour>();
         CreateMap<ExpansionCostsDTO, ExpansionCosts>()
@@ -266,7 +273,7 @@ public class MappingProfile : Profile
         CreateMap<HeroUnitStatFormulaDefinitionDTO, UnitStatFormulaData>()
             .ForMember(dest => dest.Type,
                 opt => opt.MapFrom(src => HohStringParser.ParseEnumFromString<UnitStatFormulaType>(src.Id)))
-            .ForMember(dest => dest.BaseFactor, opt => opt.MapFrom(src => src.Unit.Normal))
+            .ForMember(dest => dest.BaseFactor, opt => opt.MapFrom(src => src.Unit.Normal.ToFloat()))
             .ForMember(dest => dest.RarityFactors,
                 opt => opt.MapFrom(src =>
                     src.RarityUnits.ToDictionary(dto => dto.RarityId, dto => dto.Factors)));
