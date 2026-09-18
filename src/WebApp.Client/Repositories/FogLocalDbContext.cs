@@ -1,5 +1,5 @@
 using CloudNimble.BlazorEssentials.IndexedDb;
-using Ingweland.Fog.Application.Client.Web.Data;
+using Ingweland.Fog.WebApp.Client.Repositories.Abstractions;
 using Microsoft.JSInterop;
 
 namespace Ingweland.Fog.WebApp.Client.Repositories;

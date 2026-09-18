@@ -1,6 +1,5 @@
 using System.Text.Json;
 using System.Text.Json.Serialization;
-using Ingweland.Fog.Application.Client.Web.Data;
 using Ingweland.Fog.Application.Client.Web.EquipmentConfigurator.Abstractions;
 using Ingweland.Fog.Application.Client.Web.Models;
 using Ingweland.Fog.Application.Client.Web.Services.Abstractions;
@@ -11,6 +10,7 @@ using Ingweland.Fog.Application.Core.Services.Hoh.Abstractions;
 using Ingweland.Fog.Shared.Helpers;
 using Ingweland.Fog.WebApp.Client.Net;
 using Ingweland.Fog.WebApp.Client.Repositories;
+using Ingweland.Fog.WebApp.Client.Repositories.Abstractions;
 using Ingweland.Fog.WebApp.Client.Services;
 using Ingweland.Fog.WebApp.Client.Services.Abstractions;
 using Microsoft.AspNetCore.Components.WebAssembly.Hosting;

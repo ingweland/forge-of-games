@@ -1,6 +1,6 @@
 using CloudNimble.BlazorEssentials.IndexedDb;
 
-namespace Ingweland.Fog.Application.Client.Web.Data;
+namespace Ingweland.Fog.WebApp.Client.Repositories.Abstractions;
 
 public interface IFogLocalDbContext
 {

@@ -1,6 +1,7 @@
 using Ingweland.Fog.Application.Core.Repository.Abstractions;
+using Microsoft.Extensions.Logging;
 
-namespace Ingweland.Fog.WebApp.Client.Repositories.Abstractions;
+namespace Ingweland.Fog.Application.Client.Web.Repositories.Abstractions;
 
 public abstract class HohDataProviderBase<TData>(
     ILogger<HohDataProviderBase<TData>> logger) : IDataProvider

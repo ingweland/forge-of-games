@@ -1,6 +1,6 @@
 using System.Diagnostics;
-using Ingweland.Fog.Application.Client.Web.Data;
 using Ingweland.Fog.Application.Client.Web.Data.Entities;
+using Ingweland.Fog.Application.Client.Web.Repositories.Abstractions;
 using Ingweland.Fog.Application.Client.Web.Services.Hoh.Abstractions;
 using Ingweland.Fog.Application.Core.Repository.Abstractions;
 using Ingweland.Fog.Models.Hoh.Entities;
