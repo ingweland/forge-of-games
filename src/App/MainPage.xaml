@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:localization="clr-namespace:Ingweland.Fog.Application.Client.Core.Localization;assembly=Ingweland.Fog.Application.Client.Core"
+             x:Class="Ingweland.Fog.App.MainPage"
+             Title="{x:Static localization:FogResource.BrandName}">
+
+    <!-- Temporary harness for the city viewer: opens a city from a forgeofgames.com share link.
+         To be replaced by the Allied Culture guides list. -->
+    <VerticalStackLayout Padding="24" Spacing="16" MaximumWidthRequest="640">
+        <Entry x:Name="ShareLinkEntry"
+               Placeholder="https://forgeofgames.com/city-planner/shares/…"
+               ClearButtonVisibility="WhileEditing"
+               IsEnabled="False"
+               Completed="OnLoadClicked" />
+
+        <Button x:Name="LoadButton"
+                Text="{x:Static localization:FogResource.Common_Load}"
+                IsEnabled="False"
+                Clicked="OnLoadClicked" />
+
+        <ActivityIndicator x:Name="BusyIndicator" IsRunning="True" />
+
+        <Label x:Name="StatusLabel" IsVisible="False" />
+    </VerticalStackLayout>
+
+</ContentPage>

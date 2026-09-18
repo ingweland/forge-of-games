@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:skia="clr-namespace:SkiaSharp.Views.Maui.Controls;assembly=SkiaSharp.Views.Maui.Controls"
+             x:Class="Ingweland.Fog.App.Views.CityViewerPage"
+             BackgroundColor="#333333">
+
+    <ContentPage.Resources>
+        <Style x:Key="MapToolButton" TargetType="ImageButton">
+            <Setter Property="WidthRequest" Value="44" />
+            <Setter Property="HeightRequest" Value="44" />
+            <Setter Property="CornerRadius" Value="22" />
+            <Setter Property="Padding" Value="10" />
+            <Setter Property="BackgroundColor" Value="#99000000" />
+        </Style>
+    </ContentPage.Resources>
+
+    <Grid>
+        <!-- IgnorePixelScaling keeps the surface at full resolution but hands PaintSurface and Touch
+             device-independent units, which is what the shared map code and its text sizes assume. -->
+        <skia:SKCanvasView x:Name="CanvasView"
+                           IgnorePixelScaling="True"
+                           EnableTouchEvents="True"
+                           PaintSurface="OnCanvasViewPaintSurface"
+                           Touch="OnCanvasViewTouch" />
+
+        <VerticalStackLayout x:Name="Toolbar"
+                             IsVisible="False"
+                             HorizontalOptions="End"
+                             VerticalOptions="Start"
+                             Margin="12"
+                             Spacing="8">
+            <ImageButton Source="zoom_in.png" Style="{StaticResource MapToolButton}" Clicked="OnZoomInClicked" />
+            <ImageButton Source="zoom_out.png" Style="{StaticResource MapToolButton}" Clicked="OnZoomOutClicked" />
+            <ImageButton Source="fit_screen.png" Style="{StaticResource MapToolButton}"
+                         Clicked="OnFitToScreenClicked" />
+        </VerticalStackLayout>
+
+        <ActivityIndicator x:Name="LoadingIndicator"
+                           IsRunning="True"
+                           Color="White"
+                           HorizontalOptions="Center"
+                           VerticalOptions="Center" />
+
+        <Label x:Name="ErrorLabel"
+               IsVisible="False"
+               TextColor="White"
+               Margin="24"
+               HorizontalOptions="Center"
+               VerticalOptions="Center"
+               HorizontalTextAlignment="Center" />
+    </Grid>
+
+</ContentPage>
