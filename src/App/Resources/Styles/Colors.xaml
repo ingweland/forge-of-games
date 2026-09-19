@@ -3,14 +3,18 @@
     xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml">
 
-    <!-- Note: For Android please see also Platforms\Android\Resources\values\colors.xml -->
+    <!-- The website's palette: FogTheme (src/WebApp.Client/Theme/FogTheme.cs) and the fog CSS variables in
+         src/WebApp/wwwroot/app.css. The keys above the Fog ones are the MAUI template's, used by Styles.xaml; the
+         app is light-only, like the website, so their dark-theme counterparts only avoid leftover template colours.
+         Kept here rather than in FogStyles.xaml because Styles.xaml can only see keys from dictionaries merged
+         before it. For Android see also Platforms/Android/Resources/values/colors.xml. -->
 
-    <Color x:Key="Primary">#512BD4</Color>
-    <Color x:Key="PrimaryDark">#ac99ea</Color>
+    <Color x:Key="Primary">#316896</Color>
+    <Color x:Key="PrimaryDark">#316896</Color>
     <Color x:Key="PrimaryDarkText">#242424</Color>
-    <Color x:Key="Secondary">#DFD8F7</Color>
-    <Color x:Key="SecondaryDarkText">#9880e5</Color>
-    <Color x:Key="Tertiary">#2B0B98</Color>
+    <Color x:Key="Secondary">#6C79A7</Color>
+    <Color x:Key="SecondaryDarkText">#6C79A7</Color>
+    <Color x:Key="Tertiary">#BEBEBE</Color>
 
     <Color x:Key="White">White</Color>
     <Color x:Key="Black">Black</Color>
@@ -26,6 +30,20 @@
     <Color x:Key="Gray600">#404040</Color>
     <Color x:Key="Gray900">#212121</Color>
     <Color x:Key="Gray950">#141414</Color>
+
+    <Color x:Key="FogBackgroundColor">#FFFAEB</Color>
+    <Color x:Key="FogSurfaceColor">#FFFFFF</Color>
+    <Color x:Key="FogSurface2Color">#FCF0CE</Color>
+    <Color x:Key="FogContainerColor">#DEC78E</Color>
+    <Color x:Key="FogTextColor">#34495E</Color>
+    <Color x:Key="FogTextOnContainerColor">#5B451C</Color>
+    <Color x:Key="FogBorderColor">#F0F0F0</Color>
+    <Color x:Key="FogZebraColor">#F9FAFB</Color>
+    <Color x:Key="FogPrimaryColor">#316896</Color>
+    <Color x:Key="FogDisabledBackgroundColor">#E0E0E0</Color>
+    <Color x:Key="FogDisabledTextColor">#A6A6A6</Color>
+    <!-- The website's active menu link: rgba(255, 255, 255, 0.2). -->
+    <Color x:Key="FogMenuSelectedColor">#33FFFFFF</Color>
 
     <SolidColorBrush x:Key="PrimaryBrush" Color="{StaticResource Primary}"/>
     <SolidColorBrush x:Key="SecondaryBrush" Color="{StaticResource Secondary}"/>

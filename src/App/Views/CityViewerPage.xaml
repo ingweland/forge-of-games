@@ -5,8 +5,10 @@
              xmlns:cv="clr-namespace:Ingweland.Fog.App.Views.CityViewer"
              xmlns:loc="clr-namespace:Ingweland.Fog.Application.Client.Core.Localization;assembly=Ingweland.Fog.Application.Client.Core"
              x:Class="Ingweland.Fog.App.Views.CityViewerPage"
-             BackgroundColor="#333333">
+             BackgroundColor="#333333"
+             Shell.FlyoutBehavior="Disabled">
 
+    <!-- No side menu on the map: its edge swipe would compete with panning. The back button stays. -->
     <ContentPage.Resources>
         <Style x:Key="MapToolButton" TargetType="ImageButton">
             <Setter Property="WidthRequest" Value="44" />

@@ -7,6 +7,8 @@ public partial class App : Microsoft.Maui.Controls.Application
     public App()
     {
         InitializeComponent();
+        // Light only, like the website: the palette and the property panels have no dark variant.
+        UserAppTheme = AppTheme.Light;
     }
 
     protected override Window CreateWindow(IActivationState? activationState)

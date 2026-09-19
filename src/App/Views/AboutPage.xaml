@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!-- A placeholder until the app has its own About content. -->
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:loc="clr-namespace:Ingweland.Fog.Application.Client.Core.Localization;assembly=Ingweland.Fog.Application.Client.Core"
+             x:Class="Ingweland.Fog.App.Views.AboutPage"
+             Title="{x:Static loc:FogResource.Navigation_About}">
+
+    <Label Text="{x:Static loc:FogResource.About_HeaderText}"
+           Style="{StaticResource FogTextLabel}"
+           Margin="24"
+           HorizontalTextAlignment="Center"
+           VerticalOptions="Center" />
+
+</ContentPage>

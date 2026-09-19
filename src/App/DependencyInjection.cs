@@ -62,7 +62,8 @@ public static class DependencyInjection
         AddRefitJsonApiClient<IHohDataService>(services, apiBaseUrl, refitSettings);
         AddRefitJsonApiClient<IFogSharingService>(services, apiBaseUrl, refitSettings, "api");
 
-        services.AddTransient<MainPage>();
+        services.AddTransient<CityViewerHomePage>();
+        services.AddTransient<AboutPage>();
         services.AddTransient<CityViewerPage>();
     }
 

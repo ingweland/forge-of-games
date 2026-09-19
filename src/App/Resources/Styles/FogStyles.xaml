@@ -1,24 +1,11 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<!-- The website's look (src/WebApp/wwwroot/app.css) for the city planner panels. Colors are explicit
-     throughout: the template's implicit styles follow the OS theme, draw grey Border strokes and white
-     shadows. A keyed style replaces the implicit one, so each style sets its own font and colors. -->
+<!-- The website's look (src/WebApp/wwwroot/app.css) for the city planner panels and the side menu. The colours
+     are in Colors.xaml. A keyed style replaces the implicit one, so each style sets its own font and colours. -->
 <ResourceDictionary
     xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     xmlns:cv="clr-namespace:Ingweland.Fog.App.Views.CityViewer"
     xmlns:vm="clr-namespace:Ingweland.Fog.Application.Client.Web.ViewModels.Hoh;assembly=Ingweland.Fog.Application.Client.Web">
-
-    <Color x:Key="FogBackgroundColor">#FFFAEB</Color>
-    <Color x:Key="FogSurfaceColor">#FFFFFF</Color>
-    <Color x:Key="FogSurface2Color">#FCF0CE</Color>
-    <Color x:Key="FogContainerColor">#DEC78E</Color>
-    <Color x:Key="FogTextColor">#34495E</Color>
-    <Color x:Key="FogTextOnContainerColor">#5B451C</Color>
-    <Color x:Key="FogBorderColor">#F0F0F0</Color>
-    <Color x:Key="FogZebraColor">#F9FAFB</Color>
-    <Color x:Key="FogPrimaryColor">#316896</Color>
-    <Color x:Key="FogDisabledBackgroundColor">#E0E0E0</Color>
-    <Color x:Key="FogDisabledTextColor">#A6A6A6</Color>
 
     <!-- The width of the website's 1px borders and rules. App sets it to whole device pixels for the window's
          display scale; 1 is only the value before the window reports it. -->
@@ -138,6 +125,28 @@
         <Setter Property="CornerRadius" Value="4" />
         <Setter Property="Padding" Value="14,8" />
         <Setter Property="Margin" Value="0,0,0,16" />
+    </Style>
+
+    <!-- Side menu (the website's drawer, NavBar.razor) -->
+    <Style x:Key="FogMenuHeaderLabel" TargetType="Label">
+        <Setter Property="FontFamily" Value="OpenSansSemibold" />
+        <Setter Property="FontSize" Value="18" />
+        <Setter Property="TextColor" Value="{StaticResource White}" />
+        <Setter Property="HorizontalTextAlignment" Value="Center" />
+    </Style>
+
+    <Style x:Key="FogMenuItemLabel" TargetType="Label">
+        <Setter Property="FontFamily" Value="OpenSansRegular" />
+        <Setter Property="FontSize" Value="14" />
+        <Setter Property="TextColor" Value="{StaticResource White}" />
+        <Setter Property="VerticalTextAlignment" Value="Center" />
+    </Style>
+
+    <Style x:Key="FogMenuFooterLabel" TargetType="Label">
+        <Setter Property="FontFamily" Value="OpenSansRegular" />
+        <Setter Property="FontSize" Value="12" />
+        <Setter Property="TextColor" Value="{StaticResource White}" />
+        <Setter Property="HorizontalTextAlignment" Value="Center" />
     </Style>
 
     <!-- Item templates for WrapList -->

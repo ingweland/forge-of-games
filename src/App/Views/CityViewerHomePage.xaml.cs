@@ -1,22 +1,21 @@
 using Ingweland.Fog.App.Services.Abstractions;
-using Ingweland.Fog.App.Views;
 using Ingweland.Fog.Application.Client.Core.Localization;
 using Ingweland.Fog.Application.Client.Web.Services.Abstractions;
 using Microsoft.Extensions.Logging;
 
-namespace Ingweland.Fog.App;
+namespace Ingweland.Fog.App.Views;
 
-public partial class MainPage : ContentPage
+public partial class CityViewerHomePage : ContentPage
 {
-    private const string LAST_SHARE_ID_KEY = "MainPage.LastShareId";
+    private const string LAST_SHARE_ID_KEY = "CityViewerHome.LastShareId";
 
     private readonly IFogSharingUiService _fogSharingUiService;
     private readonly IHohDataInitializationService _hohDataInitializationService;
-    private readonly ILogger<MainPage> _logger;
+    private readonly ILogger<CityViewerHomePage> _logger;
     private bool _dataRequested;
 
-    public MainPage(IHohDataInitializationService hohDataInitializationService,
-        IFogSharingUiService fogSharingUiService, ILogger<MainPage> logger)
+    public CityViewerHomePage(IHohDataInitializationService hohDataInitializationService,
+        IFogSharingUiService fogSharingUiService, ILogger<CityViewerHomePage> logger)
     {
         _hohDataInitializationService = hohDataInitializationService;
         _fogSharingUiService = fogSharingUiService;
