@@ -3,8 +3,8 @@
 @using Ingweland.Fog.Application.Client.Web.CityPlanner.Abstractions
 @using Ingweland.Fog.Application.Client.Web.CityPlanner.Stats
 @using Ingweland.Fog.Application.Core.Constants
+@using Ingweland.Fog.Application.Core.Extensions
 @using Ingweland.Fog.Models.Fog.Entities
-@using Ingweland.Fog.Models.Hoh.Enums
 @using Microsoft.Extensions.Localization
 @implements IDisposable
 @inject ICityPlanner CityPlanner
@@ -38,7 +38,7 @@
             <CityProductionStatsComponent Items="@Data.Production.Costs"
                                           Title="@Loc[FogResource.CityPlanner_ProductionCost]"/>
         }
-        @if (CitiesWithHappiness.Contains(Data.CityId))
+        @if (Data.CityId.HasHappiness())
         {
             <HappinessStatsComponent Data="@Data.Happiness"/>
         }
@@ -52,12 +52,6 @@
 </div>
 
 @code {
-
-    private static readonly HashSet<CityId> CitiesWithHappiness =
-    [
-        CityId.Capital, CityId.Egypt, CityId.Mayas_Tikal, CityId.Mayas_ChichenItza, CityId.Mayas_SayilPalace,
-        CityId.Arabia_CityOfBrass, CityId.Arabia_NoriasOfHama, CityId.Arabia_Petra, CityId.AncientEgyptEvent,
-    ];
 
     private readonly BuildingLevelRange _wonderLevelRange =
         new() {StartLevel = 0, EndLevel = HohConstants.WONDER_MAX_LEVEL};

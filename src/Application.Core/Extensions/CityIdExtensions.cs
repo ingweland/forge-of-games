@@ -98,4 +98,11 @@ public static class CityIdExtensions
     {
         return $"city.City_{cityId}";
     }
+
+    public static bool HasHappiness(this CityId cityId)
+    {
+        return cityId is CityId.Capital or CityId.Egypt or CityId.Mayas_Tikal or CityId.Mayas_ChichenItza
+            or CityId.Mayas_SayilPalace or CityId.Arabia_CityOfBrass or CityId.Arabia_NoriasOfHama
+            or CityId.Arabia_Petra or CityId.AncientEgyptEvent;
+    }
 }
