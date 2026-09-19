@@ -1,5 +1,4 @@
 using System.Globalization;
-using Ingweland.Fog.Application.Client.Web.Repositories.Abstractions;
 using Ingweland.Fog.Application.Client.Web.Services.Hoh.Abstractions;
 using Ingweland.Fog.Application.Core.Repository.Abstractions;
 using Ingweland.Fog.Models.Hoh.Entities;
@@ -11,23 +10,41 @@ namespace Ingweland.Fog.App.Repositories;
 
 /// <summary>
 ///     MAUI counterpart of the Blazor client's IndexedDbHohLocalizationDataProvider. Supplies the
-///     in-game strings (building names, wonder names, ...) the city map draws.
+///     in-game strings (building names, wonder names, ...) the city map draws, in the app's language.
+///     Each language is downloaded once per data version and then read from disk. Not a
+///     HohDataProviderBase, which loads once: the website reloads the page for a new language, while
+///     the app loads the strings again (HohDataInitializationService).
 /// </summary>
 public class FileSystemHohLocalizationDataProvider(
     IProtobufSerializer protobufSerializer,
     IHohDataService hohDataService,
-    ILogger<FileSystemHohLocalizationDataProvider> logger)
-    : HohDataProviderBase<IDictionary<string, LocalizationData>>(logger), IHohLocalizationDataProvider
+    ILogger<FileSystemHohLocalizationDataProvider> logger) : IDataProvider, IHohLocalizationDataProvider
 {
     private readonly HohDataFileCache _cache = new("localization");
+    private IDictionary<string, LocalizationData> _data = new Dictionary<string, LocalizationData>();
 
-    protected override async Task<IDictionary<string, LocalizationData>> LoadAsync(string version)
+    public async Task InitializeAsync(string version)
     {
         // HohGameLocalizationService looks the data up by CultureInfo.CurrentCulture.Name, which
-        // MauiProgram pins to a supported culture before this runs.
+        // AppCulture sets to a supported culture.
         var cultureCode = CultureInfo.CurrentCulture.Name;
+        var data = await LoadAsync(version, cultureCode);
 
-        var cached = await _cache.TryReadAsync($"{version}_{cultureCode}");
+        // The language can change while this loads. The load for the new language sets its own data.
+        if (cultureCode == CultureInfo.CurrentCulture.Name)
+        {
+            _data = data;
+        }
+    }
+
+    public IDictionary<string, LocalizationData> GetData()
+    {
+        return _data;
+    }
+
+    private async Task<IDictionary<string, LocalizationData>> LoadAsync(string version, string cultureCode)
+    {
+        var cached = await _cache.TryReadAsync(version, cultureCode);
         if (cached != null)
         {
             try
@@ -48,7 +65,7 @@ public class FileSystemHohLocalizationDataProvider(
             throw new InvalidOperationException($"Could not load Hoh localization data for {cultureCode}.");
         }
 
-        await _cache.TryWriteAsync($"{dataVersion}_{cultureCode}", data);
+        await _cache.TryWriteAsync(dataVersion, cultureCode, data);
         return Build(cultureCode, protobufSerializer.DeserializeFromBytes<LocalizationData>(data));
     }
 

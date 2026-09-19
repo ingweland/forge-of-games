@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!-- The side menu mirrors the website's drawer (WebApp.Client/Components/Layout/NavBar.razor): the brand name on
-     top, icon-and-label items, the copyright at the bottom, all on the primary colour. FlyoutBackgroundColor is set
-     here rather than in Styles.xaml: Shell's constructor binds it to a white or black theme binding, which outranks
-     any style setter (dotnet/maui#9736). -->
+     top, icon-and-label items, the language menu and the copyright at the bottom, all on the primary color.
+     FlyoutBackgroundColor is set here rather than in Styles.xaml: Shell's constructor binds it to a white or black
+     theme binding, which outranks any style setter (dotnet/maui#9736). -->
 <Shell x:Class="Ingweland.Fog.App.AppShell"
        xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
        xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
@@ -45,10 +45,23 @@
     </Shell.ItemTemplate>
 
     <Shell.FlyoutFooter>
-        <VerticalStackLayout Padding="12,12,12,8" Spacing="2">
-            <Label x:Name="CopyrightLabel" Style="{StaticResource FogMenuFooterLabel}" />
-            <Label Text="{x:Static loc:FogResource.Common_AllRightsReserved}"
-                   Style="{StaticResource FogMenuFooterLabel}" />
+        <VerticalStackLayout Padding="12,12,12,8" Spacing="8">
+            <!-- The website's language menu (LanguageSelectorComponent), white like its text. menu_translate.svg is
+                 Google's translate_24dp_FFFFFF_FILL0_wght400_GRAD0_opsz24.svg and menu_arrow_down.svg is the
+                 website's MudBlazor Icons.Material.Filled.KeyboardArrowDown. -->
+            <HorizontalStackLayout HorizontalOptions="Center" Padding="4,6" Spacing="8">
+                <HorizontalStackLayout.GestureRecognizers>
+                    <TapGestureRecognizer Tapped="OnLanguageTapped" />
+                </HorizontalStackLayout.GestureRecognizers>
+                <Image Source="menu_translate.png" WidthRequest="20" HeightRequest="20" VerticalOptions="Center" />
+                <Label x:Name="LanguageLabel" Style="{StaticResource FogMenuItemLabel}" />
+                <Image Source="menu_arrow_down.png" WidthRequest="20" HeightRequest="20" VerticalOptions="Center" />
+            </HorizontalStackLayout>
+            <VerticalStackLayout Spacing="2">
+                <Label x:Name="CopyrightLabel" Style="{StaticResource FogMenuFooterLabel}" />
+                <Label Text="{x:Static loc:FogResource.Common_AllRightsReserved}"
+                       Style="{StaticResource FogMenuFooterLabel}" />
+            </VerticalStackLayout>
         </VerticalStackLayout>
     </Shell.FlyoutFooter>
 

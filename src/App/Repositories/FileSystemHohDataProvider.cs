@@ -17,11 +17,13 @@ public class FileSystemHohDataProvider(
     ILogger<FileSystemHohDataProvider> logger)
     : HohDataProviderBase<Data>(logger), IHohDataProvider
 {
+    // The core data is a single file in its version's folder.
+    private const string CACHE_FILE_NAME = "data";
     private readonly HohDataFileCache _cache = new("core");
 
     protected override async Task<Data> LoadAsync(string version)
     {
-        var cached = await _cache.TryReadAsync(version);
+        var cached = await _cache.TryReadAsync(version, CACHE_FILE_NAME);
         if (cached != null)
         {
             try
@@ -41,7 +43,7 @@ public class FileSystemHohDataProvider(
             throw new InvalidOperationException("Could not load Hoh core data.");
         }
 
-        await _cache.TryWriteAsync(dataVersion, data);
+        await _cache.TryWriteAsync(dataVersion, CACHE_FILE_NAME, data);
         return protobufSerializer.DeserializeFromBytes<Data>(data);
     }
 }
