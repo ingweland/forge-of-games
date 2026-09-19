@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!-- The website's look (src/WebApp/wwwroot/app.css) for the city planner panels. Colors are explicit
+     throughout: the template's implicit styles follow the OS theme, draw grey Border strokes and white
+     shadows. A keyed style replaces the implicit one, so each style sets its own font and colors. -->
+<ResourceDictionary
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:cv="clr-namespace:Ingweland.Fog.App.Views.CityViewer"
+    xmlns:vm="clr-namespace:Ingweland.Fog.Application.Client.Web.ViewModels.Hoh;assembly=Ingweland.Fog.Application.Client.Web">
+
+    <Color x:Key="FogBackgroundColor">#FFFAEB</Color>
+    <Color x:Key="FogSurfaceColor">#FFFFFF</Color>
+    <Color x:Key="FogSurface2Color">#FCF0CE</Color>
+    <Color x:Key="FogContainerColor">#DEC78E</Color>
+    <Color x:Key="FogTextColor">#34495E</Color>
+    <Color x:Key="FogTextOnContainerColor">#5B451C</Color>
+    <Color x:Key="FogBorderColor">#F0F0F0</Color>
+    <Color x:Key="FogZebraColor">#F9FAFB</Color>
+    <Color x:Key="FogPrimaryColor">#316896</Color>
+    <Color x:Key="FogDisabledBackgroundColor">#E0E0E0</Color>
+    <Color x:Key="FogDisabledTextColor">#A6A6A6</Color>
+
+    <!-- The width of the website's 1px borders and rules. App sets it to whole device pixels for the window's
+         display scale; 1 is only the value before the window reports it. -->
+    <x:Double x:Key="FogHairlineThickness">1</x:Double>
+
+    <!-- Text -->
+    <Style x:Key="FogTextLabel" TargetType="Label">
+        <Setter Property="FontFamily" Value="OpenSansRegular" />
+        <Setter Property="FontSize" Value="14" />
+        <Setter Property="TextColor" Value="{StaticResource FogTextColor}" />
+    </Style>
+
+    <Style x:Key="FogBoldTextLabel" TargetType="Label" BasedOn="{StaticResource FogTextLabel}">
+        <Setter Property="FontFamily" Value="OpenSansSemibold" />
+    </Style>
+
+    <Style x:Key="FogSmallTextLabel" TargetType="Label" BasedOn="{StaticResource FogTextLabel}">
+        <Setter Property="FontSize" Value="10" />
+    </Style>
+
+    <Style x:Key="FogSmallBoldTextLabel" TargetType="Label" BasedOn="{StaticResource FogBoldTextLabel}">
+        <Setter Property="FontSize" Value="10" />
+    </Style>
+
+    <!-- Card (.fog-container) -->
+    <Style x:Key="FogCard" TargetType="Border">
+        <Setter Property="BackgroundColor" Value="{StaticResource FogSurfaceColor}" />
+        <Setter Property="Stroke" Value="{StaticResource FogBorderColor}" />
+        <Setter Property="StrokeThickness" Value="{DynamicResource FogHairlineThickness}" />
+        <Setter Property="StrokeShape" Value="RoundRectangle 8" />
+        <Setter Property="Padding" Value="0" />
+    </Style>
+
+    <!-- Age tag in a card's top-left corner; the background is the age color. -->
+    <Style x:Key="FogAgeTag" TargetType="Border">
+        <Setter Property="Stroke" Value="Transparent" />
+        <Setter Property="StrokeThickness" Value="0" />
+        <Setter Property="StrokeShape" Value="RoundRectangle 7,0,0,8" />
+        <Setter Property="Padding" Value="8,2" />
+        <Setter Property="MinimumWidthRequest" Value="80" />
+        <Setter Property="MinimumHeightRequest" Value="22" />
+        <Setter Property="HorizontalOptions" Value="Start" />
+    </Style>
+
+    <Style x:Key="FogAgeTagLabel" TargetType="Label">
+        <Setter Property="FontFamily" Value="OpenSansRegular" />
+        <Setter Property="FontSize" Value="12" />
+        <Setter Property="TextColor" Value="White" />
+        <Setter Property="HorizontalTextAlignment" Value="Center" />
+        <Setter Property="VerticalTextAlignment" Value="Center" />
+    </Style>
+
+    <!-- Section header tag (StatsSectionHeader) -->
+    <Style x:Key="FogSectionTag" TargetType="Border">
+        <Setter Property="BackgroundColor" Value="{StaticResource FogContainerColor}" />
+        <Setter Property="Stroke" Value="Transparent" />
+        <Setter Property="StrokeThickness" Value="0" />
+        <Setter Property="StrokeShape" Value="Rectangle" />
+        <Setter Property="Padding" Value="8,2" />
+        <Setter Property="HorizontalOptions" Value="Start" />
+    </Style>
+
+    <Style x:Key="FogSectionTagLabel" TargetType="Label">
+        <Setter Property="FontFamily" Value="OpenSansSemibold" />
+        <Setter Property="FontSize" Value="10" />
+        <Setter Property="TextColor" Value="{StaticResource FogTextOnContainerColor}" />
+    </Style>
+
+    <!-- Chip (GeneralProductionItemComponent) and tile (BuildingInfoItemComponent) -->
+    <Style x:Key="FogChip" TargetType="Border">
+        <Setter Property="BackgroundColor" Value="{StaticResource FogSurfaceColor}" />
+        <Setter Property="Stroke" Value="{StaticResource FogContainerColor}" />
+        <Setter Property="StrokeThickness" Value="{DynamicResource FogHairlineThickness}" />
+        <Setter Property="StrokeShape" Value="RoundRectangle 8" />
+        <Setter Property="Padding" Value="6,2" />
+    </Style>
+
+    <Style x:Key="FogTile" TargetType="Border" BasedOn="{StaticResource FogChip}">
+        <Setter Property="Padding" Value="6,6,6,2" />
+    </Style>
+
+    <Style x:Key="FogChipLabel" TargetType="Label" BasedOn="{StaticResource FogSmallBoldTextLabel}">
+        <Setter Property="LineBreakMode" Value="NoWrap" />
+        <Setter Property="VerticalTextAlignment" Value="Center" />
+    </Style>
+
+    <Style x:Key="FogTileLabel" TargetType="Label" BasedOn="{StaticResource FogBoldTextLabel}">
+        <Setter Property="FontSize" Value="12" />
+        <Setter Property="LineBreakMode" Value="NoWrap" />
+        <Setter Property="HorizontalTextAlignment" Value="Center" />
+    </Style>
+
+    <!-- Tables (StatsTable) -->
+    <Style x:Key="FogTableHeaderLabel" TargetType="Label" BasedOn="{StaticResource FogSmallBoldTextLabel}">
+        <Setter Property="LineBreakMode" Value="NoWrap" />
+        <Setter Property="VerticalTextAlignment" Value="Center" />
+    </Style>
+
+    <Style x:Key="FogTableCellLabel" TargetType="Label" BasedOn="{StaticResource FogSmallTextLabel}">
+        <Setter Property="LineBreakMode" Value="NoWrap" />
+        <Setter Property="VerticalTextAlignment" Value="Center" />
+    </Style>
+
+    <Style x:Key="FogProductCellLabel" TargetType="Label" BasedOn="{StaticResource FogTableCellLabel}">
+        <Setter Property="FontSize" Value="12" />
+    </Style>
+
+    <!-- The viewer is read-only, so this button only ever shows its disabled look. On Windows the button's
+         own colors are also used when it is disabled, so the grey has to be set here. -->
+    <Style x:Key="FogDisabledButton" TargetType="Button">
+        <Setter Property="BackgroundColor" Value="{StaticResource FogDisabledBackgroundColor}" />
+        <Setter Property="TextColor" Value="{StaticResource FogDisabledTextColor}" />
+        <Setter Property="FontFamily" Value="OpenSansSemibold" />
+        <Setter Property="FontSize" Value="14" />
+        <Setter Property="TextTransform" Value="Uppercase" />
+        <Setter Property="BorderWidth" Value="0" />
+        <Setter Property="CornerRadius" Value="4" />
+        <Setter Property="Padding" Value="14,8" />
+        <Setter Property="Margin" Value="0,0,0,16" />
+    </Style>
+
+    <!-- Item templates for WrapList -->
+    <DataTemplate x:Key="FogChipTemplate" x:DataType="vm:IconLabelItemViewModel">
+        <cv:IconLabelChip />
+    </DataTemplate>
+
+    <DataTemplate x:Key="FogTileTemplate" x:DataType="vm:IconLabelItemViewModel">
+        <cv:IconLabelTile />
+    </DataTemplate>
+</ResourceDictionary>

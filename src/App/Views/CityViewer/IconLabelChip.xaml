@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!-- GeneralProductionItemComponent: an icon and a short value side by side. -->
+<ContentView xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:vm="clr-namespace:Ingweland.Fog.Application.Client.Web.ViewModels.Hoh;assembly=Ingweland.Fog.Application.Client.Web"
+             x:Class="Ingweland.Fog.App.Views.CityViewer.IconLabelChip"
+             x:DataType="vm:IconLabelItemViewModel">
+    <Border Style="{StaticResource FogChip}">
+        <HorizontalStackLayout Spacing="4">
+            <Image Source="{Binding IconUrl}" WidthRequest="18" HeightRequest="18" Aspect="AspectFit"
+                   VerticalOptions="Center" />
+            <Label Text="{Binding Label}" Style="{StaticResource FogChipLabel}" />
+        </HorizontalStackLayout>
+    </Border>
+</ContentView>

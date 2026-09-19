@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!-- CityPropertiesComponent.razor (read-only). -->
+<ContentView xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:cv="clr-namespace:Ingweland.Fog.App.Views.CityViewer"
+             xmlns:models="clr-namespace:Ingweland.Fog.App.ViewModels.CityViewer"
+             xmlns:loc="clr-namespace:Ingweland.Fog.Application.Client.Core.Localization;assembly=Ingweland.Fog.Application.Client.Core"
+             x:Class="Ingweland.Fog.App.Views.CityViewer.CityPropertiesView"
+             x:DataType="models:CityPropertiesPanelModel">
+    <Border Style="{StaticResource FogCard}">
+        <VerticalStackLayout>
+            <Border Style="{StaticResource FogAgeTag}"
+                    BackgroundColor="{Binding AgeColor, TargetNullValue={StaticResource FogContainerColor}}">
+                <Label Text="{Binding Properties.Age.Name}" Style="{StaticResource FogAgeTagLabel}" />
+            </Border>
+
+            <Label Text="{Binding Properties.Name}" Style="{StaticResource FogBoldTextLabel}" FontSize="12"
+                   HorizontalTextAlignment="Center" Padding="6,6,6,12" />
+
+            <VerticalStackLayout Padding="8,0">
+                <Label IsVisible="{Binding HasWonder}" Text="{Binding WonderLine}"
+                       Style="{StaticResource FogTextLabel}" Margin="4,0,12,12" />
+
+                <cv:StatsSection IsVisible="{Binding HasWonderCost}" Title="{Binding WonderCostTitle}">
+                    <cv:WrapList BindableLayout.ItemsSource="{Binding Properties.WonderCost}"
+                                 BindableLayout.ItemTemplate="{StaticResource FogChipTemplate}" />
+                </cv:StatsSection>
+
+                <cv:StatsSection Title="{x:Static loc:FogResource.CityPlanner_Production}" IsCollapsible="True">
+                    <Grid x:Name="ProductionTable" />
+                </cv:StatsSection>
+
+                <cv:StatsSection IsVisible="{Binding HasProductionCosts}"
+                                 Title="{x:Static loc:FogResource.CityPlanner_ProductionCost}" IsCollapsible="True">
+                    <Grid x:Name="ProductionCostTable" />
+                </cv:StatsSection>
+
+                <cv:StatsSection IsVisible="{Binding ShowHappiness}"
+                                 Title="{x:Static loc:FogResource.CityPlanner_Happiness}" IsCollapsible="True">
+                    <Grid ColumnDefinitions="Auto,Auto" RowDefinitions="Auto,Auto,Auto,Auto,Auto"
+                          RowSpacing="2" ColumnSpacing="8" HorizontalOptions="Start">
+                        <Label Grid.Row="0" Text="{x:Static loc:FogResource.CityPlanner_Happiness_TotalAvailable}"
+                               Style="{StaticResource FogSmallTextLabel}" HorizontalOptions="End"
+                               VerticalOptions="Center" />
+                        <cv:IconLabelChip Grid.Row="0" Grid.Column="1"
+                                          BindingContext="{Binding Properties.Happiness.TotalAvailableHappiness}" />
+                        <Label Grid.Row="1" Text="{x:Static loc:FogResource.CityPlanner_Happiness_TotalConsumed}"
+                               Style="{StaticResource FogSmallTextLabel}" HorizontalOptions="End"
+                               VerticalOptions="Center" />
+                        <cv:IconLabelChip Grid.Row="1" Grid.Column="1"
+                                          BindingContext="{Binding Properties.Happiness.TotalHappinessConsumption}" />
+                        <Label Grid.Row="2" Text="{x:Static loc:FogResource.CityPlanner_Happiness_UsageRatio}"
+                               Style="{StaticResource FogSmallTextLabel}" HorizontalOptions="End"
+                               VerticalOptions="Center" />
+                        <cv:IconLabelChip Grid.Row="2" Grid.Column="1"
+                                          BindingContext="{Binding Properties.Happiness.UsageRatio}" />
+                        <Label Grid.Row="3" Text="{x:Static loc:FogResource.CityPlanner_Happiness_UnmetNeed}"
+                               Style="{StaticResource FogSmallTextLabel}" HorizontalOptions="End"
+                               VerticalOptions="Center" />
+                        <cv:IconLabelChip Grid.Row="3" Grid.Column="1"
+                                          BindingContext="{Binding Properties.Happiness.UnmetHappinessNeed}" />
+                        <Label Grid.Row="4" Text="{x:Static loc:FogResource.CityPlanner_Happiness_Excess}"
+                               Style="{StaticResource FogSmallTextLabel}" HorizontalOptions="End"
+                               VerticalOptions="Center" />
+                        <cv:IconLabelChip Grid.Row="4" Grid.Column="1"
+                                          BindingContext="{Binding Properties.Happiness.ExcessHappiness}" />
+                    </Grid>
+                </cv:StatsSection>
+
+                <cv:StatsSection Title="{x:Static loc:FogResource.CityPlanner_Area}" IsCollapsible="True">
+                    <VerticalStackLayout Spacing="6">
+                        <cv:WrapList ColumnSpacing="2" RowSpacing="2" BindableLayout.ItemsSource="{Binding AreaTiles}"
+                                     BindableLayout.ItemTemplate="{StaticResource FogTileTemplate}" />
+                        <Grid x:Name="AreaTable" />
+                        <VerticalStackLayout IsVisible="{Binding HasPremiumExpansions}" Spacing="8"
+                                             HorizontalOptions="Center">
+                            <Label Text="{x:Static loc:FogResource.StatsHub_Player_PremiumExpansions}"
+                                   Style="{StaticResource FogSmallBoldTextLabel}" HorizontalOptions="Center" />
+                            <HorizontalStackLayout Spacing="8" HorizontalOptions="Center">
+                                <cv:IconLabelChip
+                                    BindingContext="{Binding Properties.Areas.PremiumExpansionCount}" />
+                                <cv:IconLabelChip
+                                    BindingContext="{Binding Properties.Areas.PremiumExpansionCost}" />
+                            </HorizontalStackLayout>
+                        </VerticalStackLayout>
+                    </VerticalStackLayout>
+                </cv:StatsSection>
+
+                <cv:StatsSection Title="{x:Static loc:FogResource.CityPlanner_Workforce}" IsCollapsible="True">
+                    <cv:WrapList BindableLayout.ItemsSource="{Binding Properties.Workforce}"
+                                 BindableLayout.ItemTemplate="{StaticResource FogChipTemplate}" />
+                </cv:StatsSection>
+
+                <cv:StatsSection IsVisible="{Binding HasWonderBonus}"
+                                 Title="{x:Static loc:FogResource.Hoh_WorldWonder}">
+                    <cv:WrapList BindableLayout.ItemsSource="{Binding Properties.WonderBonus}"
+                                 BindableLayout.ItemTemplate="{StaticResource FogChipTemplate}" />
+                </cv:StatsSection>
+            </VerticalStackLayout>
+        </VerticalStackLayout>
+    </Border>
+</ContentView>

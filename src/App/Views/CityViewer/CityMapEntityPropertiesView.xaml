@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!-- CityMapEntityPropertiesComponent.razor with Editable="false". -->
+<ContentView xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:cv="clr-namespace:Ingweland.Fog.App.Views.CityViewer"
+             xmlns:models="clr-namespace:Ingweland.Fog.App.ViewModels.CityViewer"
+             xmlns:loc="clr-namespace:Ingweland.Fog.Application.Client.Core.Localization;assembly=Ingweland.Fog.Application.Client.Core"
+             x:Class="Ingweland.Fog.App.Views.CityViewer.CityMapEntityPropertiesView"
+             x:DataType="models:CityMapEntityPanelModel">
+    <Border Style="{StaticResource FogCard}">
+        <VerticalStackLayout>
+            <Border Style="{StaticResource FogAgeTag}"
+                    BackgroundColor="{Binding AgeColor, TargetNullValue={StaticResource FogContainerColor}}">
+                <Label Text="{Binding AgeName}" Style="{StaticResource FogAgeTagLabel}" />
+            </Border>
+
+            <Label Text="{Binding Title}" Style="{StaticResource FogBoldTextLabel}"
+                   HorizontalTextAlignment="Center" Padding="12" />
+
+            <VerticalStackLayout Padding="8,0">
+                <cv:StatsSection Title="{x:Static loc:FogResource.Common_Info}" Padding="0">
+                    <cv:WrapList ColumnSpacing="4" RowSpacing="2"
+                                 BindableLayout.ItemsSource="{Binding Building.InfoItems}"
+                                 BindableLayout.ItemTemplate="{StaticResource FogTileTemplate}" />
+                </cv:StatsSection>
+
+                <HorizontalStackLayout>
+                    <CheckBox IsChecked="{Binding Building.IsUpgrading, Mode=OneWay}" IsEnabled="False"
+                              VerticalOptions="Center" />
+                    <Label Text="{x:Static loc:FogResource.CityPlanner_CityMapEntity_IsUpgrading}"
+                           Style="{StaticResource FogTextLabel}" VerticalOptions="Center" />
+                </HorizontalStackLayout>
+
+                <Button IsVisible="{Binding Building.IsLockable}" Text="{Binding LockButtonText}" IsEnabled="False"
+                        Style="{StaticResource FogDisabledButton}" />
+
+                <cv:StatsSection IsVisible="{Binding HasProduction}"
+                                 Title="{x:Static loc:FogResource.CityPlanner_Production}">
+                    <VerticalStackLayout Spacing="6">
+                        <cv:WrapList ColumnSpacing="4" RowSpacing="2"
+                                     BindableLayout.ItemsSource="{Binding Building.ProductionComponent.General}"
+                                     BindableLayout.ItemTemplate="{StaticResource FogChipTemplate}" />
+                        <Grid x:Name="ProductsTable" />
+                    </VerticalStackLayout>
+                </cv:StatsSection>
+
+                <cv:StatsSection IsVisible="{Binding HasProductionCost}"
+                                 Title="{x:Static loc:FogResource.CityPlanner_ProductionCost}" IsCollapsible="True">
+                    <Grid x:Name="ProductionCostTable" />
+                </cv:StatsSection>
+            </VerticalStackLayout>
+        </VerticalStackLayout>
+    </Border>
+</ContentView>
