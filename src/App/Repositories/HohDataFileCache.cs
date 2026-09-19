@@ -2,7 +2,9 @@ namespace Ingweland.Fog.App.Repositories;
 
 /// <summary>
 ///     Disk-backed replacement for the IndexedDB stores the Blazor client uses to cache the Hoh core
-///     data and localization blobs. One file per version; stale versions are pruned on write.
+///     data and localization blobs. One file per version; stale versions are pruned on write. Kept in the
+///     OS cache folder, which stays out of device backups; if the OS clears it when storage runs low, the
+///     data is downloaded again.
 /// </summary>
 internal sealed class HohDataFileCache
 {
@@ -10,7 +12,7 @@ internal sealed class HohDataFileCache
 
     public HohDataFileCache(string subdirectory)
     {
-        _directory = Path.Combine(FileSystem.AppDataDirectory, "hoh-data", subdirectory);
+        _directory = Path.Combine(FileSystem.CacheDirectory, "hoh-data", subdirectory);
     }
 
     public async Task<byte[]?> TryReadAsync(string id)

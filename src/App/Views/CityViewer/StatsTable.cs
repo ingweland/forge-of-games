@@ -57,9 +57,9 @@ internal static class StatsTable
 
     public static Image Icon(string url, double size)
     {
-        return new Image
+        return new AssetImage
         {
-            Source = url,
+            Url = url,
             WidthRequest = size,
             HeightRequest = size,
             Aspect = Aspect.AspectFit,

@@ -6,6 +6,8 @@ using Ingweland.Fog.App.Services.Abstractions;
 using Ingweland.Fog.App.Views;
 using Ingweland.Fog.Application.Client.Web;
 using Ingweland.Fog.Application.Client.Web.Analytics.Interfaces;
+using Ingweland.Fog.Application.Client.Web.CityPlanner.Abstractions;
+using Ingweland.Fog.Application.Client.Web.CityPlanner.Rendering;
 using Ingweland.Fog.Application.Client.Web.EquipmentConfigurator.Abstractions;
 using Ingweland.Fog.Application.Client.Web.Services.Abstractions;
 using Ingweland.Fog.Application.Client.Web.Services.Hoh.Abstractions;
@@ -41,6 +43,15 @@ public static class DependencyInjection
         services.AddScoped<IJSInteropService, NotSupportedJsInteropService>();
         services.AddScoped<IEquipmentProfilePersistenceService, NotSupportedEquipmentProfilePersistenceService>();
         services.Replace(ServiceDescriptor.Singleton<IAnalyticsService, NoOpAnalyticsService>());
+
+        // Assets are downloaded once and then read from disk (AssetCacheHandler): the city planner's own downloads,
+        // i.e. its font and the icon atlas image and JSON (the shared layer registers these typed clients; this adds
+        // the handler to them), and images shown in the UI (AssetImage uses the named client).
+        services.AddSingleton<AssetFileCache>();
+        services.AddTransient<AssetCacheHandler>();
+        services.AddHttpClient<ITypefaceProvider, TypefaceProvider>().AddHttpMessageHandler<AssetCacheHandler>();
+        services.AddHttpClient<IProductionRenderer, ProductionRenderer>().AddHttpMessageHandler<AssetCacheHandler>();
+        services.AddHttpClient(AssetCacheHandler.HTTP_CLIENT_NAME).AddHttpMessageHandler<AssetCacheHandler>();
 
         var apiBaseUrl = configuration[API_BASE_URL_KEY] ??
             throw new InvalidOperationException($"`{API_BASE_URL_KEY}` is missing from appsettings.json.");
