@@ -149,6 +149,46 @@
         <Setter Property="HorizontalTextAlignment" Value="Center" />
     </Style>
 
+    <!-- Allied culture city guides (AlliedCultureCityGuides.razor) -->
+    <Style x:Key="FogSectionTitleLabel" TargetType="Label">
+        <Setter Property="FontFamily" Value="OpenSansRegular" />
+        <Setter Property="FontSize" Value="18" />
+        <Setter Property="TextColor" Value="{StaticResource FogTextOnContainerColor}" />
+        <Setter Property="Padding" Value="6,8,50,2" />
+    </Style>
+
+    <Style x:Key="FogCityNameLabel" TargetType="Label">
+        <Setter Property="FontFamily" Value="OpenSansRegular" />
+        <Setter Property="FontSize" Value="20" />
+        <Setter Property="TextColor" Value="{StaticResource FogTextOnBackgroundColor}" />
+        <Setter Property="TextTransform" Value="Uppercase" />
+        <Setter Property="HorizontalTextAlignment" Value="Center" />
+        <Setter Property="Padding" Value="0,14,0,0" />
+    </Style>
+
+    <!-- AlliedCultureCityGuideItem.razor: the image fills the card, the name sits over its bottom edge. -->
+    <Style x:Key="FogGuideCard" TargetType="Border">
+        <Setter Property="BackgroundColor" Value="Transparent" />
+        <Setter Property="Stroke" Value="Transparent" />
+        <Setter Property="StrokeThickness" Value="0" />
+        <Setter Property="StrokeShape" Value="RoundRectangle 8" />
+        <Setter Property="Padding" Value="0" />
+        <Setter Property="WidthRequest" Value="120" />
+    </Style>
+
+    <Style x:Key="FogGuideCardLabel" TargetType="Label" BasedOn="{StaticResource FogTextLabel}">
+        <Setter Property="FontSize" Value="12" />
+        <Setter Property="BackgroundColor" Value="{StaticResource FogSurfaceColor}" />
+        <Setter Property="Padding" Value="4" />
+        <Setter Property="Margin" Value="0,-6,0,0" />
+        <Setter Property="HorizontalTextAlignment" Value="Center" />
+    </Style>
+
+    <!-- AlliedCultureCalendarItemCard.razor, the website's .command-center-card. -->
+    <Style x:Key="FogCalendarCard" TargetType="Border" BasedOn="{StaticResource FogCard}">
+        <Setter Property="MinimumHeightRequest" Value="80" />
+    </Style>
+
     <!-- Item templates for WrapList -->
     <DataTemplate x:Key="FogChipTemplate" x:DataType="vm:IconLabelItemViewModel">
         <cv:IconLabelChip />

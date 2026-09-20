@@ -14,8 +14,9 @@ public partial class AppShell : Shell
         CopyrightLabel.Text = $"© {DateTime.Now.Year} Forge of Games";
         LanguageLabel.Text = AppCulture.Current.Label;
 
-        // A new shell (a language change) registers this again, which MAUI accepts for the same page type.
+        // A new shell (a language change) registers these again, which MAUI accepts for the same page types.
         Routing.RegisterRoute(nameof(CityViewerPage), typeof(CityViewerPage));
+        Routing.RegisterRoute(nameof(CityGuidePage), typeof(CityGuidePage));
     }
 
     // Android's back button on another menu page goes to the first one (City Viewer) before leaving the app, as

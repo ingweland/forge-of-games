@@ -13,6 +13,7 @@ using Ingweland.Fog.Application.Client.Web.Services.Abstractions;
 using Ingweland.Fog.Application.Client.Web.Services.Hoh.Abstractions;
 using Ingweland.Fog.Application.Client.Web.Settings;
 using Ingweland.Fog.Application.Core.Repository.Abstractions;
+using Ingweland.Fog.Application.Core.Services.Hoh.Abstractions;
 using Ingweland.Fog.Shared;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
@@ -60,11 +61,15 @@ public static class DependencyInjection
             ContentSerializer = new SystemTextJsonContentSerializer(GetDefaultJsonSerializerOptions()),
         };
         AddRefitJsonApiClient<IHohDataService>(services, apiBaseUrl, refitSettings);
+        AddRefitJsonApiClient<IInGameEventService>(services, apiBaseUrl, refitSettings);
         AddRefitJsonApiClient<IFogSharingService>(services, apiBaseUrl, refitSettings, "api");
+        AddRefitJsonApiClient<ICommunityCityStrategyService>(services, apiBaseUrl, refitSettings, "api");
 
         services.AddTransient<CityViewerHomePage>();
         services.AddTransient<AboutPage>();
         services.AddTransient<CityViewerPage>();
+        services.AddTransient<AlliedCultureCityGuidesPage>();
+        services.AddTransient<CityGuidePage>();
     }
 
     // Same client setup as WebApp.Client/DependencyInjection.cs, with an absolute origin in place of

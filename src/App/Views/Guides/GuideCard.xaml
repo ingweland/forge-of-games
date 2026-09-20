@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!-- AlliedCultureCityGuideItem.razor: the wonder's image with its name across the bottom edge. -->
+<ContentView xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:cv="clr-namespace:Ingweland.Fog.App.Views.CityViewer"
+             xmlns:vm="clr-namespace:Ingweland.Fog.Application.Client.Web.ViewModels;assembly=Ingweland.Fog.Application.Client.Web"
+             x:Class="Ingweland.Fog.App.Views.Guides.GuideCard"
+             x:DataType="vm:AlliedCultureCityGuideViewModel">
+    <Border Style="{StaticResource FogGuideCard}">
+        <Border.Shadow>
+            <Shadow Brush="Black" Opacity="0.2" Radius="3" Offset="0,3" />
+        </Border.Shadow>
+        <Border.GestureRecognizers>
+            <TapGestureRecognizer Tapped="OnTapped" />
+        </Border.GestureRecognizers>
+        <Grid RowDefinitions="Auto,Auto">
+            <cv:AssetImage Url="{Binding Wonder.ImageUrl}" HeightRequest="120" Aspect="AspectFill" />
+            <Label Grid.Row="1" Text="{Binding Wonder.Name}" Style="{StaticResource FogGuideCardLabel}" />
+        </Grid>
+    </Border>
+</ContentView>

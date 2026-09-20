@@ -66,10 +66,15 @@
     </Shell.FlyoutFooter>
 
     <!-- The website's menu icons (WebApp.Client/Services/MainMenuService.cs), downloaded from the CDN's images/icons:
-         menu_city.svg is the city guides' strategy_24dp_FBE0C6_FILL0_wght400_GRAD0_opsz24.svg and menu_about.svg is
-         About's info_24dp_FBE0C6_FILL0_wght400_GRAD0_opsz24.svg. -->
+         menu_city.svg is the city guides' strategy_24dp_FBE0C6_FILL0_wght400_GRAD0_opsz24.svg, which City Viewer
+         shares, and menu_about.svg is About's info_24dp_FBE0C6_FILL0_wght400_GRAD0_opsz24.svg. -->
     <FlyoutItem Title="{x:Static loc:FogResource.CityViewer_Title}" Icon="menu_city.png">
         <ShellContent ContentTemplate="{DataTemplate views:CityViewerHomePage}" Route="CityViewerHome" />
+    </FlyoutItem>
+
+    <FlyoutItem Title="{x:Static loc:FogResource.Navigation_AlliedCultureCityGuides}" Icon="menu_city.png">
+        <ShellContent ContentTemplate="{DataTemplate views:AlliedCultureCityGuidesPage}"
+                      Route="AlliedCultureCityGuides" />
     </FlyoutItem>
 
     <FlyoutItem Title="{x:Static loc:FogResource.Navigation_About}" Icon="menu_about.png">

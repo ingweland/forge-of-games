@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!-- The website's allied culture city guides (WebApp.Client/Components/Pages/AlliedCultureCityGuides.razor):
+     the calendar of the events running now or soon, then a card per guide, grouped by city. -->
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:cv="clr-namespace:Ingweland.Fog.App.Views.CityViewer"
+             xmlns:guides="clr-namespace:Ingweland.Fog.App.Views.Guides"
+             xmlns:models="clr-namespace:Ingweland.Fog.App.ViewModels.Guides"
+             xmlns:vm="clr-namespace:Ingweland.Fog.Application.Client.Web.ViewModels;assembly=Ingweland.Fog.Application.Client.Web"
+             xmlns:loc="clr-namespace:Ingweland.Fog.Application.Client.Core.Localization;assembly=Ingweland.Fog.Application.Client.Core"
+             x:Class="Ingweland.Fog.App.Views.AlliedCultureCityGuidesPage"
+             Title="{x:Static loc:FogResource.AlliedCultureCityGuides_Title}">
+
+    <ContentPage.Resources>
+        <DataTemplate x:Key="CalendarCardTemplate" x:DataType="models:CalendarCardModel">
+            <guides:CalendarCard />
+        </DataTemplate>
+
+        <DataTemplate x:Key="GuideCardTemplate" x:DataType="vm:AlliedCultureCityGuideViewModel">
+            <guides:GuideCard />
+        </DataTemplate>
+
+        <!-- One city: its name over that city's guides. -->
+        <DataTemplate x:Key="GuideGroupTemplate" x:DataType="vm:AlliedCultureCityGuideGroupViewModel">
+            <VerticalStackLayout Spacing="6">
+                <Label Text="{Binding CityName}" Style="{StaticResource FogCityNameLabel}" />
+                <cv:WrapList BindableLayout.ItemsSource="{Binding Guides}"
+                             BindableLayout.ItemTemplate="{StaticResource GuideCardTemplate}"
+                             ColumnSpacing="6" RowSpacing="6" />
+            </VerticalStackLayout>
+        </DataTemplate>
+    </ContentPage.Resources>
+
+    <ScrollView>
+        <VerticalStackLayout Padding="8" Spacing="6">
+            <!-- The website's section title: the label with a rule under it, both only as wide as the text. -->
+            <VerticalStackLayout HorizontalOptions="Start">
+                <Label Text="{x:Static loc:FogResource.AlliedCultureCityGuides_Calendar}"
+                       Style="{StaticResource FogSectionTitleLabel}" />
+                <BoxView Color="{StaticResource FogTextOnContainerColor}"
+                         HeightRequest="{DynamicResource FogHairlineThickness}" />
+            </VerticalStackLayout>
+
+            <ActivityIndicator x:Name="BusyIndicator" IsRunning="True" HorizontalOptions="Start" />
+
+            <Label x:Name="StatusLabel" IsVisible="False" Style="{StaticResource FogTextLabel}" />
+
+            <cv:WrapList x:Name="CalendarList" ColumnSpacing="6" RowSpacing="6"
+                         BindableLayout.ItemTemplate="{StaticResource CalendarCardTemplate}" />
+
+            <VerticalStackLayout x:Name="GuideGroups" Spacing="18"
+                                 BindableLayout.ItemTemplate="{StaticResource GuideGroupTemplate}" />
+        </VerticalStackLayout>
+    </ScrollView>
+
+</ContentPage>
