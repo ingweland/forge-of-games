@@ -1,7 +1,10 @@
 using Ingweland.Fog.App.Services.Abstractions;
+using Ingweland.Fog.App.Views.Guides;
 using Ingweland.Fog.Application.Client.Web.CityStrategyBuilder.Abstractions;
+using Ingweland.Fog.Application.Client.Web.Providers.Interfaces;
 using Ingweland.Fog.Application.Client.Web.Services.Abstractions;
 using Ingweland.Fog.Application.Client.Web.ViewModels;
+using Ingweland.Fog.Models.Fog.Entities;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
 
@@ -23,6 +26,7 @@ public partial class CityGuidePage : ContentPage, IQueryAttributable
     // The width of the website's .timeline-container.
     private const double TIMELINE_PANEL_WIDTH = 270;
 
+    private readonly IAssetUrlProvider _assetUrlProvider;
     private readonly ICityStrategyBuilderService _builder;
     private readonly IAlliedCultureCityGuidesUiService _guidesUiService;
     private readonly IHohDataInitializationService _hohDataInitializationService;
@@ -33,6 +37,7 @@ public partial class CityGuidePage : ContentPage, IQueryAttributable
     private bool _isNavigating;
     private bool _isReleased;
     private bool? _isWide;
+    private CityStrategyTimelineItemBase? _selectedItem;
     private bool _timelineIsVisible;
 
     public CityGuidePage(IServiceScopeFactory serviceScopeFactory,
@@ -47,6 +52,7 @@ public partial class CityGuidePage : ContentPage, IQueryAttributable
         _scope = serviceScopeFactory.CreateScope();
         _builder = _scope.ServiceProvider.GetRequiredService<ICityStrategyBuilderService>();
         _guidesUiService = _scope.ServiceProvider.GetRequiredService<IAlliedCultureCityGuidesUiService>();
+        _assetUrlProvider = _scope.ServiceProvider.GetRequiredService<IAssetUrlProvider>();
 
         InitializeComponent();
 
@@ -158,14 +164,27 @@ public partial class CityGuidePage : ContentPage, IQueryAttributable
     }
 
     /// <summary>
-    ///     Brings the page in line with the selected timeline item. The components for the four item types go
-    ///     into <c>ItemContentHost</c> from here.
+    ///     Brings the page in line with the selected timeline item.
     /// </summary>
     private void ShowSelectedItem()
     {
-        ItemTitleLabel.Text = _builder.SelectedTimelineItem?.Title ?? string.Empty;
-        Timeline.Select(_builder.SelectedTimelineItem?.Id);
+        _selectedItem = _builder.SelectedTimelineItem;
+        ItemTitleLabel.Text = _selectedItem?.Title ?? string.Empty;
+        ItemContentHost.Content = CreateItemContent(_selectedItem);
+        Timeline.Select(_selectedItem?.Id);
         ApplyLayoutMode();
+    }
+
+    // The website's two viewers are the same chain of `is` tests over these four types; the layout map and the
+    // research tree join it next, and until then they leave the area empty.
+    private View? CreateItemContent(CityStrategyTimelineItemBase? item)
+    {
+        return item switch
+        {
+            CityStrategyDescriptionTimelineItem description => MarkdownItemView.ForDescription(description),
+            CityStrategyIntroTimelineItem intro => MarkdownItemView.ForIntro(intro, _assetUrlProvider),
+            _ => null,
+        };
     }
 
     // Wide: the timeline is a panel in column 0 and the content sits beside it, as in the website's desktop
@@ -185,6 +204,13 @@ public partial class CityGuidePage : ContentPage, IQueryAttributable
 
         // The website's arrows are the mobile viewer's: with the panel there, the list is already at hand.
         NavigationButtons.IsVisible = Body.IsVisible && !isWide && !_timelineIsVisible;
+
+        // So is the item's title. The desktop viewer prints none at all, and neither viewer prints one for an
+        // intro item, whose own markdown already opens with the same title as its heading.
+        ItemTitleLabel.IsVisible = !isWide && _selectedItem is not CityStrategyIntroTimelineItem;
+
+        // .content-container's padding-bottom: the arrows float over the content, so it stops short of them.
+        ItemContentHost.Margin = new Thickness(0, 0, 0, NavigationButtons.IsVisible ? 64 : 0);
 
         if (_timelineIsVisible)
         {

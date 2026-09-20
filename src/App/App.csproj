@@ -27,6 +27,11 @@
                <MauiXaml Update="MyPage.xaml" Inflator="Runtime" /> (force runtime inflation) -->
         <MauiXamlInflator>SourceGen</MauiXamlInflator>
 
+        <!-- A newer MAUI servicing release than the installed workload manifest defaults to (10.0.20),
+             taken deliberately: Microsoft.Maui.Controls and friends are restored from NuGet at this version
+             rather than coming from the workload. -->
+        <MauiVersion>10.0.71</MauiVersion>
+
         <!-- Display name -->
         <ApplicationTitle>Forge of Games</ApplicationTitle>
 
@@ -76,7 +81,7 @@
         <PackageReference Include="Microsoft.Extensions.Http.Resilience" Version="10.8.0"/>
         <PackageReference Include="Microsoft.Extensions.Localization" Version="10.0.10"/>
         <PackageReference Include="Microsoft.Extensions.Logging.Debug" Version="10.0.0"/>
-        <PackageReference Include="Microsoft.Maui.Controls" Version="$(MauiVersion)"/>
+        <PackageReference Include="Microsoft.Maui.Controls" Version="10.0.101" />
         <PackageReference Include="Refit.HttpClientFactory" Version="14.0.0"/>
         <PackageReference Include="SkiaSharp.Views.Maui.Controls" Version="4.152.1" />
     </ItemGroup>

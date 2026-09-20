@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <!-- A community city guide, read only: the MAUI counterpart of the website's CityStrategyViewerComponent and
      CityStrategyMobileViewerComponent. The toolbar sits under the navigation bar, the timeline beside the
-     content on wide windows and over it on narrow ones. The content itself arrives with the components for the
-     four timeline item types. -->
+     content on wide windows and over it on narrow ones. The Description and Intro items are markdown, drawn by
+     MarkdownView; the layout map and the research tree come next. -->
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:guides="clr-namespace:Ingweland.Fog.App.Views.Guides"
@@ -29,7 +29,7 @@
 
             <Grid x:Name="ContentHost" Grid.Column="1" RowDefinitions="Auto,*" Padding="0,6,0,0">
                 <Label x:Name="ItemTitleLabel" Style="{StaticResource FogTimelineItemTitleLabel}" />
-                <!-- Filled by the timeline item components, which come next. -->
+                <!-- Filled from ShowSelectedItem with the component for the selected item's type. -->
                 <ContentView x:Name="ItemContentHost" Grid.Row="1" />
             </Grid>
         </Grid>

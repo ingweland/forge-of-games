@@ -242,6 +242,27 @@
         <Setter Property="Padding" Value="6,0,6,6" />
     </Style>
 
+    <!-- Markdown (.markdown-city-guide) -->
+    <!-- The .component-root of the Description and Intro items: a white card with a square hairline border,
+         holding the MarkdownView that draws the guide's text. -->
+    <Style x:Key="FogGuideContent" TargetType="Border">
+        <Setter Property="BackgroundColor" Value="{StaticResource FogSurfaceColor}" />
+        <Setter Property="Stroke" Value="{StaticResource FogBorderColor}" />
+        <Setter Property="StrokeThickness" Value="{DynamicResource FogHairlineThickness}" />
+        <Setter Property="StrokeShape" Value="Rectangle" />
+        <Setter Property="Padding" Value="0" />
+    </Style>
+
+    <!-- Fenced and indented code. No monospace family: neither bundled font has one and the names the
+         platforms do ship differ, so the tinted block is what marks it. -->
+    <Style x:Key="FogCodeBlock" TargetType="Border">
+        <Setter Property="BackgroundColor" Value="{StaticResource FogZebraColor}" />
+        <Setter Property="Stroke" Value="{StaticResource FogBorderColor}" />
+        <Setter Property="StrokeThickness" Value="{DynamicResource FogHairlineThickness}" />
+        <Setter Property="StrokeShape" Value="RoundRectangle 4" />
+        <Setter Property="Padding" Value="8" />
+    </Style>
+
     <!-- Item templates for WrapList -->
     <DataTemplate x:Key="FogChipTemplate" x:DataType="vm:IconLabelItemViewModel">
         <cv:IconLabelChip />
