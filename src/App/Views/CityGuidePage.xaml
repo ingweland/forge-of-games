@@ -1,6 +1,72 @@
 <?xml version="1.0" encoding="utf-8" ?>
-<!-- A placeholder for a guide. The website opens its city strategy viewer here (CITY_STRATEGY_VIEWER_PATH),
-     which is still to be ported; for now only the title says which guide was opened. -->
+<!-- A community city guide, read only: the MAUI counterpart of the website's CityStrategyViewerComponent and
+     CityStrategyMobileViewerComponent. The toolbar sits under the navigation bar, the timeline beside the
+     content on wide windows and over it on narrow ones. The content itself arrives with the components for the
+     four timeline item types. -->
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="Ingweland.Fog.App.Views.CityGuidePage" />
+             xmlns:guides="clr-namespace:Ingweland.Fog.App.Views.Guides"
+             x:Class="Ingweland.Fog.App.Views.CityGuidePage"
+             BackgroundColor="{StaticResource FogBackgroundColor}"
+             Shell.FlyoutBehavior="Disabled">
+
+    <!-- No side menu here either: the layout map that lands in this area pans, and its gesture would compete
+         with the menu's edge swipe. The back button stays. -->
+    <Grid RowDefinitions="Auto,*">
+        <HorizontalStackLayout x:Name="Toolbar"
+                               IsVisible="False"
+                               BackgroundColor="{StaticResource FogToolbarColor}"
+                               Padding="6,2"
+                               Spacing="6">
+            <ImageButton x:Name="TimelineButton"
+                         Source="timeline.png"
+                         Style="{StaticResource FogToolbarButton}"
+                         Clicked="OnTimelineClicked" />
+        </HorizontalStackLayout>
+
+        <Grid x:Name="Body" Grid.Row="1" IsVisible="False" ColumnDefinitions="Auto,*" ColumnSpacing="2">
+            <guides:TimelineView x:Name="Timeline" />
+
+            <Grid x:Name="ContentHost" Grid.Column="1" RowDefinitions="Auto,*" Padding="0,6,0,0">
+                <Label x:Name="ItemTitleLabel" Style="{StaticResource FogTimelineItemTitleLabel}" />
+                <!-- Filled by the timeline item components, which come next. -->
+                <ContentView x:Name="ItemContentHost" Grid.Row="1" />
+            </Grid>
+        </Grid>
+
+        <!-- The website's .navigation-buttons-container: one arrow at each end, over the content. -->
+        <Grid x:Name="NavigationButtons"
+              Grid.Row="1"
+              IsVisible="False"
+              ColumnDefinitions="Auto,*,Auto"
+              VerticalOptions="End"
+              Margin="12">
+            <ImageButton Source="arrow_back.png"
+                         Style="{StaticResource FogToolbarButton}"
+                         BackgroundColor="{StaticResource FogPrimaryColor}"
+                         Clicked="OnPreviousClicked" />
+            <ImageButton Grid.Column="2"
+                         Source="arrow_forward.png"
+                         Style="{StaticResource FogToolbarButton}"
+                         BackgroundColor="{StaticResource FogPrimaryColor}"
+                         Clicked="OnNextClicked" />
+        </Grid>
+
+        <ActivityIndicator x:Name="LoadingIndicator"
+                           Grid.Row="1"
+                           IsRunning="True"
+                           Color="{StaticResource FogPrimaryColor}"
+                           HorizontalOptions="Center"
+                           VerticalOptions="Center" />
+
+        <Label x:Name="ErrorLabel"
+               Grid.Row="1"
+               IsVisible="False"
+               Style="{StaticResource FogTextLabel}"
+               Margin="24"
+               HorizontalOptions="Center"
+               VerticalOptions="Center"
+               HorizontalTextAlignment="Center" />
+    </Grid>
+
+</ContentPage>

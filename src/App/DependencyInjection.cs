@@ -40,7 +40,7 @@ public static class DependencyInjection
         services.AddSingleton<IHohDataProvider, FileSystemHohDataProvider>();
         services.AddSingleton<IHohLocalizationDataProvider, FileSystemHohLocalizationDataProvider>();
         services.AddSingleton<IHohDataInitializationService, HohDataInitializationService>();
-        services.AddScoped<IPersistenceService, NotSupportedPersistenceService>();
+        services.AddScoped<IPersistenceService, FileSystemPersistenceService>();
         services.AddScoped<IJSInteropService, NotSupportedJsInteropService>();
         services.AddScoped<IEquipmentProfilePersistenceService, NotSupportedEquipmentProfilePersistenceService>();
         services.Replace(ServiceDescriptor.Singleton<IAnalyticsService, NoOpAnalyticsService>());

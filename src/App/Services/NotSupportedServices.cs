@@ -4,178 +4,15 @@ using Ingweland.Fog.Application.Client.Web.Services.Abstractions;
 using Ingweland.Fog.Models.Fog.Entities;
 using Ingweland.Fog.Models.Hoh.Entities.Equipment;
 using Ingweland.Fog.Models.Hoh.Entities.Relics;
-using Ingweland.Fog.Models.Hoh.Enums;
 using Microsoft.AspNetCore.Components;
 
 namespace Ingweland.Fog.App.Services;
 
-// The city viewer never persists anything: CityPlanner takes IPersistenceService in its constructor
-// but the read-only path never calls it. These throw rather than no-op so that any future code that
-// does reach for persistence fails loudly instead of silently losing data.
-// Replace with a real Preferences/file-backed implementation when the guide feature needs saving.
-internal sealed class NotSupportedPersistenceService : IPersistenceService
-{
-    public ValueTask SaveCity(HohCity city)
-    {
-        throw new NotSupportedException(NotSupported.Message);
-    }
-
-    public ValueTask SaveCityStrategy(CityStrategy cityStrategy)
-    {
-        throw new NotSupportedException(NotSupported.Message);
-    }
-
-    public ValueTask SaveCityInspirationsRequestAsync(CityInspirationsSearchFormRequest request)
-    {
-        throw new NotSupportedException(NotSupported.Message);
-    }
-
-    public ValueTask<CityInspirationsSearchFormRequest?> GetCityInspirationsRequestAsync()
-    {
-        throw new NotSupportedException(NotSupported.Message);
-    }
-
-    public ValueTask SaveTopHeroesRequestAsync(TopHeroesSearchFormRequest request)
-    {
-        throw new NotSupportedException(NotSupported.Message);
-    }
-
-    public ValueTask<TopHeroesSearchFormRequest?> GetTopHeroesRequestAsync()
-    {
-        throw new NotSupportedException(NotSupported.Message);
-    }
-
-    public ValueTask<bool> DeleteCity(string cityId)
-    {
-        throw new NotSupportedException(NotSupported.Message);
-    }
-
-    public ValueTask<bool> DeleteCityStrategy(string strategyId)
-    {
-        throw new NotSupportedException(NotSupported.Message);
-    }
-
-    public ValueTask<HohCity?> LoadCity(string cityId)
-    {
-        throw new NotSupportedException(NotSupported.Message);
-    }
-
-    public ValueTask<CityStrategy?> LoadCityStrategy(string strategyId, bool isCommunity = false)
-    {
-        throw new NotSupportedException(NotSupported.Message);
-    }
-
-    public ValueTask<IReadOnlyCollection<HohCityBasicData>> GetCities()
-    {
-        throw new NotSupportedException(NotSupported.Message);
-    }
-
-    public ValueTask<IReadOnlyCollection<HohCityBasicData>> GetCityStrategies()
-    {
-        throw new NotSupportedException(NotSupported.Message);
-    }
-
-    public ValueTask SaveCommandCenterProfile(BasicCommandCenterProfile commandCenterProfile)
-    {
-        throw new NotSupportedException(NotSupported.Message);
-    }
-
-    public ValueTask SaveEquipment(IReadOnlyCollection<EquipmentItem> equipment)
-    {
-        throw new NotSupportedException(NotSupported.Message);
-    }
-
-    public ValueTask<bool> DeleteProfile(string profileId)
-    {
-        throw new NotSupportedException(NotSupported.Message);
-    }
-
-    public ValueTask<BasicCommandCenterProfile?> LoadProfile(string profileId)
-    {
-        throw new NotSupportedException(NotSupported.Message);
-    }
-
-    public ValueTask<IReadOnlyCollection<BasicCommandCenterProfile>> GetProfilesAsync()
-    {
-        throw new NotSupportedException(NotSupported.Message);
-    }
-
-    public ValueTask<HeroProfileIdentifier?> GetHeroProfileAsync(string heroId)
-    {
-        throw new NotSupportedException(NotSupported.Message);
-    }
-
-    public ValueTask<IReadOnlyCollection<EquipmentItem>> GetEquipmentAsync()
-    {
-        throw new NotSupportedException(NotSupported.Message);
-    }
-
-    public ValueTask SaveHeroProfileAsync(HeroProfileIdentifier profile)
-    {
-        throw new NotSupportedException(NotSupported.Message);
-    }
-
-    public ValueTask<UiSettings> GetUiSettingsAsync()
-    {
-        throw new NotSupportedException(NotSupported.Message);
-    }
-
-    public ValueTask SaveUiSettingsAsync(UiSettings settings)
-    {
-        throw new NotSupportedException(NotSupported.Message);
-    }
-
-    public ValueTask SaveTempCities(IEnumerable<HohCity> cities)
-    {
-        throw new NotSupportedException(NotSupported.Message);
-    }
-
-    public ValueTask<IReadOnlyCollection<HohCity>> GetTempCities()
-    {
-        throw new NotSupportedException(NotSupported.Message);
-    }
-
-    public ValueTask SaveCityBackup(HohCityBackup cityBackup)
-    {
-        throw new NotSupportedException(NotSupported.Message);
-    }
-
-    public ValueTask SaveCommandCenterProfileBackup(CommandCenterProfileBackup backup)
-    {
-        throw new NotSupportedException(NotSupported.Message);
-    }
-
-    public ValueTask SaveOpenTechnologies(CityId cityId, IReadOnlyCollection<string> openTechnologies)
-    {
-        throw new NotSupportedException(NotSupported.Message);
-    }
-
-    public ValueTask<IReadOnlyCollection<string>> GetOpenTechnologies(CityId cityId)
-    {
-        throw new NotSupportedException(NotSupported.Message);
-    }
-
-    public ValueTask SaveCommunityCityStrategy(string strategyId, CityStrategy cityStrategy)
-    {
-        throw new NotSupportedException(NotSupported.Message);
-    }
-
-    public ValueTask SetItemAsync<T>(string key, T value)
-    {
-        throw new NotSupportedException(NotSupported.Message);
-    }
-
-    public ValueTask RemoveItemAsync(string key)
-    {
-        throw new NotSupportedException(NotSupported.Message);
-    }
-
-    public ValueTask<T?> GetItemAsync<T>(string key)
-    {
-        throw new NotSupportedException(NotSupported.Message);
-    }
-}
-
+// Two services the client application layer asks for that the app has no counterpart for: the browser
+// interop the web uses for scrolling, downloads and the clipboard, and the equipment profile storage
+// behind a feature the app does not show. These throw rather than no-op so that any code reaching for
+// them fails loudly instead of silently doing nothing.
+// City guides and the items stored with them live in FileSystemPersistenceService.
 internal sealed class NotSupportedJsInteropService : IJSInteropService
 {
     public ValueTask ResetScrollPositionAsync()
@@ -268,5 +105,5 @@ internal sealed class NotSupportedEquipmentProfilePersistenceService : IEquipmen
 internal static class NotSupported
 {
     public const string Message =
-        "This service is not implemented in the MAUI app yet; the city viewer does not need it.";
+        "This service is not implemented in the MAUI app; nothing it shows needs it.";
 }

@@ -38,6 +38,7 @@
     <Color x:Key="FogTextColor">#34495E</Color>
     <Color x:Key="FogTextOnContainerColor">#5B451C</Color>
     <Color x:Key="FogTextOnBackgroundColor">#C38B2E</Color>
+    <Color x:Key="FogToolbarColor">#808080</Color>
     <Color x:Key="FogBorderColor">#F0F0F0</Color>
     <Color x:Key="FogZebraColor">#F9FAFB</Color>
     <Color x:Key="FogPrimaryColor">#316896</Color>

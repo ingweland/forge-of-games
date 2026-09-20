@@ -189,6 +189,59 @@
         <Setter Property="MinimumHeightRequest" Value="80" />
     </Style>
 
+    <!-- City guide viewer (CityStrategyMobileViewerComponent.razor.css,
+         CityStrategyTimelineViewerComponent.razor.css) -->
+    <Style x:Key="FogToolbarButton" TargetType="ImageButton">
+        <Setter Property="WidthRequest" Value="40" />
+        <Setter Property="HeightRequest" Value="40" />
+        <Setter Property="CornerRadius" Value="20" />
+        <Setter Property="Padding" Value="8" />
+        <Setter Property="BackgroundColor" Value="Transparent" />
+    </Style>
+
+    <!-- The .name-container tag hanging under the timeline panel's top edge. -->
+    <Style x:Key="FogTimelineHeader" TargetType="Border">
+        <Setter Property="BackgroundColor" Value="{StaticResource FogContainerColor}" />
+        <Setter Property="Stroke" Value="Transparent" />
+        <Setter Property="StrokeThickness" Value="0" />
+        <Setter Property="StrokeShape" Value="RoundRectangle 0,0,8,8" />
+        <Setter Property="Padding" Value="8,4" />
+        <Setter Property="Margin" Value="12,0" />
+    </Style>
+
+    <Style x:Key="FogTimelineHeaderLabel" TargetType="Label" BasedOn="{StaticResource FogBoldTextLabel}">
+        <Setter Property="TextColor" Value="{StaticResource FogTextOnContainerColor}" />
+        <Setter Property="HorizontalTextAlignment" Value="Center" />
+    </Style>
+
+    <!-- .list-index: the item's number in a circle. -->
+    <Style x:Key="FogTimelineIndex" TargetType="Border">
+        <Setter Property="BackgroundColor" Value="{StaticResource FogContainerColor}" />
+        <Setter Property="Stroke" Value="Transparent" />
+        <Setter Property="StrokeThickness" Value="0" />
+        <Setter Property="StrokeShape" Value="RoundRectangle 12" />
+        <Setter Property="WidthRequest" Value="24" />
+        <Setter Property="HeightRequest" Value="24" />
+        <Setter Property="Padding" Value="0" />
+    </Style>
+
+    <Style x:Key="FogTimelineIndexLabel" TargetType="Label" BasedOn="{StaticResource FogSmallTextLabel}">
+        <Setter Property="TextColor" Value="{StaticResource FogTextOnContainerColor}" />
+        <Setter Property="HorizontalTextAlignment" Value="Center" />
+        <Setter Property="VerticalTextAlignment" Value="Center" />
+    </Style>
+
+    <Style x:Key="FogTimelineItemLabel" TargetType="Label" BasedOn="{StaticResource FogTextLabel}">
+        <Setter Property="FontSize" Value="12" />
+        <Setter Property="VerticalTextAlignment" Value="Center" />
+    </Style>
+
+    <!-- .timeline-item-title-container: which item the content area is showing. -->
+    <Style x:Key="FogTimelineItemTitleLabel" TargetType="Label" BasedOn="{StaticResource FogBoldTextLabel}">
+        <Setter Property="TextColor" Value="{StaticResource FogTextOnContainerColor}" />
+        <Setter Property="Padding" Value="6,0,6,6" />
+    </Style>
+
     <!-- Item templates for WrapList -->
     <DataTemplate x:Key="FogChipTemplate" x:DataType="vm:IconLabelItemViewModel">
         <cv:IconLabelChip />
