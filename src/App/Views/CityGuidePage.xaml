@@ -2,7 +2,8 @@
 <!-- A community city guide, read only: the MAUI counterpart of the website's CityStrategyViewerComponent and
      CityStrategyMobileViewerComponent. The toolbar sits under the navigation bar, the timeline beside the
      content on wide windows and over it on narrow ones. The Description and Intro items are markdown, drawn by
-     MarkdownView, and the Research item is ResearchItemView; the layout map comes next. -->
+     MarkdownView, the Research item is ResearchItemView, and the Layout item is the shared CityMapView, which
+     is what the rest of this toolbar is for. -->
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:guides="clr-namespace:Ingweland.Fog.App.Views.Guides"
@@ -22,12 +23,45 @@
                          Source="timeline.png"
                          Style="{StaticResource FogToolbarButton}"
                          Clicked="OnTimelineClicked" />
+
+            <!-- The map's own buttons, shown only while a layout item is on screen and the properties panel
+                 is not covering it. See ApplyMapToolbar. -->
+            <BoxView x:Name="MapToolsDivider" Style="{StaticResource FogToolbarDivider}" IsVisible="False" />
+            <ImageButton x:Name="ZoomOutButton"
+                         Source="zoom_out.png"
+                         IsVisible="False"
+                         Style="{StaticResource FogToolbarButton}"
+                         Clicked="OnZoomOutClicked" />
+            <ImageButton x:Name="ZoomInButton"
+                         Source="zoom_in.png"
+                         IsVisible="False"
+                         Style="{StaticResource FogToolbarButton}"
+                         Clicked="OnZoomInClicked" />
+            <ImageButton x:Name="FitScreenButton"
+                         Source="fit_screen.png"
+                         IsVisible="False"
+                         Style="{StaticResource FogToolbarButton}"
+                         Clicked="OnFitToScreenClicked" />
+
+            <BoxView x:Name="MapViewsDivider" Style="{StaticResource FogToolbarDivider}" IsVisible="False" />
+            <ImageButton x:Name="DiffModeButton"
+                         Source="difference.png"
+                         IsVisible="False"
+                         Style="{StaticResource FogToolbarButton}"
+                         Clicked="OnDiffModeClicked" />
+            <ImageButton x:Name="AnalyticsButton"
+                         Source="analytics.png"
+                         IsVisible="False"
+                         Style="{StaticResource FogToolbarButton}"
+                         Clicked="OnAnalyticsClicked" />
         </HorizontalStackLayout>
 
         <Grid x:Name="Body" Grid.Row="1" IsVisible="False" ColumnDefinitions="Auto,*" ColumnSpacing="2">
             <guides:TimelineView x:Name="Timeline" />
 
-            <Grid x:Name="ContentHost" Grid.Column="1" RowDefinitions="Auto,*" Padding="0,6,0,0">
+            <!-- No top padding, unlike the website's .main-container: the content starts against the toolbar,
+                 as the timeline beside it does. -->
+            <Grid x:Name="ContentHost" Grid.Column="1" RowDefinitions="Auto,*">
                 <Label x:Name="ItemTitleLabel" Style="{StaticResource FogTimelineItemTitleLabel}" />
                 <!-- Filled from ShowSelectedItem with the component for the selected item's type. -->
                 <ContentView x:Name="ItemContentHost" Grid.Row="1" />

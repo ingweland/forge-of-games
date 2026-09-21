@@ -44,6 +44,12 @@
     <Color x:Key="FogPrimaryColor">#316896</Color>
     <Color x:Key="FogDisabledBackgroundColor">#E0E0E0</Color>
     <Color x:Key="FogDisabledTextColor">#A6A6A6</Color>
+    <!-- The vertical tab strip down the map panel's outer edge: .city-planner-tabs-header, and the red
+         marker on the open tab, which is FogTheme's Error behind MudBlazor's tab slider. -->
+    <Color x:Key="FogTabStripColor">#36536C</Color>
+    <Color x:Key="FogTabSliderColor">#963532</Color>
+    <!-- Behind the city map, where the planner has not drawn: the dark the website's canvas sits on. -->
+    <Color x:Key="FogMapBackgroundColor">#333333</Color>
     <!-- The research tree's technology states, the fog tech colors in app.css. A city guide only ever shows
          the two unselected ones; the selected pair belongs to the website's research calculator. -->
     <Color x:Key="FogOpenTechColor">#CFFCEF</Color>

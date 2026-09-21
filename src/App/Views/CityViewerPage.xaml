@@ -1,11 +1,9 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             xmlns:skia="clr-namespace:SkiaSharp.Views.Maui.Controls;assembly=SkiaSharp.Views.Maui.Controls"
              xmlns:cv="clr-namespace:Ingweland.Fog.App.Views.CityViewer"
-             xmlns:loc="clr-namespace:Ingweland.Fog.Application.Client.Core.Localization;assembly=Ingweland.Fog.Application.Client.Core"
              x:Class="Ingweland.Fog.App.Views.CityViewerPage"
-             BackgroundColor="#333333"
+             BackgroundColor="{StaticResource FogMapBackgroundColor}"
              Shell.FlyoutBehavior="Disabled">
 
     <!-- No side menu on the map: its edge swipe would compete with panning. The back button stays. -->
@@ -19,50 +17,12 @@
         </Style>
     </ContentPage.Resources>
 
-    <!-- The properties host moves with the layout mode (see ApplyLayoutMode): wide windows get a side panel
-         in column 1 across both rows; narrow ones a bottom sheet over row 1 of the map. -->
-    <Grid ColumnDefinitions="*,Auto" RowDefinitions="45*,55*">
-        <!-- IgnorePixelScaling keeps the surface at full resolution but hands PaintSurface and Touch
-             device-independent units, which is what the shared map code and its text sizes assume. -->
-        <skia:SKCanvasView x:Name="CanvasView"
-                           Grid.RowSpan="2"
-                           IgnorePixelScaling="True"
-                           EnableTouchEvents="True"
-                           PaintSurface="OnCanvasViewPaintSurface"
-                           Touch="OnCanvasViewTouch" />
+    <Grid>
+        <!-- The map, its side panel and its bottom sheet; a guide's layout timeline item hosts the same view. -->
+        <cv:CityMapView x:Name="Map" BackgroundColor="{StaticResource FogMapBackgroundColor}" />
 
-        <Border x:Name="PropertiesHost"
-                IsVisible="False"
-                BackgroundColor="{StaticResource FogBackgroundColor}"
-                Stroke="Transparent"
-                StrokeThickness="0"
-                StrokeShape="Rectangle"
-                Padding="0">
-            <Grid RowDefinitions="Auto,*">
-                <ImageButton x:Name="ClosePropertiesButton"
-                             Source="close.png"
-                             IsVisible="False"
-                             HorizontalOptions="End"
-                             WidthRequest="44"
-                             HeightRequest="44"
-                             Padding="10"
-                             Margin="0,4,4,0"
-                             BackgroundColor="Transparent"
-                             ToolTipProperties.Text="{x:Static loc:FogResource.Common_Close}"
-                             Clicked="OnClosePropertiesClicked" />
-
-                <ScrollView x:Name="PropertiesScroll" Grid.Row="1">
-                    <VerticalStackLayout Padding="6" Spacing="12">
-                        <cv:CityMapEntityPropertiesView x:Name="EntityCard" IsVisible="False" />
-                        <cv:CityPropertiesView x:Name="CityCard" IsVisible="False" />
-                    </VerticalStackLayout>
-                </ScrollView>
-            </Grid>
-        </Border>
-
-        <!-- After the host, so the sheet never covers these on short windows. -->
+        <!-- Over the map, and so hidden while the panel is covering it (see UpdateToolbar). -->
         <VerticalStackLayout x:Name="Toolbar"
-                             Grid.RowSpan="2"
                              IsVisible="False"
                              HorizontalOptions="End"
                              VerticalOptions="Start"
@@ -77,14 +37,12 @@
         </VerticalStackLayout>
 
         <ActivityIndicator x:Name="LoadingIndicator"
-                           Grid.RowSpan="2"
                            IsRunning="True"
                            Color="White"
                            HorizontalOptions="Center"
                            VerticalOptions="Center" />
 
         <Label x:Name="ErrorLabel"
-               Grid.RowSpan="2"
                IsVisible="False"
                TextColor="White"
                Margin="24"

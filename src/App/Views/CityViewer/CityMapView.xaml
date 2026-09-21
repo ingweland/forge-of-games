@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!-- The read-only city map and the panel beside it, shared by the standalone city viewer and a guide's layout
+     timeline item: the two places the website draws the same SKGLView over the same city planner. Rendering,
+     pan, pinch-zoom and hit-testing all live in the shared Application.Client.Web city planner code; this view
+     only hosts the canvas, forwards input and shows what the tapped building and the city come to.
+     The host moves with the layout mode (see ApplyLayoutMode): wide windows get a side panel in column 1
+     beside the map; narrow ones a sheet over it, covering it whole. -->
+<ContentView xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:skia="clr-namespace:SkiaSharp.Views.Maui.Controls;assembly=SkiaSharp.Views.Maui.Controls"
+             xmlns:cv="clr-namespace:Ingweland.Fog.App.Views.CityViewer"
+             xmlns:loc="clr-namespace:Ingweland.Fog.Application.Client.Core.Localization;assembly=Ingweland.Fog.Application.Client.Core"
+             x:Class="Ingweland.Fog.App.Views.CityViewer.CityMapView">
+
+    <Grid ColumnDefinitions="*,Auto">
+        <!-- IgnorePixelScaling keeps the surface at full resolution but hands PaintSurface and Touch
+             device-independent units, which is what the shared map code and its text sizes assume. -->
+        <skia:SKCanvasView x:Name="CanvasView"
+                           IgnorePixelScaling="True"
+                           EnableTouchEvents="True"
+                           PaintSurface="OnCanvasViewPaintSurface"
+                           Touch="OnCanvasViewTouch" />
+
+        <Border x:Name="PropertiesHost"
+                IsVisible="False"
+                BackgroundColor="{StaticResource FogBackgroundColor}"
+                Stroke="Transparent"
+                StrokeThickness="0"
+                StrokeShape="Rectangle"
+                Padding="0">
+            <Grid ColumnDefinitions="*,Auto">
+                <Grid RowDefinitions="Auto,*">
+                    <ImageButton x:Name="ClosePropertiesButton"
+                                 Source="close.png"
+                                 IsVisible="False"
+                                 HorizontalOptions="End"
+                                 WidthRequest="44"
+                                 HeightRequest="44"
+                                 Padding="10"
+                                 Margin="0,4,4,0"
+                                 BackgroundColor="Transparent"
+                                 ToolTipProperties.Text="{x:Static loc:FogResource.Common_Close}"
+                                 Clicked="OnClosePropertiesClicked" />
+
+                    <ScrollView x:Name="PropertiesScroll" Grid.Row="1">
+                        <!-- Initialize inserts the two cost calculators, which need services, so that this
+                             one stack reads properties then calculators - which is also the order the two
+                             tabs below split it into. -->
+                        <VerticalStackLayout x:Name="PanelStack" Padding="6" Spacing="12">
+                            <cv:CityMapEntityPropertiesView x:Name="EntityCard" IsVisible="False" />
+                            <cv:CityPropertiesView x:Name="CityCard" IsVisible="False" />
+                        </VerticalStackLayout>
+                    </ScrollView>
+                </Grid>
+
+                <!-- The website's MudTabs Position="Right" over the same two groups, down the panel's outer
+                     edge: .city-planner-tabs-header with a 6px slider marking the open one. Wide windows
+                     only - a phone shows the panel one card at a time and has no room to spare. -->
+                <VerticalStackLayout x:Name="TabStrip"
+                                     Grid.Column="1"
+                                     IsVisible="False"
+                                     BackgroundColor="{StaticResource FogTabStripColor}">
+                    <Grid ColumnDefinitions="Auto,*">
+                        <BoxView x:Name="PropertiesTabSlider" WidthRequest="6"
+                                 Color="{StaticResource FogTabStripColor}" />
+                        <ImageButton Grid.Column="1"
+                                     Source="analytics.png"
+                                     Style="{StaticResource FogTabButton}"
+                                     Clicked="OnPropertiesTabClicked" />
+                    </Grid>
+                    <Grid ColumnDefinitions="Auto,*">
+                        <BoxView x:Name="CalculatorsTabSlider" WidthRequest="6"
+                                 Color="{StaticResource FogTabStripColor}" />
+                        <ImageButton Grid.Column="1"
+                                     Source="calculator.png"
+                                     Style="{StaticResource FogTabButton}"
+                                     Clicked="OnCalculatorsTabClicked" />
+                    </Grid>
+                </VerticalStackLayout>
+            </Grid>
+        </Border>
+    </Grid>
+
+</ContentView>

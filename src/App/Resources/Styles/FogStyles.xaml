@@ -298,6 +298,51 @@
         <Setter Property="FontSize" Value="14" />
     </Style>
 
+    <!-- One tab down the map panel's strip. MinimumTabWidth is 28px on the website, widened here to a
+         thumb's worth; the 6px slider beside it makes up the rest of the strip. -->
+    <Style x:Key="FogTabButton" TargetType="ImageButton">
+        <Setter Property="WidthRequest" Value="38" />
+        <Setter Property="HeightRequest" Value="44" />
+        <Setter Property="Padding" Value="8" />
+        <Setter Property="BackgroundColor" Value="Transparent" />
+    </Style>
+
+    <!-- .toolbar-divider, between the city viewer toolbar's groups of buttons. -->
+    <Style x:Key="FogToolbarDivider" TargetType="BoxView">
+        <Setter Property="Color" Value="{StaticResource FogBorderColor}" />
+        <Setter Property="WidthRequest" Value="1" />
+        <Setter Property="HeightRequest" Value="24" />
+        <Setter Property="VerticalOptions" Value="Center" />
+    </Style>
+
+    <!-- Cost calculators (CityPlannerBuildingCostCalculator, CityPlannerWonderCostCalculator) -->
+    <!-- .section-title: the calculator's name, in the card's top-left corner as the age tag is. -->
+    <Style x:Key="FogCalculatorTag" TargetType="Border" BasedOn="{StaticResource FogAgeTag}">
+        <Setter Property="BackgroundColor" Value="{StaticResource FogContainerColor}" />
+    </Style>
+
+    <Style x:Key="FogCalculatorTagLabel" TargetType="Label" BasedOn="{StaticResource FogSectionTagLabel}">
+        <Setter Property="FontSize" Value="12" />
+        <Setter Property="HorizontalTextAlignment" Value="Center" />
+        <Setter Property="VerticalTextAlignment" Value="Center" />
+    </Style>
+
+    <!-- .entity-title: what is being costed, the building's or the wonder's name. -->
+    <Style x:Key="FogCalculatorSubjectLabel" TargetType="Label" BasedOn="{StaticResource FogBoldTextLabel}">
+        <Setter Property="HorizontalTextAlignment" Value="Center" />
+        <Setter Property="Padding" Value="0,6" />
+    </Style>
+
+    <!-- The two level selectors. A Picker is the platform's own dropdown, so this only brings its text in
+         line with the rest of the card; the web's MudSelect draws its own outlined field. -->
+    <Style x:Key="FogPicker" TargetType="Picker">
+        <Setter Property="FontFamily" Value="OpenSansRegular" />
+        <Setter Property="FontSize" Value="14" />
+        <Setter Property="TextColor" Value="{StaticResource FogTextColor}" />
+        <Setter Property="TitleColor" Value="{StaticResource FogDisabledTextColor}" />
+        <Setter Property="BackgroundColor" Value="Transparent" />
+    </Style>
+
     <!-- Item templates for WrapList -->
     <DataTemplate x:Key="FogChipTemplate" x:DataType="vm:IconLabelItemViewModel">
         <cv:IconLabelChip />

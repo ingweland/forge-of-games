@@ -1,5 +1,7 @@
 using Ingweland.Fog.App.Services.Abstractions;
+using Ingweland.Fog.App.Views.CityViewer;
 using Ingweland.Fog.App.Views.Guides;
+using Ingweland.Fog.Application.Client.Web.CityPlanner;
 using Ingweland.Fog.Application.Client.Web.CityStrategyBuilder.Abstractions;
 using Ingweland.Fog.Application.Client.Web.Providers.Interfaces;
 using Ingweland.Fog.Application.Client.Web.Services.Abstractions;
@@ -29,6 +31,7 @@ public partial class CityGuidePage : ContentPage, IQueryAttributable
 
     private readonly IAssetUrlProvider _assetUrlProvider;
     private readonly ICityStrategyBuilderService _builder;
+    private readonly CityPlannerSettings _cityPlannerSettings;
     private readonly IAlliedCultureCityGuidesUiService _guidesUiService;
     private readonly IHohDataInitializationService _hohDataInitializationService;
     private readonly ILogger<CityGuidePage> _logger;
@@ -38,6 +41,7 @@ public partial class CityGuidePage : ContentPage, IQueryAttributable
     private bool _isNavigating;
     private bool _isReleased;
     private bool? _isWide;
+    private CityMapView? _mapView;
     private CityStrategyTimelineItemBase? _selectedItem;
     private bool _timelineIsVisible;
 
@@ -54,6 +58,8 @@ public partial class CityGuidePage : ContentPage, IQueryAttributable
         _builder = _scope.ServiceProvider.GetRequiredService<ICityStrategyBuilderService>();
         _guidesUiService = _scope.ServiceProvider.GetRequiredService<IAlliedCultureCityGuidesUiService>();
         _assetUrlProvider = _scope.ServiceProvider.GetRequiredService<IAssetUrlProvider>();
+        // The same instance the renderer behind the map reads diff mode from.
+        _cityPlannerSettings = _scope.ServiceProvider.GetRequiredService<CityPlannerSettings>();
 
         InitializeComponent();
 
@@ -172,12 +178,19 @@ public partial class CityGuidePage : ContentPage, IQueryAttributable
         _selectedItem = _builder.SelectedTimelineItem;
         ItemTitleLabel.Text = _selectedItem?.Title ?? string.Empty;
         ItemContentHost.Content = CreateItemContent(_selectedItem);
+
+        // Selecting a layout item re-initialized the city planner on that item's city, so everything the map
+        // draws and everything beside it belongs to the item just selected.
+        if (_selectedItem is CityStrategyLayoutTimelineItem)
+        {
+            _mapView!.Refresh();
+        }
+
         Timeline.Select(_selectedItem?.Id);
         ApplyLayoutMode();
     }
 
-    // The website's two viewers are the same chain of `is` tests over these four types; the layout map joins
-    // it next, and until then it leaves the area empty.
+    // The website's two viewers are the same chain of `is` tests over these four types.
     private View? CreateItemContent(CityStrategyTimelineItemBase? item)
     {
         return item switch
@@ -190,8 +203,28 @@ public partial class CityGuidePage : ContentPage, IQueryAttributable
             CityStrategyResearchTimelineItem research => new ResearchItemView(research,
                 _builder.Strategy.InGameCityId,
                 _scope.ServiceProvider.GetRequiredService<IResearchCalculatorService>(), _isWide ?? true),
+            CityStrategyLayoutTimelineItem => MapView(),
             _ => null,
         };
+    }
+
+    /// <summary>
+    ///     One map for every layout item, as the website keeps one SKGLView across them all: the pan and zoom
+    ///     belong to the scope's transformation component, and a fresh view would re-fit the map on its first
+    ///     paint and throw away where the reader had got to.
+    /// </summary>
+    private CityMapView MapView()
+    {
+        if (_mapView != null)
+        {
+            return _mapView;
+        }
+
+        _mapView = new CityMapView {BackgroundColor = ThemeResources.Color("FogMapBackgroundColor")};
+        _mapView.StateChanged += OnMapStateChanged;
+        _mapView.Initialize(_scope.ServiceProvider);
+        _mapView.ApplyLayoutMode(_isWide ?? true);
+        return _mapView;
     }
 
     // Wide: the timeline is a panel in column 0 and the content sits beside it, as in the website's desktop
@@ -209,34 +242,104 @@ public partial class CityGuidePage : ContentPage, IQueryAttributable
         Timeline.IsVisible = _timelineIsVisible;
         ContentHost.IsVisible = isWide || !_timelineIsVisible;
 
+        var isLayout = _selectedItem is CityStrategyLayoutTimelineItem;
+        // On a narrow window the timeline takes the whole page, and then there is no map under it to act on.
+        var mapIsOnScreen = isLayout && (isWide || !_timelineIsVisible);
+        ApplyMapToolbar(mapIsOnScreen, isWide);
+        _mapView?.ApplyLayoutMode(isWide);
+
         // The website's arrows are the mobile viewer's: with the panel there, the list is already at hand.
-        NavigationButtons.IsVisible = Body.IsVisible && !isWide && !_timelineIsVisible;
+        // The map's own sheet takes them with it, as the website's building dialog covers everything.
+        NavigationButtons.IsVisible = Body.IsVisible && !isWide && !_timelineIsVisible &&
+            !(isLayout && _mapView?.IsPanelOpen == true);
 
         // So is the item's title. The desktop viewer prints none at all, and neither viewer prints one for an
         // intro item, whose own markdown already opens with the same title as its heading.
         ItemTitleLabel.IsVisible = !isWide && _selectedItem is not CityStrategyIntroTimelineItem;
 
         // .content-container's padding-bottom: the arrows float over the content, so it stops short of them.
-        ItemContentHost.Margin = new Thickness(0, 0, 0, NavigationButtons.IsVisible ? 64 : 0);
+        // .map-container carries no such padding - over the map they are meant to float.
+        ItemContentHost.Margin =
+            new Thickness(0, 0, 0, NavigationButtons.IsVisible && !isLayout ? 64 : 0);
 
         // The research item lays its technologies out differently in each mode, and is the only content that
         // cares which one it is in.
         (ItemContentHost.Content as ResearchItemView)?.SetWide(isWide);
 
-        if (_timelineIsVisible)
+        SetToggled(TimelineButton, _timelineIsVisible);
+    }
+
+    private void ApplyMapToolbar(bool mapIsOnScreen, bool isWide)
+    {
+        // On a narrow window the properties panel covers the map, and then only the button that brings the
+        // map back is worth showing - CityStrategyMobileViewerComponent gates fit and diff on its Main
+        // state the same way, and leaves its analytics toggle up in every state.
+        var mapIsUncovered = mapIsOnScreen && _mapView?.IsPanelOpen != true;
+
+        // Zoom stays on a phone, where the website's mobile viewer drops it: CityViewerPage has always
+        // offered it there, and a guide's map is the same map.
+        ZoomOutButton.IsVisible = mapIsUncovered;
+        ZoomInButton.IsVisible = mapIsUncovered;
+        FitScreenButton.IsVisible = mapIsUncovered;
+        MapToolsDivider.IsVisible = mapIsUncovered;
+
+        DiffModeButton.IsVisible = mapIsUncovered;
+        // Wide windows keep the properties panel open beside the map, so there is nothing to ask for.
+        AnalyticsButton.IsVisible = mapIsOnScreen && !isWide;
+        MapViewsDivider.IsVisible = DiffModeButton.IsVisible || AnalyticsButton.IsVisible;
+
+        SetToggled(DiffModeButton, _cityPlannerSettings.DiffModeIsActive);
+        SetToggled(AnalyticsButton, _mapView?.IsCityPropertiesToggled == true);
+    }
+
+    private static void SetToggled(ImageButton button, bool isToggled)
+    {
+        if (isToggled)
         {
-            TimelineButton.BackgroundColor = ThemeResources.Color("FogPrimaryColor");
+            button.BackgroundColor = ThemeResources.Color("FogPrimaryColor");
         }
         else
         {
-            TimelineButton.ClearValue(BackgroundColorProperty);
+            button.ClearValue(BackgroundColorProperty);
         }
+    }
+
+    private void OnMapStateChanged()
+    {
+        ApplyLayoutMode();
     }
 
     private void OnTimelineClicked(object? sender, EventArgs e)
     {
         _timelineIsVisible = !_timelineIsVisible;
         ApplyLayoutMode();
+    }
+
+    private void OnZoomInClicked(object? sender, EventArgs e)
+    {
+        _mapView?.ZoomIn();
+    }
+
+    private void OnZoomOutClicked(object? sender, EventArgs e)
+    {
+        _mapView?.ZoomOut();
+    }
+
+    private void OnFitToScreenClicked(object? sender, EventArgs e)
+    {
+        _mapView?.FitToScreen();
+    }
+
+    private void OnDiffModeClicked(object? sender, EventArgs e)
+    {
+        // The setting raises its own StateChanged, which the map listens to and repaints on.
+        _cityPlannerSettings.DiffModeIsActive = !_cityPlannerSettings.DiffModeIsActive;
+        SetToggled(DiffModeButton, _cityPlannerSettings.DiffModeIsActive);
+    }
+
+    private void OnAnalyticsClicked(object? sender, EventArgs e)
+    {
+        _mapView?.ToggleCityProperties();
     }
 
     private async void OnTimelineItemSelected(object? sender, string id)
@@ -310,6 +413,12 @@ public partial class CityGuidePage : ContentPage, IQueryAttributable
 
         _isReleased = true;
         Timeline.ItemSelected -= OnTimelineItemSelected;
+        if (_mapView != null)
+        {
+            _mapView.StateChanged -= OnMapStateChanged;
+            _mapView.Release();
+        }
+
         // Disposes the city strategy builder with everything else it resolved.
         _scope.Dispose();
     }
