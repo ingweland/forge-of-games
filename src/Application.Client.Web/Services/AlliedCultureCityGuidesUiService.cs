@@ -38,7 +38,9 @@ public class AlliedCultureCityGuidesUiService(
         var guidesTask = ExecuteSafeAsync(() => communityCityStrategyService.GetStrategiesAsync(), []);
         var wondersTask = cityService.GetWonderBasicDataAsync();
         await Task.WhenAll(guidesTask, wondersTask);
-        var guides = guidesTask.Result.Where(x => x.WonderId is not (null or WonderId.Undefined))
+        var guides = guidesTask.Result.Where(x => x.WonderId is not (null or WonderId.Undefined) && !x.IsPremium)
+            .ToDictionary(x => x.WonderId!);
+        var premiumGuides = guidesTask.Result.Where(x => x.WonderId is not (null or WonderId.Undefined) && x.IsPremium)
             .ToDictionary(x => x.WonderId!);
         var groups = new List<AlliedCultureCityGuideGroupViewModel>();
         foreach (var kvp in wondersTask.Result.OrderBy(x => x.Key))
@@ -46,12 +48,15 @@ public class AlliedCultureCityGuidesUiService(
             var guideVms = new List<AlliedCultureCityGuideViewModel>();
             foreach (var w in kvp.Value)
             {
-                if (!guides.TryGetValue(w.Id, out var guide))
+                if (guides.TryGetValue(w.Id, out var guide))
                 {
-                    continue;
+                    guideVms.Add(alliedCultureCityGuideViewModelFactory.Create(guide, w));
                 }
 
-                guideVms.Add(alliedCultureCityGuideViewModelFactory.Create(guide, w));
+                if (premiumGuides.TryGetValue(w.Id, out var premiumGuide))
+                {
+                    guideVms.Add(alliedCultureCityGuideViewModelFactory.Create(premiumGuide, w));
+                }
             }
 
             if (guideVms.Count > 0)

@@ -2292,6 +2292,15 @@ namespace Ingweland.Fog.Application.Client.Core.Localization {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Premium.
+        /// </summary>
+        public static string Common_Premium {
+            get {
+                return ResourceManager.GetString("Common.Premium", resourceCulture);
+            }
+        }
+
+        /// <summary>
         ///   Looks up a localized string similar to Previous.
         /// </summary>
         public static string Common_Previous {

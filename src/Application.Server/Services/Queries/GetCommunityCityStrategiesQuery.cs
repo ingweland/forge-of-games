@@ -23,6 +23,7 @@ public class GetCommunityCityStrategiesQueryHandler(IFogDbContext context, IMapp
         GetCommunityCityStrategiesQuery request, CancellationToken cancellationToken)
     {
         return Result.Try(() => context.CommunityCityStrategies
+                .Where(x => x.IsEnabled)
                 .ProjectTo<CommunityCityStrategyDto>(mapper.ConfigurationProvider)
                 .ToListAsync(cancellationToken))
             .Map(IReadOnlyCollection<CommunityCityStrategyDto> (x) => x);

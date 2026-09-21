@@ -8,6 +8,8 @@ public class CommunityCityStrategyEntity
     public required string Author { get; set; }
     public required CityId CityId { get; set; }
     public int Id { get; set; }
+    public bool IsEnabled { get; set; } = true;
+    public bool IsPremium { get; set; }
     public required string Name { get; set; }
     public required string SharedDataId { get; set; }
 

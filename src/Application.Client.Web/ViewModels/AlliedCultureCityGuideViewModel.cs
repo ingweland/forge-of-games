@@ -6,6 +6,10 @@ namespace Ingweland.Fog.Application.Client.Web.ViewModels;
 public class AlliedCultureCityGuideViewModel
 {
     public required CityId CityId { get; init; }
+    public required string DisplayName { get; init; }
+
+    public bool IsPremium { get; init; }
+
     public required string SharedDataId { get; init; }
     public required WonderBasicViewModel Wonder { get; init; }
 }

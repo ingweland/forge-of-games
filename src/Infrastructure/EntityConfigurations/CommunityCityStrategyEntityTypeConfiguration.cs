@@ -19,6 +19,7 @@ public class CommunityCityStrategyEntityTypeConfiguration : IEntityTypeConfigura
         builder.Property(p => p.UpdatedAt).IsRequired();
         builder.Property(p => p.CityId).IsRequired().HasConversion<string>();
         builder.Property(p => p.WonderId).HasConversion<string>();
+        builder.Property(p => p.IsEnabled).HasDefaultValue(true);
         builder.Property(p => p.AgeId);
     }
 }
