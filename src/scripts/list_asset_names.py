@@ -4,7 +4,7 @@ from pathlib import Path
 
 def main():
     input_path = r"D:\Temp\My project\Assets"
-    output_path = f"asset_names_{date.today():%Y-%m-%d}.txt"
+    output_path = rf"D:\Temp\asset_names_{date.today():%Y-%m-%d}.txt"
 
     names = sorted(
         {
