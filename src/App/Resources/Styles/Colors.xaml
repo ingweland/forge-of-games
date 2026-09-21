@@ -44,6 +44,12 @@
     <Color x:Key="FogPrimaryColor">#316896</Color>
     <Color x:Key="FogDisabledBackgroundColor">#E0E0E0</Color>
     <Color x:Key="FogDisabledTextColor">#A6A6A6</Color>
+    <!-- The research tree's technology states, the fog tech colors in app.css. A city guide only ever shows
+         the two unselected ones; the selected pair belongs to the website's research calculator. -->
+    <Color x:Key="FogOpenTechColor">#CFFCEF</Color>
+    <Color x:Key="FogSelectedOpenTechColor">#ACD2C7</Color>
+    <Color x:Key="FogTargetTechColor">#FCF0CE</Color>
+    <Color x:Key="FogSelectedTargetTechColor">#F4E8C8</Color>
     <!-- The website's active menu link: rgba(255, 255, 255, 0.2). -->
     <Color x:Key="FogMenuSelectedColor">#33FFFFFF</Color>
 

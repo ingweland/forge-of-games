@@ -263,6 +263,41 @@
         <Setter Property="Padding" Value="8" />
     </Style>
 
+    <!-- Research (ResearchTimelineItemComponent.razor.css, TechnologyComponent.razor.css) -->
+    <!-- .cost-title, over what this item's technologies come to. -->
+    <Style x:Key="FogResearchCostTitle" TargetType="Label" BasedOn="{StaticResource FogBoldTextLabel}">
+        <Setter Property="TextTransform" Value="Uppercase" />
+        <Setter Property="HorizontalOptions" Value="Center" />
+    </Style>
+
+    <!-- .age-header: a full-width bar carrying the age's name, in the age's own color, which the view sets. -->
+    <Style x:Key="FogAgeHeaderLabel" TargetType="Label">
+        <Setter Property="FontFamily" Value="OpenSansRegular" />
+        <Setter Property="FontSize" Value="14" />
+        <Setter Property="TextColor" Value="{StaticResource White}" />
+        <Setter Property="TextTransform" Value="Uppercase" />
+        <Setter Property="VerticalTextAlignment" Value="Center" />
+        <Setter Property="HeightRequest" Value="44" />
+        <Setter Property="Padding" Value="12,2" />
+    </Style>
+
+    <!-- TechnologyComponent's own .fog-container, which FogCard already is. Not FogChip, whose stroke is the
+         container color rather than the border one. The background is the technology's state, set in code. -->
+    <Style x:Key="FogTechChip" TargetType="Border" BasedOn="{StaticResource FogCard}">
+        <Setter Property="Padding" Value="4" />
+    </Style>
+
+    <Style x:Key="FogTechChipLabel" TargetType="Label" BasedOn="{StaticResource FogTextLabel}">
+        <Setter Property="FontSize" Value="12" />
+        <Setter Property="LineBreakMode" Value="WordWrap" />
+        <Setter Property="HorizontalTextAlignment" Value="Center" />
+        <Setter Property="VerticalTextAlignment" Value="Center" />
+    </Style>
+
+    <Style x:Key="FogTechChipWideLabel" TargetType="Label" BasedOn="{StaticResource FogTechChipLabel}">
+        <Setter Property="FontSize" Value="14" />
+    </Style>
+
     <!-- Item templates for WrapList -->
     <DataTemplate x:Key="FogChipTemplate" x:DataType="vm:IconLabelItemViewModel">
         <cv:IconLabelChip />

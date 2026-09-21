@@ -3,6 +3,7 @@ using Ingweland.Fog.App.Views.Guides;
 using Ingweland.Fog.Application.Client.Web.CityStrategyBuilder.Abstractions;
 using Ingweland.Fog.Application.Client.Web.Providers.Interfaces;
 using Ingweland.Fog.Application.Client.Web.Services.Abstractions;
+using Ingweland.Fog.Application.Client.Web.Services.Hoh.Abstractions;
 using Ingweland.Fog.Application.Client.Web.ViewModels;
 using Ingweland.Fog.Models.Fog.Entities;
 using Microsoft.Extensions.DependencyInjection;
@@ -175,14 +176,20 @@ public partial class CityGuidePage : ContentPage, IQueryAttributable
         ApplyLayoutMode();
     }
 
-    // The website's two viewers are the same chain of `is` tests over these four types; the layout map and the
-    // research tree join it next, and until then they leave the area empty.
+    // The website's two viewers are the same chain of `is` tests over these four types; the layout map joins
+    // it next, and until then it leaves the area empty.
     private View? CreateItemContent(CityStrategyTimelineItemBase? item)
     {
         return item switch
         {
             CityStrategyDescriptionTimelineItem description => MarkdownItemView.ForDescription(description),
             CityStrategyIntroTimelineItem intro => MarkdownItemView.ForIntro(intro, _assetUrlProvider),
+            // One research calculator per item, as the website's transient registration gives each of its
+            // components: the service holds the technology graph and the state applied over it, and two views
+            // sharing one would overwrite each other's.
+            CityStrategyResearchTimelineItem research => new ResearchItemView(research,
+                _builder.Strategy.InGameCityId,
+                _scope.ServiceProvider.GetRequiredService<IResearchCalculatorService>(), _isWide ?? true),
             _ => null,
         };
     }
@@ -211,6 +218,10 @@ public partial class CityGuidePage : ContentPage, IQueryAttributable
 
         // .content-container's padding-bottom: the arrows float over the content, so it stops short of them.
         ItemContentHost.Margin = new Thickness(0, 0, 0, NavigationButtons.IsVisible ? 64 : 0);
+
+        // The research item lays its technologies out differently in each mode, and is the only content that
+        // cares which one it is in.
+        (ItemContentHost.Content as ResearchItemView)?.SetWide(isWide);
 
         if (_timelineIsVisible)
         {
