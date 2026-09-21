@@ -22,7 +22,8 @@
                        Style="{StaticResource FogTextLabel}" Margin="4,0,12,12" />
 
                 <cv:StatsSection IsVisible="{Binding HasWonderCost}" Title="{Binding WonderCostTitle}">
-                    <cv:WrapList BindableLayout.ItemsSource="{Binding Properties.WonderCost}"
+                    <cv:WrapList ColumnSpacing="4" RowSpacing="2"
+                                 BindableLayout.ItemsSource="{Binding Properties.WonderCost}"
                                  BindableLayout.ItemTemplate="{StaticResource FogChipTemplate}" />
                 </cv:StatsSection>
 
@@ -87,13 +88,15 @@
                 </cv:StatsSection>
 
                 <cv:StatsSection Title="{x:Static loc:FogResource.CityPlanner_Workforce}" IsCollapsible="True">
-                    <cv:WrapList BindableLayout.ItemsSource="{Binding Properties.Workforce}"
+                    <cv:WrapList ColumnSpacing="4" RowSpacing="2"
+                                 BindableLayout.ItemsSource="{Binding Properties.Workforce}"
                                  BindableLayout.ItemTemplate="{StaticResource FogChipTemplate}" />
                 </cv:StatsSection>
 
                 <cv:StatsSection IsVisible="{Binding HasWonderBonus}"
                                  Title="{x:Static loc:FogResource.Hoh_WorldWonder}">
-                    <cv:WrapList BindableLayout.ItemsSource="{Binding Properties.WonderBonus}"
+                    <cv:WrapList ColumnSpacing="4" RowSpacing="2"
+                                 BindableLayout.ItemsSource="{Binding Properties.WonderBonus}"
                                  BindableLayout.ItemTemplate="{StaticResource FogChipTemplate}" />
                 </cv:StatsSection>
             </VerticalStackLayout>
