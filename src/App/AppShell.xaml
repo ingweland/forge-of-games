@@ -65,20 +65,14 @@
         </VerticalStackLayout>
     </Shell.FlyoutFooter>
 
-    <!-- The website's menu icons (WebApp.Client/Services/MainMenuService.cs), downloaded from the CDN's images/icons:
-         menu_city.svg is the city guides' strategy_24dp_FBE0C6_FILL0_wght400_GRAD0_opsz24.svg, which City Viewer
-         shares, and menu_about.svg is About's info_24dp_FBE0C6_FILL0_wght400_GRAD0_opsz24.svg. -->
-    <FlyoutItem Title="{x:Static loc:FogResource.CityViewer_Title}" Icon="menu_city.png">
-        <ShellContent ContentTemplate="{DataTemplate views:CityViewerHomePage}" Route="CityViewerHome" />
-    </FlyoutItem>
-
+    <!-- The city guides are the only entry for now. City Viewer and About are still built and still wired up -
+         their pages, their services and CityViewerPage's route registration are all untouched - they are just
+         not listed; each comes back as its own FlyoutItem.
+         The icon is the website's (WebApp.Client/Services/MainMenuService.cs), downloaded from the CDN's
+         images/icons: menu_city.svg is strategy_24dp_FBE0C6_FILL0_wght400_GRAD0_opsz24.svg. -->
     <FlyoutItem Title="{x:Static loc:FogResource.Navigation_AlliedCultureCityGuides}" Icon="menu_city.png">
         <ShellContent ContentTemplate="{DataTemplate views:AlliedCultureCityGuidesPage}"
                       Route="AlliedCultureCityGuides" />
-    </FlyoutItem>
-
-    <FlyoutItem Title="{x:Static loc:FogResource.Navigation_About}" Icon="menu_about.png">
-        <ShellContent ContentTemplate="{DataTemplate views:AboutPage}" Route="About" />
     </FlyoutItem>
 
 </Shell>

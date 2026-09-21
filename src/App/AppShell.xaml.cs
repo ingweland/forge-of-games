@@ -19,8 +19,9 @@ public partial class AppShell : Shell
         Routing.RegisterRoute(nameof(CityGuidePage), typeof(CityGuidePage));
     }
 
-    // Android's back button on another menu page goes to the first one (City Viewer) before leaving the app, as
-    // Android's navigation guidance asks.
+    // Android's back button on another menu page goes to the first one before leaving the app, as Android's
+    // navigation guidance asks. With a single menu item there is nowhere else to come back from, so this
+    // only does anything once the menu grows again.
     protected override bool OnBackButtonPressed()
     {
         if (CurrentItem != Items[0] && Navigation.NavigationStack.Count <= 1)
@@ -33,7 +34,7 @@ public partial class AppShell : Shell
     }
 
     // The website reloads the page for a new language. Here a new shell reads every text again, on the same menu
-    // item, and the City Viewer start page loads the game's texts in that language (HohDataInitializationService).
+    // item, and the guides page loads the game's texts in that language (HohDataInitializationService).
     private async void OnLanguageTapped(object? sender, TappedEventArgs e)
     {
         var label = await DisplayActionSheetAsync(null, FogResource.Common_Cancel, null,
