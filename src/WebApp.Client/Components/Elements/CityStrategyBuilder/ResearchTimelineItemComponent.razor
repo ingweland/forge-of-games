@@ -93,20 +93,16 @@
 
         if (Data.Technologies.Count > 0 || Data.OpenedTechnologies.Count > 0)
         {
-            foreach (var ageTechnologies in _ageTechnologies!)
-            {
-                if (ageTechnologies.Technologies.All(x => x.State is
-                        ResearchCalculatorTechnologyState.Open or
-                        ResearchCalculatorTechnologyState.SelectedOpen or
-                        ResearchCalculatorTechnologyState.Target or
-                        ResearchCalculatorTechnologyState.SelectedTarget))
-                {
-                    continue;
-                }
+            // The age this item's work is in: the first still holding a technology neither opened nor
+            // targeted. An item that completes the tree leaves none, and opens at its end rather than
+            // leaving every age shut.
+            var age = _ageTechnologies!.FirstOrDefault(a => a.Technologies.Any(x => x.State is not (
+                ResearchCalculatorTechnologyState.Open or
+                ResearchCalculatorTechnologyState.SelectedOpen or
+                ResearchCalculatorTechnologyState.Target or
+                ResearchCalculatorTechnologyState.SelectedTarget)));
 
-                ageTechnologies.IsListOpen = true;
-                break;
-            }
+            (age ?? _ageTechnologies!.Last()).IsListOpen = true;
         }
         else
         {
