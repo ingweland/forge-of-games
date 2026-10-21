@@ -66,6 +66,12 @@ public enum RegionId
     FallOfTroy,
     AncientEgyptDungeon,
     ScyllaDungeon,
+    MoriartyHound,
+    MoriartyDungeon,
+    MoriartyStreets2,
+    MoriartyMoran,
+    MoriartyStreets,
+    MoriartyStreetsElite,
 }
 
 public enum CampaignRegionGroup

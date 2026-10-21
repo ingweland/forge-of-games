@@ -22,4 +22,5 @@ public enum ContinentId
     FallOfTroy,
     AncientEgyptDungeon,
     ScyllaDungeon,
+    MoriartyDungeon,
 }

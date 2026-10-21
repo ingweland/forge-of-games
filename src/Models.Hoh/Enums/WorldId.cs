@@ -17,4 +17,5 @@ public enum WorldId
     FallOfTroy,
     AncientEgyptDungeon,
     ScyllaDungeon,
+    MoriartyDungeon,
 }
