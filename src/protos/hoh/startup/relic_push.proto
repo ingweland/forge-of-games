@@ -10,5 +10,5 @@ message PlayerRelicDto {
   int32 id = 1;
   string definitionId = 2;
   int32 level = 3;
-  string equippedOnHeroDefinitionId = 4;
+  string equippedOnHeroDefinitionId = 5;
 }
