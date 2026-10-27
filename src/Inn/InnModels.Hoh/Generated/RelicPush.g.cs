@@ -27,7 +27,7 @@ namespace Ingweland.Fog.Inn.Models.Hoh {
             "ChByZWxpY19wdXNoLnByb3RvIiwKCVJlbGljUHVzaBIfCgZyZWxpY3MYASAD",
             "KAsyDy5QbGF5ZXJSZWxpY0R0byJlCg5QbGF5ZXJSZWxpY0R0bxIKCgJpZBgB",
             "IAEoBRIUCgxkZWZpbml0aW9uSWQYAiABKAkSDQoFbGV2ZWwYAyABKAUSIgoa",
-            "ZXF1aXBwZWRPbkhlcm9EZWZpbml0aW9uSWQYBCABKAlCH6oCHEluZ3dlbGFu",
+            "ZXF1aXBwZWRPbkhlcm9EZWZpbml0aW9uSWQYBSABKAlCH6oCHEluZ3dlbGFu",
             "ZC5Gb2cuSW5uLk1vZGVscy5Ib2hiBnByb3RvMw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
@@ -312,7 +312,7 @@ namespace Ingweland.Fog.Inn.Models.Hoh {
     }
 
     /// <summary>Field number for the "equippedOnHeroDefinitionId" field.</summary>
-    public const int EquippedOnHeroDefinitionIdFieldNumber = 4;
+    public const int EquippedOnHeroDefinitionIdFieldNumber = 5;
     private string equippedOnHeroDefinitionId_ = "";
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -384,7 +384,7 @@ namespace Ingweland.Fog.Inn.Models.Hoh {
         output.WriteInt32(Level);
       }
       if (EquippedOnHeroDefinitionId.Length != 0) {
-        output.WriteRawTag(34);
+        output.WriteRawTag(42);
         output.WriteString(EquippedOnHeroDefinitionId);
       }
       if (_unknownFields != null) {
@@ -410,7 +410,7 @@ namespace Ingweland.Fog.Inn.Models.Hoh {
         output.WriteInt32(Level);
       }
       if (EquippedOnHeroDefinitionId.Length != 0) {
-        output.WriteRawTag(34);
+        output.WriteRawTag(42);
         output.WriteString(EquippedOnHeroDefinitionId);
       }
       if (_unknownFields != null) {
@@ -490,7 +490,7 @@ namespace Ingweland.Fog.Inn.Models.Hoh {
             Level = input.ReadInt32();
             break;
           }
-          case 34: {
+          case 42: {
             EquippedOnHeroDefinitionId = input.ReadString();
             break;
           }
@@ -525,7 +525,7 @@ namespace Ingweland.Fog.Inn.Models.Hoh {
             Level = input.ReadInt32();
             break;
           }
-          case 34: {
+          case 42: {
             EquippedOnHeroDefinitionId = input.ReadString();
             break;
           }
