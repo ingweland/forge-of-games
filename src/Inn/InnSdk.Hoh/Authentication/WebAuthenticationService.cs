@@ -47,7 +47,7 @@ public class WebAuthenticationService(
 
         //redirect
         var redirectedPage = await httpClient.GetStringAsync(loginResponse!.RedirectUrl);
-        var pattern = @"const\s+clientVersion\s*=\s*""([^""]+)"";";
+        var pattern = @"var\s+clientVersion\s*=\s*""([^""]+)"";";
         var match = Regex.Match(redirectedPage, pattern);
 
         string clientVersion;
