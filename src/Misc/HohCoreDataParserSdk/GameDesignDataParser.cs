@@ -21,6 +21,8 @@ public class GameDesignDataParser(
 {
     private static readonly HashSet<string> HeroesToSkip =
     [
+        "hero.SherlockHolmes",
+        "hero_star_up.SherlockHolmesEpic",
     ];
 
     private static readonly Dictionary<string, string> CurrentToLegacyHeroUnitIdMap = new()
